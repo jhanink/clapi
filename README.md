@@ -1,4 +1,4 @@
-## Command line utilities for cart/checkout api calls
+## Command line convenience utils for cart/checkout api calls
 
 ```
 git clone https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts.git
