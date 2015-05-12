@@ -1,0 +1,18 @@
+{
+  "name": "dev-api-shortcuts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gecgithub01.walmart.com:jhanink/dev-api-shortcuts.git"
+  },
+  "author": "Joe Hanink",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^3.8.0"
+  }
+}
