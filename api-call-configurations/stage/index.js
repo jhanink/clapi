@@ -1,17 +1,36 @@
+var fs = require("fs");
+var path = require("path");
 
+module.exports = function () {
 
+  var commonHeaders = {
+    "WM.SRV.DEVICEID": "walmart.com",
+    "WM.SRV.LOCALEID": "eng_USA",
+    "WM.SRV.TENANTID": 0,
+    "WM_CONSUMER.ID": 100,
+    "WM_QOS.CORRELATION_ID": "bfhyb",
+    "WM_SEC.AUTH_TOKEN": "ahha%&!^!)(!&",
+    "WM_SVC.ENV": "DEV",
+    "WM_SVC.NAME": "payment",
+    "WM_SVC.VERSION": "1.0.0",
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  };
 
-var commonHeaders = [
-  { h: "WM.SRV.DEVICEID", v: "walmart.com" },
-  { h: "WM.SRV.LOCALEID", v: "eng_USA" },
-  { h: "WM.SRV.TENANTID", v: 0 },
-  { h: "WM_CONSUMER.ID", v: 100 },
-  { h: "WM_QOS.CORRELATION_ID", v: "bfhyb" },
-  { h: "WM_SEC.AUTH_TOKEN", v: "ahha%&!^!)(!&" },
-  { h: "WM_SVC.ENV", v: "DEV" },
-  { h: "WM_SVC.NAME", v: "payment" },
-  { h: "WM_SVC.VERSION", v: "1.0.0" },
-  { h: "Accept", v: "application/json" },
-  { h: "Content-Type", v: "application/json" }
-]
+  var args = process.state.args;
+  var name = args.name;
 
+  if (!name) {
+    console.log("---> no name provided");
+    return;
+  }
+
+  fs.stat(path.join(__dirname, name + ".js"), function (err, stats) {
+    if (!err) {
+      require("./" + name)(commonHeaders);
+    } else {
+      console.log("---> no such api config file for ["+name+"]");
+    }
+  });
+
+};

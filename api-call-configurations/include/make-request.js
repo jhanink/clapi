@@ -7,9 +7,6 @@ var makeRequest = function (options, data) {
 if (data) {
     data = JSON.stringify(data);
     options["Content-Length"] = data.length;
-  console.log("--------------")
-    console.log(data)
-  console.log("--------------")
   }
 
   var req = https.request(options, function(res) {
@@ -22,7 +19,7 @@ if (data) {
     });
 
     res.on('end', function() {
-      console.log(prettyjson.render(responseString));
+      console.log(prettyjson.render(JSON.parse(responseString)));
     });
   });
 

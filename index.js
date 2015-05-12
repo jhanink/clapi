@@ -1,4 +1,4 @@
-var args = require("yargs");
+var args = require("yargs").argv;
 
 process.state = {
   args: args
