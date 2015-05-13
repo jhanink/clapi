@@ -3,10 +3,11 @@
 Command line convenience utils for cart/checkout api calls
 
 ```
-$ git clone https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts.git
-$ cd dev-api-shortcuts
-$ npm install
-
+git clone https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts.git
+cd dev-api-shortcuts
+npm install
+```
+```
 # run a command on STAGE or PRODUCTION (below)
 # append formatting option --JSON, --RAW, --PRETTY (PRETTY is the default)
 ```
