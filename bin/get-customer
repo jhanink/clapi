@@ -1,1 +1,3 @@
-node ../index --name=get-customer --customerId=$1 "$@"
+if [ `basename "$PWD"` == "bin" ]; then PROG='../index'; else PROG='index'; fi
+
+node $PROG --name=get-customer --customerId=$1 "$@"
