@@ -34,12 +34,6 @@ npm install
 ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
-#### → TODO
-
-```sh
-./check_all_stage_envs  # tests various staging urls for availability in one go and returns a concise report
-```
-
 ### Why is this a node program and not a collection of curl scripts?
 
 Because node is more fun.
@@ -48,6 +42,12 @@ Because node is more fun.
 
 [Ask for more more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
+#### → TODO
+
+```sh
+./check-all-stage-envs
+   https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1
+```
 
 ### Et Cetera
 
