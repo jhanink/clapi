@@ -40,7 +40,7 @@ Because node is more fun.
 
 ### Contribute
 
-[Ask for more more commands here and add a link below](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+[Ask for more more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues) (and then add a link below)
 
 #### → TODO
 
