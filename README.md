@@ -12,6 +12,8 @@ npm install
 # append formatting option --JSON, --RAW, --PRETTY (PRETTY is the default)
 ```
 
+
+
 ### Commands
 
 The set of available commands will grow and change over time.
@@ -38,9 +40,13 @@ The set of available commands will grow and change over time.
 ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
+
+
 ### Why is this a node program and not a collection of curl scripts?
 
 Because node is more fun.
+
+
 
 ### Contribute
 
@@ -49,6 +55,7 @@ Because node is more fun.
 ##### → TODO
 
 https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1
+
 
 
 ### Et Cetera
