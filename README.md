@@ -37,3 +37,9 @@ npm install
 ### Why is this a node program and not a collection of curl scripts?
 
 Because node is more fun.
+
+### Todo
+
+```
+./check_all_stage_envs  # tests various staging urls for availability in one go and returns a concise report
+```
