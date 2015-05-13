@@ -1,0 +1,3 @@
+node ../index --name=get-customer --customerId=$1 --RAW > /tmp/customer_$1.json
+
+node ../index --name=create-temp-card --file=/tmp/customer_$1.json

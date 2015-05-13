@@ -1,1 +1,0 @@
-node index --name=get-customer --customerId=$1 "$@"
