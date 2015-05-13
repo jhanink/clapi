@@ -46,7 +46,7 @@ Because node is more fun.
 
 ```sh
 ./check-all-stage-envs
-   https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1
+   [https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1)
 ```
 
 ### Et Cetera
