@@ -1,27 +1,25 @@
 var service = require("../include/service");
 
 var args = process.state.args;
-var pcId = args.pcId;
+var customerId = args.customerId;
 
 module.exports = function () {
 
-  if (!pcId) {
-    console.log("---> missing pcId");
+  if (!customerId) {
+    console.log("---> missing customerId");
     return;
   }
 
   // --- prepare configs
   var requestOptions = {
-    hostname: 'ultra-esb.prod-xo.esb.platform.glb.prod.walmart.com',
+    hostname: 'ca.stg0.ca-services-cdc.prod.walmart.com',
     port: 80,
-    path: '/service/checkoutservice/checkout/contract/' + pcId,
-    method: 'GET',
-    random: 'ly'
+    path: '/ca-app/services/customers/' + customerId,
+    method: 'GET'
   };
 
   // --- prepare request
-  service.setServiceName("checkoutservice");
-  service.setServiceVersion("2.0.0");
+  service.setServiceName("payment");
   service.setRequestOptions(requestOptions);
   service.setUseHttp();
 

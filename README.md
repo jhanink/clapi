@@ -20,6 +20,14 @@ npm install
 ./create-gift-card 100
 ``` 
 
+```
+./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
+```
+
+```
+./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
+```
+
 #### → PRODUCTION
 
 ```

@@ -24,7 +24,6 @@ module.exports = function () {
 
   // --- prepare request
   service.setServiceName("payment");
-  service.setServiceVersion("1.0.0");
   service.setRequestOptions(requestOptions);
   service.setDataPayload(dataPayload);
 
