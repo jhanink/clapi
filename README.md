@@ -26,6 +26,6 @@ npm install
 ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
-### Why is this a node program and not a simple shell script?
+### Why is this a node program and not a collection of curl scripts?
 
 Because node is more fun.
