@@ -1,52 +1,24 @@
-var proto; // http | https
 var prettyjson = require("prettyjson");
+var request = require("request");
 
 
 var makeRequest = function (options, data) {
 
-  // --- process optional data
   if (data) {
-    data = JSON.stringify(data);
-    options["Content-Length"] = data.length;
+    options.body = JSON.stringify(data);
   }
 
-  // --- http or https
-  proto = process.state.isHttps || options.port === 443
-      ? require("https") : require("http");
+  request(options, function (err, resp, body) {
+    if (err) {console.log(err);return;}
 
-  // --- setup request
-  var req = proto.request(options, function(res) {
-    res.setEncoding('utf-8');
-
-    var responseString = '';
-
-    res.on('data', function(data) {
-      responseString += data;
-    });
-
-    res.on('end', function() {
-      if (process.state.args.RAW) {
-        console.log(responseString);
-      } else if (process.state.args.JSON) {
-        console.log(JSON.stringify(JSON.parse(responseString), null, 2));
-      } else {
-        console.log(prettyjson.render(JSON.parse(responseString)));
-      }
-    });
+    if (process.state.args.RAW) {
+      console.log(body);
+    } else if (process.state.args.JSON) {
+      console.log(JSON.stringify(JSON.parse(body), null, 2));
+    } else {
+      console.log(prettyjson.render(JSON.parse(body)));
+    }
   });
-
-  // --- log errors
-  req.on('error', function(e) {
-    console.log(e);
-  });
-
-  // --- pass data if any
-  if (data) {
-    req.write(data);
-  }
-  // --- finish
-  req.end();
-
 };
 
 module.exports = makeRequest;

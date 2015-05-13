@@ -23,7 +23,9 @@ var service = {
     setUseHttp: function() {
       process.state.isHttps = false;
     },
-    sendRequest: function () {
+    sendRequest: function (options, data) {
+      if (options) this.setRequestOptions(options);
+      if (data) this.setDataPayload(data);
       makeRequest(_options, _data);
     }
 
