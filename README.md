@@ -1,6 +1,6 @@
 ### What is this?
 
-Dev CLI utils for cart/checkout api calls
+Convenience Dev CLI for cart/checkout api calls
 
 ```sh
 git clone https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts.git
