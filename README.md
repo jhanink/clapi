@@ -46,9 +46,8 @@ Because node is more fun.
 
 ### Contribute
 
-Suggest api calls with descriptions and I'll add them ASAP.
+[Ask for more more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
-https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues
 
 ### Et Cetera
 
