@@ -14,7 +14,7 @@ npm install
 
 ### Commands
 
-#### → STAGE
+#### STAGE →
 
 ```sh
 ./create-gift-card 100
@@ -28,7 +28,7 @@ npm install
 ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
 
-#### → PRODUCTION
+#### PRODUCTION →
 
 ```sh
 ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
