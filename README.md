@@ -53,6 +53,7 @@ Because node is more fun.
 
 https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1
 
+https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/2
 
 
 ### Et Cetera
