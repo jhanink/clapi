@@ -24,13 +24,9 @@ The set of available commands will grow and change over time.
 
 ```sh
 ./create-gift-card 100
-``` 
 
-```sh
 ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
-```
 
-```sh
 ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
 
