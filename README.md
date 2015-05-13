@@ -16,27 +16,27 @@ npm install
 
 #### → STAGE
 
-```
+```sh
 ./create-gift-card 100
 ``` 
 
-```
+```sh
 ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
 
-```
+```sh
 ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
 
 #### → PRODUCTION
 
-```
+```sh
 ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
 ### Todo
 
-```
+```sh
 ./check_all_stage_envs  # tests various staging urls for availability in one go and returns a concise report
 ```
 
