@@ -34,7 +34,7 @@ npm install
 ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
-### Todo
+#### → TODO
 
 ```sh
 ./check_all_stage_envs  # tests various staging urls for availability in one go and returns a concise report
