@@ -17,7 +17,7 @@ module.exports = function () {
     path: '/service/checkoutservice/checkout/contract/' + pcId,
     method: 'GET'
   };
-  console.log("--------2")
+
   // --- prepare request
   service.setServiceName("checkoutservice");
   service.setServiceVersion("2.0.0");

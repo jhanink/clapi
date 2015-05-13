@@ -1,1 +1,1 @@
-node index --name=create-gift-card --amount=$1
+node index --name=create-gift-card --amount=$1 "$@"

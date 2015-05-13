@@ -6,4 +6,14 @@ cd dev-api-shortcuts
 npm install
 ```
 
-* create-gift-card 100
+### Stage
+* create-gift-card 100 \[--RAW, --JSON, --PRETTY\]
+
+### Prod
+* get-pc-prod e74dd26a-ef98-442e-bf88-86637b5b344d  \[--RAW, --JSON, --PRETTY\]
+
+### Why is this a node program and not a simple shell script?
+
+Because node is more fun.
+ 
+QED.

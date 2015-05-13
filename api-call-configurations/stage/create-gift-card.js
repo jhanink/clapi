@@ -1,11 +1,19 @@
-var makeRequest = require("../include/make-request");
+var service = require("../include/service");
 
 var args = process.state.args;
 var amount = args.amount || 75;
 
-var apiModule = function (headers){
+module.exports = function () {
 
-  var data = {
+  // --- prepare configs
+  var requestOptions = {
+    hostname: 'stg-payment.glb.staging.walmart.com',
+    port: 443,
+    path: '/paymentservices/kuber/v1/paycards',
+    method: 'PUT'
+  };
+
+  var dataPayload = {
     "clientreqid": "node" + Math.random(),
     "pmid": "FDCGC",
     "startbalance": {
@@ -14,16 +22,25 @@ var apiModule = function (headers){
     }
   };
 
-  var options = {
-    hostname: 'stg-payment.glb.staging.walmart.com',
-    port: 443,
-    path: '/paymentservices/kuber/v1/paycards',
-    method: 'PUT',
-    headers: headers
-  };
+  // --- prepare request
+  service.setServiceName("payment");
+  service.setServiceVersion("1.0.0");
+  service.setRequestOptions(requestOptions);
+  service.setDataPayload(dataPayload);
 
-  // Set up the request
-  makeRequest(options, data);
+  // --- send request
+  service.sendRequest();
+
 };
 
-module.exports = apiModule;
+
+
+/*
+ curl -v \
+ -X PUT -H "WM.SRV.DEVICEID:walmart.com" -H "WM.SRV.LOCALEID:eng_USA" -H "WM.SRV.TENANTID:0" \
+ -H "WM_CONSUMER.ID:100" -H "WM_QOS.CORRELATION_ID:bfhyb" -H "WM_SEC.AUTH_TOKEN:ahha%&\!^\!)(\!&" \
+ -H "WM_SVC.ENV:DEV" -H "WM_SVC.NAME:payment" -H "WM_SVC.VERSION:1.0.0" \
+ -H "Accept:application/json" -H "Content-Type:application/json" \
+ --data '{"clientreqid":"node00000000000000000000","pmid":"FDCGC","startbalance":{"currencyAmount":50,"currencyUnit":"USD"}}' \
+ https://stg-payment.glb.staging.walmart.com/paymentservices/kuber/v1/paycards
+ */

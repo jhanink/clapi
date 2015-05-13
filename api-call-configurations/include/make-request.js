@@ -1,15 +1,21 @@
-var https = require("https");
+var proto; // http | https
 var prettyjson = require("prettyjson");
 
 
 var makeRequest = function (options, data) {
 
-if (data) {
+  // --- process optional data
+  if (data) {
     data = JSON.stringify(data);
     options["Content-Length"] = data.length;
   }
 
-  var req = https.request(options, function(res) {
+  // --- http or https
+  proto = process.state.isHttps || options.port === 443
+      ? require("https") : require("http");
+
+  // --- setup request
+  var req = proto.request(options, function(res) {
     res.setEncoding('utf-8');
 
     var responseString = '';
@@ -19,30 +25,28 @@ if (data) {
     });
 
     res.on('end', function() {
-      console.log(prettyjson.render(JSON.parse(responseString)));
+      if (process.state.args.RAW) {
+        console.log(responseString);
+      } else if (process.state.args.JSON) {
+        console.log(JSON.stringify(JSON.parse(responseString), null, 2));
+      } else {
+        console.log(prettyjson.render(JSON.parse(responseString)));
+      }
     });
   });
 
+  // --- log errors
   req.on('error', function(e) {
     console.log(e);
   });
 
+  // --- pass data if any
   if (data) {
     req.write(data);
   }
+  // --- finish
   req.end();
 
 };
 
 module.exports = makeRequest;
-
-
-/*
- curl -v \
- -X PUT -H "WM.SRV.DEVICEID:walmart.com" -H "WM.SRV.LOCALEID:eng_USA" -H "WM.SRV.TENANTID:0" \
- -H "WM_CONSUMER.ID:100" -H "WM_QOS.CORRELATION_ID:bfhyb" -H "WM_SEC.AUTH_TOKEN:ahha%&\!^\!)(\!&" \
- -H "WM_SVC.ENV:DEV" -H "WM_SVC.NAME:payment" -H "WM_SVC.VERSION:1.0.0" \
- -H "Accept:application/json" -H "Content-Type:application/json" \
- --data '{"clientreqid":"node00000000000000000000","pmid":"FDCGC","startbalance":{"currencyAmount":50,"currencyUnit":"USD"}}' \
- https://stg-payment.glb.staging.walmart.com/paymentservices/kuber/v1/paycards
-*/
