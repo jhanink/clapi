@@ -4,11 +4,14 @@ var _headers = process.state.headers;
 var _options, _data;
 
 var service = {
+    setHeader: function (name, value) {
+      _headers[name] = value;
+    },
     setServiceName: function (serviceName) {
-      _headers["WM_SVC.NAME"] = serviceName;
+      this.setHeader("WM_SVC.NAME", serviceName);
     },
     setServiceVersion: function (serviceVersion) {
-      _headers["WM_SVC.VERSION"] = serviceVersion;
+      this.setHeader("WM_SVC.VERSION", serviceVersion);
     },
     setRequestOptions: function (options) {
       _options = options
