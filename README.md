@@ -10,13 +10,21 @@ npm install
 
 ### Commands
 
-Stage
+Follow any command with a formatting option: 
+* --RAW     : unformatted response
+* --JSON    : formatted json
+* --PRETTY  : pretty-printed, colorized (DEFAULT)
 
-* create-gift-card 100 \[--RAW, --JSON, --PRETTY\]
+example: `create-gift-card 100 --JSON`
 
-Production
 
-* get-pc-prod e74dd26a-ef98-442e-bf88-86637b5b344d  \[--RAW, --JSON, --PRETTY\]
+#### → STAGE
+
+* `create-gift-card 100` 
+
+#### → PRODUCTION
+
+* `get-pc-prod e74dd26a-ef98-442e-bf88-86637b5b344d`
 
 ### Why is this a node program and not a simple shell script?
 
