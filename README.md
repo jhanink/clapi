@@ -22,17 +22,18 @@ The set of available commands will grow and change over time. [Add your requests
 
 ```sh
 
-./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
+./bin/get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
 
-./create-gift-card 100
+./bin/create-gift-card 100
 
-./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
+./bin/create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
 
 ##### → PRODUCTION
 
 ```sh
-./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
+
+./bin/get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
 
