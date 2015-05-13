@@ -1,4 +1,4 @@
-## What is this?
+### What is this?
 
 Command line convenience utils for cart/checkout api calls
 
@@ -12,7 +12,7 @@ npm install
 # append formatting option --JSON, --RAW, --PRETTY (PRETTY is the default)
 ```
 
-## Commands
+### Commands
 
 #### → STAGE
 
@@ -34,11 +34,11 @@ npm install
 ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
-## Why is this a node program and not a collection of curl scripts?
+### Why is this a node program and not a collection of curl scripts?
 
 Because node is more fun.
 
-## Contribute
+### Contribute
 
 [Ask for more more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues) (and then add a link below)
 
@@ -47,7 +47,7 @@ Because node is more fun.
 https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1
 
 
-## Et Cetera
+### Et Cetera
 
 [See additional project goals](project-goals.md)
 
