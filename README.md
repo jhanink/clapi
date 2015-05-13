@@ -44,4 +44,10 @@ npm install
 
 Because node is more fun.
 
+### Contribute
+
+Leave me issues with api calls and descriptions and I'll add them ASAP.
+
+https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues
+
 
