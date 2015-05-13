@@ -17,13 +17,13 @@ npm install
 #### → STAGE
 
 ```
-create-gift-card 100
+./create-gift-card 100
 ``` 
 
 #### → PRODUCTION
 
 ```
-get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
+./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
 ### Why is this a node program and not a simple shell script?

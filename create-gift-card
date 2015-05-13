@@ -1,1 +1,3 @@
+#!/bin/bash
+
 node index --name=create-gift-card --amount=$1 "$@"

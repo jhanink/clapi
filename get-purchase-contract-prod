@@ -1,1 +1,3 @@
+#!/bin/bash
+
 node index --name=get-purchase-contract --pcId=$1 --PROD "$@"
