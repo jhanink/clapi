@@ -3,7 +3,7 @@
 ##### → MAIN GOAL
 
 ```
-Convenient dev CLI to cart/checkout APIs
+Convenience dev CLI to cart/checkout APIs
 ```
 
 ##### → SECONDARY GOALS
