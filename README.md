@@ -50,4 +50,7 @@ Leave me issues with api calls and descriptions and I'll add them ASAP.
 
 https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues
 
+### Et Cetera
+
+See additional project goals: [a relative link](project-goals.md)
 
