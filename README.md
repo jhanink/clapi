@@ -14,6 +14,10 @@ npm install
 
 ### Commands
 
+The set of available commands will grow and change over time.
+
+[Add your requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+
 #### → STAGE
 
 ```sh
@@ -40,7 +44,7 @@ Because node is more fun.
 
 ### Contribute
 
-[Ask for more more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues) (and then add a link below)
+[Add your requests for more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues) (and then add a link below)
 
 #### → TODO
 
