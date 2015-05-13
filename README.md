@@ -21,9 +21,10 @@ The set of available commands will grow and change over time. [Add your requests
 ##### → STAGE
 
 ```sh
-./create-gift-card 100
 
 ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
+
+./create-gift-card 100
 
 ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
@@ -44,7 +45,8 @@ Because node is more fun.
 
 ### Contribute
 
-[Add your requests for more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues) (and then add a link below)
+* [Open a github issue to request a new feature](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+* [Add a link to it below using the github editor](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/edit/master/README.md)
 
 ##### → TODO
 
