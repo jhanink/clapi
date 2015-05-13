@@ -40,11 +40,11 @@ Because node is more fun.
 
 ### Contribute
 
-[Ask for more more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+[Ask for more more commands here and add a link below](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
 #### → TODO
 
-https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1 (Check all stage envs and apis)
+https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1
 
 
 ### Et Cetera
