@@ -11,9 +11,9 @@ npm install
 ### Commands
 
 Follow any command with a formatting option: 
-* --RAW     : unformatted response
-* --JSON    : formatted json
-* --PRETTY  : pretty-printed, colorized (DEFAULT)
+* `--RAW`     : unformatted response
+* `--JSON`    : formatted json
+* `--PRETTY`  : pretty-printed, colorized ( DEFAULT )
 
 example: `create-gift-card 100 --JSON`
 
