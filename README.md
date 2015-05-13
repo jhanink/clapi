@@ -7,7 +7,7 @@ git clone https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts.git
 cd dev-api-shortcuts
 npm install
 
-# run a STATE or PRODUCTION command below
+# run a command on STAGE or PRODUCTION (below)
 # append formatting option --JSON, --RAW, --PRETTY (PRETTY is the default)
 ```
 
