@@ -7,18 +7,18 @@ process.state = {
   isHttps: true
 };
 
-var name = args.name;
+var command_name = args.name;
 
-if (!name) {
+if (!command_name) {
   console.log("---> no name provided");
   return;
 }
 
 var subdir = (args.PROD)? "prod" : "stage";
 
-fs.stat(path.join(__dirname,"api-call-configurations", subdir,  name + ".js"), function (err, stats) {
+fs.stat(path.join(__dirname,"api-call-configurations", subdir,  command_name + ".js"), function (err, stats) {
   if (err) {
-    console.log("---> no such STAGE file for ["+name+"]");
+    console.log("---> no such STAGE file for [" + command_name + "]");
   } else {
     require("./api-call-configurations/" + subdir)();
   }
