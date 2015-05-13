@@ -44,7 +44,8 @@ Because node is more fun.
 
 ### Contribute
 
-[Add your requests for more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues) (and then add a link below)
+[Add your requests for more commands here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+[Then add a link below using the github editor](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/edit/master/README.md)
 
 ##### → TODO
 
