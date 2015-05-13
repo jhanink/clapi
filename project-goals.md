@@ -1,19 +1,19 @@
 ### This project has multiple goals
 
-#### → MAIN GOAL
+##### → MAIN GOAL
 
 ```
 Convenient dev CLI to cart/checkout APIs
 ```
 
-#### → SECONDARY GOALS
+##### → SECONDARY GOALS
 
 ```
 * Project host for new checkout POC app
 * Project host for trying out new stacks and pipelines
 ```
 
-#### → DETAILS
+##### → DETAILS
 
 ```
 * dual interface for CLI and HTTP server usage
