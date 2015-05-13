@@ -21,9 +21,10 @@ The set of available commands will grow and change over time. [Add your requests
 ##### → STAGE
 
 ```sh
-./create-gift-card 100
 
 ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
+
+./create-gift-card 100
 
 ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
