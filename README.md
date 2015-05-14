@@ -23,23 +23,24 @@ The set of available commands will grow and change over time. [Add your requests
 ```sh
 
 # get customer by customerId
-./bin/get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
+./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
 
 # get customer by email
-./bin/get-customer node-1@wm.com  # by email
+./get-customer node-1@wm.com  # by email
 
 # create gift card for some amount
-./bin/create-gift-card 100
+./create-gift-card 100
 
-# create a temp card for a customer
-./bin/create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
+# create a temp card for a customer by customerId
+./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
 
 ##### → PRODUCTION
 
 ```sh
 
-./bin/get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
+# get production purchase contract 
+./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
 
