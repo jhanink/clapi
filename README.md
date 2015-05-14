@@ -22,7 +22,8 @@ The set of available commands will grow and change over time. [Add your requests
 
 ```sh
 
-./bin/get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
+./bin/get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253  # lookup by customerId
+./bin/get-customer node-1@wm.com  # lookup by email
 
 ./bin/create-gift-card 100
 
