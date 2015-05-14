@@ -1,9 +1,7 @@
 var prettyjson = require("prettyjson");
 var request = require("request");
 
-
-var makeRequest = function (options, data) {
-
+var makeRequest = function (options, data, state) {
   if (data) {
     options.body = JSON.stringify(data);
   }
@@ -11,9 +9,9 @@ var makeRequest = function (options, data) {
   request(options, function (err, resp, body) {
     if (err) {console.log(err);return;}
 
-    if (process.state.args.RAW) {
+    if (state.args.RAW) {
       console.log(body);
-    } else if (process.state.args.JSON) {
+    } else if (state.args.JSON) {
       console.log(JSON.stringify(JSON.parse(body), null, 2));
     } else {
       console.log(prettyjson.render(JSON.parse(body)));

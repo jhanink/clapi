@@ -1,5 +1,4 @@
-
-module.exports = function () {
+module.exports = function (state) {
 
   var headers = {
     "Accept": "application/json",
@@ -27,9 +26,7 @@ module.exports = function () {
     "WM_CONSUMER.USER_TYPE": "GUEST"
   };
 
-  process.state.headers = headers;
+  state.headers = headers;
 
-  require("./" + process.state.args.name)();
+  require("./" + state.args.name)(state);
 };
-
-

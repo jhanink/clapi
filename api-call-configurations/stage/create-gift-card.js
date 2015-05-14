@@ -1,8 +1,6 @@
-var service = require("../include/service");
-
-var amount = process.state.args.amount || 75;
-
-module.exports = function () {
+module.exports = function (state) {
+  var service = require("../include/service")(state);
+  var amount = state.args.amount || 75;
   var options = {
     url: 'https://stg-payment.glb.staging.walmart.com/paymentservices/kuber/v1/paycards',
     method: 'PUT'

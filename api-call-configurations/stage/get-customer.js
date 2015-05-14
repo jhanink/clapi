@@ -1,14 +1,11 @@
-var service = require("../include/service");
-var customerId = process.state.args.customerId;
-
-
-module.exports = function () {
-  if (!customerId) {
+module.exports = function (state) {
+  var service = require("../include/service")(state);
+  if (!state.args.customerId) {
     console.log("---> missing customerId");return;
   }
 
   var options = {
-    url: 'http://ca.stg0.ca-services-cdc.prod.walmart.com/ca-app/services/customers/' + customerId,
+    url: 'http://ca.stg0.ca-services-cdc.prod.walmart.com/ca-app/services/customers/' + state.args.customerId,
     method: 'GET'
   };
 

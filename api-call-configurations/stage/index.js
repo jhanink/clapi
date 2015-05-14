@@ -1,6 +1,4 @@
-
-module.exports = function () {
-
+module.exports = function (state) {
   var headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -14,7 +12,7 @@ module.exports = function () {
     "WM_SVC.VERSION": "1.0.0"
   };
 
-  process.state.headers = headers;
+  state.headers = headers;
 
-  require("./" + process.state.args.name)();
+  require("./" + state.args.name)(state);
 };

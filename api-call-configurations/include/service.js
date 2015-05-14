@@ -1,9 +1,10 @@
 var makeRequest = require("./make-request");
 
-var _headers = process.state.headers;
-var _options, _data;
+module.exports = function(state) {
+  var _headers = state.headers;
+  var _options, _data;
 
-var service = {
+  return {
     setHeader: function (name, value) {
       _headers[name] = value;
     },
@@ -20,15 +21,10 @@ var service = {
     setDataPayload: function (data) {
       _data = data;
     },
-    setUseHttp: function() {
-      process.state.isHttps = false;
-    },
     sendRequest: function (options, data) {
       if (options) this.setRequestOptions(options);
       if (data) this.setDataPayload(data);
-      makeRequest(_options, _data);
+      makeRequest(_options, _data, state);
     }
-
+  }
 };
-
-module.exports = service;
