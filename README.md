@@ -8,7 +8,6 @@ cd dev-api-shortcuts
 npm install
 ```
 ```sh
-# run a command on STAGE or PRODUCTION (below)
 # append formatting option --JSON, --RAW, --PRETTY (PRETTY is the default)
 ```
 
