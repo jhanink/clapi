@@ -26,7 +26,7 @@ The set of available commands will grow and change over time. [Add your requests
 ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
 
 # get customer by email
-./get-customer node-1@wm.com  # by email
+./get-customer node-1@wm.com
 
 # create gift card for some amount
 ./create-gift-card 100
