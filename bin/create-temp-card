@@ -1,4 +1,4 @@
-if [ `basename "$PWD"` == "bin" ]; then PROG='../index'; else PROG='index'; fi
+. script-include
 
 node $PROG --name=get-customer --customerId=$1 --RAW > /tmp/customer_$1.json
 

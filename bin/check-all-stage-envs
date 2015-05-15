@@ -1,4 +1,4 @@
-if [ `basename "$PWD"` == "bin" ]; then PROG='../index'; else PROG='index'; fi
+. script-include
 
 # cycle through all stage envs and return a concise report with green/red flags
 

@@ -1,0 +1,3 @@
+if [ `basename "$PWD"` == "bin" ]; then PROG='../index'; else PROG='index'; fi
+
+SCRIPT_NAME=`basename "$0"`
