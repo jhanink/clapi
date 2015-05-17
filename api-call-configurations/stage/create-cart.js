@@ -1,7 +1,6 @@
 module.exports = function (state) {
   var service = require("../include/service")(state);
   var customerId = state.args.customerId;
-
   if (!customerId) {
     console.log("---> missing customerId");return;
   }
