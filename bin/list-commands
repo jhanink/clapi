@@ -1,1 +1,8 @@
-cat include/commands | more
+ARG="$@"
+
+if [ "$ARG" == "" ];
+then
+   cat include/commands | more;
+else
+  cat include/commands | grep -A 1 $ARG | more
+fi
