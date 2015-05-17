@@ -1,4 +1,4 @@
-. script-include
+. /include/script-include
 
 node $PROG --name=get-customer --customerId=$1 --RAW > /tmp/customer_$1.json
 
