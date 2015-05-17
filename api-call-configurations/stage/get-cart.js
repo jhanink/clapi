@@ -1,7 +1,6 @@
 module.exports = function (state) {
   var service = require("../include/service")(state);
   var cartId = state.args.cartId;
-
   if (!cartId) {
     console.log("---> missing cartId");return;
   }
