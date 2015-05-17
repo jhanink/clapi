@@ -33,6 +33,12 @@ The set of available commands will grow and change over time. [Add your requests
 
 # create a temp card for a customer by customerId
 ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253
+
+# get cart by cartId
+./get cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
+
+# create cart by customerId
+./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253
 ```
 
 ##### → PRODUCTION

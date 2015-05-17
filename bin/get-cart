@@ -1,0 +1,3 @@
+. script-include
+
+node $PROG --name=$SCRIPT_NAME --cartId=$1 "$@"
