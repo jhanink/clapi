@@ -4,7 +4,7 @@ module.exports = function (state) {
   var customerId = state.args.customerId;
 
   var options = {
-    url: 'http://cart-service-app.stg.cartserviceapp.globalproducts.glb.prod.walmart.com/cart-service-app/cart',
+    url: 'http://cartservice-app.stg1.pangeasvcscart.services.glb.prod.walmart.com/cart-service-app/cart',
     method: 'POST'
   };
 
@@ -17,7 +17,8 @@ module.exports = function (state) {
     },
     "storeIds": [2280, 5457],
     "customerId": customerId,
-    "currencyCode": "USD"
+    "currencyCode": "USD",
+    "customerType": "CUSTOMER"
   };
 
   service.setServiceName("cartservice");
