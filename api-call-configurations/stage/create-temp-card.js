@@ -1,5 +1,4 @@
 var fs = require("fs");
-
 module.exports = function (state) {
   var service = require("../include/service")(state);
   if (!state.args.file) {
