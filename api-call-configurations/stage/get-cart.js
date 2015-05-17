@@ -1,6 +1,5 @@
 module.exports = function (state) {
   var service = require("../include/service")(state);
-
   var cartId = state.args.cartId;
 
   var options = {
