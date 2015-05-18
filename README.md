@@ -27,7 +27,7 @@ The set of available commands will grow and change over time. [Add your requests
 #   ./get-customer | ls -R
 ```
 
-##### → STAGE
+##### → STAGE COMMANDS
 
 ```sh
 
@@ -53,7 +53,7 @@ The set of available commands will grow and change over time. [Add your requests
 ./add-to-cart # NOT YET IMPLEMENTED
 ```
 
-##### → PRODUCTION
+##### → PROD COMMANDS
 
 ```sh
 
