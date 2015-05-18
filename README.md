@@ -18,7 +18,9 @@ npm install
 
 The set of available commands will grow and change over time. [Add your requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
-Recall the last output for a command by entering the command without parameters. 
+```sh
+# NOTE: You can recall the last output for a command by entering the command without parameters.
+```
 
 ##### → STAGE
 
