@@ -1,3 +1,8 @@
 . ./include/script-include
 
-node $PROG --name=create-gift-card --amount=$1 "$@"
+if [ ! -z "$1" ]
+then
+  node $PROG --name=create-gift-card --amount=$1 "$@" > $BASE_DIR/output/create-gift-card.json
+fi
+
+cat $BASE_DIR/output/create-gift-card.json

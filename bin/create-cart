@@ -1,3 +1,8 @@
 . ./include/script-include
 
-node $PROG --name=$SCRIPT_NAME --customerId=$1 "$@"
+if [ ! -z "$1" ]
+then
+  node $PROG --name=$SCRIPT_NAME --customerId=$1 "$@" > $BASE_DIR/output/create-cart.json
+fi
+
+cat $BASE_DIR/output/create-cart.json

@@ -2,7 +2,7 @@
 
 if [ ! -z "$1" ]
 then
-  node $PROG --name=$SCRIPT_NAME --cartId=$1 "$@" > $BASE_DIR/output/cart.json
+  node $PROG --name=$SCRIPT_NAME --cartId=$1 "$@" > $BASE_DIR/output/get-cart.json
 fi
 
-cat $BASE_DIR/output/cart.json
+cat $BASE_DIR/output/get-cart.json

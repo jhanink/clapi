@@ -1,8 +1,9 @@
-ARG="$@"
-
-if [ "$ARG" == "" ];
+echo ""
+if [ "$1" == "" ];
 then
    cat include/commands | more;
+   echo ""
 else
-  cat include/commands | grep -A 1 $ARG | more
+  cat include/commands | grep -A 1 $1 | more
 fi
+echo ""

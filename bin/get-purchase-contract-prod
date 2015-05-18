@@ -1,3 +1,8 @@
 . ./include/script-include
 
-node $PROG --name=get-purchase-contract --pcId=$1 --PROD "$@"
+if [ ! -z "$1" ]
+then
+  node $PROG --name=get-purchase-contract --pcId=$1 --PROD "$@" > $BASE_DIR/output/get-purchase-contract-prod.json
+fi
+
+cat $BASE_DIR/output/get-purchase_contract_prod.json

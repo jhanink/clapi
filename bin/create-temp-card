@@ -1,7 +1,9 @@
 . /include/script-include
 
-node $PROG --name=get-customer --customerId=$1 --RAW > ../output/customer.json
+if [ ! -z "$1" ]
+then
+  node $PROG --name=get-customer --customerId=$1 --RAW > $BASE_DIR/output/customer.json
+  node $PROG --name=create-temp-card --file=/tmp/customer_$1.json "$@" > $BASE_DIR/output/create-temp-card.json
+fi
 
-node $PROG --name=create-temp-card --file=/tmp/customer_$1.json > ../output/temp-card.json
-
-cat ../output/temp-card.json
+cat $BASE_DIR/output/create-temp-card.json
