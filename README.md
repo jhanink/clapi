@@ -19,8 +19,12 @@ npm install
 The set of available commands will grow and change over time. [Add your requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
 ```sh
-# NOTE: You can recall the last command result by entering a command without parameters.
-# e.g.: ./get-customer
+# NOTE: You can recall the last result by invoking a command without lookup parameters.
+# e.g.
+#   ./get-customer
+#   ./get-customer --JSON | more
+#   ./get-customer | grep accountType
+#   ./get-customer | ls -R
 ```
 
 ##### → STAGE
