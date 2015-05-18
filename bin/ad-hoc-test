@@ -1,3 +1,5 @@
-. /include/script-include
+. ./include/script-include
 
-node $PROG --name=$SCRIPT_NAME "$@"
+node $PROG --name=$SCRIPT_NAME "$@" > $BASE_DIR/output/ad-hoc-test.json
+
+cat $BASE_DIR/output/ad-hoc-test.json | more

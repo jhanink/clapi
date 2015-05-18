@@ -1,4 +1,4 @@
-. /include/script-include
+. ./include/script-include
 
 # cycle through all stage envs and return a concise report with green/red flags
 

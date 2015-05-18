@@ -1,5 +1,7 @@
 . /include/script-include
 
-node $PROG --name=get-customer --customerId=$1 --RAW > /tmp/customer_$1.json
+node $PROG --name=get-customer --customerId=$1 --RAW > ../output/customer.json
 
-node $PROG --name=create-temp-card --file=/tmp/customer_$1.json
+node $PROG --name=create-temp-card --file=/tmp/customer_$1.json > ../output/temp-card.json
+
+cat ../output/temp-card.json

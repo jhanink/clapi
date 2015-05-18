@@ -1,3 +1,10 @@
-if [ `basename "$PWD"` == "bin" ]; then PROG='../index'; else PROG='index'; fi
+if [ `basename "$PWD"` == "bin" ];
+then
+  PROG='../index';
+  BASE_DIR=`dirname "$PWD"`;
+else
+  PROG='index';
+  BASE_DIR=`"$PWD"`;
+fi
 
 SCRIPT_NAME=`basename "$0"`
