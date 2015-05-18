@@ -1,6 +1,6 @@
 . ./include/script-include
 
-if [ $NO_PARAMS == 0 ]
+if [ $HAS_PARAMS == 1 ]
 then
   node $PROG --name=get-customer --customerId=$1 --RAW > $BASE_DIR/output/tmp-customer.json
   node $PROG --name=$SCRIPT_NAME --file=$BASE_DIR/output/tmp-customer.json --RAW > $BASE_DIR/output/$SCRIPT_NAME.json

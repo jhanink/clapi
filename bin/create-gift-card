@@ -1,6 +1,6 @@
 . ./include/script-include
 
-if [ $NO_PARAMS == 0 ]
+if [ $HAS_PARAMS == 1 ]
 then
   node $PROG --name=$SCRIPT_NAME --amount=$1 "$@" > $BASE_DIR/output/$SCRIPT_NAME.json
 fi
