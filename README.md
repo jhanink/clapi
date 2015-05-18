@@ -25,6 +25,8 @@ The set of available commands will grow and change over time. [Add your requests
 #   ./get-customer --JSON | more
 #   ./get-customer | grep accountType
 #   ./get-customer | ls -R
+#   ./get-customer --DEBUG
+#   ./get-customer --VAL=payload.person.customerAccountId
 ```
 
 ##### → STAGE COMMANDS
@@ -49,8 +51,8 @@ The set of available commands will grow and change over time. [Add your requests
  # ----- create cart by customerId
 ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253
 
- # ----- add to cart by itemId
-./add-to-cart # NOT YET IMPLEMENTED
+ # ----- add to cart by offerId
+./add-to-cart 72F051ACFF794D25A99692E11E239691
 ```
 
 ##### → PROD COMMANDS
