@@ -28,9 +28,9 @@ if (!file) {
 
 var contents = fs.readFileSync(file);
 
-if (args.VAL) {
+if (args.KEY) {
   var val = JSON.parse(contents);
-  contents = eval('val.' + args.VAL);
+  contents = eval('val.' + args.KEY);
   contents = JSON.stringify(contents);
 }
 

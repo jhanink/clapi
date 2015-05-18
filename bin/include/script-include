@@ -11,16 +11,16 @@ fi
 
 
 # requires bash v3+ for '=~'
-if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] || [ "$1" == "--PRETTY" ] || [[ "$1" =~ ^--VAL* ]];
+if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] || [ "$1" == "--PRETTY" ] || [[ "$1" =~ ^--KEY* ]];
 then
   HAS_PARAMS=0
 else
   HAS_PARAMS=1
 fi
 
-if [[ "$1" =~ ^--VAL* ]];
+if [[ "$1" =~ ^--KEY* ]];
 then
-  HAS_VAL=1
+  HAS_KEY=1
 fi
 
 SCRIPT_NAME=`basename "$0"`

@@ -3,7 +3,7 @@
 if [ $HAS_PARAMS == 1 ]
 then
 
-  CART_ID=`./get-cart --VAL=cart.id`
+  CART_ID=`./get-cart --KEY=cart.id`
   node $INDEX --name=$SCRIPT_NAME --cartId=$CART_ID --offerId=$1 --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
 fi
 
