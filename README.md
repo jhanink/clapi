@@ -20,6 +20,7 @@ The set of available commands will grow and change over time. [Add your requests
 
 ```sh
 # NOTE: You can recall the last output for a command by entering the command without parameters.
+# e.g.: ./get-customer
 ```
 
 ##### → STAGE
