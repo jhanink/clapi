@@ -78,8 +78,7 @@ Because node is more fun.
 
 ##### → TODO
 
-* https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/1
-* https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues/2
+* https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues
 
 
 ### Et Cetera
