@@ -12,6 +12,7 @@ if (!command_name) {
   console.log("---> no name provided");return;
 }
 
+
 var subdir = (args.PROD) ? "prod" : "stage";
 
 fs.stat(path.join(__dirname,"api-call-configurations", subdir,  command_name + ".js"), function (err, stats) {
