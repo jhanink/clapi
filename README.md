@@ -57,7 +57,7 @@ The set of available commands will grow and change over time. [Add your requests
 
 ```sh
 
-# ----- get production purchase contract 
+  # ----- get production purchase contract 
 ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
