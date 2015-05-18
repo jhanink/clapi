@@ -1,10 +1,19 @@
 if [ `basename "$PWD"` == "bin" ];
 then
   PROG='../index';
+  PRINT_OUTPUT='../print_output';
   BASE_DIR=`dirname "$PWD"`;
 else
   PROG='index';
+  PRINT_OUTPUT='print_output';
   BASE_DIR=`"$PWD"`;
+fi
+
+if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] || [ "$1" == "--PRETTY" ];
+then
+  NO_PARAMS=1
+else
+  NO_PARAMS=0
 fi
 
 SCRIPT_NAME=`basename "$0"`

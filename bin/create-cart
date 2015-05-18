@@ -1,8 +1,9 @@
 . ./include/script-include
 
-if [ ! -z "$1" ]
+if [ $NO_PARAMS == 0 ]
 then
-  node $PROG --name=$SCRIPT_NAME --customerId=$1 "$@" > $BASE_DIR/output/create-cart.json
+  node $PROG --name=$SCRIPT_NAME --customerId=$1 "$@" > $BASE_DIR/output/$SCRIPT_NAME.json
+  cat $BASE_DIR/output/$SCRIPT_NAME.json >
 fi
 
-cat $BASE_DIR/output/create-cart.json
+node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"

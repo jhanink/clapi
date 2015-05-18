@@ -1,0 +1,9 @@
+. ./include/script-include
+
+if [ $NO_PARAMS == 0 ]
+then
+
+fi
+
+
+node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"

@@ -1,8 +1,8 @@
 . ./include/script-include
 
-if [ ! -z "$1" ]
+if [ $NO_PARAMS == 0 ]
 then
-  node $PROG --name=get-purchase-contract --pcId=$1 --PROD "$@" > $BASE_DIR/output/get-purchase-contract-prod.json
+  node $PROG --name=$SCRIPT_NAME --pcId=$1 --PROD --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
 fi
 
-cat $BASE_DIR/output/get-purchase-contract-prod.json
+node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"
