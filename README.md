@@ -44,6 +44,9 @@ The set of available commands will grow and change over time. [Add your requests
 
 # create cart by customerId
 ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253
+
+# add to cart by itemId
+./add-to-cart # NOT YET IMPLEMENTED
 ```
 
 ##### → PRODUCTION
