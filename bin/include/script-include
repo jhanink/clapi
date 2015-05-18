@@ -1,10 +1,10 @@
 if [ `basename "$PWD"` == "bin" ];
 then
-  PROG='../index';
+  INDEX='../index';
   PRINT_OUTPUT='../print_output';
   BASE_DIR=`dirname "$PWD"`;
 else
-  PROG='index';
+  INDEX='index';
   PRINT_OUTPUT='print_output';
   BASE_DIR=`"$PWD"`;
 fi

@@ -2,8 +2,8 @@
 
 if [ $HAS_PARAMS == 1 ]
 then
-  node $PROG --name=get-customer --customerId=$1 --RAW > $BASE_DIR/output/tmp-customer.json
-  node $PROG --name=$SCRIPT_NAME --file=$BASE_DIR/output/tmp-customer.json --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
+  node $INDEX --name=get-customer --customerId=$1 --RAW > $BASE_DIR/output/tmp-customer.json
+  node $INDEX --name=$SCRIPT_NAME --file=$BASE_DIR/output/tmp-customer.json --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
 fi
 
 node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"

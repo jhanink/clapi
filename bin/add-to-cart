@@ -1,9 +1,8 @@
 . ./include/script-include
 
-if [ $NO_PARAMS == 0 ]
+if [ $HAS_PARAMS == 1 ]
 then
-
+  node $INDEX --name=$SCRIPT_NAME --itemId=$1 --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
 fi
-
 
 node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"

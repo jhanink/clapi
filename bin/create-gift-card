@@ -2,7 +2,7 @@
 
 if [ $HAS_PARAMS == 1 ]
 then
-  node $PROG --name=$SCRIPT_NAME --amount=$1 "$@" > $BASE_DIR/output/$SCRIPT_NAME.json
+  node $INDEX --name=$SCRIPT_NAME --amount=$1 --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
 fi
 
 node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"

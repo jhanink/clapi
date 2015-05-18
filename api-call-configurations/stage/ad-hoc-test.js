@@ -1,5 +1,11 @@
 module.exports = function (state) {
 
-  console.log("--- ad-hoc-test")
+  console.log(JSON.stringify({
+    "output": {
+      "type": "ad-hoc-test",
+      "status": "NOTHING HERE",
+      "args" : state.args
+    }
+  }));
 
 };
