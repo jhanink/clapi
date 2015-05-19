@@ -1,8 +1,9 @@
 . ./include/script-include
 
-if [ $HAS_PARAMS == 1 ]
+if [ $DAS_has_params == 1 ]
 then
-  node $INDEX --name=$SCRIPT_NAME --pcId=$1 --PROD --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
+  node $DAS_index --name=$DAS_script_name --pcId=$1 --PROD --WRAP > $DAS_base_dir/output/TEMP_RESULT.json
+  DAS_handle_response;
 fi
 
-node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"
+DAS_print_output;

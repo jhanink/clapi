@@ -16,7 +16,7 @@ var subdir = (args.PROD) ? "prod" : "stage";
 
 fs.stat(path.join(__dirname,"api-call-configurations", subdir,  command_name + ".js"), function (err, stats) {
   if (err) {
-    console.log("---> no such STAGE file for [" + command_name + "]");
+    console.log("---> no such ("+subdir+") file for [" + command_name + "]");
   } else {
     require("./api-call-configurations/" + subdir)(state);
   }
