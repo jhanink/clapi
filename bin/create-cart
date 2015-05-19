@@ -4,7 +4,7 @@ if [ $DAS_has_params == 1 ]
 then
   node $DAS_index --name=$DAS_script_name --customerId=$1 --WRAP > $DAS_output_dir/TEMP_RESULT.json
   DAS_handle_response;
-  cp $DAS_output_dir/$SCRIPT_NAME.json $DAS_output_dir/LATEST_CART.json
+  cp $DAS_output_dir/$DAS_script_name.json $DAS_output_dir/LATEST_CART.json
 fi
 
 DAS_print_output;

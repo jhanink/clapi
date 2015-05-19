@@ -1,9 +1,10 @@
 . ./include/script-include
 
-if [ $HAS_PARAMS == 1 ]
+if [ $DAS_has_params == 1 ]
 then
-  node $INDEX --name=$SCRIPT_NAME --cartId=$1 --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
-  cp $BASE_DIR/output/$SCRIPT_NAME.json $BASE_DIR/output/LATEST_CART.json
+  node $DAS_index --name=$DAS_script_name --cartId=$1 --WRAP > $DAS_output_dir/TEMP_RESULT.json
+  DAS_handle_response;
+  cp $DAS_output_dir/$DAS_script_name.json $DAS_output_dir/LATEST_CART.json
 fi
 
-node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"
+DAS_print_output;
