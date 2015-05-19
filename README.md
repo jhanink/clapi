@@ -26,7 +26,7 @@ The set of available commands will grow and change over time. [Add your requests
 #   ./get-customer | grep accountType
 #   ./get-customer | ls -R
 #   ./get-customer --DEBUG
-#   ./get-customer --KEY=payload.person.customerAccountId
+#   ./get-customer --EVAL=payload.person.customerAccountId
 ```
 
 ##### → STAGE COMMANDS

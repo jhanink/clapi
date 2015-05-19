@@ -12,7 +12,7 @@ var makeRequest = function (options, data, state) {
 };
 
 var _printOutput = function (state, err, body) {
-  if (err) {console.log(err);return;}
+  if (err) {console.log(err); process.exit(1);}
 
   if (state.args.RAW) {
     console.log(body);
