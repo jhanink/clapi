@@ -13,6 +13,8 @@ else
   DAS_base_dir=`"$PWD"`;
 fi
 
+DAS_output_dir="${DAS_base_dir}/output"
+
 
 # requires bash v3+ for '=~'
 if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] \
@@ -26,13 +28,13 @@ fi
 
 
 function DAS_handle_response() {
-  DAS_response_status=`node $DAS_print_output --file=$DAS_base_dir/output/TEMP_RESULT.json --EVAL=status`
+  DAS_response_status=`node $DAS_print_output --file=$DAS_output_dir/TEMP_RESULT.json --EVAL=status`
   if [ "$DAS_response_status" == "SUCCESS" ];
   then
-    node $DAS_print_output --file=$DAS_base_dir/output/TEMP_RESULT.json --EVAL=body > $DAS_base_dir/output/$DAS_script_name.json
+    node $DAS_print_output --file=$DAS_output_dir/TEMP_RESULT.json --EVAL=body > $DAS_output_dir/$DAS_script_name.json
   else
-    node $DAS_print_output --file=$DAS_base_dir/output/TEMP_RESULT.json --EVAL=body > $DAS_base_dir/output/${DAS_script_name}_ERROR.json
-    node $DAS_print_output --file=$DAS_base_dir/output/${DAS_script_name}_ERROR.json $DAS_args
+    node $DAS_print_output --file=$DAS_output_dir/TEMP_RESULT.json --EVAL=body > $DAS_output_dir/${DAS_script_name}_ERROR.json
+    node $DAS_print_output --file=$DAS_output_dir/${DAS_script_name}_ERROR.json $DAS_args
     exit 1;
   fi
 }
@@ -40,8 +42,8 @@ function DAS_handle_response() {
 function DAS_print_output() {
   if [ $DAS_arg_1 == "--ERROR" ];
   then
-    node $DAS_print_output --file=$DAS_base_dir/output/${DAS_script_name}_ERROR.json $DAS_args
+    node $DAS_print_output --file=$DAS_output_dir/${DAS_script_name}_ERROR.json $DAS_args
   else
-    node $DAS_print_output --file=$DAS_base_dir/output/$DAS_script_name.json $DAS_args
+    node $DAS_print_output --file=$DAS_output_dir/$DAS_script_name.json $DAS_args
   fi
 }

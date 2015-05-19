@@ -2,9 +2,9 @@
 
 if [ $DAS_has_params == 1 ]
 then
-  node $DAS_index --name=$DAS_script_name --cartId=$1 --WRAP > $DAS_base_dir/output/TEMP_RESULT.json
+  node $DAS_index --name=$DAS_script_name --cartId=$1 --WRAP > $DAS_output_dir/TEMP_RESULT.json
   DAS_handle_response;
-  cp $DAS_base_dir/output/$SCRIPT_NAME.json $DAS_base_dir/output/LATEST_CART.json
+  cp $DAS_output_dir/$SCRIPT_NAME.json $DAS_output_dir/LATEST_CART.json
 fi
 
 DAS_print_output;
