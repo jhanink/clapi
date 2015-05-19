@@ -7,12 +7,30 @@ var makeRequest = function (options, data, state) {
   }
 
   request(options, function (err, resp, body) {
-    _printOutput(state, err, body);
+    _printOutput(state, err, resp, body);
   });
 };
 
-var _printOutput = function (state, err, body) {
-  if (err) {console.log(err); process.exit(1);}
+var _printOutput = function (state, err, resp, body) {
+  var wrappedResult = {};
+
+  if (err) {
+    wrappedResult.status = "FAILURE";
+    wrappedResult.body = err;
+    console.log(wrappedResult);
+    return;
+  }
+
+
+
+  if (state.args.WRAP) {
+    wrappedResult = {
+      status: resp.statusCode === 200 ? "SUCCESS" : "FAILURE",
+      body: body
+    };
+    console.log(JSON.stringify(wrappedResult));
+    return;
+  }
 
   if (state.args.RAW) {
     console.log(body);
@@ -21,6 +39,6 @@ var _printOutput = function (state, err, body) {
   } else {
     console.log(prettyjson.render(JSON.parse(body)));
   }
-}
+};
 
 module.exports = makeRequest;

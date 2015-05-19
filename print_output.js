@@ -4,7 +4,7 @@ var prettyjson = require("prettyjson");
 
 function printResult (state, contents) {
   if (state.args.RAW) {
-    console.log(contents);
+    console.log(JSON.stringify(JSON.parse(contents)));
   } else if (state.args.JSON) {
     console.log(JSON.stringify(JSON.parse(contents), null, 2));
   } else {

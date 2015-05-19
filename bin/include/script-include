@@ -1,21 +1,49 @@
+DAS_script_name=`basename "$0"`
+DAS_args="$@"
+DAS_arg_1="$1"
+
 if [ `basename "$PWD"` == "bin" ];
 then
-  INDEX='../index';
-  PRINT_OUTPUT='../print_output';
-  BASE_DIR=`dirname "$PWD"`;
+  DAS_index='../index';
+  DAS_print_output='../print_output';
+  DAS_base_dir=`dirname "$PWD"`;
 else
-  INDEX='index';
-  PRINT_OUTPUT='print_output';
-  BASE_DIR=`"$PWD"`;
+  DAS_index='index';
+  DAS_print_output='print_output';
+  DAS_base_dir=`"$PWD"`;
 fi
 
 
 # requires bash v3+ for '=~'
-if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] || [ "$1" == "--PRETTY" ] || [[ "$1" =~ ^--EVAL* ]];
+if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] \
+   || [ "$1" == "--PRETTY" ] || [ "$1" == "--WRAP" ] \
+    || [ "$1" == "--ERROR" ] || [[ "$1" =~ ^--EVAL* ]];
 then
-  HAS_PARAMS=0
+  DAS_has_params=0
 else
-  HAS_PARAMS=1
+  DAS_has_params=1
 fi
 
-SCRIPT_NAME=`basename "$0"`
+
+function DAS_handle_response() {
+  DAS_response_status=`node $DAS_print_output --file=$DAS_base_dir/output/TEMP_RESULT.json --EVAL=status`
+  if [ "$DAS_response_status" == "SUCCESS" ];
+  then
+    node $DAS_print_output --file=$DAS_base_dir/output/TEMP_RESULT.json --EVAL=body > $DAS_base_dir/output/$DAS_script_name.json
+  else
+    node $DAS_print_output --file=$DAS_base_dir/output/TEMP_RESULT.json --EVAL=body > $DAS_base_dir/output/${DAS_script_name}_ERROR.json
+    node $DAS_print_output --file=$DAS_base_dir/output/${DAS_script_name}_ERROR.json $DAS_args
+    exit 1;
+  fi
+}
+
+function DAS_print_output() {
+
+  if [ $DAS_arg_1 == "--ERROR" ];
+  then
+    node $DAS_print_output --file=$DAS_base_dir/output/${DAS_script_name}_ERROR.json $DAS_args
+    exit 0;
+  fi
+  exit 1
+  node $DAS_print_output --file=$DAS_base_dir/output/$DAS_script_name.json $DAS_args
+}

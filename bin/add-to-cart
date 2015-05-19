@@ -4,7 +4,7 @@ if [ $HAS_PARAMS == 1 ]
 then
   CART_ID=`./get-cart --EVAL=cart.id`
   node $INDEX --name=$SCRIPT_NAME --cartId=$CART_ID --offerId=$1 --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
-  cp $BASE_DIR/output/$SCRIPT_NAME.json $BASE_DIR/output/latest_cart.json
+  cp $BASE_DIR/output/$SCRIPT_NAME.json $BASE_DIR/output/LATEST_CART.json
 fi
 
 node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json "$@"
