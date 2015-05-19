@@ -1,4 +1,9 @@
 . ./include/script-include
 
-node $INDEX --name=$SCRIPT_NAME --RAW > $BASE_DIR/output/$SCRIPT_NAME.json
-node $PRINT_OUTPUT --file=$BASE_DIR/output/$SCRIPT_NAME.json
+if [ $DAS_has_params == 1 ]
+then
+  node $DAS_index --name=$DAS_script_name --WRAP > $DAS_output_dir/TEMP_RESULT.json
+  DAS_handle_response;
+fi
+
+DAS_print_output;
