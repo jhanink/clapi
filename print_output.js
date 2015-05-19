@@ -26,6 +26,13 @@ if (!file) {
   return;
 }
 
+if (!fs.existsSync(file)) {
+  printResult(state, JSON.stringify({
+    "result": "No Error file was found"
+  }));
+  return;
+}
+
 var contents = fs.readFileSync(file);
 
 if (args.EVAL) {
