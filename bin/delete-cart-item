@@ -2,7 +2,8 @@
 
 if [ $DAS_has_params == 1 ]
 then
-  node $DAS_index --name=$DAS_script_name --cartId=$1 --WRAP > $DAS_output_dir/TEMP_RESULT.json
+  CART_ID=`./get-cart --EVAL=cart.id`
+  node $DAS_index --name=$DAS_script_name --cartId=$CART_ID --itemId=$1 --WRAP > $DAS_output_dir/TEMP_RESULT.json
   DAS_handle_response;
   cp $DAS_output_dir/$DAS_script_name.json $DAS_output_dir/LATEST_CART.json
 fi

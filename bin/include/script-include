@@ -40,6 +40,12 @@ function DAS_handle_response() {
 }
 
 function DAS_print_output() {
+  if [ ! -z "$1" ];
+  then
+    node $DAS_print_output --file=$1 $DAS_args
+    exit 0;
+  fi
+
   if [ "$DAS_arg_1" == "--ERROR" ];
   then
     node $DAS_print_output --file=$DAS_output_dir/${DAS_script_name}_ERROR.json $DAS_args

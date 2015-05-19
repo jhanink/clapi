@@ -57,6 +57,10 @@ The set of available commands will grow and change over time. [Add your requests
 
  # ----- add to cart by offerId
 ./add-to-cart 72F051ACFF794D25A99692E11E239691
+./add-to-cart 37BD88D2F6E0447B8E1CB932884BED86
+
+ # ----- delete item from cart
+./delete-cart-item d781d647-632d-4460-9bad-97e997dd6c17
 
 ```
 
