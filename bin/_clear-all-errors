@@ -1,0 +1,3 @@
+. ./include/script-include
+
+rm $DAS_output_dir/*_ERROR.json
