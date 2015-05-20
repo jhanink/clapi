@@ -47,9 +47,9 @@ if (!fs.existsSync(file)) {
 }
 
 var contents = fs.readFileSync(file);
-contents = JSON.parse(contents);
+var val = JSON.parse(contents);
 
-var dasfunctions = require("./api-call-configurations/include/dasfunctions")(contents);
+var dasfunctions = require("./api-call-configurations/include/dasfunctions")(val);
 
 if (args.CALL) {
   try {

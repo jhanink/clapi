@@ -81,15 +81,20 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
    offerId:  72F051ACFF794D25A99692E11E239691         # Add to cart
    itemId:   `./get-cart --EVAL=items[0].id`          # Find itemId after adding to cart
 
+ --SAMPLE ITEM
+   name:     Braun Clean & Renew Refills, Pack of 3
+   offerId:  37BD88D2F6E0447B8E1CB932884BED86         # Add to cart
+   itemId:   `./get-cart --EVAL=items[0].id`          # Find itemId after adding to cart
+
 
  # offerId
-./add-to-cart 72F051ACFF794D25A99692E11E239691  # Sample Item 1
+./add-to-cart 72F051ACFF794D25A99692E11E239691
 
  # itemId, quantity
-./update-cart-item `./get-cart --EVAL=items[0].id` 5  # Sample Item 1
+./update-cart-item `./get-cart --EVAL=items[0].id` 5
 
  # itemId
-./delete-cart-item `./get-cart --EVAL=items[0].id` # Sample Item 1
+./delete-cart-item `./get-cart --EVAL=items[0].id`
 
 ```
 
