@@ -12,6 +12,19 @@ function printResult (state, contents) {
   }
 }
 
+function echo (msg, val) {
+  if (!val) {
+    console.log(msg);
+  } else {
+    console.log(msg, val);
+  }
+}
+
+function echoEnd(msg, val) {
+  echo (msg, val);
+  process.exit();
+}
+
 if (args.DEBUG) {
   printResult({args: args}, JSON.stringify({"args": args}));return;
 }
@@ -34,9 +47,25 @@ if (!fs.existsSync(file)) {
 }
 
 var contents = fs.readFileSync(file);
+contents = JSON.parse(contents);
 
-if (args.EVAL) {
-  var val = JSON.parse(contents);
+var dasfunctions = require("./api-call-configurations/include/dasfunctions")(contents);
+
+if (args.CALL) {
+  try {
+    var fn = eval(dasfunctions[args.CALL]);
+    if (typeof(fn) !== "function") {
+      throw new Error(args.CALL + " is not a function");
+    }
+    contents = JSON.stringify(fn());
+  } catch (e) {
+    contents = JSON.stringify({
+      "result" : "error",
+      "description" : e.message
+    });
+  }
+}
+else if (args.EVAL) {
   contents = eval('val.' + args.EVAL);
   contents = JSON.stringify(contents);
 }
