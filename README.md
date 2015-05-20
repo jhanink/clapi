@@ -23,13 +23,14 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #  NOTE: You can recall the last result to process or extract information
    
   #  [  EXAMPLES  ]
-  #     ./get-customer
-  #     ./get-customer --JSON | more
-  #     ./get-customer | grep accountType
-  #     ./get-customer | less -R
-  #     ./get-customer --EVAL payload.person.customerAccountId
-  #     ./get-cart --EVAL cart.id
-  #     ./get-cart --CALL listCartItems
+  
+  ./get-customer
+  ./get-customer --JSON | more
+  ./get-customer | grep accountType
+  ./get-customer | less -R
+  ./get-customer --EVAL payload.person.customerAccountId
+  ./get-cart --EVAL cart.id
+  ./get-cart --CALL listCartItems
   ```
 
 ##### → STAGE COMMANDS
