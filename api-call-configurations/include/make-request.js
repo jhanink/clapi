@@ -25,7 +25,7 @@ var _printOutput = function (state, err, resp, body) {
 
   if (state.args.WRAP) {
     wrappedResult = {
-      status: resp.statusCode === 200 ? "SUCCESS" : "FAILURE",
+      status: Math.floor(resp.statusCode/100) === 2 ? "SUCCESS" : "FAILURE",
       body: body
     };
     console.log(JSON.stringify(wrappedResult));
