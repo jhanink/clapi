@@ -83,7 +83,6 @@ Because node is more fun.
 ### Contribute
 
 * [Open a github issue to request a new feature](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
-* https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues
 
 
 
