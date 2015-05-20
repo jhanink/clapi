@@ -88,11 +88,11 @@ Because node is more fun.
 
 ### Et Cetera
 
-[See additional project goals](project-goals.md)
+* [See additional project goals](project-goals.md)
 
 
 ### Related Documentation
 
-https://confluence.walmart.com/display/PGSCARTXO/Cart-Service-App+API
-https://confluence.walmart.com/display/PGSCARTXO/New+Checkout+Service+API
+* https://confluence.walmart.com/display/PGSCARTXO/Cart-Service-App+API
+* https://confluence.walmart.com/display/PGSCARTXO/New+Checkout+Service+API
 
