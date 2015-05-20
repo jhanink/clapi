@@ -41,8 +41,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #     customerId:  688ddfc5-181f-46b5-a0e7-8dc139146253
   #     email:       node-1@wm.com
   
-  ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253    # customerId
-  ./get-customer node-1@wm.com    # email
+  ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253       # customerId
+  ./get-customer node-1@wm.com                              # email
 ```
 
 ```sh
@@ -50,7 +50,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #   --CARDS
   
   ./create-gift-card 100    # amount
-  ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253    # customerId
+  ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253   # customerId
 ```
 
 ```sh
@@ -59,25 +59,25 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #     cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
   #     customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
   
-  ./get-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b  # cartId
-  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253  # customerId
-  ./clear-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b  # cartId
+  ./get-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b           # cartId
+  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253        # customerId
+  ./clear-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
 ```
 
 ```sh
 
   #   --SAMPLE ITEMS
   #     name:     Braun Syncro Refill Solution, Pack of 2
-  #     offerId:  72F051ACFF794D25A99692E11E239691         # Add to cart
-  #     itemId:   `./get-cart --EVAL=items[0].id`          # Find itemId after adding to cart
+  #     offerId:  72F051ACFF794D25A99692E11E239691          # Add to cart
+  #     itemId:   `./get-cart --EVAL=items[0].id`           # Find itemId after adding to cart
   
   #     name:     Braun Clean & Renew Refills, Pack of 3
-  #     offerId:  37BD88D2F6E0447B8E1CB932884BED86         # Add to cart
-  #     itemId:   `./get-cart --EVAL=items[0].id`          # Find itemId after adding to cart
+  #     offerId:  37BD88D2F6E0447B8E1CB932884BED86          # Add to cart
+  #     itemId:   `./get-cart --EVAL=items[0].id`           # Find itemId after adding to cart
   
-  ./add-to-cart 72F051ACFF794D25A99692E11E239691    # offerId
-  ./update-cart-item `./get-cart --EVAL=items[0].id` 5  # itemId, quantity
-  ./delete-cart-item `./get-cart --EVAL=items[0].id`    # itemId
+  ./add-to-cart 72F051ACFF794D25A99692E11E239691            # offerId
+  ./update-cart-item `./get-cart --EVAL=items[0].id` 5      # itemId, quantity
+  ./delete-cart-item `./get-cart --EVAL=items[0].id`        # itemId
 
 ```
 
@@ -88,7 +88,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #   --SAMPLE PURCHASE CONTRACT
   #     pcId:  e74dd26a-ef98-442e-bf88-86637b5b344d
    
-  ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d    # purchase contract Id
+  ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d     # purchase contract Id
 ```
 
 
