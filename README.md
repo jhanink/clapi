@@ -16,7 +16,7 @@ npm install
 
 ### Commands
 
-The set of available commands will grow and change over time. [Add your requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+Currently available commands. [Add your requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
 ```sh
 # NOTE: You can recall the last result using options but WITHOUT any lookup parameters.
