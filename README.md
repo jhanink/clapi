@@ -59,9 +59,9 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #     cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
   #     customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
   
-  ./get-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b           # cartId
+  ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b           # cartId
   ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253        # customerId
-  ./clear-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
+  ./clear-cart  6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
 ```
 
 ```sh
@@ -75,9 +75,9 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #     offerId:  37BD88D2F6E0447B8E1CB932884BED86          # Add to cart
   #     itemId:   `./get-cart --EVAL=items[0].id`           # Find itemId after adding to cart
   
-  ./add-to-cart 72F051ACFF794D25A99692E11E239691            # offerId
-  ./update-cart-item `./get-cart --EVAL=items[0].id` 5      # itemId, quantity
-  ./delete-cart-item `./get-cart --EVAL=items[0].id`        # itemId
+  ./add-to-cart       72F051ACFF794D25A99692E11E239691            # offerId
+  ./update-cart-item  `./get-cart --EVAL=items[0].id` 5      # itemId, quantity
+  ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # itemId
 
 ```
 
