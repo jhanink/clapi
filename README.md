@@ -63,8 +63,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #     cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
   #     customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
   
-  ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b           # cartId
-  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253        # customerId
+  ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
+  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253         # customerId
   ./clear-cart  6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
 ```
 
