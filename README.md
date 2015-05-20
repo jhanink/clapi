@@ -52,15 +52,29 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
  # ----- create cart by customerId
 ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253
 
-# ----- clear cart by cartId
+ # ----- clear cart by cartId
 ./clear-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
 
- # ----- add to cart by offerId
-./add-to-cart 72F051ACFF794D25A99692E11E239691
-./add-to-cart 37BD88D2F6E0447B8E1CB932884BED86
+ 
+ ## ----- Sample Item 1
+ ##    name:  Braun Syncro Refill Solution, Pack of 2
+ ## offerId:  72F051ACFF794D25A99692E11E239691
+ ##  itemId:  fb710cdb-c888-4025-bce9-768085911dfc
+  
+ ## ----- Sample Item 2
+ ##    name:  Braun Clean & Renew Refills, Pack of 3
+ ## offerId:  37BD88D2F6E0447B8E1CB932884BED86
+ ##  itemId:  a6a54b86-0332-472f-958d-235e7daa31dc
 
- # ----- delete item from cart
-./delete-cart-item d781d647-632d-4460-9bad-97e997dd6c17
+
+ # ----- add to cart by offerId
+./add-to-cart 72F051ACFF794D25A99692E11E239691  # Sample Item 1
+
+ # ----- update quantity of item in cart by itemId
+./update-cart-item `./get-cart --EVAL=items[0].id` 5  # Sample Item 1
+
+ # ----- delete item from cart by itemId
+./delete-cart-item `./get-cart --EVAL=items[0].id` # Sample Item 1
 
 ```
 
