@@ -30,13 +30,13 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
    
   #  --EXAMPLES
   
-  # set output mode, pipe out to grep, etc
+  # set output mode, pipe to grep, etc
   ./get-customer
   ./get-customer  --JSON  | more
   ./get-customer  | grep accountType
   ./get-customer  | less -R
   
-  # with --EVAL, you can perform a filter to pull out a portion of the json response
+  # with --EVAL, you can perform a filter to pull out a portion of the response
   ./get-customer  --EVAL payload.person.customerAccountId
   ./get-cart      --EVAL cart.id
   
