@@ -20,7 +20,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
   
-  #  NOTE: You can recall the last result to process or extract information
+  #  NOTE: You can recall the last cached result to process or extract information
    
   #  --EXAMPLES
   
