@@ -60,11 +60,6 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
  ##    name:  Braun Syncro Refill Solution, Pack of 2
  ## offerId:  72F051ACFF794D25A99692E11E239691
  ##  itemId:  fb710cdb-c888-4025-bce9-768085911dfc
-  
- ## ----- Sample Item 2
- ##    name:  Braun Clean & Renew Refills, Pack of 3
- ## offerId:  37BD88D2F6E0447B8E1CB932884BED86
- ##  itemId:  a6a54b86-0332-472f-958d-235e7daa31dc
 
 
  # ----- add to cart by offerId
