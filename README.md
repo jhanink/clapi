@@ -59,7 +59,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
  ## ----- Sample Item 1
  ##    name:  Braun Syncro Refill Solution, Pack of 2
  ## offerId:  72F051ACFF794D25A99692E11E239691
- ##  itemId:  fb710cdb-c888-4025-bce9-768085911dfc
+ ##  itemId:  `./get-cart --EVAL=items[0].id`  # After adding to cart
 
 
  # ----- add to cart by offerId
