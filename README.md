@@ -25,12 +25,12 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #  --EXAMPLES
   
   ./get-customer
-  ./get-customer --JSON | more
-  ./get-customer | grep accountType
-  ./get-customer | less -R
-  ./get-customer --EVAL payload.person.customerAccountId
-  ./get-cart --EVAL cart.id
-  ./get-cart --CALL listCartItems
+  ./get-customer  --JSON  | more
+  ./get-customer  | grep accountType
+  ./get-customer  | less -R
+  ./get-customer  --EVAL payload.person.customerAccountId
+  ./get-cart      --EVAL cart.id
+  ./get-cart      --CALL listCartItems
   ```
 
 ##### → STAGE COMMANDS
