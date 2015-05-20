@@ -54,21 +54,22 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
  # ----- clear cart by cartId
 ./clear-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
+```
 
- 
- ## ----- Sample Item 1
- ##    name:  Braun Syncro Refill Solution, Pack of 2
- ## offerId:  72F051ACFF794D25A99692E11E239691
- ##  itemId:  `./get-cart --EVAL=items[0].id`  # After adding to cart
+```
+ SAMPLE ITEM 1
+   name:     Braun Syncro Refill Solution, Pack of 2
+   offerId:  72F051ACFF794D25A99692E11E239691         # Add to cart
+   itemId:   `./get-cart --EVAL=items[0].id`          # Find itemId after adding to cart
 
 
- # ----- add to cart by offerId
+ # ----- add to cart by ( offerId )
 ./add-to-cart 72F051ACFF794D25A99692E11E239691  # Sample Item 1
 
- # ----- update quantity of item in cart by itemId
+ # ----- update item quantity by ( itemId )
 ./update-cart-item `./get-cart --EVAL=items[0].id` 5  # Sample Item 1
 
- # ----- delete item from cart by itemId
+ # ----- delete ite by ( itemId )
 ./delete-cart-item `./get-cart --EVAL=items[0].id` # Sample Item 1
 
 ```
