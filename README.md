@@ -28,8 +28,12 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-customer  --JSON  | more
   ./get-customer  | grep accountType
   ./get-customer  | less -R
+  
+  # with --EVAL, you can pull out a portion of the json response
   ./get-customer  --EVAL payload.person.customerAccountId
   ./get-cart      --EVAL cart.id
+  
+  # with --CALL, you can perform arbitrary processing on the response
   ./get-cart      --CALL listCartItems
   ```
 
