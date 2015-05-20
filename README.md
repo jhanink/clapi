@@ -34,9 +34,9 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
 
- SAMPLE CUSTOMER 1
-   customerId:  688ddfc5-181f-46b5-a0e7-8dc139146253
-   email:       node-1@wm.com
+ --SAMPLE CUSTOMER
+     customerId:  688ddfc5-181f-46b5-a0e7-8dc139146253
+     email:       node-1@wm.com
 
 
   # customerId
@@ -44,6 +44,11 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
  # email
 ./get-customer node-1@wm.com
+```
+
+```sh
+
+ --SAMPLE CARDS
 
  # amount
 ./create-gift-card 100
@@ -54,9 +59,9 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
 
- SAMPLE CART 1
-   cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
-   customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
+ --SAMPLE CART
+      cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
+      customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
 
 
  # cartId
@@ -71,7 +76,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
 
- SAMPLE ITEM 1
+ --SAMPLE ITEM
    name:     Braun Syncro Refill Solution, Pack of 2
    offerId:  72F051ACFF794D25A99692E11E239691         # Add to cart
    itemId:   `./get-cart --EVAL=items[0].id`          # Find itemId after adding to cart
@@ -92,8 +97,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
 
- SAMPLE PURCHASE CONTRACT 1
-   pcId:  e74dd26a-ef98-442e-bf88-86637b5b344d
+ --SAMPLE PURCHASE CONTRACT
+     pcId:  e74dd26a-ef98-442e-bf88-86637b5b344d
 
 
  # purchase contract Id 
