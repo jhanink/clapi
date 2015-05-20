@@ -13,6 +13,12 @@ npm install
 
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/api-shortcuts-jh1.png?raw=true)
 
+### Features
+
+* call an API and view the response in JSON or PRETTY mode
+* the last response for each API call is cached to review, filter, or transform
+* results are greppable, filterable, and processable via custom functions
+* 
 
 ### Commands
 
@@ -24,16 +30,17 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
    
   #  --EXAMPLES
   
+  # set output mode, pipe out to grep, etc
   ./get-customer
   ./get-customer  --JSON  | more
   ./get-customer  | grep accountType
   ./get-customer  | less -R
   
-  # with --EVAL, you can pull out a portion of the json response
+  # with --EVAL, you can perform a filter to pull out a portion of the json response
   ./get-customer  --EVAL payload.person.customerAccountId
   ./get-cart      --EVAL cart.id
   
-  # with --CALL, you can perform arbitrary processing on the response
+  # with --CALL, you can perform arbitrary processing on the response using a custom function
   ./get-cart      --CALL listCartItems
   ```
 
