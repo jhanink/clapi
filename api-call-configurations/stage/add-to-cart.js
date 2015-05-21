@@ -1,12 +1,13 @@
 module.exports = function (state) {
   var service = require("../include/service")(state);
   var cartId = state.args.cartId;
-  var offerId = state.args.offerId;
+  var id = state.args.id;
+
   if (!cartId) {
     console.log("--> missing cartId");return;
   }
-  if (!offerId) {
-    console.log("--> missing offerId");return;
+  if (!id) {
+    console.log("--> missing (item) id param");return;
   }
 
   var options = {
@@ -16,9 +17,14 @@ module.exports = function (state) {
   };
 
   var data = {
-    "offerId": offerId,
     "quantity": 1
   };
+
+  if (id.length === 32) {
+    data.offerId = id;
+  } else {
+    data.itemId = id;
+  }
 
   service.setHeader("CRT", cartId);
   service.setServiceName("cartservice");

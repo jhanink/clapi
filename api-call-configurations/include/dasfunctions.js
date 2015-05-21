@@ -12,7 +12,10 @@ module.exports = function (contents) {
       for (i=0;i<items.length;i++) {
         result.push ({
           "name": items[i].name,
-          "id": items[i].id
+          "id": items[i].id,
+          "offerId": items[i].offerId,
+          "USItemId": items[i].USItemId,
+          "quantity": items[i].quantity
         });
       }
       return result;

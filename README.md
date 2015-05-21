@@ -78,17 +78,18 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 ```sh
 
   #   --SAMPLE ITEMS
-  #     name:     Braun Syncro Refill Solution, Pack of 2
-  #     offerId:  72F051ACFF794D25A99692E11E239691           # Add to cart
+  #     name:     Peltor Bullseye 9 NRR 25 dB Earmuff, Blue
+  #     offerId:  989CF1FB215E4C579A273357D8DE5111           # Add to cart
   #     itemId:   `./get-cart --EVAL=items[0].id`            # Find itemId after adding to cart
   
-  #     name:     Braun Clean & Renew Refills, Pack of 3
-  #     offerId:  37BD88D2F6E0447B8E1CB932884BED86           # Add to cart
-  #     itemId:   `./get-cart --EVAL=items[0].id`            # Find itemId after adding to cart
+  #     name:     Case Logic USB Flash Drive Case for 2 Drives, Blue
+  #     offerId:  26DCCE73B82544DCB9CDC13A20012EC6
+  #     itemId:   `./get-cart --EVAL=items[0].id`
   
-  ./add-to-cart       72F051ACFF794D25A99692E11E239691       # offerId
-  ./update-cart-item  `./get-cart --EVAL=items[0].id` 5      # itemId, quantity
-  ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # itemId
+  ./add-to-cart       989CF1FB215E4C579A273357D8DE5111       # offerId
+  ./add-to-cart       9875792                                # itemId
+  ./update-cart-item  `./get-cart --EVAL=items[0].id` 5      # id, quantity   (not USItemId)
+  ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # id             (not USItemId)
 
 ```
 
