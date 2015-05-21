@@ -96,7 +96,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
   #   --EXTRAS
   
-  ./fetch-latest-items -n                                     # fetches the resport
+  ./fetch-latest-items -n                                     # fetches the report
   ./fetch-latest-items -F listFetchedItems                    # uses local cache for a shortened summary
 ```
 
