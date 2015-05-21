@@ -90,7 +90,14 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./add-to-cart       9875792                                # itemId
   ./update-cart-item  `./get-cart --EVAL=items[0].id` 5      # id, quantity   (not USItemId)
   ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # id             (not USItemId)
+```
 
+```sh
+
+  #   --EXTRAS
+  
+  ./fetch-latest-items -n                                     # fetches the resport
+  ./fetch-latest-items -F listFetchedItems                    # uses local cache for a shortened summary
 ```
 
 ##### → PROD COMMANDS
