@@ -133,4 +133,5 @@ Because node is more fun.
 
 * https://confluence.walmart.com/display/PGSCARTXO/Cart-Service-App+API
 * https://confluence.walmart.com/display/PGSCARTXO/New+Checkout+Service+API
+* http://mobile-qa-ci.homeoffice.wal-mart.com:8080/view/Item%20check/job/Inventory_check/
 
