@@ -1,0 +1,25 @@
+. ./include/script-include
+
+if [ $DAS_has_params == 1 ]
+then
+  #----- Initialize
+  ITEM_LATEST_ZIP=item_latest.zip
+  ITEM_FAILED_INPUT=item_failed_*
+  ITEM_PASSED_INPUT=item_passed_*
+  ITEM_PASSED_FILE=item_passed.csv
+  mkdir -p /tmp/output
+  rm /tmp/output/*
+
+  #----- Retrieve
+  curl -sS http://mobile-qa-ci.homeoffice.wal-mart.com:8080/view/Item%20check/job/Inventory_check/lastSuccessfulBuild/artifact/data/output/*zip*/output.zip > /tmp/$ITEM_LATEST_ZIP
+
+  # -- Extract
+  unzip /tmp/$ITEM_LATEST_ZIP -d /tmp
+
+  mv `ls /tmp/output/$ITEM_PASSED_INPUT` $DAS_output_dir/$ITEM_PASSED_FILE
+
+  #----- Process
+  node $DAS_base_dir/fetch-latest-items.js --file=$DAS_output_dir/$ITEM_PASSED_FILE > $DAS_output_dir/LATEST_ITEMS.json
+fi
+
+DAS_print_output $DAS_output_dir/LATEST_ITEMS.json

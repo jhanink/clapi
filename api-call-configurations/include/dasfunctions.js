@@ -19,6 +19,20 @@ module.exports = function (contents) {
         });
       }
       return result;
+    },
+    listFetchedItems: function () {
+      var items = contents.result;
+      var result = [];
+      for (i=0;i<items.length;i++) {
+        if (!items[i].canAddToCart || items[i].productClassType !== "REGULAR") continue;
+        result.push ({
+          "id": items[i].id,
+          "offerId": items[i].offerId,
+          "availability": items[i].offerFilfullmentOptionWrappers.split("#")[0],
+          "fulfillmentOpts": items[i].offerFilfullmentOptionWrappers.split("#")[1]
+        });
+      }
+      return result;
     }
   };
   return self;

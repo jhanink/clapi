@@ -21,8 +21,6 @@ var _printOutput = function (state, err, resp, body) {
     return;
   }
 
-
-
   if (state.args.WRAP) {
     wrappedResult = {
       status: Math.floor(resp.statusCode/100) === 2 ? "SUCCESS" : "FAILURE",

@@ -14,6 +14,7 @@
   "author": "Joe Hanink",
   "license": "ISC",
   "dependencies": {
+    "csvtojson": "^0.3.21",
     "express": "^4.12.3",
     "prettyjson": "^1.1.0",
     "request": "^2.55.0",

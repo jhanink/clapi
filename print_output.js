@@ -47,15 +47,16 @@ if (!fs.existsSync(file)) {
 }
 
 var contents = fs.readFileSync(file);
+
 var val = JSON.parse(contents);
 
 var dasfunctions = require("./api-call-configurations/include/dasfunctions")(val);
 
-if (args.CALL) {
+if (args.F) {
   try {
-    var fn = eval(dasfunctions[args.CALL]);
+    var fn = eval(dasfunctions[args.F]);
     if (typeof(fn) !== "function") {
-      throw new Error(args.CALL + " is not a function");
+      throw new Error(args.F + " is not a function");
     }
     contents = JSON.stringify(fn());
   } catch (e) {

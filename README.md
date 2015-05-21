@@ -40,8 +40,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-customer  --EVAL payload.person.customerAccountId
   ./get-cart      --EVAL cart.id
   
-  # with --CALL, you can perform arbitrary processing on the response using a custom function
-  ./get-cart      --CALL listCartItems
+  # with --FUNC, you can perform arbitrary processing on the response using a custom function
+  ./get-cart      -F listCartItems
   ```
 
 ##### → STAGE COMMANDS
@@ -78,8 +78,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 ```sh
 
   #   --SAMPLE ITEMS
-  #     name:     Peltor Bullseye 9 NRR 25 dB Earmuff, Blue
-  #     offerId:  989CF1FB215E4C579A273357D8DE5111           # Add to cart
+  #     name:     Down Comforter, Reversible Microfiber
+  #     offerId:  3B13FF477E8D499D8D4098D91818EB4A           # Add to cart
   #     itemId:   `./get-cart --EVAL=items[0].id`            # Find itemId after adding to cart
   
   #     name:     Case Logic USB Flash Drive Case for 2 Drives, Blue

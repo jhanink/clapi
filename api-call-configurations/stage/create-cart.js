@@ -17,7 +17,7 @@ module.exports = function (state) {
       "city": "San Bruno",
       "country": "USA"
     },
-    "storeIds": [2280, 5457],
+    "storeIds": [2280, 2282, 5457, 3300, 3400],
     "customerId": customerId,
     "currencyCode": "USD",
     "customerType": "CUSTOMER"
