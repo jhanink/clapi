@@ -52,11 +52,11 @@ var val = JSON.parse(contents);
 
 var dasfunctions = require("./api-call-configurations/include/dasfunctions")(val);
 
-if (args.F) {
+if (args.FUNC) {
   try {
-    var fn = eval(dasfunctions[args.F]);
+    var fn = eval(dasfunctions[args.FUNC]);
     if (typeof(fn) !== "function") {
-      throw new Error(args.F + " is not a function");
+      throw new Error(args.FUNC + " is not a function");
     }
     contents = JSON.stringify(fn());
   } catch (e) {

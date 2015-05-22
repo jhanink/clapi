@@ -41,7 +41,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-cart      --EVAL cart.id
   
   # with --FUNC, you can perform arbitrary processing on the response using a custom function
-  ./get-cart      -F listCartItems
+  ./get-cart      --FUNC listCartItems
   ```
 
 ##### → STAGE COMMANDS
@@ -96,8 +96,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
   #   --EXTRAS
   
-  ./fetch-latest-items -NEW                                  # fetches the latest report
-  ./fetch-latest-items -F listFetchedItems                   # condensed report of "REGULAR" items
+  ./fetch-inventory-report --NEW                             # fetches the latest report
+  ./fetch-inventory-report --FUNC listFetchedItems            # condensed report of "REGULAR" items
 ```
 
 ##### → PROD COMMANDS
