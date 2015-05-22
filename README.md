@@ -3,8 +3,8 @@
 `CLAPI` - Command Line API wrappers for cart and checkout
 
 ```sh
-git clone https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts.git
-cd dev-api-shortcuts
+git clone https://gecgithub01.walmart.com/jhanink/clapi.git
+cd clapi
 npm install
 ```
 ```sh
@@ -96,8 +96,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
   #   --EXTRAS
   
-  ./fetch-latest-items -n                                     # fetches the report
-  ./fetch-latest-items -F listFetchedItems                    # uses local cache for a shortened summary
+  ./fetch-latest-items -NEW                                  # fetches the latest report
+  ./fetch-latest-items -F listFetchedItems                   # condensed report of "REGULAR" items
 ```
 
 ##### → PROD COMMANDS
