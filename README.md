@@ -11,7 +11,7 @@ npm install
 # output formatting with --JSON, --RAW, --PRETTY (PRETTY is the default)
 ```
 
-![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/api-shortcuts-jh1.png?raw=true)
+![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi.gif?raw=true)
 
 ### Features
 
