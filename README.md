@@ -40,6 +40,10 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-customer  --EVAL payload.person.customerAccountId
   ./get-cart      --EVAL cart.id
   
+  # with --EXPR, you can refer to the result object using `obj` or `val`
+  ./get-cart      --EXPR obj.cart.id
+  ./get-cart      --EXPR val.cart.id
+  
   # with --FUNC, you can perform arbitrary processing on the response using a custom function
   ./get-cart      --FUNC listCartItems
   ```
@@ -97,7 +101,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #   --EXTRAS
   
   ./fetch-inventory-report --NEW                             # fetches the latest report
-  ./fetch-inventory-report --FUNC listFetchedItems            # condensed report of "REGULAR" items
+  ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
+  ./fetch-inventory-report --FUNC listFetchedItems           # get condensed report from cached result
 ```
 
 ##### → PROD COMMANDS

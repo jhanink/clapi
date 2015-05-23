@@ -49,6 +49,7 @@ if (!fs.existsSync(file)) {
 var contents = fs.readFileSync(file);
 
 var val = JSON.parse(contents);
+var obj = val;
 
 var dasfunctions = require("./api-call-configurations/include/dasfunctions")(val);
 
@@ -68,6 +69,10 @@ if (args.FUNC) {
 }
 else if (args.EVAL) {
   contents = eval('val.' + args.EVAL);
+  contents = JSON.stringify(contents);
+}
+else if (args.EXPR) {
+  contents = eval(args.EXPR);
   contents = JSON.stringify(contents);
 }
 
