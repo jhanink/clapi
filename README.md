@@ -46,6 +46,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   # with --FUNC, you can perform arbitrary processing on the response using a custom function
   ./get-cart      --FUNC listCartItems
+  
   ```
 
 ##### → STAGE COMMANDS
@@ -74,8 +75,12 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   #     cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
   #     customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
   
-  ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
   ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253         # customerId
+  
+  # create a cart and copy cart id to the clipboard
+  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253 --EVAL cart.id | pbcopy
+  
+  ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
   ./clear-cart  6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
 ```
 
