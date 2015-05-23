@@ -8,7 +8,7 @@ cd clapi
 npm install
 ```
 ```sh
-# output formatting with --JSON, --RAW, --PRETTY (PRETTY is the default)
+# Click the video below to restart it in a new tab
 ```
 
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi.gif?raw=true)
