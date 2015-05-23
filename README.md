@@ -44,7 +44,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-cart      --EXPR obj.cart.id
   ./get-cart      --EXPR val.cart.id
   
-  # with --FUNC, you can perform arbitrary processing on the response using a custom function
+  # with --FUNC, you can call functions that do custom processing on the response data
   ./get-cart      --FUNC listCartItems
   
   ```
