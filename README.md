@@ -32,9 +32,10 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   # set output mode, pipe to grep, etc
   ./get-customer
-  ./get-customer  --JSON  | more
+  ./get-custmer   --JSON
+  ./get-customer  --JSON | more
+  ./get-customer  --LESS
   ./get-customer  | grep accountType
-  ./get-customer  | less -R
   
   # with --EVAL, you can perform a filter to pull out a portion of the response
   ./get-customer  --EVAL payload.person.customerAccountId
