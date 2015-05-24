@@ -19,7 +19,8 @@ DAS_output_dir="${DAS_base_dir}/output"
 # requires bash v3+ for '=~'
 if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] \
    || [ "$1" == "--PRETTY" ] || [ "$1" == "--WRAP" ] || [ "$1" == "--FUNC" ] \
-    || [ "$1" == "--ERROR" ] || [[ "$1" =~ ^--EVAL* ]] || [[ "$1" =~ ^--EXPR* ]];
+   || [ "$1" == "--MORE" ] || [ "$1" == "--LESS" ] \
+   || [ "$1" == "--ERROR" ] || [[ "$1" =~ ^--EVAL* ]] || [[ "$1" =~ ^--EXPR* ]];
 then
   DAS_has_params=0
 else
@@ -40,16 +41,29 @@ function DAS_handle_response() {
 }
 
 function DAS_print_output() {
-  if [ ! -z "$1" ];
-  then
-    node $DAS_print_output --file=$1 $DAS_args
-    exit 0;
-  fi
-
   if [ "$DAS_arg_1" == "--ERROR" ];
   then
     node $DAS_print_output --file=$DAS_output_dir/${DAS_script_name}_ERROR.json $DAS_args
   else
-    node $DAS_print_output --file=$DAS_output_dir/$DAS_script_name.json $DAS_args
+    for var in $DAS_args
+    do
+      if [ "$var" == "--MORE" ];
+      then
+        __print | more -R;
+        exit 0;
+      fi
+
+      if [ "$var" == "--LESS" ];
+      then
+        __print | less -R;
+        exit 0;
+      fi
+    done
+    __print;
   fi
 }
+
+function __print() {
+  node $DAS_print_output --file=$DAS_output_dir/$DAS_script_name.json $DAS_args
+}
+
