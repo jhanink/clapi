@@ -13,9 +13,9 @@ npm install
 
 ### Features
 
-* call an API and view the response in JSON or PRETTY mode
-* the last response for each API call is cached to review, filter, or transform
-* results are greppable, filterable, and processable via custom functions
+* Call an API and view the response in JSON or PRETTY mode
+* Get the last response for each API call is cached to review, filter, or transform
+* Grep, filter, or apply custom functions at the time of call or last cached result
 
 
 ### Commands
