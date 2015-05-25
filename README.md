@@ -24,12 +24,9 @@ npm install
 
 Currently available commands. [Add new requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
-##### → STAGE ENVIRONMENT
+##### → STAGE - Cart & Checkout
 
 ```sh
-
-  #     customerId:  688ddfc5-181f-46b5-a0e7-8dc139146253
-  #     email:       node-1@wm.com
   
   ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253        # customerId
   ./get-customer node-1@wm.com                               # email
@@ -42,9 +39,6 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 ```
 
 ```sh
-
-  #     cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
-  #     customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
   
   ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253         # customerId
   
@@ -63,13 +57,15 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # id             (not USItemId)
 ```
 
-##### → EXTRAS
+##### → STAGE - Other
 
 ```sh
   
   ./fetch-inventory-report --NEW                             # fetches the latest report
   ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
   ./fetch-inventory-report --FUNC listFetchedItems           # print condensed report from cached result
+```
+```sh
   
   ./get-iro-offers 989CF1FB215E4C579A273357D8DE5111          # get IRO offers by offerId
   ./get-iro-offers 17753319                                  # get IRO offers by USItemId
@@ -77,12 +73,9 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-iro-offers --EVAL status                             # print IRO offer status (OK, PARTIAL..)
 ```
 
-##### → PROD ENVIRONMENT
+##### → PROD - Cart & Checkout
 
 ```sh
-
-  #   --SAMPLE PURCHASE CONTRACT
-  #     pcId:  e74dd26a-ef98-442e-bf88-86637b5b344d
    
   ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d     # purchase contract Id
 ```
