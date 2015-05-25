@@ -8,6 +8,7 @@ cd clapi
 npm install
 ```
 
+
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi.gif?raw=true)
 
 ### Features
