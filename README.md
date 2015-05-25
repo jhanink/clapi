@@ -24,6 +24,71 @@ npm install
 
 Currently available commands. [Add new requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
+##### → STAGE ENVIRONMENT
+
+```sh
+
+  #     customerId:  688ddfc5-181f-46b5-a0e7-8dc139146253
+  #     email:       node-1@wm.com
+  
+  ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253        # customerId
+  ./get-customer node-1@wm.com                               # email
+```
+
+```sh
+  
+  ./create-gift-card 100    # amount
+  ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253    # customerId
+```
+
+```sh
+
+  #     cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
+  #     customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
+  
+  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253         # customerId
+  
+  # create a cart and copy cart id to the clipboard
+  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253 --EVAL cart.id | pbcopy
+  
+  ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
+  ./clear-cart  6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
+```
+
+```sh
+  
+  ./add-to-cart       989CF1FB215E4C579A273357D8DE5111       # offerId
+  ./add-to-cart       9875792                                # itemId
+  ./update-cart-item  `./get-cart --EVAL=items[0].id` 5      # id, quantity   (not USItemId)
+  ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # id             (not USItemId)
+```
+
+##### → EXTRAS
+
+```sh
+  
+  ./fetch-inventory-report --NEW                             # fetches the latest report
+  ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
+  ./fetch-inventory-report --FUNC listFetchedItems           # print condensed report from cached result
+  
+  ./get-iro-offers 989CF1FB215E4C579A273357D8DE5111          # get IRO offers by offerId
+  ./get-iro-offers 17753319                                  # get IRO offers by USItemId
+  ./get-iro-offers --MORE                                    # print cached result
+  ./get-iro-offers --EVAL status                             # print IRO offer status (OK, PARTIAL..)
+```
+
+##### → PROD ENVIRONMENT
+
+```sh
+
+  #   --SAMPLE PURCHASE CONTRACT
+  #     pcId:  e74dd26a-ef98-442e-bf88-86637b5b344d
+   
+  ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d     # purchase contract Id
+```
+
+### OPTIONS
+
 ```sh
   
   #  NOTE: You can recall the last cached result to process or extract information
@@ -49,73 +114,6 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-cart      --FUNC listCartItems
   
   ```
-
-##### → STAGE COMMANDS
-
-```sh
-
-  #   --SAMPLE CUSTOMER
-  #     customerId:  688ddfc5-181f-46b5-a0e7-8dc139146253
-  #     email:       node-1@wm.com
-  
-  ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253        # customerId
-  ./get-customer node-1@wm.com                               # email
-```
-
-```sh
-
-  #   --CARDS
-  
-  ./create-gift-card 100    # amount
-  ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253    # customerId
-```
-
-```sh
-
-  #   --SAMPLE CART
-  #     cartId:     6a6f9ddb-8e95-4083-9efe-d1bbb544d03b
-  #     customerId: 688ddfc5-181f-46b5-a0e7-8dc139146253
-  
-  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253         # customerId
-  
-  # create a cart and copy cart id to the clipboard
-  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253 --EVAL cart.id | pbcopy
-  
-  ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
-  ./clear-cart  6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
-```
-
-```sh
-  
-  ./add-to-cart       989CF1FB215E4C579A273357D8DE5111       # offerId
-  ./add-to-cart       9875792                                # itemId
-  ./update-cart-item  `./get-cart --EVAL=items[0].id` 5      # id, quantity   (not USItemId)
-  ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # id             (not USItemId)
-```
-
-```sh
-
-  #   --EXTRAS
-  
-  ./fetch-inventory-report --NEW                             # fetches the latest report
-  ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
-  ./fetch-inventory-report --FUNC listFetchedItems           # print condensed report from cached result
-  
-  ./get-iro-offers 989CF1FB215E4C579A273357D8DE5111          # get IRO offers by offerId
-  ./get-iro-offers 17753319                                  # get IRO offers by USItemId
-  ./get-iro-offers --MORE                                    # print cached result
-  ./get-iro-offers --EVAL status                             # print IRO offer status (OK, PARTIAL..)
-```
-
-##### → PROD COMMANDS
-
-```sh
-
-  #   --SAMPLE PURCHASE CONTRACT
-  #     pcId:  e74dd26a-ef98-442e-bf88-86637b5b344d
-   
-  ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d     # purchase contract Id
-```
 
 
 ### Why is this a node program and not a collection of curl scripts?
