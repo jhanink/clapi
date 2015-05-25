@@ -6,7 +6,7 @@ module.exports = function (contents) {
     getCartItems: function () {
       return contents.items;
     },
-    listCartItems: function () {
+    printCartItems: function () {
       var items = self.getCartItems();
       var result = [];
       for (i=0;i<items.length;i++) {
@@ -20,7 +20,7 @@ module.exports = function (contents) {
       }
       return result;
     },
-    listFetchedItems: function () {
+    printFetchedItems: function () {
       var items = contents.result;
       var result = [];
       for (i=0;i<items.length;i++) {

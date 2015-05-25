@@ -61,7 +61,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   ./fetch-inventory-report --NEW                             # fetches the latest report
   ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
-  ./fetch-inventory-report --FUNC listFetchedItems           # print condensed report from cached result
+  ./fetch-inventory-report --FUNC printFetchedItems          # print condensed report from cached result
 ```
 ```sh
   
@@ -83,22 +83,18 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
   
-  # set output mode, pipe to grep, etc
-  ./get-customer
-  ./get-custmer   --JSON
-  ./get-customer  --JSON | more
-  ./get-customer  --LESS
-  ./get-customer  | grep accountType
+  ./get-customer                                             # default output
+  ./get-custmer   --JSON                                     # JSON output
+  ./get-customer  --JSON | more                              # JSON piped to more
+  ./get-customer  --LESS                                     # default piped to less
+  ./get-customer  | grep accountType                         # default, grep for accountType
   
-  # with --EVAL, you can perform a filter to pull out a portion of the response
-  ./get-customer  --EVAL payload.person.customerAccountId
-  ./get-cart      --EVAL cart.id
+  ./get-customer  --EVAL payload.person.customerAccountId    # eval object for a json property 
+  ./get-cart      --EVAL cart.id                             # eval object for a json property
   
-  # with --EXPR, you can refer to the result object using `obj` or `val`
-  ./get-cart      --EXPR obj.cart.id
+  ./get-cart      --EXPR obj.cart.id                         # eval from root object reference
   
-  # with --FUNC, you can call custom functions
-  ./get-cart      --FUNC listCartItems
+  ./get-cart      --FUNC printCartItems                      # run a custom function on result
   
   ```
 
