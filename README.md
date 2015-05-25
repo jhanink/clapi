@@ -86,15 +86,6 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 ```
 
 ```sh
-
-  #   --SAMPLE ITEMS
-  #     name:     Down Comforter, Reversible Microfiber
-  #     offerId:  3B13FF477E8D499D8D4098D91818EB4A           # Add to cart
-  #     itemId:   `./get-cart --EVAL=items[0].id`            # Find itemId after adding to cart
-  
-  #     name:     Case Logic USB Flash Drive Case for 2 Drives, Blue
-  #     offerId:  26DCCE73B82544DCB9CDC13A20012EC6
-  #     itemId:   `./get-cart --EVAL=items[0].id`
   
   ./add-to-cart       989CF1FB215E4C579A273357D8DE5111       # offerId
   ./add-to-cart       9875792                                # itemId
@@ -109,7 +100,6 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./fetch-inventory-report --NEW                             # fetches the latest report
   ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
   ./fetch-inventory-report --FUNC listFetchedItems           # print condensed report from cached result
-  
   
   ./get-iro-offers 989CF1FB215E4C579A273357D8DE5111          # get IRO offers by offerId
   ./get-iro-offers 17753319                                  # get IRO offers by USItemId
