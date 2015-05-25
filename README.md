@@ -79,7 +79,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
      e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
-### OPTIONS - output mode, expression evaluation, custom functions
+##### → OPTIONS - output mode, expression evaluation, custom functions
 
 ```sh
   
