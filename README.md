@@ -94,8 +94,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   ./get-cart      --EXPR obj.cart.id                         # eval from root object reference
   
-  ./get-cart      --FUNC printCartItems                      # run a custom function on result
-  
+  ./get-cart      --FUNC printCartItems                      # run a custom function on result  
   ```
 
 
