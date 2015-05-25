@@ -79,13 +79,9 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
      e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
-### OPTIONS
+### OPTIONS - output mode, expression evaluation, custom functions
 
 ```sh
-  
-  #  NOTE: You can recall the last cached result to process or extract information
-   
-  #  --EXAMPLES
   
   # set output mode, pipe to grep, etc
   ./get-customer
@@ -100,9 +96,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   # with --EXPR, you can refer to the result object using `obj` or `val`
   ./get-cart      --EXPR obj.cart.id
-  ./get-cart      --EXPR val.cart.id
   
-  # with --FUNC, you can call functions that do custom processing on the response data
+  # with --FUNC, you can call custom functions
   ./get-cart      --FUNC listCartItems
   
   ```
