@@ -24,7 +24,7 @@ npm install
 
 Currently available commands. [Add new requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
-##### → STAGE - Cart & Checkout
+##### → STAGE : Cart & Checkout
 
 ```sh
   
@@ -57,7 +57,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # id             (not USItemId)
 ```
 
-##### → STAGE - Other
+##### → STAGE : Other
 
 ```sh
   
@@ -73,7 +73,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-iro-offers --EVAL status                             # print IRO offer status (OK, PARTIAL..)
 ```
 
-##### → PROD - Cart & Checkout
+##### → PROD : Cart & Checkout
 
 ```sh
    
@@ -81,7 +81,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
      e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
-##### → OPTIONS - output mode, expression evaluation, custom functions
+##### → OPTIONS : Output mode, expression eval, custom functions
 
 ```sh
   
