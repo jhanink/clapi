@@ -75,7 +75,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
    
-  ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d     # purchase contract Id
+  ./get-purchase-contract-prod \                             # purchase contract Id
+     e74dd26a-ef98-442e-bf88-86637b5b344d
 ```
 
 ### OPTIONS
