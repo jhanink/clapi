@@ -7,9 +7,6 @@ git clone https://gecgithub01.walmart.com/jhanink/clapi.git
 cd clapi
 npm install
 ```
-```sh
-# Click the video below to restart it in a new tab
-```
 
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi.gif?raw=true)
 
