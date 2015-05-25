@@ -118,13 +118,6 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 ```
 
 
-```sh
-
-  #   --IRO
-  
-```
-
-
 ### Why is this a node program and not a collection of curl scripts?
 
 Because node is more fun.
