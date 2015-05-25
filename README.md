@@ -40,8 +40,8 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253         # customerId
   
-  # create a cart and copy cart id to the clipboard
-  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253 --EVAL cart.id | pbcopy
+  ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253 \       # create cart, copy to clipboard
+     --EVAL cart.id | pbcopy
   
   ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
   ./clear-cart  6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
