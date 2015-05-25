@@ -108,7 +108,13 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   ./fetch-inventory-report --NEW                             # fetches the latest report
   ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
-  ./fetch-inventory-report --FUNC listFetchedItems           # get condensed report from cached result
+  ./fetch-inventory-report --FUNC listFetchedItems           # print condensed report from cached result
+  
+  
+  ./get-iro-offers 989CF1FB215E4C579A273357D8DE5111          # get IRO offers by offerId
+  ./get-iro-offers 17753319                                  # get IRO offers by USItemId
+  ./get-iro-offers --MORE                                    # print cached result
+  ./get-iro-offers --EVAL status                             # print IRO offer status, e.g. OK, PARTIAL
 ```
 
 ##### → PROD COMMANDS
@@ -121,6 +127,12 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-purchase-contract-prod e74dd26a-ef98-442e-bf88-86637b5b344d     # purchase contract Id
 ```
 
+
+```sh
+
+  #   --IRO
+  
+```
 
 
 ### Why is this a node program and not a collection of curl scripts?
