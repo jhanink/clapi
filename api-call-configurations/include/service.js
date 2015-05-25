@@ -14,6 +14,9 @@ module.exports = function(state) {
     setServiceVersion: function (serviceVersion) {
       this.setHeader("WM_SVC.VERSION", serviceVersion);
     },
+    setConsumerId: function (consumerId) {
+      this.setHeader("WM_CONSUMER.ID", consumerId);
+    },
     setRequestOptions: function (options) {
       _options = options;
       _options.headers = _headers;
