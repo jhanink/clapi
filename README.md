@@ -114,7 +114,7 @@ Because node is more fun.
 
 ### Et Cetera
 
-* [See additional project goals](project-goals.md)
+* [See additional project goals](docs/project-goals.md)
 
 
 ### Related Documentation
