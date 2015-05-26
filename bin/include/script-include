@@ -60,11 +60,16 @@ function DAS_print_output() {
         exit 0;
       fi
     done
-    __print;
+    __print "$@";
   fi
 }
 
 function __print() {
+  if [ ! -z "$1" ];
+  then
+    node $DAS_print_output --file=$1 $DAS_args
+    exit 0;
+  fi
   node $DAS_print_output --file=$DAS_output_dir/$DAS_script_name.json $DAS_args
 }
 

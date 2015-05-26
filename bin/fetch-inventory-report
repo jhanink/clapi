@@ -19,7 +19,8 @@ then
   mv `ls /tmp/output/$ITEM_PASSED_INPUT` $DAS_output_dir/$ITEM_PASSED_FILE
 
   #----- Process
-  node $DAS_base_dir/${DAS_script_name}.js --file=$DAS_output_dir/$ITEM_PASSED_FILE > $DAS_output_dir/LATEST_ITEMS.json
+  node $DAS_base_dir/${DAS_script_name} --file=$DAS_output_dir/$ITEM_PASSED_FILE > $DAS_output_dir/LATEST_ITEMS.json
+  cp $DAS_output_dir/LATEST_ITEMS.json $DAS_output_dir/${DAS_script_name}.json
 fi
 
 DAS_print_output $DAS_output_dir/LATEST_ITEMS.json
