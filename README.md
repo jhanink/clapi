@@ -35,7 +35,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
   
-  ./create-gift-card 100    # amount
+  ./create-gift-card 100                                     # amount
   ./create-temp-card 688ddfc5-181f-46b5-a0e7-8dc139146253    # customerId
 ```
 
