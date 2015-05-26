@@ -1,0 +1,19 @@
+
+cd bin
+ls -al
+
+---
+# get a customer by customerId
+./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253
+
+# get a customer by email
+./get-customer node-1@wm.com
+
+# use the cached copy, format to JSON, and pipe to more
+./get-customer --JSON | more
+
+---
+# let’s do some cart stuff
+
+# get a cart by customerId
+./get-cart 688ddfc5-181f-46b5-a0e7-8dc139146253
