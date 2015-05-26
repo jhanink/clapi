@@ -20,7 +20,8 @@ DAS_output_dir="${DAS_base_dir}/output"
 # requires bash v3+ for '=~'
 if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] \
    || [ "$1" == "--PRETTY" ] || [ "$1" == "--WRAP" ] || [ "$1" == "--FUNC" ] \
-   || [ "$1" == "--MORE" ] || [ "$1" == "--LESS" ] || [ "$1" == "-H" ]  || [ "$1" == "-T" ] \
+   || [ "$1" == "--MORE" ] || [ "$1" == "--LESS" ] \
+   || [ "$1" == "-H" ]  || [ "$1" == "-T" ] || [ "$1" == "--EVALHELP" ] \
    || [ "$1" == "--ERROR" ] || [[ "$1" =~ ^--EVAL* ]] || [[ "$1" =~ ^--EXPR* ]];
 then
   DAS_has_params=0

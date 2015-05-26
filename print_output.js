@@ -75,6 +75,25 @@ else if (args.EXPR) {
   contents = eval(args.EXPR);
   contents = JSON.stringify(contents);
 }
+else if (args.EVALHELP) {
+  var props = [];
+  var temp = args.EVALHELP;
+
+  if (typeof(temp) == "boolean" && temp) {
+    temp = eval('val');
+  } else {
+    temp = eval('val.' + args.EVALHELP);
+  }
+
+  if (typeof(temp) === "string" || typeof(temp) === "number") {
+    contents = JSON.stringify(temp)
+  } else {
+    for (var i in temp) {
+      props.push(i);
+    }
+    contents = JSON.stringify(props);
+  }
+}
 
 printResult(state, contents);
 
