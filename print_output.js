@@ -41,7 +41,7 @@ if (!file) {
 
 if (!fs.existsSync(file)) {
   printResult(state, JSON.stringify({
-    "result": "No Error file was found"
+    "result": "file not found [" + file + "]"
   }));
   return;
 }
