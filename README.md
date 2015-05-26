@@ -95,6 +95,9 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-customer  --EVAL payload.person.customerAccountId    # eval object for a json property 
   ./get-cart      --EVAL cart.id                             # eval object for a json property
   
+  ./get-cart      --EVALHELP                                 # list obj properties under the root node
+  ./get-cart      --EVALHELP cart                            # list obj properties under the named node
+  
   ./get-cart      --EXPR obj.cart.id                         # eval from root object reference
   
   ./get-cart      --FUNC printCartItems                      # run a custom function on result  
