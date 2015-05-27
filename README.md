@@ -98,8 +98,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-cart      --HELP cart                                # list obj props under named node
   ./get-cart      --HELP cart --NOCOLOR | pbcopy             # remove color codes before copy
   
-  # in HELP mode, if a key contains a space, use a dash
-  # ["has mercury"] -> ["has-mercury"]
+  # in HELP mode, if a key contains a space, use a dash instead ["has mercury"] -> ["has-mercury"]
   ./get-iro-offers --HELP payload[0].product.productAttributes["has-mercury"]
   
   # evaluate fixed nodes 
