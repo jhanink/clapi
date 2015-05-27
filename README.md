@@ -64,14 +64,14 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   ./fetch-inventory-report --NEW                             # fetches the latest report
   ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
-  ./fetch-inventory-report --FUNC printFetchedItems          # print condensed report from cached result
+  ./fetch-inventory-report --FUNC printFetchedItems          # print condensed report
 ```
 ```sh
   
   ./get-iro-offers 989CF1FB215E4C579A273357D8DE5111          # get IRO offers by offerId
   ./get-iro-offers 17753319                                  # get IRO offers by USItemId
   ./get-iro-offers --MORE                                    # print cached result
-  ./get-iro-offers --EVAL status                             # print IRO offer status (OK, PARTIAL..)
+  ./get-iro-offers --EVAL status                             # print IRO status (OK, PARTIAL..)
 ```
 
 ##### → PROD : Cart & Checkout
@@ -86,25 +86,28 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
 
 ```sh
   
+  # output modes and options
   ./get-customer                                             # default output
   ./get-custmer   --JSON                                     # JSON output
   ./get-customer  --JSON | more                              # JSON piped to more
   ./get-customer  --LESS                                     # default piped to less
   ./get-customer  | grep accountType                         # default, grep for accountType
   
+  # interactive object navigation help mode
+  ./get-cart      -I                                         # list obj props under root node
+  ./get-cart      -I cart                                    # list obj props under named node
+  
+  # evaluate fixed nodes 
   ./get-customer  --EVAL payload.person.customerAccountId    # eval object for a json property 
-  ./get-cart      --EVAL cart.id                             # eval object for a json property
-  
-  ./get-cart      --EVALHELP                                 # list obj properties under the root node
-  ./get-cart      --EVALHELP cart                            # list obj properties under the named node
-  
+  ./get-cart      --EVAL cart.id                             # eval object for a json property  
   ./get-cart      --EXPR obj.cart.id                         # eval from root object reference
   
+  # call custom functions
   ./get-cart      --FUNC printCartItems                      # run a custom function on result  
   ```
 
 
-### Why is this a node program and not a collection of curl scripts?
+### Why is this a node program instead of curl scripts?
 
 Because node is more fun.
 

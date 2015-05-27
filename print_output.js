@@ -75,23 +75,58 @@ else if (args.EXPR) {
   contents = eval(args.EXPR);
   contents = JSON.stringify(contents);
 }
-else if (args.EVALHELP) {
+else if (args.EVALHELP || args.HELP) {
   var props = [];
-  var temp = args.EVALHELP;
-
-  if (typeof(temp) == "boolean" && temp) {
-    temp = eval('val');
+  var temp = args.EVALHELP || args.HELP;
+  var argsHelp = temp;
+  var hasArgsValue = ! (typeof(temp) == "boolean" && temp);
+  if (hasArgsValue) {
+    temp = eval('val.' + temp);
   } else {
-    temp = eval('val.' + args.EVALHELP);
+    temp = eval('val');
   }
 
-  if (typeof(temp) === "string" || typeof(temp) === "number") {
+  /*
+
+   Black        0;30     Dark Gray     1;30
+   Blue         0;34     Light Blue    1;34
+   Green        0;32     Light Green   1;32
+   Cyan         0;36     Light Cyan    1;36
+   Red          0;31     Light Red     1;31
+   Purple       0;35     Light Purple  1;35
+   Brown/Orange 0;33     Yellow        1;33
+   Light Gray   0;37     White         1;37
+
+   */
+
+  if (typeof(temp) === "string" || typeof(temp) === "number" || typeof(temp) === "boolean") {
     contents = JSON.stringify(temp)
   } else {
     for (var i in temp) {
-      props.push(i);
+      if (args.JSON) {
+        props.push(i);
+      } else {
+        var child = temp[i];
+        if (typeof(child) === "string" || typeof(child) === "number" || typeof(child) === "boolean") {
+          props.push("\033[0;34m" + i + "\033[0m" + " - \033[0;33m" + child + "\033[0m");
+        } else {
+          var str = "";
+          if (typeof(child.length) === "undefined") {
+            str = "\033[0;37m";
+            str += i + " {}";
+          } else {
+            str = child.length ? "\033[0;37m" : "\033[1;30m";
+            str += i + " " + (child.length ? child.length : "EMPTY");
+          }
+          str += "\033[0m";
+          props.push(str);
+        }
+      }
     }
-    contents = JSON.stringify(props);
+    var output = {};
+    var outputKey = "" + (hasArgsValue ? argsHelp.toUpperCase() : ":");
+    output[outputKey] = props
+    contents = JSON.stringify(output);
   }
 }
 
