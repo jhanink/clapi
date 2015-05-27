@@ -94,7 +94,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-customer  | grep accountType                         # default, grep for accountType
   
   # interactive object navigation help mode
-  ./get-cart      -I                                         # list obj props under root node
+  ./get-cart      --HELP                                     # list obj props under root node
   ./get-cart      -I cart                                    # list obj props under named node
   
   # evaluate fixed nodes 

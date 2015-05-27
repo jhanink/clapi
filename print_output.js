@@ -75,9 +75,9 @@ else if (args.EXPR) {
   contents = eval(args.EXPR);
   contents = JSON.stringify(contents);
 }
-else if (args.EVALHELP || args.HELP) {
+else if (args.EVALHELP || args.HELP || args.I) {
   var props = [];
-  var temp = args.EVALHELP || args.HELP;
+  var temp = args.EVALHELP || args.HELP || args.I;
   var argsHelp = temp;
   var hasArgsValue = ! (typeof(temp) == "boolean" && temp);
   if (hasArgsValue) {
