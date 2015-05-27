@@ -124,7 +124,7 @@ else if (args.EVALHELP || args.HELP || args.I) {
       }
     }
     var output = {};
-    var outputKey = "" + (hasArgsValue ? argsHelp.toUpperCase() : ":");
+    var outputKey = "" + (hasArgsValue ? argsHelp : ":");
     output[outputKey] = props
     contents = JSON.stringify(output);
   }
