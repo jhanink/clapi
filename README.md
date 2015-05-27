@@ -93,9 +93,14 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-customer  --LESS                                     # default piped to less
   ./get-customer  | grep accountType                         # default, grep for accountType
   
-  # interactive object navigation help mode
+  # interactive object navigation HELP mode
   ./get-cart      --HELP                                     # list obj props under root node
   ./get-cart      --HELP cart                                # list obj props under named node
+  ./get-cart      --HELP cart --NOCOLOR | pbcopy             # remove color codes before copy
+  
+  # in HELP mode, if a key contains a space, use a dash
+  # ["has mercury"] -> ["has-mercury"]
+  ./get-iro-offers --HELP payload[0].product.productAttributes["has-mercury"]
   
   # evaluate fixed nodes 
   ./get-customer  --EVAL payload.person.customerAccountId    # eval object for a json property 
