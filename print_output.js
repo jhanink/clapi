@@ -99,25 +99,58 @@ else if (args.EVALHELP || args.HELP || args.I) {
 
    */
 
-  if (typeof(temp) === "string" || typeof(temp) === "number" || typeof(temp) === "boolean") {
+  // IS leaf node
+  if (typeof(temp) === "string" || typeof(temp) === "number" || typeof(temp) === "boolean")
+  {
     contents = JSON.stringify(temp)
-  } else {
+  }
+  // NOT leaf node
+  else
+  {
+    // inspect the properties
+    var idx = 0;
     for (var i in temp) {
-      if (args.JSON) {
+      if (!temp.hasOwnProperty(i)) continue;
+      idx++;
+      if (args.JSON)
+      {
         props.push(i);
-      } else {
-        var child = temp[i];
-        if (typeof(child) === "string" || typeof(child) === "number" || typeof(child) === "boolean") {
-          props.push("\033[0;34m" + i + "\033[0m" + " - \033[0;33m" + child + "\033[0m");
-        } else {
-          var str = "";
-          if (typeof(child.length) === "undefined") {
-            str = "\033[0;37m";
-            str += i + " {}";
+      }
+      else
+      {
+        // initialize
+        var child = temp[i], objType = typeof(child),
+            isPrimitive = objType === "string" || objType === "number" || objType === "boolean",
+            isValueLeafNode = isPrimitive,
+            isPlainObject = !isPrimitive && typeof(child.length) === "undefined",
+            isArray = !isPrimitive && !isPlainObject,
+            linePrefix = isArray?"array":objType,
+            prefixLength = linePrefix.length;
+
+        // prefix padding
+        for (var _pad=0;_pad<(8-prefixLength);_pad++) {linePrefix += " "}
+        linePrefix = idx+(idx<10?"   ":"  ")+linePrefix;
+
+        // prepare output
+        var str = "\033[1;30m" + linePrefix + " \033[0m" ;
+
+        if (isValueLeafNode)
+        {
+          str += "\033[0;34m";
+          str += i + "\033[0m" + " - \033[0;33m" + child + "\033[0m";
+          props.push(str);
+        }
+        else
+        {
+          var propCount = 0;
+          if (isPlainObject) {
+            for (var _p in child) {if (child.hasOwnProperty(_p)) {propCount++;}}
           } else {
-            str = child.length ? "\033[0;37m" : "\033[1;30m";
-            str += i + " " + (child.length ? child.length : "EMPTY");
+            propCount = child.length;
           }
+          str += propCount ? "\033[0;34m" : "\033[1;30m";
+          str += i + "" + (propCount ? "\033[1;30m "+propCount+"\033[0m" : " EMPTY");
+
           str += "\033[0m";
           props.push(str);
         }
