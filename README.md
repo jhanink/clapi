@@ -95,7 +95,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   # interactive object navigation help mode
   ./get-cart      --HELP                                     # list obj props under root node
-  ./get-cart      -I cart                                    # list obj props under named node
+  ./get-cart      --HELP cart                                # list obj props under named node
   
   # evaluate fixed nodes 
   ./get-customer  --EVAL payload.person.customerAccountId    # eval object for a json property 

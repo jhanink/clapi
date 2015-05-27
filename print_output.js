@@ -79,9 +79,19 @@ else if (args.EVALHELP || args.HELP || args.I) {
   var props = [];
   var temp = args.EVALHELP || args.HELP || args.I;
   var argsHelp = temp;
+  var argsHelpStr = argsHelp;
   var hasArgsValue = ! (typeof(temp) == "boolean" && temp);
   if (hasArgsValue) {
-    temp = eval('val.' + temp);
+    var _arr = temp.split(".");
+    for (var _s=0;_s<_arr.length;_s++) {
+      var _part = _arr[_s];
+      if (_part.indexOf("-") > -1) {
+        _arr[_s] = _part.replace("-", " ").replace("[", "[\"").replace("]", "\"]")
+
+      }
+    }
+    var argsHelpStr = _arr.join(".")
+    temp = eval('val.' + argsHelpStr);
   } else {
     temp = eval('val');
   }
@@ -157,7 +167,7 @@ else if (args.EVALHELP || args.HELP || args.I) {
       }
     }
     var output = {};
-    var outputKey = "" + (hasArgsValue ? argsHelp : ":");
+    var outputKey = "" + (hasArgsValue ? argsHelpStr : ":");
     output[outputKey] = props
     contents = JSON.stringify(output);
   }
