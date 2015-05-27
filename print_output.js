@@ -1,12 +1,23 @@
 var fs = require("fs");
 var args = require("yargs").argv;
 var prettyjson = require("prettyjson");
+var stripAnsi = require("strip-ansi");
 
 function printResult (state, contents) {
   if (state.args.RAW) {
     console.log(JSON.stringify(JSON.parse(contents)));
   } else if (state.args.JSON) {
     console.log(JSON.stringify(JSON.parse(contents), null, 2));
+  } else if (state.args.HELP && state.args.NOCOLOR) {
+    var data = JSON.parse(contents);
+    for (var temp in data) {
+      if (data[temp].length) {
+        for (var _data=0;_data<data[temp].length;_data++) {
+          console.log(data[temp][_data]);
+        }
+      }
+    }
+
   } else {
     console.log(prettyjson.render(JSON.parse(contents)));
   }
@@ -148,7 +159,6 @@ else if (args.EVALHELP || args.HELP || args.I) {
         {
           str += "\033[0;34m";
           str += i + "\033[0m" + " - \033[0;33m" + child + "\033[0m";
-          props.push(str);
         }
         else
         {
@@ -162,13 +172,16 @@ else if (args.EVALHELP || args.HELP || args.I) {
           str += i + "" + (propCount ? "\033[1;30m "+propCount+"\033[0m" : " EMPTY");
 
           str += "\033[0m";
-          props.push(str);
         }
+        if (args.NOCOLOR) {
+          str = stripAnsi(str);
+        }
+        props.push (str)
       }
     }
     var output = {};
     var outputKey = "" + (hasArgsValue ? argsHelpStr : ":");
-    output[outputKey] = props
+    output[outputKey] = props;
     contents = JSON.stringify(output);
   }
 }
