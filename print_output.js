@@ -158,7 +158,7 @@ else if (args.EVALHELP || args.HELP || args.I) {
         if (isValueLeafNode)
         {
           str += "\033[0;34m";
-          str += i + "\033[0m" + " - \033[0;33m" + child + "\033[0m";
+          str += i + "\033[0m" + "\033[0;37m — " + child + "\033[0m";
         }
         else
         {
@@ -169,7 +169,8 @@ else if (args.EVALHELP || args.HELP || args.I) {
             propCount = child.length;
           }
           str += propCount ? "\033[0;34m" : "\033[1;30m";
-          str += i + "" + (propCount ? "\033[1;30m "+propCount+"\033[0m" : " EMPTY");
+          var toPluralize = propCount === 0 || propCount > 1;
+          str += i + "" + (propCount ? "\033[1;30m • "+propCount+(isArray?" element":" node")+(toPluralize?"s":"")+"\033[0m" : "");
 
           str += "\033[0m";
         }
