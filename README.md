@@ -44,16 +44,16 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253         # customerId
   
   ./create-cart 688ddfc5-181f-46b5-a0e7-8dc139146253 \
-     --EVAL cart.id | pbcopy                                 # create cart, copy to clipboard
+      --EVAL cart.id | pbcopy                                # create cart, copy to clipboard
   
-  ./get-cart    6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
-  ./clear-cart  6a6f9ddb-8e95-4083-9efe-d1bbb544d03b         # cartId
+  ./get-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b            # cartId
+  ./clear-cart 6a6f9ddb-8e95-4083-9efe-d1bbb544d03b          # cartId
 ```
 
 ```sh
   
-  ./add-to-cart       989CF1FB215E4C579A273357D8DE5111       # offerId
-  ./add-to-cart       9875792                                # itemId
+  ./add-to-cart 989CF1FB215E4C579A273357D8DE5111             # offerId
+  ./add-to-cart 9875792                                      # itemId
   ./update-cart-item  `./get-cart --EVAL=items[0].id` 5      # id, quantity   (not USItemId)
   ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # id             (not USItemId)
 ```
@@ -88,26 +88,26 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   # output modes and options
   ./get-customer                                             # default output
-  ./get-custmer   --JSON                                     # JSON output
-  ./get-customer  --JSON | more                              # JSON piped to more
-  ./get-customer  --LESS                                     # default piped to less
-  ./get-customer  | grep accountType                         # default, grep for accountType
+  ./get-custmer --JSON                                       # JSON output
+  ./get-customer --JSON | more                               # JSON piped to more
+  ./get-customer --LESS                                      # default piped to less
+  ./get-customer | grep accountType                          # default, grep for accountType
   
-  # interactive object navigation HELP mode
-  ./get-cart      --HELP                                     # list obj props under root node
-  ./get-cart      --HELP cart                                # list obj props under named node
-  ./get-cart      --HELP cart --NOCOLOR | pbcopy             # remove color codes before copy
+  # interactive object navigation mode
+  ./get-cart -i                                              # list obj props under root node
+  ./get-cart -i cart                                         # list obj props under named node
+  ./get-cart -i cart --NOCOLOR | pbcopy                      # remove color codes before copy
   
-  # in HELP mode, if a key contains a space, use a dash instead ["has mercury"] -> ["has-mercury"]
-  ./get-iro-offers --HELP payload[0].product.productAttributes["has-mercury"]
+  ./get-iro-offers -i \
+       payload[0].product.productAttributes["has-mercury"]   # use dashes instead of spaces in keys 
   
   # evaluate fixed nodes 
-  ./get-customer  --EVAL payload.person.customerAccountId    # eval object for a json property 
-  ./get-cart      --EVAL cart.id                             # eval object for a json property  
-  ./get-cart      --EXPR obj.cart.id                         # eval from root object reference
+  ./get-customer --EVAL payload.person.customerAccountId     # eval object for a json property 
+  ./get-cart --EVAL cart.id                                  # eval object for a json property  
+  ./get-cart --EXPR obj.cart.id                              # eval from root object reference
   
   # call custom functions
-  ./get-cart      --FUNC printCartItems                      # run a custom function on result  
+  ./get-cart --FUNC printCartItems                           # run a custom function on result  
   ```
 
 
