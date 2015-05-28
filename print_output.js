@@ -43,7 +43,7 @@ if (args.DEBUG) {
 var state = {
   args: args
 };
-var file = args.file;
+var file = args.file || args.f;
 
 if (!file) {
   console.log("---> no file provided");

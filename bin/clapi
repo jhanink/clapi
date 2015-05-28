@@ -1,0 +1,13 @@
+if [[ "$1" =~ "-s=" ]];
+then
+  f=${1: 3}
+  echo "$f" > ../output/clapi_filename.txt
+  exit 0;
+fi
+
+if [[ "$1" =~ "-f=" ]];
+then
+  node ../print_output.js -i "$@"
+else
+  node ../print_output -i -f=`cat ../output/clapi_filename.txt` "$@"
+fi
