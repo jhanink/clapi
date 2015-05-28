@@ -86,9 +86,9 @@ else if (args.EXPR) {
   contents = eval(args.EXPR);
   contents = JSON.stringify(contents);
 }
-else if (args.EVALHELP || args.HELP || args.I) {
+else if (args.EVALHELP || args.HELP || args.i) {
   var props = [];
-  var temp = args.EVALHELP || args.HELP || args.I;
+  var temp = args.EVALHELP || args.HELP || args.i;
   var argsHelp = temp;
   var argsHelpStr = argsHelp;
   var hasArgsValue = ! (typeof(temp) == "boolean" && temp);
@@ -109,14 +109,16 @@ else if (args.EVALHELP || args.HELP || args.I) {
 
   /*
 
-   Black        0;30     Dark Gray     1;30
-   Blue         0;34     Light Blue    1;34
-   Green        0;32     Light Green   1;32
-   Cyan         0;36     Light Cyan    1;36
-   Red          0;31     Light Red     1;31
-   Purple       0;35     Light Purple  1;35
-   Brown/Orange 0;33     Yellow        1;33
-   Light Gray   0;37     White         1;37
+     Black        0;30     Dark Gray     1;30
+     Blue         0;34     Light Blue    1;34
+     Green        0;32     Light Green   1;32
+     Cyan         0;36     Light Cyan    1;36
+     Red          0;31     Light Red     1;31
+     Purple       0;35     Light Purple  1;35
+     Brown/Orange 0;33     Yellow        1;33
+     Light Gray   0;37     White         1;37
+
+                     ○ • ■ · —
 
    */
 
@@ -145,11 +147,17 @@ else if (args.EVALHELP || args.HELP || args.I) {
             isValueLeafNode = isPrimitive,
             isPlainObject = !isPrimitive && typeof(child.length) === "undefined",
             isArray = !isPrimitive && !isPlainObject,
-            linePrefix = isArray?"array":objType,
+
+            /*  show data-type  */
+            // linePrefix = isArray?"array":objType, prefixPadding = 8,
+
+            /*  no data-type  */
+            linePrefix = "", prefixPadding = 0,
+
             prefixLength = linePrefix.length;
 
         // prefix padding
-        for (var _pad=0;_pad<(8-prefixLength);_pad++) {linePrefix += " "}
+        for (var _pad=0;_pad<(prefixPadding-prefixLength);_pad++) {linePrefix += " "}
         linePrefix = idx+(idx<10?"   ":"  ")+linePrefix;
 
         // prepare output
@@ -170,7 +178,7 @@ else if (args.EVALHELP || args.HELP || args.I) {
           }
           str += propCount ? "\033[0;34m" : "\033[1;30m";
           var toPluralize = propCount === 0 || propCount > 1;
-          str += i + "" + (propCount ? "\033[1;30m • "+propCount+(isArray?" element":" node")+(toPluralize?"s":"")+"\033[0m" : " ~");
+          str += i + "" + (propCount ? "\033[1;30m "+(isArray?"··":"○—○")+" "+propCount+(isArray?" element":" node")+(toPluralize?"s":"")+"\033[0m" : " \\");
 
           str += "\033[0m";
         }
@@ -181,7 +189,7 @@ else if (args.EVALHELP || args.HELP || args.I) {
       }
     }
     var output = {};
-    var outputKey = "" + (hasArgsValue ? argsHelpStr : ":");
+    var outputKey = "" + (hasArgsValue ? "\033[0;33m "+argsHelpStr+"\033[0m" : ":");
     output[outputKey] = props;
     contents = JSON.stringify(output);
   }
