@@ -170,7 +170,7 @@ else if (args.EVALHELP || args.HELP || args.I) {
           }
           str += propCount ? "\033[0;34m" : "\033[1;30m";
           var toPluralize = propCount === 0 || propCount > 1;
-          str += i + "" + (propCount ? "\033[1;30m • "+propCount+(isArray?" element":" node")+(toPluralize?"s":"")+"\033[0m" : "");
+          str += i + "" + (propCount ? "\033[1;30m • "+propCount+(isArray?" element":" node")+(toPluralize?"s":"")+"\033[0m" : " ~");
 
           str += "\033[0m";
         }
