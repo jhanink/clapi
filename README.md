@@ -101,9 +101,11 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-iro-offers -i \
        payload[0].product.productAttributes["has-mercury"]   # use dashes instead of spaces in keys
         
-  # general interactive mode
-  ./clapi -s=/tmp/data.json                                  # save a filename for clapi to use
-  ./clapi                                                    # perform interactive mode on saved file
+  # all commands automatically save to the clapi buffer
+  ./clapi -s=/tmp/data.json                                  # explicitly save to clapi buffer
+  
+  # interactive mode against the clapi buffer
+  ./clapi                                                    # interactive mode clapi file
   
   # evaluate fixed nodes 
   ./get-customer --EVAL payload.person.customerAccountId     # eval object for a json property 
