@@ -21,7 +21,7 @@ DAS_output_dir="${DAS_base_dir}/output"
 if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] \
    || [ "$1" == "--PRETTY" ] || [ "$1" == "--WRAP" ] || [ "$1" == "--FUNC" ] \
    || [ "$1" == "--MORE" ] || [ "$1" == "--LESS" ] \
-   || [ "$1" == "-H" ]  || [ "$1" == "-T" ] \
+   || [ "$1" == "-H" ]  || [ "$1" == "-T" ]  || [ "$1" == "--SAVE" ] \
    || [ "$1" == "--EVALHELP" ] || [ "$1" == "--HELP" ] || [ "$1" == "-i" ] \
    || [ "$1" == "--ERROR" ] || [[ "$1" =~ ^--EVAL* ]] || [[ "$1" =~ ^--EXPR* ]];
 then
@@ -79,9 +79,11 @@ function DAS_print_output() {
 function __print() {
   if [ ! -z "$1" ];
   then
+    cp $1 $DAS_output_dir/clapi.json
     node $DAS_print_output --file=$1 $DAS_args
     exit 0;
   fi
+  cp $DAS_output_dir/$DAS_script_name.json $DAS_output_dir/clapi.json
   node $DAS_print_output --file=$DAS_output_dir/$DAS_script_name.json $DAS_args
 }
 
