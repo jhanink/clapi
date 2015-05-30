@@ -117,10 +117,12 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   # All the above commands automatically save to the clapi buffer
   
-  ./clapi -s=/tmp/data.json                                  # explicitly save to clapi buffer
   
-  # interactive mode against the clapi buffer
-  ./clapi                                                    # interactive mode clapi file
+  # explicitly save to clapi buffer
+  ./clapi -s=/tmp/data.json
+  
+  # interactive mode against the existing clapi buffer
+  ./clapi
   
   
   ```
