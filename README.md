@@ -108,7 +108,6 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   # call custom functions
   ./get-cart --FUNC printCartItems                           # run a custom function on result
-  
 ```
 
 All the above commands automatically save to the CLAPI buffer
@@ -123,7 +122,6 @@ All the above commands automatically save to the CLAPI buffer
   
   # interactive mode against the existing clapi buffer
   ./clapi
-    
   ```
   
 ##### → ETC
