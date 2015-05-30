@@ -122,8 +122,7 @@ All the above commands automatically save to the clapi buffer
   
   # interactive mode against the existing clapi buffer
   ./clapi
-  
-  
+    
   ```
   
 ##### → ETC
