@@ -111,9 +111,10 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
 ```
 
+All the above commands automatically save to the CLAPI buffer
+
 ##### → CLAPI : interactive / iterative mode
 
-All the above commands automatically save to the clapi buffer
 
 ```sh
   
