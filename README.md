@@ -109,13 +109,17 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   # call custom functions
   ./get-cart --FUNC printCartItems                           # run a custom function on result
   
+```
+
+##### → CLAPI : interactive / iterative mode
+
+```sh
   
-  -----
+  # All the above commands automatically save to the clapi buffer
   
-  # all commands automatically save to the clapi buffer
   ./clapi -s=/tmp/data.json                                  # explicitly save to clapi buffer
   
-  # iterative / interactive mode against the clapi buffer
+  # interactive mode against the clapi buffer
   ./clapi                                                    # interactive mode clapi file
   
   
