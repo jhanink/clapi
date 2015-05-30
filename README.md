@@ -104,7 +104,7 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   # all commands automatically save to the clapi buffer
   ./clapi -s=/tmp/data.json                                  # explicitly save to clapi buffer
   
-  # interactive mode against the clapi buffer
+  # iterative / interactive mode against the clapi buffer
   ./clapi                                                    # interactive mode clapi file
   
   # evaluate fixed nodes 
