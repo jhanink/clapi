@@ -1,0 +1,9 @@
+if [[ "$1" =~ "-f=" ]];
+then
+  f=${1: 3}
+  cp $f ../output/clapi.json
+  echo "OK"
+  exit 0;
+fi
+
+node ../print_output.js -f=../output/clapi.json --NODASH -i -v "$@"

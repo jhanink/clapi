@@ -10,7 +10,7 @@ cd bin
 ```
 
 
-![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi_output.gif?raw=true)
+![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi_output.png?raw=true)
 
 ### Features
 

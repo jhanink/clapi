@@ -150,14 +150,15 @@ else if (args.EVALHELP || args.HELP || args.i) {
             isValueLeafNode = isPrimitive,
             isPlainObject = !isPrimitive && typeof(child.length) === "undefined",
             isArray = !isPrimitive && !isPlainObject,
-
-            /*  show data-type  */
-            // linePrefix = isArray?"array":objType, prefixPadding = 8,
-
             /*  no data-type  */
             linePrefix = "", prefixPadding = 0,
-
             prefixLength = linePrefix.length;
+
+        if (state.args.v) {
+          linePrefix = isArray?"array":objType;
+          prefixPadding = 8;
+          prefixLength = linePrefix.length;
+        }
 
         // prefix padding
         for (var _pad=0;_pad<(prefixPadding-prefixLength);_pad++) {linePrefix += " "}
