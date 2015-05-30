@@ -113,8 +113,16 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   ./get-cart --EXPR obj.cart.id                              # eval from root object reference
   
   # call custom functions
-  ./get-cart --FUNC printCartItems                           # run a custom function on result  
+  ./get-cart --FUNC printCartItems                           # run a custom function on result
+  
   ```
+  
+##### → ETC
+
+```sh
+
+  ./curl-torbit http://www-e6.walmart.com -i                 # get torbit headers
+```
 
 
 ### Why is this a node program instead of curl scripts?
@@ -129,14 +137,9 @@ Because node is more fun.
 
 
 
-### Et Cetera
-
-* [See additional project goals](docs/project-goals.md)
-
-
 ### Related Documentation
 
 * https://confluence.walmart.com/display/PGSCARTXO/Cart-Service-App+API
 * https://confluence.walmart.com/display/PGSCARTXO/New+Checkout+Service+API
 * http://mobile-qa-ci.homeoffice.wal-mart.com:8080/view/Item%20check/job/Inventory_check/
-
+* [See additional project goals](docs/project-goals.md)

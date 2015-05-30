@@ -1,0 +1,19 @@
+. ./include/script-include
+
+if [ $DAS_has_params == 1 ]
+then
+  #----- Initialize
+  mkdir -p $DAS_temp_dir
+  rm -rf $DAS_temp_dir/*
+
+  #----- Retrieve
+  curl -X GET -I -H "X-TB-Debug: 1" $1 > $DAS_temp_dir/${DAS_script_name}.txt
+
+  #----- Process
+  node $DAS_base_dir/custom/${DAS_script_name} --file=$DAS_temp_dir/${DAS_script_name}.txt > $DAS_output_dir/${DAS_script_name}.json
+fi
+
+DAS_print_output $DAS_output_dir/${DAS_script_name}.json
+
+
+

@@ -15,7 +15,9 @@ else
 fi
 
 DAS_output_dir="${DAS_base_dir}/output"
+DAS_temp_dir="$DAS_output_dir/temp"
 
+mkdir -p $DAS_temp_dir
 
 # requires bash v3+ for '=~'
 if [ -z "$1" ] || [ "$1" == "--JSON" ] || [ "$1" == "--RAW" ] \

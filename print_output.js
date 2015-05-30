@@ -17,9 +17,12 @@ function printResult (state, contents) {
         }
       }
     }
-
   } else {
-    console.log(prettyjson.render(JSON.parse(contents)));
+    var options = {};
+    if (state.args.NODASH) {
+      options.noDash = true;
+    }
+    console.log(prettyjson.render(JSON.parse(contents), options));
   }
 }
 
