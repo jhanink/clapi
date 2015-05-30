@@ -100,12 +100,6 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   ./get-iro-offers -i \
        payload[0].product.productAttributes["has-mercury"]   # use dashes instead of spaces in keys
-        
-  # all commands automatically save to the clapi buffer
-  ./clapi -s=/tmp/data.json                                  # explicitly save to clapi buffer
-  
-  # iterative / interactive mode against the clapi buffer
-  ./clapi                                                    # interactive mode clapi file
   
   # evaluate fixed nodes 
   ./get-customer --EVAL payload.person.customerAccountId     # eval object for a json property 
@@ -114,6 +108,16 @@ Currently available commands. [Add new requests here](https://gecgithub01.walmar
   
   # call custom functions
   ./get-cart --FUNC printCartItems                           # run a custom function on result
+  
+  
+  -----
+  
+  # all commands automatically save to the clapi buffer
+  ./clapi -s=/tmp/data.json                                  # explicitly save to clapi buffer
+  
+  # iterative / interactive mode against the clapi buffer
+  ./clapi                                                    # interactive mode clapi file
+  
   
   ```
   
