@@ -118,7 +118,7 @@ All the above commands automatically save to the CLAPI buffer
 ```sh
   
   # explicitly save a json file to the clapi buffer
-  ./clapi -s=/tmp/data.json
+  ./clapi -s=../SAMPLE.json
   
   # interactive mode against the existing clapi buffer
   ./clapi
