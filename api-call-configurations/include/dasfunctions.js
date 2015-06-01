@@ -1,5 +1,5 @@
 module.exports = function (contents) {
-  var self = {
+  return {
     echo: function (other) {
       return other ? other : contents;
     },
@@ -35,5 +35,4 @@ module.exports = function (contents) {
       return result;
     }
   };
-  return self;
 };

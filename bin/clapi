@@ -4,9 +4,27 @@ then
   cp $f ../output/clapi.json
   echo "OK"
   exit 0;
-fi
+fi;
+
+if [[ "$1" =~ "--JSON" ]];
+then
+  node ../print_output.js -f=../output/clapi.json --JSON
+  exit 0;
+fi;
+
+if [[ "$1" =~ "--PRETTY" ]];
+then
+  node ../print_output.js -f=../output/clapi.json --PRETTY
+  exit 0;
+fi;
 
 # add clapi find
 # add clapi function
 
-node ../print_output.js -f=../output/clapi.json --NODASH -i "$@"
+if [[ "$1" =~ "--FUNC=" ]];
+then
+  node ../print_output.js -f=../output/clapi.json --CLAPI_TEMP "$@"
+  exit 0;
+fi;
+
+node ../print_output.js -f=../output/clapi.json -i "$@"

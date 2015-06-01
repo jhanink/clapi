@@ -1,6 +1,5 @@
 var fs = require("fs");
 var args = require("yargs").argv;
-var stripAnsi = require("strip-ansi");
 var clapi = require("./clapi_modules/clapi-helpers");
 
 function echo (msg, val) {
@@ -23,6 +22,7 @@ if (args.DEBUG) {
 var state = {
   args: args
 };
+
 var file = args.file || args.f;
 
 if (!file) {
@@ -41,10 +41,14 @@ var contents = fs.readFileSync(file);
 
 var val = JSON.parse(contents);
 var obj = val;
-
-var dasfunctions = require("./api-call-configurations/include/dasfunctions")(val);
+var dasfunctions;
 
 if (args.FUNC) {
+  if (args.CLAPI_TEMP) {
+    dasfunctions = require("./clapi_modules/clapi-temp")(val);
+  } else {
+    dasfunctions = require("./api-call-configurations/include/dasfunctions")(val);
+  }
   try {
     var fn = eval(dasfunctions[args.FUNC]);
     if (typeof(fn) !== "function") {
@@ -58,16 +62,19 @@ if (args.FUNC) {
     });
   }
 }
-else if (args.EVAL) {
+else if (args.EVAL)
+{
   contents = eval('val.' + args.EVAL);
   contents = JSON.stringify(contents);
 }
-else if (args.EXPR) {
+else if (args.EXPR)
+{
   contents = eval(args.EXPR);
   contents = JSON.stringify(contents);
 }
-else if (args.EVALHELP || args.HELP || args.i) {
-    contents = clapi.generateOutput(contents, args, obj, state);
+else if (args.EVALHELP || args.HELP || args.i)
+{
+  contents = clapi.generateOutput(contents, args, obj, state);
 }
 
 clapi.printResult(state, contents);

@@ -1,4 +1,6 @@
+var fs = require("fs");
 var prettyjson = require("prettyjson");
+var stripAnsi = require("strip-ansi");
 
 module.exports = {
   printResult: function printResult (state, contents) {
@@ -6,7 +8,7 @@ module.exports = {
       console.log(JSON.stringify(JSON.parse(contents)));
     } else if (state.args.JSON) {
       console.log(JSON.stringify(JSON.parse(contents), null, 2));
-    } else if (state.args.HELP && state.args.NOCOLOR) {
+    } else if (state.args.i && state.args.NOCOLOR) {
       var data = JSON.parse(contents);
       for (var temp in data) {
         if (data[temp].length) {
@@ -22,6 +24,24 @@ module.exports = {
       }
       console.log(prettyjson.render(JSON.parse(contents), options));
     }
+  },
+  getClapiFileContents: function (state) {
+
+    var file = state.args.file || state.args.f;
+
+    if (!file) {
+      console.log("---> no file provided");
+      return;
+    }
+
+    if (!fs.existsSync(file)) {
+      this.printResult(state, JSON.stringify({
+        "result": "file not found [" + file + "]"
+      }));
+      return;
+    }
+
+    return fs.readFileSync(file);
   },
   generateOutput: function (input, args, val, state) {
     var contents = input;
@@ -62,7 +82,7 @@ module.exports = {
     // IS leaf node
     if (typeof(temp) === "string" || typeof(temp) === "number" || typeof(temp) === "boolean")
     {
-      contents = JSON.stringify(temp)
+      return JSON.stringify(temp)
     }
     // NOT leaf node
     else
