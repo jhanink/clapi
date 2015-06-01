@@ -122,6 +122,10 @@ All the above commands automatically save to the CLAPI buffer
   
   # interactive mode against the existing clapi buffer
   ./clapi
+  
+  # clapi functions
+  ./clapi -s=../FULFILLMENT_SAMPLE.json
+  ./clapi --FUNC=fulfillmentMissingPrices
   ```
   
 ##### → ETC
