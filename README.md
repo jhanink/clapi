@@ -124,8 +124,8 @@ All the above commands automatically save to the CLAPI buffer
   ./clapi
   
   # clapi functions
-  ./clapi -s=../samples/FULFILLMENT_SAMPLE.json
-  ./clapi --FUNC=fulfillmentMissingPrices
+  ./clapi -s=../samples/missingFulfillmentPrices.json
+  ./clapi --FUNC=missingFulfillmentPrices
   ```
   
 ##### → ETC
@@ -140,7 +140,7 @@ All the above commands automatically save to the CLAPI buffer
 ```sh
 
   # find which nodes have values
-  ./clapi -s=../samples/FULFILLMENT_SAMPLE.json && \
+  ./clapi -s=../samples/missingFulfillmentPrices.json && \
   for var in $(seq 0 20); \
   do \
     echo "--- $var" && \

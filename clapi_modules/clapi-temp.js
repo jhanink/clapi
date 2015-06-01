@@ -1,6 +1,6 @@
 module.exports = function (val) {
   return {
-    fulfillmentMissingPrices: function () {
+    missingFulfillmentPrices: function () {
       var test = val.test;
       var output = [];
       for (var i = 0; i < test.length; i++) {
