@@ -140,6 +140,7 @@ All the above commands automatically save to the CLAPI buffer
 ```sh
 
   # find which nodes have values
+  ./clapi -s=../FULFILLMENT_SAMPLE.json && \
   for var in $(seq 0 20); \
   do \
     echo "--- $var" && \
