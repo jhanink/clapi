@@ -131,6 +131,18 @@ All the above commands automatically save to the CLAPI buffer
   ./curl-torbit http://www-e6.walmart.com -i                 # get torbit headers
 ```
 
+##### → TIPS & TRICKS
+
+```sh
+
+  # find which nodes have values
+  for var in $(seq 0 20); \
+  do \
+    echo "--- $var" && \
+    ./clapi test[$var].storefrontPricing.currentPrice.currentValue; \
+  done;
+```
+
 
 ### Why is this a node program instead of curl scripts?
 

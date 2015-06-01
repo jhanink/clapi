@@ -6,4 +6,7 @@ then
   exit 0;
 fi
 
+# add clapi find
+# add clapi function
+
 node ../print_output.js -f=../output/clapi.json --NODASH -i "$@"
