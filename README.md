@@ -118,6 +118,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ```sh
   
+  # implicitly save a result to the clapi buffer
+  ./get-cart
+  
   # explicitly save a json file to the clapi buffer
   ./clapi -s=../samples/SAMPLE.json
   
