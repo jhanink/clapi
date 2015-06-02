@@ -2,6 +2,15 @@ var fs = require("fs");
 var prettyjson = require("prettyjson");
 var stripAnsi = require("strip-ansi");
 
+
+var getEnvVar = function (envKey) {
+  return process.env[envKey];
+};
+
+var checkEnv = function (envKey, envVal) {
+  return getEnvVar(envKey) === envVal;
+};
+
 module.exports = {
   printResult: function printResult (state, contents) {
     if (state.args.RAW) {
@@ -111,7 +120,7 @@ module.exports = {
               linePrefix = "", prefixPadding = 0,
               prefixLength = linePrefix.length;
 
-          if (process.env.CLAPI_SHOW_DATATYPE === "ON") {
+          if (checkEnv("CLAPI_SHOW_DATATYPE", "ON")) {
             linePrefix = isArray?"array":objType;
             prefixPadding = 8;
             prefixLength = linePrefix.length;
