@@ -123,18 +123,22 @@ All the above commands automatically save to the CLAPI buffer
   # interactive mode against the existing clapi buffer
   ./clapi
   ./clapi summary
-  ./clapi summary.shippingCosts
-  ./clapi summary.shippingCosts[0]
   
+  # use the ./clapi alias ./c
+  ./c summary.shippingCosts
+  ./c summary.shippingCosts[0]
+  
+  # turn datatype display on
   export CLAPI_SHOW_DATATYPE=ON
-  ./clapi
+  ./c
   
+  # turn datatype display off
   export CLAPI_SHOW_DATATYPE=OFF
-  ./clapi
+  ./c
   
-  # clapi functions
-  ./clapi -s=../samples/missingFulfillmentPrices.json
-  ./clapi --FUNC=missingFulfillmentPrices
+  # functions
+  ./c -s=../samples/missingFulfillmentPrices.json
+  ./c --FUNC=missingFulfillmentPrices
   ```
   
 ##### → ETC
@@ -149,11 +153,11 @@ All the above commands automatically save to the CLAPI buffer
 ```sh
 
   # find which nodes have values
-  ./clapi -s=../samples/missingFulfillmentPrices.json && \
+  ./c -s=../samples/missingFulfillmentPrices.json && \
   for var in $(seq 0 20); \
   do \
     echo "--- $var" && \
-    ./clapi test[$var].storefrontPricing.currentPrice.currentValue; \
+    ./c test[$var].storefrontPricing.currentPrice.currentValue; \
   done;
 ```
 
