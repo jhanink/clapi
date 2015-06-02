@@ -110,6 +110,9 @@ module.exports = {
         }
         else
         {
+          // TODO - acrrue output information in an array of object for sorting purposes
+          // and then serialize at the end
+
           // initialize
           var child = temp[i], objType = typeof(child),
               isPrimitive = objType === "string" || objType === "number" || objType === "boolean",
