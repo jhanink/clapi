@@ -20,9 +20,6 @@ then
   exit 0;
 fi;
 
-# add clapi find
-# add clapi function
-
 if [[ "$1" =~ "--FUNC=" ]];
 then
   node ../print_output.js -f=../output/clapi.json --CLAPI_TEMP "$@"

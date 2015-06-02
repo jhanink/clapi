@@ -104,14 +104,14 @@ module.exports = {
           // initialize
           var child = temp[i], objType = typeof(child),
               isPrimitive = objType === "string" || objType === "number" || objType === "boolean",
-              isValueLeafNode = isPrimitive,
-              isPlainObject = !isPrimitive && typeof(child.length) === "undefined",
-              isArray = !isPrimitive && !isPlainObject,
+              isValueLeafNode = isPrimitive || child === null,
+              isPlainObject = !isValueLeafNode && (child != null && typeof(child.length) === "undefined"),
+              isArray = !isValueLeafNode && !isPlainObject,
           /*  no data-type  */
               linePrefix = "", prefixPadding = 0,
               prefixLength = linePrefix.length;
 
-          if (state.args.v) {
+          if (process.env.CLAPI_DATATYPE === "on") {
             linePrefix = isArray?"array":objType;
             prefixPadding = 8;
             prefixLength = linePrefix.length;
