@@ -122,6 +122,15 @@ All the above commands automatically save to the CLAPI buffer
   
   # interactive mode against the existing clapi buffer
   ./clapi
+  ./clapi summary
+  ./clapi summary.shippingCosts
+  ./clapi summary.shippingCosts[0]
+  
+  export CLAPI_SHOW_DATATYPE=ON
+  ./clapi
+  
+  export CLAPI_SHOW_DATATYPE=OFF
+  ./clapi
   
   # clapi functions
   ./clapi -s=../samples/missingFulfillmentPrices.json

@@ -111,7 +111,7 @@ module.exports = {
               linePrefix = "", prefixPadding = 0,
               prefixLength = linePrefix.length;
 
-          if (process.env.CLAPI_DATATYPE === "on") {
+          if (process.env.CLAPI_SHOW_DATATYPE === "ON") {
             linePrefix = isArray?"array":objType;
             prefixPadding = 8;
             prefixLength = linePrefix.length;
