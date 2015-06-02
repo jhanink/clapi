@@ -43,8 +43,7 @@ module.exports = {
 
     return fs.readFileSync(file);
   },
-  generateOutput: function (input, args, val, state) {
-    var contents = input;
+  generateOutput: function (val, state, args) {
     var props = [];
     var temp = args.EVALHELP || args.HELP || args.i;
     var argsHelpStr = temp;
@@ -59,9 +58,13 @@ module.exports = {
         }
       }
       argsHelpStr = _arr.join(".")
-      temp = eval('val.' + argsHelpStr);
+      var _temp = this._find(val, argsHelpStr);
+      argsHelpStr = _temp.key;
+      fs.writeFileSync(__dirname + '/../output/clapi_pasteboard', './clapi ' + argsHelpStr);
+      temp = _temp.val;
     } else {
       temp = eval('val');
+      fs.writeFileSync(__dirname + '/../output/clapi_pasteboard', './clapi ');
     }
 
     /*
@@ -151,5 +154,33 @@ module.exports = {
       output[outputKey] = props;
       return JSON.stringify(output);
     }
+  },
+  _find: function (obj, partial) {
+
+    var match, firstPart, lastPart;
+
+    try {
+      match = eval('obj.' + partial);
+      if (match) {
+        return {key: partial, val: match};
+      }
+    } catch (e) {}
+
+
+    var lastDot = partial.lastIndexOf(".");
+    if (lastDot === -1) {
+      lastPart = partial;
+    } else {
+      firstPart = partial.substring(0, lastDot);
+      lastPart = partial.substring(lastDot+1);
+      obj = eval('obj.'+firstPart);
+    }
+    for (var _i in obj) {
+      if (!obj.hasOwnProperty(_i)) continue;
+      if (_i.indexOf(lastPart) > -1) {
+        return {key: firstPart+"."+_i, val:obj[_i]};
+      }
+    }
+    return {key: partial, val:"NO MATCH FOUND for \""+partial+"\""};
   }
 };

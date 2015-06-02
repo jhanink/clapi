@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [[ "$1" =~ "-s=" ]];
 then
   f=${1: 3}
@@ -28,3 +30,5 @@ then
 fi;
 
 node ../print_output.js -f=../output/clapi.json -i "$@"
+
+cat ../output/clapi_pasteboard | pbcopy
