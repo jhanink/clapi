@@ -123,7 +123,7 @@ module.exports = {
               linePrefix = "", prefixPadding = 0,
               prefixLength = linePrefix.length;
 
-          if (checkEnv("CLAPI_SHOW_DATATYPE", "ON")) {
+          if (checkEnv("CLAPI_SET_DATATYPE", "ON")) {
             linePrefix = isArray?"array":objType;
             prefixPadding = 8;
             prefixLength = linePrefix.length;

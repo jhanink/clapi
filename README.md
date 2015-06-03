@@ -133,11 +133,11 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   ./c summary.shippingCosts[0]
   
   # turn datatype display on
-  export CLAPI_SHOW_DATATYPE=ON
+  export CLAPI_SET_DATATYPE=ON
   ./c
   
   # turn datatype display off
-  export CLAPI_SHOW_DATATYPE=OFF
+  export CLAPI_SET_DATATYPE=OFF
   ./c
   
   # functions
