@@ -16,9 +16,8 @@ List JSON payloads with drill-down and search features
 ### Features
 
 ```
-* Call an API and view the response in JSON or PRETTY mode
-* Get the last cached response for an API call
-* Use the cached result to filter, pipe, or run custom processing functions
+* Call an API and view in JSON, PRETTY, or Interactive mode
+* Use the CLAPI result buffer to grep, pipe, or process with custom functions
 ```
 
 
