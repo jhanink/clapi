@@ -9,6 +9,7 @@ npm install
 cd bin
 ```
 
+List JSON payloads with drill-down and search features
 
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi_output.png?raw=true)
 
