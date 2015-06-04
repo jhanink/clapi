@@ -85,63 +85,16 @@ module.exports = {
     {
       // inspect the properties
       var idx = 0;
-      for (var i in temp) {
-        if (!temp.hasOwnProperty(i)) continue;
+      for (var prop in temp) {
+        if (!temp.hasOwnProperty(prop)) continue;
         idx++;
         if (args.JSON)
         {
-          props.push(i);
+          props.push(prop);
         }
         else
         {
-          // TODO - accrue output information in an array of object for sorting purposes
-          // and then serialize at the end
-
-          // initialize
-          var child = temp[i], objType = typeof(child),
-              isPrimitive = objType === "string" || objType === "number" || objType === "boolean",
-              isValueLeafNode = isPrimitive || child === null,
-              isPlainObject = !isValueLeafNode && !isPrimitive && (child != null && typeof(child.length) === "undefined"),
-              isArray = child instanceof Array,
-          /*  no data-type  */
-              linePrefix = "", prefixPadding = 0,
-              prefixLength = linePrefix.length;
-
-          if (checkEnv("CLAPI_SET_DATATYPE", "ON")) {
-            linePrefix = isArray?"array":objType;
-            prefixPadding = 8;
-            prefixLength = linePrefix.length;
-          }
-
-          // prefix padding
-          for (var _pad=0;_pad<(prefixPadding-prefixLength);_pad++) {linePrefix += " "}
-          linePrefix = idx+(idx<10?"   ":"  ")+linePrefix;
-
-          // prepare output
-          var str = "\033[1;30m" + linePrefix + " \033[0m" ;
-
-          if (isValueLeafNode)
-          {
-            str += "\033[0;34m";
-            str += i + "\033[0m" + "\033[0;37m — " + child + "\033[0m";
-          }
-          else
-          {
-            var propCount = 0;
-            if (isPlainObject) {
-              for (var _p in child) {if (child.hasOwnProperty(_p)) {propCount++;}}
-            } else {
-              propCount = child.length;
-            }
-            str += propCount ? "\033[0;34m" : "\033[1;30m";
-            var toPluralize = propCount === 0 || propCount > 1;
-            str += i + "" + (propCount ? "\033[1;30m "+(isArray?"··":"○—○")+" "+propCount+(isArray?" element":" node")+(toPluralize?"s":"")+"\033[0m" : " \\");
-
-            str += "\033[0m";
-          }
-          if (args.NOCOLOR) {
-            str = stripAnsi(str);
-          }
+          var str = this._getFormattedLineOutput(temp[prop], prop, args, idx);
           props.push (str)
         }
       }
@@ -150,6 +103,56 @@ module.exports = {
       output[outputKey] = props;
       return output;
     }
+  },
+  _getFormattedLineOutput: function (child, prop, args, idx) {
+    // TODO - accrue output information in an array of object for sorting purposes
+    // and then serialize at the end
+
+    // initialize
+    var objType = typeof(child),
+        isPrimitive = objType === "string" || objType === "number" || objType === "boolean",
+        isValueLeafNode = isPrimitive || child === null,
+        isPlainObject = !isValueLeafNode && !isPrimitive && (child != null && typeof(child.length) === "undefined"),
+        isArray = child instanceof Array,
+    /*  no data-type  */
+        linePrefix = "", prefixPadding = 0,
+        prefixLength = linePrefix.length;
+
+    if (checkEnv("CLAPI_SET_DATATYPE", "ON")) {
+      linePrefix = isArray?"array":objType;
+      prefixPadding = 8;
+      prefixLength = linePrefix.length;
+    }
+
+    // prefix padding
+    for (var _pad=0;_pad<(prefixPadding-prefixLength);_pad++) {linePrefix += " "}
+    linePrefix = idx+(idx<10?"   ":"  ")+linePrefix;
+
+    // prepare output
+    var str = "\033[1;30m" + linePrefix + " \033[0m" ;
+
+    if (isValueLeafNode)
+    {
+      str += "\033[0;34m";
+      str += prop + "\033[0m" + "\033[0;37m — " + child + "\033[0m";
+    }
+    else
+    {
+      var propCount = 0;
+      if (isPlainObject) {
+        for (var _p in child) {if (child.hasOwnProperty(_p)) {propCount++;}}
+      } else {
+        propCount = child.length;
+      }
+      str += propCount ? "\033[0;34m" : "\033[1;30m";
+      var toPluralize = propCount === 0 || propCount > 1;
+      str += prop + "" + (propCount ? "\033[1;30m "+(isArray?"··":"○—○")+" "+propCount+(isArray?" element":" node")+(toPluralize?"s":"")+"\033[0m" : " \\");
+      str += "\033[0m";
+    }
+    if (args.NOCOLOR) {
+      str = stripAnsi(str);
+    }
+    return str;
   },
   _findShallow: function (obj, partial) {
     var match, firstPart, lastPart;
@@ -185,7 +188,17 @@ module.exports = {
     for (var i=0;i<searchResult.length;i++) {
       var path = searchResult[i];
       args.i = path;
-      output.push (path)
+
+      var objForPath = eval("obj." + path);
+      var type = typeof(objForPath);
+      var isPrimitive = type === "string" || type === "number" || type === "boolean";
+      var str = this._getFormattedLineOutput(obj, path, args, i+1);
+      /*output.push (
+          "\033[0;34m"
+          + path
+          + "\033[0m"
+          + (isPrimitive?" - "+objForPath: ""));*/
+      output.push(str);
     }
     var finalOutput = {}
     finalOutput["  SEARCH TERM  >  " + searchTerm] = output;
