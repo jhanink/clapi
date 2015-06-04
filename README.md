@@ -146,7 +146,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   ./cf isassoc
   ./cf email
 ```
+
 ![clapi find](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/cf_output.png?raw=true)
+
 
 ```sh
   
