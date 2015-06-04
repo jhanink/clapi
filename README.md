@@ -140,6 +140,11 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   export CLAPI_SET_DATATYPE=OFF
   ./c
   
+  # find (deep search) by property name
+  # using startsWith, case-insensitive matching 
+  ./cf isAssociate
+  ./cf isassoc
+  
   # functions
   ./c -s=../samples/missingFulfillmentPrices.json
   ./c --FUNC=missingFulfillmentPrices
