@@ -66,8 +66,8 @@ module.exports = {
 
         }
       }
-      argsHelpStr = _arr.join(".")
-      var _temp = this._find(val, argsHelpStr);
+      argsHelpStr = _arr.join(".");
+      var _temp = this._findShallow(val, argsHelpStr);
       argsHelpStr = _temp.key;
       fs.writeFileSync(__dirname + '/../output/clapi_pasteboard', './clapi ' + argsHelpStr);
       temp = _temp.val;
@@ -75,21 +75,6 @@ module.exports = {
       temp = eval('val');
       fs.writeFileSync(__dirname + '/../output/clapi_pasteboard', './clapi ');
     }
-
-    /*
-
-     Black        0;30     Dark Gray     1;30
-     Blue         0;34     Light Blue    1;34
-     Green        0;32     Light Green   1;32
-     Cyan         0;36     Light Cyan    1;36
-     Red          0;31     Light Red     1;31
-     Purple       0;35     Light Purple  1;35
-     Brown/Orange 0;33     Yellow        1;33
-     Light Gray   0;37     White         1;37
-
-     ○ • ■ · —
-
-     */
 
     // IS leaf node
     if (typeof(temp) === "string" || typeof(temp) === "number" || typeof(temp) === "boolean")
@@ -110,7 +95,7 @@ module.exports = {
         }
         else
         {
-          // TODO - acrrue output information in an array of object for sorting purposes
+          // TODO - accrue output information in an array of object for sorting purposes
           // and then serialize at the end
 
           // initialize
@@ -167,8 +152,7 @@ module.exports = {
       return JSON.stringify(output);
     }
   },
-  _find: function (obj, partial) {
-
+  _findShallow: function (obj, partial) {
     var match, firstPart, lastPart;
 
     try {
@@ -177,7 +161,6 @@ module.exports = {
         return {key: partial, val: match};
       }
     } catch (e) {}
-
 
     var lastDot = partial.lastIndexOf(".");
     if (lastDot === -1) {
@@ -194,5 +177,23 @@ module.exports = {
       }
     }
     return {key: partial, val:"NO MATCH FOUND for \""+partial+"\""};
+  },
+  // deep search matching for all keys and values matching 'term' starting at node 'obj
+  _search: function (obj, term) {
+
   }
 };
+
+/*
+
+ Black        0;30     Dark Gray     1;30
+ Blue         0;34     Light Blue    1;34
+ Green        0;32     Light Green   1;32
+ Cyan         0;36     Light Cyan    1;36
+ Red          0;31     Light Red     1;31
+ Purple       0;35     Light Purple  1;35
+ Brown/Orange 0;33     Yellow        1;33
+ Light Gray   0;37     White         1;37
+
+ ○ • ■ · —
+ */

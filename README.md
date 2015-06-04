@@ -163,6 +163,11 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
     echo "--- $var" && \
     ./c test[$var].storefrontPricing.currentPrice.currentValue; \
   done;
+  
+  # find selected purchase contract shipping options
+  ./c -s=../samples/purchaseContract.json;
+  for i in {0..3}; do ./c groups[0].shippingOptions[$i].selected; done;
+  
 ```
 
 
