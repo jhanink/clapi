@@ -74,7 +74,16 @@ else if (args.EXPR)
 }
 else if (args.EVALHELP || args.HELP || args.i)
 {
-  contents = JSON.stringify(clapi.generateOutput(obj, state, args));
+  if (args.FIND) {
+    if (args.i && typeof(args.i) !== "boolean") {
+      contents = JSON.stringify(clapi._getMatches(obj, args.i, state, args));
+    } else {
+      contents = JSON.stringify(clapi.generateOutput(obj, state, args));
+    }
+  } else {
+    contents = JSON.stringify(clapi.generateOutput(obj, state, args));
+  }
 }
 
 clapi.printResult(state, contents);
+

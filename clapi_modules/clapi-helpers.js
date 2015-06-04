@@ -181,58 +181,66 @@ module.exports = {
   _getMatches: function (obj, searchTerm, state, args) {
     var searchResult = this._search (obj, searchTerm, "", []);
 
-    var output = {}
+    var output = [];
     for (var i=0;i<searchResult.length;i++) {
       var path = searchResult[i];
       args.i = path;
-      output[path] = this.generateOutput(obj, state, args)
+      output.push (path)
     }
-    return output;
+    var finalOutput = {}
+    finalOutput["  SEARCH TERM  >  " + searchTerm] = output;
+    return finalOutput;
   },
 
   // deep search matching for all keys and values matching 'term' starting at node 'obj'
-  _search: function (obj, searchTerm, pathString, matches) {
+  _search: function (obj, searchTerm, pathString, matchesArray) {
 
-    var __getPathString = function (pathString, prop) {
-      return pathString === "" ? prop : pathString + "." + prop;
-    };
-
-    var __handleMatchIfFound = function (matches, searchTerm, pathString, prop) {
-      if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0) {
-        matches.push(__getPathString(pathString, prop));
+    var UTIL = {
+      getObjectPath: function (pathString, prop) {
+        return pathString === "" ? prop : pathString + "." + prop;
+      },
+      matchProperty: function (searchTerm, pathString, prop, matches) {
+        if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0) {
+          var propertyPath = this.getObjectPath(pathString, prop);
+          matches.push(propertyPath);
+          return true;
+        }
+        return false;
       }
     };
 
     for (var prop in obj) {
+      if (!obj.hasOwnProperty(prop)) continue;
       var child = obj[prop];
       var childTypeInfo = this._getTypeInfo(child);
-      if (childTypeInfo.isArray) {
-        __handleMatchIfFound(matches, searchTerm, pathString, prop);
+      var propertyPath = UTIL.getObjectPath(pathString, prop);
+      if (childTypeInfo.IS_ARRAY)
+      {
+        UTIL.matchProperty(searchTerm, pathString, prop, matchesArray);
         for (var i=0;i<child.length;i++) {
-          this._search(child[i], searchTerm, __getPathString(pathString, prop), matches);
+          this._search(child[i], searchTerm, propertyPath + "["+i+"]", matchesArray);
         }
       }
-      else if (childTypeInfo.isPlainObject)
+      else if (childTypeInfo.IS_PLAIN_OBJECT)
       {
-        __handleMatchIfFound(matches, searchTerm, pathString, prop);
-        this._search(obj[prop], searchTerm, __getPathString(pathString, prop), matches);
+        UTIL.matchProperty(searchTerm, pathString, prop, matchesArray);
+        this._search(child, searchTerm, propertyPath, matchesArray);
       }
-      else if (childTypeInfo.isPrimitive)
+      else if (childTypeInfo.IS_PRIMITIVE)
       {
-        __handleMatchIfFound(matches, searchTerm, pathString, prop);
+        UTIL.matchProperty(searchTerm, pathString, prop, matchesArray);
       }
-
     }
-    return matches;
+    return matchesArray;
   },
   _getTypeInfo: function (obj) {
     var type = typeof(obj);
     return {
       type: type,
-      isPrimitive: (type === "string" || type === "number" || type === "boolean"),
-      isValueLeafNode: this.isPrimitive || obj === null,
-      isPlainObject: !this.isValueLeafNode && !this.isPrimitive && (obj != null && typeof(obj.length) === "undefined"),
-      isArray: obj instanceof Array
+      IS_PRIMITIVE: (type === "string" || type === "number" || type === "boolean"),
+      IS_VALUE_LEAF_NODE: this.IS_PRIMITIVE || obj === null,
+      IS_PLAIN_OBJECT: !this.IS_VALUE_LEAF_NODE && !this.IS_PRIMITIVE && (obj != null && typeof(obj.length) === "undefined"),
+      IS_ARRAY: obj instanceof Array
     }
   }
 };

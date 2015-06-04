@@ -1,4 +1,4 @@
-var clapi = require(".//clapi-helpers");
+var clapi = require("./clapi-helpers");
 module.exports = function (val) {
   return {
     missingFulfillmentPrices: function () {
@@ -53,8 +53,9 @@ module.exports = function (val) {
         ]
       };
       var matches = [];
-      var result = clapi._search(obj, "rrr", "", matches);
+      var result = clapi._search(obj, "rrrrr", "", matches);
       console.log(result);
+      process.exit();
     }
   }
 };

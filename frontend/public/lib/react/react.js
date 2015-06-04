@@ -119,7 +119,7 @@
 
       var expectedFeatures = [
         // shims
-        Array.isArray,
+        Array.IS_ARRAY,
         Array.prototype.every,
         Array.prototype.forEach,
         Array.prototype.indexOf,
@@ -3248,8 +3248,8 @@
       var dispatchListeners = event._dispatchListeners;
       var dispatchIDs = event._dispatchIDs;
 
-      var listenersIsArr = Array.isArray(dispatchListeners);
-      var idsIsArr = Array.isArray(dispatchIDs);
+      var listenersIsArr = Array.IS_ARRAY(dispatchListeners);
+      var idsIsArr = Array.IS_ARRAY(dispatchIDs);
       var IDsLen = idsIsArr ? dispatchIDs.length : dispatchIDs ? 1 : 0;
       var listenersLen = listenersIsArr ?
           dispatchListeners.length :
@@ -3273,7 +3273,7 @@
     if ("production" !== "development") {
       validateEventDispatches(event);
     }
-    if (Array.isArray(dispatchListeners)) {
+    if (Array.IS_ARRAY(dispatchListeners)) {
       for (var i = 0; i < dispatchListeners.length; i++) {
         if (event.isPropagationStopped()) {
           break;
@@ -3321,7 +3321,7 @@
     if ("production" !== "development") {
       validateEventDispatches(event);
     }
-    if (Array.isArray(dispatchListeners)) {
+    if (Array.IS_ARRAY(dispatchListeners)) {
       for (var i = 0; i < dispatchListeners.length; i++) {
         if (event.isPropagationStopped()) {
           break;
@@ -3365,9 +3365,9 @@
     var dispatchListener = event._dispatchListeners;
     var dispatchID = event._dispatchIDs;
     ("production" !== "development" ? invariant(
-        !Array.isArray(dispatchListener),
+        !Array.IS_ARRAY(dispatchListener),
         'executeDirectDispatch(...): Invalid `event`.'
-    ) : invariant(!Array.isArray(dispatchListener)));
+    ) : invariant(!Array.IS_ARRAY(dispatchListener)));
     var res = dispatchListener ?
         dispatchListener(event, dispatchID) :
         null;
@@ -5845,10 +5845,10 @@
           }
         }
         ("production" !== "development" ? invariant(
-            typeof initialState === 'object' && !Array.isArray(initialState),
+            typeof initialState === 'object' && !Array.IS_ARRAY(initialState),
             '%s.getInitialState(): must return an object or null',
             Constructor.displayName || 'ReactCompositeComponent'
-        ) : invariant(typeof initialState === 'object' && !Array.isArray(initialState)));
+        ) : invariant(typeof initialState === 'object' && !Array.IS_ARRAY(initialState)));
 
         this.state = initialState;
       };
@@ -6395,10 +6395,10 @@
         inst.state = initialState = null;
       }
       ("production" !== "development" ? invariant(
-          typeof initialState === 'object' && !Array.isArray(initialState),
+          typeof initialState === 'object' && !Array.IS_ARRAY(initialState),
           '%s.state: must be set to an object or null',
           this.getName() || 'ReactCompositeComponent'
-      ) : invariant(typeof initialState === 'object' && !Array.isArray(initialState)));
+      ) : invariant(typeof initialState === 'object' && !Array.IS_ARRAY(initialState)));
 
       this._pendingStateQueue = null;
       this._pendingReplaceState = false;
@@ -8529,14 +8529,14 @@
       return null;
     }
     if (props.multiple) {
-      if (!Array.isArray(props[propName])) {
+      if (!Array.IS_ARRAY(props[propName])) {
         return new Error(
             ("The `" + propName + "` prop supplied to <select> must be an array if ") +
             ("`multiple` is true.")
         );
       }
     } else {
-      if (Array.isArray(props[propName])) {
+      if (Array.IS_ARRAY(props[propName])) {
         return new Error(
             ("The `" + propName + "` prop supplied to <select> must be a scalar ") +
             ("value if `multiple` is false.")
@@ -9065,7 +9065,7 @@
             defaultValue == null,
             'If you supply `defaultValue` on a <textarea>, do not pass children.'
         ) : invariant(defaultValue == null));
-        if (Array.isArray(children)) {
+        if (Array.IS_ARRAY(children)) {
           ("production" !== "development" ? invariant(
               children.length <= 1,
               '<textarea> can only have at most one child.'
@@ -10323,7 +10323,7 @@
    * @param {*} parentType node's parent's type.
    */
   function validateChildKeys(node, parentType) {
-    if (Array.isArray(node)) {
+    if (Array.IS_ARRAY(node)) {
       for (var i = 0; i < node.length; i++) {
         var child = node[i];
         if (ReactElement.isValidElement(child)) {
@@ -11058,7 +11058,7 @@
     // of its properties.
     create: function(object) {
       if ("production" !== "development") {
-        if (typeof object !== 'object' || !object || Array.isArray(object)) {
+        if (typeof object !== 'object' || !object || Array.IS_ARRAY(object)) {
           ("production" !== "development" ? warning(
               false,
               'React.addons.createFragment only accepts a single object.',
@@ -13648,7 +13648,7 @@
   function createArrayOfTypeChecker(typeChecker) {
     function validate(props, propName, componentName, location) {
       var propValue = props[propName];
-      if (!Array.isArray(propValue)) {
+      if (!Array.IS_ARRAY(propValue)) {
         var locationName = ReactPropTypeLocationNames[location];
         var propType = getPropType(propValue);
         return new Error(
@@ -13806,7 +13806,7 @@
       case 'boolean':
         return !propValue;
       case 'object':
-        if (Array.isArray(propValue)) {
+        if (Array.IS_ARRAY(propValue)) {
           return propValue.every(isNode);
         }
         if (propValue === null || ReactElement.isValidElement(propValue)) {
@@ -13827,7 +13827,7 @@
 // Equivalent of `typeof` but with special handling for array and regexp.
   function getPropType(propValue) {
     var propType = typeof propValue;
-    if (Array.isArray(propValue)) {
+    if (Array.IS_ARRAY(propValue)) {
       return 'array';
     }
     if (propValue instanceof RegExp) {
@@ -16855,8 +16855,8 @@
 
     // Both are not empty. Warning: Never call x.concat(y) when you are not
     // certain that x is an Array (x could be a string with concat method).
-    var currentIsArray = Array.isArray(current);
-    var nextIsArray = Array.isArray(next);
+    var currentIsArray = Array.IS_ARRAY(current);
+    var nextIsArray = Array.IS_ARRAY(next);
 
     if (currentIsArray && nextIsArray) {
       current.push.apply(current, next);
@@ -17076,7 +17076,7 @@
     (
       // a real array
         (// HTMLCollection/NodeList
-            (Array.isArray(obj) ||
+            (Array.IS_ARRAY(obj) ||
               // arguments
             ('callee' in obj) || 'item' in obj))
     )
@@ -17107,7 +17107,7 @@
   function createArrayFromMixed(obj) {
     if (!hasArrayNature(obj)) {
       return [obj];
-    } else if (Array.isArray(obj)) {
+    } else if (Array.IS_ARRAY(obj)) {
       return obj.slice();
     } else {
       return toArray(obj);
@@ -17596,7 +17596,7 @@
    * allocate an array).
    */
   var forEachAccumulated = function(arr, cb, scope) {
-    if (Array.isArray(arr)) {
+    if (Array.IS_ARRAY(arr)) {
       arr.forEach(cb, scope);
     } else if (arr) {
       cb.call(scope, arr);
@@ -18681,9 +18681,9 @@
     var ret = {};
     var key;
     ("production" !== "development" ? invariant(
-        obj instanceof Object && !Array.isArray(obj),
+        obj instanceof Object && !Array.IS_ARRAY(obj),
         'keyMirror(...): Argument must be an object.'
-    ) : invariant(obj instanceof Object && !Array.isArray(obj)));
+    ) : invariant(obj instanceof Object && !Array.IS_ARRAY(obj)));
     for (key in obj) {
       if (!obj.hasOwnProperty(key)) {
         continue;
@@ -19246,10 +19246,10 @@
     // Some browse builtin objects can report typeof 'function' (e.g. NodeList in
     // old versions of Safari).
     ("production" !== "development" ? invariant(
-        !Array.isArray(obj) &&
+        !Array.IS_ARRAY(obj) &&
         (typeof obj === 'object' || typeof obj === 'function'),
         'toArray: Array-like object expected'
-    ) : invariant(!Array.isArray(obj) &&
+    ) : invariant(!Array.IS_ARRAY(obj) &&
         (typeof obj === 'object' || typeof obj === 'function')));
 
     ("production" !== "development" ? invariant(
@@ -19411,7 +19411,7 @@
     var child, nextName, nextIndex;
     var subtreeCount = 0; // Count of children found in the current subtree.
 
-    if (Array.isArray(children)) {
+    if (Array.IS_ARRAY(children)) {
       for (var i = 0; i < children.length; i++) {
         child = children[i];
         nextName = (
