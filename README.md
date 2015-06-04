@@ -146,7 +146,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   ./cf isassoc
   ./cf email
   
-  # ./find alias for ./cf` 
+  # ./find alias for ./cf 
   ./find email
 ```
 
