@@ -94,7 +94,8 @@ module.exports = {
         }
         else
         {
-          var str = this._getFormattedLineOutput(temp[prop], prop, args, idx);
+          var child = temp[prop];
+          var str = this._getFormattedLineOutput(child, prop, args, idx);
           props.push (str)
         }
       }
@@ -188,16 +189,8 @@ module.exports = {
     for (var i=0;i<searchResult.length;i++) {
       var path = searchResult[i];
       args.i = path;
-
-      var objForPath = eval("obj." + path);
-      var type = typeof(objForPath);
-      var isPrimitive = type === "string" || type === "number" || type === "boolean";
-      var str = this._getFormattedLineOutput(obj, path, args, i+1);
-      /*output.push (
-          "\033[0;34m"
-          + path
-          + "\033[0m"
-          + (isPrimitive?" - "+objForPath: ""));*/
+      var child = eval('obj.'+path);
+      var str = this._getFormattedLineOutput(child, path, args, i+1);
       output.push(str);
     }
     var finalOutput = {}
