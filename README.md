@@ -141,7 +141,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   ./c
   
   # find (deep search) by property name
-  # using startsWith, case-insensitive matching 
+  # uses starts-with, case-insensitive matching 
   ./cf isAssociate
   ./cf isassoc
   ./cf email
