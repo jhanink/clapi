@@ -1,3 +1,4 @@
+var clapi = require(".//clapi-helpers");
 module.exports = function (val) {
   return {
     missingFulfillmentPrices: function () {
@@ -16,6 +17,44 @@ module.exports = function (val) {
       }
       // return an object with an array
       return {"test.storefrontPricing": output};
+    },
+    test: function () {
+      var obj = {
+        a: {
+          b: 1,
+          j: {
+            k: {
+              m: "22",
+              n: false,
+              p: [1,2,3],
+              q: [
+                {aa: 1},
+                {bb: 2}
+              ]
+            }
+          }
+        },
+        c : [
+          {
+            d: {
+              e:2
+            }
+          },
+          {
+            f: {
+              g: {
+                h: 2,
+                rrrr: [
+
+                ]
+              }
+            }
+          }
+        ]
+      };
+      var matches = [];
+      var result = clapi._search(obj, "rrr", "", matches);
+      console.log(result);
     }
   }
 };

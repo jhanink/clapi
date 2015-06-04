@@ -2,7 +2,6 @@ var fs = require("fs");
 var prettyjson = require("prettyjson");
 var stripAnsi = require("strip-ansi");
 
-
 var getEnvVar = function (envKey) {
   return process.env[envKey];
 };
@@ -102,8 +101,8 @@ module.exports = {
           var child = temp[i], objType = typeof(child),
               isPrimitive = objType === "string" || objType === "number" || objType === "boolean",
               isValueLeafNode = isPrimitive || child === null,
-              isPlainObject = !isValueLeafNode && (child != null && typeof(child.length) === "undefined"),
-              isArray = !isValueLeafNode && !isPlainObject,
+              isPlainObject = !isValueLeafNode && !isPrimitive && (child != null && typeof(child.length) === "undefined"),
+              isArray = child instanceof Array,
           /*  no data-type  */
               linePrefix = "", prefixPadding = 0,
               prefixLength = linePrefix.length;
@@ -149,7 +148,7 @@ module.exports = {
       var output = {};
       var outputKey = "" + (hasArgsValue ? "\033[0;33m "+argsHelpStr+"\033[0m" : ":");
       output[outputKey] = props;
-      return JSON.stringify(output);
+      return output;
     }
   },
   _findShallow: function (obj, partial) {
@@ -178,9 +177,63 @@ module.exports = {
     }
     return {key: partial, val:"NO MATCH FOUND for \""+partial+"\""};
   },
-  // deep search matching for all keys and values matching 'term' starting at node 'obj
-  _search: function (obj, term) {
 
+  _getMatches: function (obj, searchTerm, state, args) {
+    var searchResult = this._search (obj, searchTerm, "", []);
+
+    var output = {}
+    for (var i=0;i<searchResult.length;i++) {
+      var path = searchResult[i];
+      args.i = path;
+      output[path] = this.generateOutput(obj, state, args)
+    }
+    return output;
+  },
+
+  // deep search matching for all keys and values matching 'term' starting at node 'obj'
+  _search: function (obj, searchTerm, pathString, matches) {
+
+    var __getPathString = function (pathString, prop) {
+      return pathString === "" ? prop : pathString + "." + prop;
+    };
+
+    var __handleMatchIfFound = function (matches, searchTerm, pathString, prop) {
+      if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0) {
+        matches.push(__getPathString(pathString, prop));
+      }
+    };
+
+    for (var prop in obj) {
+      var child = obj[prop];
+      var childTypeInfo = this._getTypeInfo(child);
+      if (childTypeInfo.isArray) {
+        __handleMatchIfFound(matches, searchTerm, pathString, prop);
+        for (var i=0;i<child.length;i++) {
+          this._search(child[i], searchTerm, __getPathString(pathString, prop), matches);
+        }
+      }
+      else if (childTypeInfo.isPlainObject)
+      {
+        __handleMatchIfFound(matches, searchTerm, pathString, prop);
+        this._search(obj[prop], searchTerm, __getPathString(pathString, prop), matches);
+      }
+      else if (childTypeInfo.isPrimitive)
+      {
+        __handleMatchIfFound(matches, searchTerm, pathString, prop);
+      }
+
+    }
+    return matches;
+  },
+  _getTypeInfo: function (obj) {
+    var type = typeof(obj);
+    return {
+      type: type,
+      isPrimitive: (type === "string" || type === "number" || type === "boolean"),
+      isValueLeafNode: this.isPrimitive || obj === null,
+      isPlainObject: !this.isValueLeafNode && !this.isPrimitive && (obj != null && typeof(obj.length) === "undefined"),
+      isArray: obj instanceof Array
+    }
   }
 };
 

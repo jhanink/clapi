@@ -74,8 +74,7 @@ else if (args.EXPR)
 }
 else if (args.EVALHELP || args.HELP || args.i)
 {
-  contents = clapi.generateOutput(obj, state, args);
+  contents = JSON.stringify(clapi.generateOutput(obj, state, args));
 }
 
 clapi.printResult(state, contents);
-
