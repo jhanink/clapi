@@ -119,7 +119,7 @@
 
       var expectedFeatures = [
         // shims
-        Array.IS_ARRAY,
+        Array.isArray,
         Array.prototype.every,
         Array.prototype.forEach,
         Array.prototype.indexOf,
@@ -206,8 +206,8 @@
   var START_KEYCODE = 229;
 
   var canUseCompositionEvent = (
-  ExecutionEnvironment.canUseDOM &&
-  'CompositionEvent' in window
+      ExecutionEnvironment.canUseDOM &&
+      'CompositionEvent' in window
   );
 
   var documentMode = null;
@@ -219,20 +219,20 @@
 // directly represent `beforeInput`. The IE `textinput` event is not as
 // useful, so we don't use it.
   var canUseTextInputEvent = (
-  ExecutionEnvironment.canUseDOM &&
-  'TextEvent' in window &&
-  !documentMode &&
-  !isPresto()
+      ExecutionEnvironment.canUseDOM &&
+      'TextEvent' in window &&
+      !documentMode &&
+      !isPresto()
   );
 
 // In IE9+, we have access to composition events, but the data supplied
 // by the native compositionend event may be incorrect. Japanese ideographic
 // spaces, for instance (\u3000) are not recorded correctly.
   var useFallbackCompositionData = (
-  ExecutionEnvironment.canUseDOM &&
-  (
-      (!canUseCompositionEvent || documentMode && documentMode > 8 && documentMode <= 11)
-  )
+      ExecutionEnvironment.canUseDOM &&
+      (
+          (!canUseCompositionEvent || documentMode && documentMode > 8 && documentMode <= 11)
+      )
   );
 
   /**
@@ -242,9 +242,9 @@
   function isPresto() {
     var opera = window.opera;
     return (
-    typeof opera === 'object' &&
-    typeof opera.version === 'function' &&
-    parseInt(opera.version(), 10) <= 12
+        typeof opera === 'object' &&
+        typeof opera.version === 'function' &&
+        parseInt(opera.version(), 10) <= 12
     );
   }
 
@@ -321,9 +321,9 @@
    */
   function isKeypressCommand(nativeEvent) {
     return (
-    (nativeEvent.ctrlKey || nativeEvent.altKey || nativeEvent.metaKey) &&
-      // ctrlKey && altKey is equivalent to AltGr, and is not a command.
-    !(nativeEvent.ctrlKey && nativeEvent.altKey)
+        (nativeEvent.ctrlKey || nativeEvent.altKey || nativeEvent.metaKey) &&
+          // ctrlKey && altKey is equivalent to AltGr, and is not a command.
+        !(nativeEvent.ctrlKey && nativeEvent.altKey)
     );
   }
 
@@ -355,8 +355,8 @@
    */
   function isFallbackCompositionStart(topLevelType, nativeEvent) {
     return (
-    topLevelType === topLevelTypes.topKeyDown &&
-    nativeEvent.keyCode === START_KEYCODE
+        topLevelType === topLevelTypes.topKeyDown &&
+        nativeEvent.keyCode === START_KEYCODE
     );
   }
 
@@ -1135,8 +1135,8 @@
    */
   function shouldUseChangeEvent(elem) {
     return (
-    elem.nodeName === 'SELECT' ||
-    (elem.nodeName === 'INPUT' && elem.type === 'file')
+        elem.nodeName === 'SELECT' ||
+        (elem.nodeName === 'INPUT' && elem.type === 'file')
     );
   }
 
@@ -1368,8 +1368,8 @@
     // This approach works across all browsers, whereas `change` does not fire
     // until `blur` in IE8.
     return (
-    elem.nodeName === 'INPUT' &&
-    (elem.type === 'checkbox' || elem.type === 'radio')
+        elem.nodeName === 'INPUT' &&
+        (elem.type === 'checkbox' || elem.type === 'radio')
     );
   }
 
@@ -3248,8 +3248,8 @@
       var dispatchListeners = event._dispatchListeners;
       var dispatchIDs = event._dispatchIDs;
 
-      var listenersIsArr = Array.IS_ARRAY(dispatchListeners);
-      var idsIsArr = Array.IS_ARRAY(dispatchIDs);
+      var listenersIsArr = Array.isArray(dispatchListeners);
+      var idsIsArr = Array.isArray(dispatchIDs);
       var IDsLen = idsIsArr ? dispatchIDs.length : dispatchIDs ? 1 : 0;
       var listenersLen = listenersIsArr ?
           dispatchListeners.length :
@@ -3273,7 +3273,7 @@
     if ("production" !== "development") {
       validateEventDispatches(event);
     }
-    if (Array.IS_ARRAY(dispatchListeners)) {
+    if (Array.isArray(dispatchListeners)) {
       for (var i = 0; i < dispatchListeners.length; i++) {
         if (event.isPropagationStopped()) {
           break;
@@ -3321,7 +3321,7 @@
     if ("production" !== "development") {
       validateEventDispatches(event);
     }
-    if (Array.IS_ARRAY(dispatchListeners)) {
+    if (Array.isArray(dispatchListeners)) {
       for (var i = 0; i < dispatchListeners.length; i++) {
         if (event.isPropagationStopped()) {
           break;
@@ -3365,9 +3365,9 @@
     var dispatchListener = event._dispatchListeners;
     var dispatchID = event._dispatchIDs;
     ("production" !== "development" ? invariant(
-        !Array.IS_ARRAY(dispatchListener),
+        !Array.isArray(dispatchListener),
         'executeDirectDispatch(...): Invalid `event`.'
-    ) : invariant(!Array.IS_ARRAY(dispatchListener)));
+    ) : invariant(!Array.isArray(dispatchListener)));
     var res = dispatchListener ?
         dispatchListener(event, dispatchID) :
         null;
@@ -3711,12 +3711,12 @@
   if (ExecutionEnvironment.canUseDOM) {
     var implementation = document.implementation;
     hasSVG = (
-    implementation &&
-    implementation.hasFeature &&
-    implementation.hasFeature(
-        'http://www.w3.org/TR/SVG11/feature#BasicStructure',
-        '1.1'
-    )
+        implementation &&
+        implementation.hasFeature &&
+        implementation.hasFeature(
+            'http://www.w3.org/TR/SVG11/feature#BasicStructure',
+            '1.1'
+        )
     );
   }
 
@@ -5750,8 +5750,8 @@
       }
       var internalInstance = ReactInstanceMap.get(this);
       return (
-      internalInstance &&
-      internalInstance !== ReactLifeCycle.currentlyMountingInstance
+          internalInstance &&
+          internalInstance !== ReactLifeCycle.currentlyMountingInstance
       );
     },
 
@@ -5845,10 +5845,10 @@
           }
         }
         ("production" !== "development" ? invariant(
-            typeof initialState === 'object' && !Array.IS_ARRAY(initialState),
+            typeof initialState === 'object' && !Array.isArray(initialState),
             '%s.getInitialState(): must return an object or null',
             Constructor.displayName || 'ReactCompositeComponent'
-        ) : invariant(typeof initialState === 'object' && !Array.IS_ARRAY(initialState)));
+        ) : invariant(typeof initialState === 'object' && !Array.isArray(initialState)));
 
         this.state = initialState;
       };
@@ -6395,10 +6395,10 @@
         inst.state = initialState = null;
       }
       ("production" !== "development" ? invariant(
-          typeof initialState === 'object' && !Array.IS_ARRAY(initialState),
+          typeof initialState === 'object' && !Array.isArray(initialState),
           '%s.state: must be set to an object or null',
           this.getName() || 'ReactCompositeComponent'
-      ) : invariant(typeof initialState === 'object' && !Array.IS_ARRAY(initialState)));
+      ) : invariant(typeof initialState === 'object' && !Array.isArray(initialState)));
 
       this._pendingStateQueue = null;
       this._pendingReplaceState = false;
@@ -7053,9 +7053,9 @@
       var type = this._currentElement.type;
       var constructor = this._instance && this._instance.constructor;
       return (
-      type.displayName || (constructor && constructor.displayName) ||
-      type.name || (constructor && constructor.name) ||
-      null
+          type.displayName || (constructor && constructor.displayName) ||
+          type.name || (constructor && constructor.name) ||
+          null
       );
     },
 
@@ -7643,9 +7643,9 @@
       assertValidProps(this._currentElement.props);
       var closeTag = omittedCloseTags[this._tag] ? '' : '</' + this._tag + '>';
       return (
-      this._createOpenTagMarkupAndPutListeners(transaction) +
-      this._createContentMarkup(transaction, context) +
-      closeTag
+          this._createOpenTagMarkupAndPutListeners(transaction) +
+          this._createContentMarkup(transaction, context) +
+          closeTag
       );
     },
 
@@ -8529,14 +8529,14 @@
       return null;
     }
     if (props.multiple) {
-      if (!Array.IS_ARRAY(props[propName])) {
+      if (!Array.isArray(props[propName])) {
         return new Error(
             ("The `" + propName + "` prop supplied to <select> must be an array if ") +
             ("`multiple` is true.")
         );
       }
     } else {
-      if (Array.IS_ARRAY(props[propName])) {
+      if (Array.isArray(props[propName])) {
         return new Error(
             ("The `" + propName + "` prop supplied to <select> must be a scalar ") +
             ("value if `multiple` is false.")
@@ -8855,9 +8855,9 @@
   }
 
   var useIEOffsets = (
-  ExecutionEnvironment.canUseDOM &&
-  'selection' in document &&
-  !('getSelection' in window)
+      ExecutionEnvironment.canUseDOM &&
+      'selection' in document &&
+      !('getSelection' in window)
   );
 
   var ReactDOMSelection = {
@@ -8954,9 +8954,9 @@
       }
 
       return (
-      '<span ' + DOMPropertyOperations.createMarkupForID(rootID) + '>' +
-      escapedText +
-      '</span>'
+          '<span ' + DOMPropertyOperations.createMarkupForID(rootID) + '>' +
+          escapedText +
+          '</span>'
       );
     },
 
@@ -9065,7 +9065,7 @@
             defaultValue == null,
             'If you supply `defaultValue` on a <textarea>, do not pass children.'
         ) : invariant(defaultValue == null));
-        if (Array.IS_ARRAY(children)) {
+        if (Array.isArray(children)) {
           ("production" !== "development" ? invariant(
               children.length <= 1,
               '<textarea> can only have at most one child.'
@@ -10218,7 +10218,7 @@
   function getCurrentOwnerDisplayName() {
     var current = ReactCurrentOwner.current;
     return (
-    current && getName(current) || undefined
+        current && getName(current) || undefined
     );
   }
 
@@ -10323,7 +10323,7 @@
    * @param {*} parentType node's parent's type.
    */
   function validateChildKeys(node, parentType) {
-    if (Array.IS_ARRAY(node)) {
+    if (Array.isArray(node)) {
       for (var i = 0; i < node.length; i++) {
         var child = node[i];
         if (ReactElement.isValidElement(child)) {
@@ -11058,7 +11058,7 @@
     // of its properties.
     create: function(object) {
       if ("production" !== "development") {
-        if (typeof object !== 'object' || !object || Array.IS_ARRAY(object)) {
+        if (typeof object !== 'object' || !object || Array.isArray(object)) {
           ("production" !== "development" ? warning(
               false,
               'React.addons.createFragment only accepts a single object.',
@@ -11378,7 +11378,7 @@
    */
   function isValidID(id) {
     return id === '' || (
-        id.charAt(0) === SEPARATOR && id.charAt(id.length - 1) !== SEPARATOR
+            id.charAt(0) === SEPARATOR && id.charAt(id.length - 1) !== SEPARATOR
         );
   }
 
@@ -11392,8 +11392,8 @@
    */
   function isAncestorIDOf(ancestorID, descendantID) {
     return (
-    descendantID.indexOf(ancestorID) === 0 &&
-    isBoundary(descendantID, ancestorID.length)
+        descendantID.indexOf(ancestorID) === 0 &&
+        isBoundary(descendantID, ancestorID.length)
     );
   }
 
@@ -13648,7 +13648,7 @@
   function createArrayOfTypeChecker(typeChecker) {
     function validate(props, propName, componentName, location) {
       var propValue = props[propName];
-      if (!Array.IS_ARRAY(propValue)) {
+      if (!Array.isArray(propValue)) {
         var locationName = ReactPropTypeLocationNames[location];
         var propType = getPropType(propValue);
         return new Error(
@@ -13806,7 +13806,7 @@
       case 'boolean':
         return !propValue;
       case 'object':
-        if (Array.IS_ARRAY(propValue)) {
+        if (Array.isArray(propValue)) {
           return propValue.every(isNode);
         }
         if (propValue === null || ReactElement.isValidElement(propValue)) {
@@ -13827,7 +13827,7 @@
 // Equivalent of `typeof` but with special handling for array and regexp.
   function getPropType(propValue) {
     var propType = typeof propValue;
-    if (Array.IS_ARRAY(propValue)) {
+    if (Array.isArray(propValue)) {
       return 'array';
     }
     if (propValue instanceof RegExp) {
@@ -14266,8 +14266,8 @@
     // instantiateReactComponent is done.
 
     return (
-    nextElement._owner !== prevElement._owner ||
-    nextElement.ref !== prevElement.ref
+        nextElement._owner !== prevElement._owner ||
+        nextElement.ref !== prevElement.ref
     );
   };
 
@@ -16855,8 +16855,8 @@
 
     // Both are not empty. Warning: Never call x.concat(y) when you are not
     // certain that x is an Array (x could be a string with concat method).
-    var currentIsArray = Array.IS_ARRAY(current);
-    var nextIsArray = Array.IS_ARRAY(next);
+    var currentIsArray = Array.isArray(current);
+    var nextIsArray = Array.isArray(next);
 
     if (currentIsArray && nextIsArray) {
       current.push.apply(current, next);
@@ -17063,23 +17063,23 @@
   function hasArrayNature(obj) {
     return (
       // not null/false
-    !!obj &&
-      // arrays are objects, NodeLists are functions in Safari
-    (typeof obj == 'object' || typeof obj == 'function') &&
-      // quacks like an array
-    ('length' in obj) &&
-      // not window
-    !('setInterval' in obj) &&
-      // no DOM node should be considered an array-like
-      // a 'select' element has 'length' and 'item' properties on IE8
-    (typeof obj.nodeType != 'number') &&
-    (
-      // a real array
-        (// HTMLCollection/NodeList
-            (Array.IS_ARRAY(obj) ||
-              // arguments
-            ('callee' in obj) || 'item' in obj))
-    )
+        !!obj &&
+          // arrays are objects, NodeLists are functions in Safari
+        (typeof obj == 'object' || typeof obj == 'function') &&
+          // quacks like an array
+        ('length' in obj) &&
+          // not window
+        !('setInterval' in obj) &&
+          // no DOM node should be considered an array-like
+          // a 'select' element has 'length' and 'item' properties on IE8
+        (typeof obj.nodeType != 'number') &&
+        (
+          // a real array
+            (// HTMLCollection/NodeList
+                (Array.isArray(obj) ||
+                  // arguments
+                ('callee' in obj) || 'item' in obj))
+        )
     );
   }
 
@@ -17107,7 +17107,7 @@
   function createArrayFromMixed(obj) {
     if (!hasArrayNature(obj)) {
       return [obj];
-    } else if (Array.IS_ARRAY(obj)) {
+    } else if (Array.isArray(obj)) {
       return obj.slice();
     } else {
       return toArray(obj);
@@ -17596,7 +17596,7 @@
    * allocate an array).
    */
   var forEachAccumulated = function(arr, cb, scope) {
-    if (Array.IS_ARRAY(arr)) {
+    if (Array.isArray(arr)) {
       arr.forEach(cb, scope);
     } else if (arr) {
       cb.call(scope, arr);
@@ -18333,10 +18333,10 @@
    */
   function isInternalComponentType(type) {
     return (
-    typeof type === 'function' &&
-    typeof type.prototype !== 'undefined' &&
-    typeof type.prototype.mountComponent === 'function' &&
-    typeof type.prototype.receiveComponent === 'function'
+        typeof type === 'function' &&
+        typeof type.prototype !== 'undefined' &&
+        typeof type.prototype.mountComponent === 'function' &&
+        typeof type.prototype.receiveComponent === 'function'
     );
   }
 
@@ -18681,9 +18681,9 @@
     var ret = {};
     var key;
     ("production" !== "development" ? invariant(
-        obj instanceof Object && !Array.IS_ARRAY(obj),
+        obj instanceof Object && !Array.isArray(obj),
         'keyMirror(...): Argument must be an object.'
-    ) : invariant(obj instanceof Object && !Array.IS_ARRAY(obj)));
+    ) : invariant(obj instanceof Object && !Array.isArray(obj)));
     for (key in obj) {
       if (!obj.hasOwnProperty(key)) {
         continue;
@@ -19246,10 +19246,10 @@
     // Some browse builtin objects can report typeof 'function' (e.g. NodeList in
     // old versions of Safari).
     ("production" !== "development" ? invariant(
-        !Array.IS_ARRAY(obj) &&
+        !Array.isArray(obj) &&
         (typeof obj === 'object' || typeof obj === 'function'),
         'toArray: Array-like object expected'
-    ) : invariant(!Array.IS_ARRAY(obj) &&
+    ) : invariant(!Array.isArray(obj) &&
         (typeof obj === 'object' || typeof obj === 'function')));
 
     ("production" !== "development" ? invariant(
@@ -19411,12 +19411,12 @@
     var child, nextName, nextIndex;
     var subtreeCount = 0; // Count of children found in the current subtree.
 
-    if (Array.IS_ARRAY(children)) {
+    if (Array.isArray(children)) {
       for (var i = 0; i < children.length; i++) {
         child = children[i];
         nextName = (
-        (nameSoFar !== '' ? nameSoFar + SUBSEPARATOR : SEPARATOR) +
-        getComponentKey(child, i)
+            (nameSoFar !== '' ? nameSoFar + SUBSEPARATOR : SEPARATOR) +
+            getComponentKey(child, i)
         );
         nextIndex = indexSoFar + subtreeCount;
         subtreeCount += traverseAllChildrenImpl(
@@ -19437,8 +19437,8 @@
           while (!(step = iterator.next()).done) {
             child = step.value;
             nextName = (
-            (nameSoFar !== '' ? nameSoFar + SUBSEPARATOR : SEPARATOR) +
-            getComponentKey(child, ii++)
+                (nameSoFar !== '' ? nameSoFar + SUBSEPARATOR : SEPARATOR) +
+                getComponentKey(child, ii++)
             );
             nextIndex = indexSoFar + subtreeCount;
             subtreeCount += traverseAllChildrenImpl(
@@ -19465,9 +19465,9 @@
             if (entry) {
               child = entry[1];
               nextName = (
-              (nameSoFar !== '' ? nameSoFar + SUBSEPARATOR : SEPARATOR) +
-              wrapUserProvidedKey(entry[0]) + SUBSEPARATOR +
-              getComponentKey(child, 0)
+                  (nameSoFar !== '' ? nameSoFar + SUBSEPARATOR : SEPARATOR) +
+                  wrapUserProvidedKey(entry[0]) + SUBSEPARATOR +
+                  getComponentKey(child, 0)
               );
               nextIndex = indexSoFar + subtreeCount;
               subtreeCount += traverseAllChildrenImpl(
@@ -19491,9 +19491,9 @@
           if (fragment.hasOwnProperty(key)) {
             child = fragment[key];
             nextName = (
-            (nameSoFar !== '' ? nameSoFar + SUBSEPARATOR : SEPARATOR) +
-            wrapUserProvidedKey(key) + SUBSEPARATOR +
-            getComponentKey(child, 0)
+                (nameSoFar !== '' ? nameSoFar + SUBSEPARATOR : SEPARATOR) +
+                wrapUserProvidedKey(key) + SUBSEPARATOR +
+                getComponentKey(child, 0)
             );
             nextIndex = indexSoFar + subtreeCount;
             subtreeCount += traverseAllChildrenImpl(

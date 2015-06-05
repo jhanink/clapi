@@ -52,26 +52,23 @@ module.exports =
       fs.writeFileSync(__dirname + '/../output/' + Const.NAMES.PASTEBOARD, './clapi ');
     }
 
-    if (typeInfo.IS_VALUE_LEAF_NODE) {
-      return JSON.stringify(temp)
-    } else {
-      var idx = 0;
-      for (var prop in temp) {
-        if (!temp.hasOwnProperty(prop)) continue;
-        idx++;
-        if (args.JSON) {
-          props.push(prop);
-        } else {
-          var child = temp[prop];
-          var str = Util.getFormattedLineOutput(child, prop, args, idx);
-          props.push (str)
-        }
+    var idx = 0;
+    for (var prop in temp) {
+      if (!temp.hasOwnProperty(prop)) continue;
+      idx++;
+      if (args.JSON) {
+        props.push(prop);
+      } else {
+        var child = temp[prop];
+        var str = Util.getFormattedLineOutput(child, prop, args, idx);
+        props.push (str)
       }
-      var output = {};
-      var outputKey = "" + (hasArgsValue ? Const.COLORS.BROWN_ORANGE+" " + argsHelpStr + Const.COLORS.CLEAR : ":");
-      output[outputKey] = props;
-      return output;
     }
+    var output = {};
+    var outputKey = "" + (hasArgsValue ? Const.COLORS.BROWN_ORANGE+" " + argsHelpStr + Const.COLORS.CLEAR : ":");
+    output[outputKey] = props;
+    return output;
+
   },
   getMatches: function (obj, searchTerm, state, args) {
     var searchResult = this.search (obj, searchTerm, "", []);

@@ -6,7 +6,7 @@ module.exports = {
     return pathString === "" ? prop : pathString + "." + prop;
   },
   matchProperty: function (searchTerm, pathString, prop, matches) {
-    if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0) {
+    if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
       var propertyPath = this.getObjectPath(pathString, prop);
       matches.push(propertyPath);
       return true;
@@ -15,13 +15,14 @@ module.exports = {
   },
   getTypeInfo: function (obj) {
     var type = typeof(obj);
+    var isPrimitive = (type === "string" || type === "number" || type === "boolean");
+    var isLeafNode = isPrimitive || obj === null;
     return {
       TYPE: type,
-      IS_PRIMITIVE: (type === "string" || type === "number" || type === "boolean"),
+      IS_PRIMITIVE: isPrimitive,
       IS_BOOLEAN: (type === "boolean"),
-      IS_VALUE_LEAF_NODE: this.IS_PRIMITIVE || obj === null,
-      IS_PLAIN_OBJECT: !this.IS_VALUE_LEAF_NODE && !this.IS_PRIMITIVE
-      && (obj != null && typeof(obj.length) === "undefined"),
+      IS_VALUE_LEAF_NODE: isLeafNode,
+      IS_PLAIN_OBJECT: !isLeafNode && !isPrimitive && (obj != null && typeof(obj.length) === "undefined"),
       IS_ARRAY: obj instanceof Array
     }
   },
@@ -65,6 +66,7 @@ module.exports = {
     return {key: partial, val:"NO MATCH FOUND for \""+partial+"\""};
   },
   getFormattedLineOutput: function (child, prop, args, idx) {
+
     var objInfo = this.getTypeInfo(child);
     var prefix = {line: "", padding: 0, length: 0};
     if (this.getEnvVar(Const.ENV.SET_DATATYPE) === "ON") {
@@ -75,10 +77,11 @@ module.exports = {
     for (var _pad=0;_pad<(prefix.padding-prefix.length);_pad++) {prefix.line += " "}
     prefix.line = idx+(idx<10?"   ":"  ") + prefix.line;
     var str = Const.COLORS.DARK_GRAY + prefix.line + " "+ Const.COLORS.CLEAR ;
+
     if (objInfo.IS_VALUE_LEAF_NODE)
     {
       str += Const.COLORS.BLUE + prop + Const.COLORS.CLEAR;
-      str += Const.COLORS.LIGHT_GRAY+" — " + child + Const.COLORS.CLEAR;
+      str += Const.COLORS.LIGHT_GREEN+" — " + child + Const.COLORS.CLEAR;
     }
     else
     {
@@ -90,7 +93,11 @@ module.exports = {
       }
       str += propCount ? Const.COLORS.BLUE : Const.COLORS.DARK_GRAY;
       var toPluralize = propCount === 0 || propCount > 1;
-      str += prop + "" + (propCount ? Const.COLORS.DARK_GRAY + " "+(objInfo.IS_ARRAY?"··":"○—○")+" "+propCount+(objInfo.IS_ARRAY?" element":" node") + (toPluralize?"s":"") + Const.COLORS.CLEAR : " \\");
+      str += prop + "" + (propCount ? Const.COLORS.DARK_GRAY + " "+(objInfo.IS_ARRAY?"··":"○—○")+" "
+          + propCount
+          + (objInfo.IS_ARRAY?" element":" node")
+          + (toPluralize?"s":"")
+          + Const.COLORS.CLEAR : " \\");
       str += "\033[0m";
     }
     if (args.NOCOLOR) {
