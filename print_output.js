@@ -76,7 +76,7 @@ else if (args.EVALHELP || args.HELP || args.i)
 {
   if (args.FIND) {
     if (args.i && typeof(args.i) !== "boolean") {
-      contents = JSON.stringify(clapi._getMatches(obj, args.i, state, args));
+      contents = JSON.stringify(clapi.getMatches(obj, args.i, state, args));
     } else {
       contents = JSON.stringify(clapi.generateOutput(obj, state, args));
     }

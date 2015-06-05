@@ -2,12 +2,111 @@ var fs = require("fs");
 var prettyjson = require("prettyjson");
 var stripAnsi = require("strip-ansi");
 
-var getEnvVar = function (envKey) {
-  return process.env[envKey];
+var CONST = {
+  ENV : {
+    SET_DATATYPE: "CLAPI_SET_DATATYPE"
+  }
 };
 
-var checkEnv = function (envKey, envVal) {
-  return getEnvVar(envKey) === envVal;
+var Util = {
+  getObjectPath: function (pathString, prop) {
+    return pathString === "" ? prop : pathString + "." + prop;
+  },
+  matchProperty: function (searchTerm, pathString, prop, matches) {
+    if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0) {
+      var propertyPath = this.getObjectPath(pathString, prop);
+      matches.push(propertyPath);
+      return true;
+    }
+    return false;
+  },
+  getTypeInfo: function (obj) {
+    var type = typeof(obj);
+    return {
+      TYPE: type,
+      IS_PRIMITIVE: (type === "string" || type === "number" || type === "boolean"),
+      IS_VALUE_LEAF_NODE: this.IS_PRIMITIVE || obj === null,
+      IS_PLAIN_OBJECT: !this.IS_VALUE_LEAF_NODE && !this.IS_PRIMITIVE
+        && (obj != null && typeof(obj.length) === "undefined"),
+      IS_ARRAY: obj instanceof Array
+    }
+  },
+  getFileContents: function (state) {
+    var file = state.args.file || state.args.f;
+    if (!file) {
+      console.log("---> no file provided");
+      return;
+    }
+    if (!fs.existsSync(file)) {
+      this.printResult(state, JSON.stringify({
+        "result": "file not found [" + file + "]"
+      }));
+      return;
+    }
+    return fs.readFileSync(file);
+  },
+  findShallow: function (obj, partial) {
+    var match, firstPart, lastPart;
+    try {
+      match = eval('obj.' + partial);
+      if (match) {
+        return {key: partial, val: match};
+      }
+    } catch (e) {}
+
+    var lastDot = partial.lastIndexOf(".");
+    if (lastDot === -1) {
+      lastPart = partial;
+    } else {
+      firstPart = partial.substring(0, lastDot);
+      lastPart = partial.substring(lastDot+1);
+      obj = eval('obj.'+firstPart);
+    }
+    for (var _i in obj) {
+      if (!obj.hasOwnProperty(_i)) continue;
+      if (_i.indexOf(lastPart) > -1) {
+        return {key: firstPart+"."+_i, val:obj[_i]};
+      }
+    }
+    return {key: partial, val:"NO MATCH FOUND for \""+partial+"\""};
+  },
+  getFormattedLineOutput: function (child, prop, args, idx) {
+    var objInfo = Util.getTypeInfo(child);
+    var prefix = {line: "", padding: 0, length: 0};
+    if (Util.getEnvVar(CONST.ENV.SET_DATATYPE) === "ON") {
+      prefix.line = objInfo.IS_ARRAY?"array":objInfo.TYPE;
+      prefix.padding = 8;
+      prefix.length = prefix.line.length;
+    }
+    for (var _pad=0;_pad<(prefix.padding-prefix.length);_pad++) {prefix.line += " "}
+    prefix.line = idx+(idx<10?"   ":"  ") + prefix.line;
+    var str = "\033[1;30m" + prefix.line + " \033[0m" ;
+    if (objInfo.IS_VALUE_LEAF_NODE)
+    {
+      str += "\033[0;34m";
+      str += prop + "\033[0m" + "\033[0;37m — " + child + "\033[0m";
+    }
+    else
+    {
+      var propCount = 0;
+      if (objInfo.IS_PLAIN_OBJECT) {
+        for (var _p in child) {if (child.hasOwnProperty(_p)) {propCount++;}}
+      } else {
+        propCount = child.length;
+      }
+      str += propCount ? "\033[0;34m" : "\033[1;30m";
+      var toPluralize = propCount === 0 || propCount > 1;
+      str += prop + "" + (propCount ? "\033[1;30m "+(objInfo.IS_ARRAY?"··":"○—○")+" "+propCount+(objInfo.IS_ARRAY?" element":" node")+(toPluralize?"s":"")+"\033[0m" : " \\");
+      str += "\033[0m";
+    }
+    if (args.NOCOLOR) {
+      str = stripAnsi(str);
+    }
+    return str;
+  },
+  getEnvVar: function (envKey) {
+    return process.env[envKey];
+  }
 };
 
 module.exports = {
@@ -33,24 +132,6 @@ module.exports = {
       console.log(prettyjson.render(JSON.parse(contents), options));
     }
   },
-  getClapiFileContents: function (state) {
-
-    var file = state.args.file || state.args.f;
-
-    if (!file) {
-      console.log("---> no file provided");
-      return;
-    }
-
-    if (!fs.existsSync(file)) {
-      this.printResult(state, JSON.stringify({
-        "result": "file not found [" + file + "]"
-      }));
-      return;
-    }
-
-    return fs.readFileSync(file);
-  },
   generateOutput: function (val, state, args) {
     var props = [];
     var temp = args.EVALHELP || args.HELP || args.i;
@@ -66,7 +147,7 @@ module.exports = {
         }
       }
       argsHelpStr = _arr.join(".");
-      var _temp = this._findShallow(val, argsHelpStr);
+      var _temp = Util.findShallow(val, argsHelpStr);
       argsHelpStr = _temp.key;
       fs.writeFileSync(__dirname + '/../output/clapi_pasteboard', './clapi ' + argsHelpStr);
       temp = _temp.val;
@@ -95,7 +176,7 @@ module.exports = {
         else
         {
           var child = temp[prop];
-          var str = this._getFormattedLineOutput(child, prop, args, idx);
+          var str = Util.getFormattedLineOutput(child, prop, args, idx);
           props.push (str)
         }
       }
@@ -105,92 +186,15 @@ module.exports = {
       return output;
     }
   },
-  _getFormattedLineOutput: function (child, prop, args, idx) {
-    // TODO - accrue output information in an array of object for sorting purposes
-    // and then serialize at the end
-
-    // initialize
-    var objType = typeof(child),
-        isPrimitive = objType === "string" || objType === "number" || objType === "boolean",
-        isValueLeafNode = isPrimitive || child === null,
-        isPlainObject = !isValueLeafNode && !isPrimitive && (child != null && typeof(child.length) === "undefined"),
-        isArray = child instanceof Array,
-    /*  no data-type  */
-        linePrefix = "", prefixPadding = 0,
-        prefixLength = linePrefix.length;
-
-    if (checkEnv("CLAPI_SET_DATATYPE", "ON")) {
-      linePrefix = isArray?"array":objType;
-      prefixPadding = 8;
-      prefixLength = linePrefix.length;
-    }
-
-    // prefix padding
-    for (var _pad=0;_pad<(prefixPadding-prefixLength);_pad++) {linePrefix += " "}
-    linePrefix = idx+(idx<10?"   ":"  ")+linePrefix;
-
-    // prepare output
-    var str = "\033[1;30m" + linePrefix + " \033[0m" ;
-
-    if (isValueLeafNode)
-    {
-      str += "\033[0;34m";
-      str += prop + "\033[0m" + "\033[0;37m — " + child + "\033[0m";
-    }
-    else
-    {
-      var propCount = 0;
-      if (isPlainObject) {
-        for (var _p in child) {if (child.hasOwnProperty(_p)) {propCount++;}}
-      } else {
-        propCount = child.length;
-      }
-      str += propCount ? "\033[0;34m" : "\033[1;30m";
-      var toPluralize = propCount === 0 || propCount > 1;
-      str += prop + "" + (propCount ? "\033[1;30m "+(isArray?"··":"○—○")+" "+propCount+(isArray?" element":" node")+(toPluralize?"s":"")+"\033[0m" : " \\");
-      str += "\033[0m";
-    }
-    if (args.NOCOLOR) {
-      str = stripAnsi(str);
-    }
-    return str;
-  },
-  _findShallow: function (obj, partial) {
-    var match, firstPart, lastPart;
-
-    try {
-      match = eval('obj.' + partial);
-      if (match) {
-        return {key: partial, val: match};
-      }
-    } catch (e) {}
-
-    var lastDot = partial.lastIndexOf(".");
-    if (lastDot === -1) {
-      lastPart = partial;
-    } else {
-      firstPart = partial.substring(0, lastDot);
-      lastPart = partial.substring(lastDot+1);
-      obj = eval('obj.'+firstPart);
-    }
-    for (var _i in obj) {
-      if (!obj.hasOwnProperty(_i)) continue;
-      if (_i.indexOf(lastPart) > -1) {
-        return {key: firstPart+"."+_i, val:obj[_i]};
-      }
-    }
-    return {key: partial, val:"NO MATCH FOUND for \""+partial+"\""};
-  },
-
-  _getMatches: function (obj, searchTerm, state, args) {
-    var searchResult = this._search (obj, searchTerm, "", []);
+  getMatches: function (obj, searchTerm, state, args) {
+    var searchResult = this.search (obj, searchTerm, "", []);
 
     var output = [];
     for (var i=0;i<searchResult.length;i++) {
       var path = searchResult[i];
       args.i = path;
       var child = eval('obj.'+path);
-      var str = this._getFormattedLineOutput(child, path, args, i+1);
+      var str = Util.getFormattedLineOutput(child, path, args, i+1);
       output.push(str);
     }
     var finalOutput = {}
@@ -199,55 +203,30 @@ module.exports = {
   },
 
   // deep search matching for all keys and values matching 'term' starting at node 'obj'
-  _search: function (obj, searchTerm, pathString, matchesArray) {
-
-    var UTIL = {
-      getObjectPath: function (pathString, prop) {
-        return pathString === "" ? prop : pathString + "." + prop;
-      },
-      matchProperty: function (searchTerm, pathString, prop, matches) {
-        if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0) {
-          var propertyPath = this.getObjectPath(pathString, prop);
-          matches.push(propertyPath);
-          return true;
-        }
-        return false;
-      }
-    };
-
+  search: function (obj, searchTerm, pathString, matchesArray) {
     for (var prop in obj) {
       if (!obj.hasOwnProperty(prop)) continue;
       var child = obj[prop];
-      var childTypeInfo = this._getTypeInfo(child);
-      var propertyPath = UTIL.getObjectPath(pathString, prop);
+      var childTypeInfo = Util.getTypeInfo(child);
+      var propertyPath = Util.getObjectPath(pathString, prop);
       if (childTypeInfo.IS_ARRAY)
       {
-        UTIL.matchProperty(searchTerm, pathString, prop, matchesArray);
+        Util.matchProperty(searchTerm, pathString, prop, matchesArray);
         for (var i=0;i<child.length;i++) {
-          this._search(child[i], searchTerm, propertyPath + "["+i+"]", matchesArray);
+          this.search(child[i], searchTerm, propertyPath + "["+i+"]", matchesArray);
         }
       }
       else if (childTypeInfo.IS_PLAIN_OBJECT)
       {
-        UTIL.matchProperty(searchTerm, pathString, prop, matchesArray);
-        this._search(child, searchTerm, propertyPath, matchesArray);
+        Util.matchProperty(searchTerm, pathString, prop, matchesArray);
+        this.search(child, searchTerm, propertyPath, matchesArray);
       }
       else if (childTypeInfo.IS_PRIMITIVE)
       {
-        UTIL.matchProperty(searchTerm, pathString, prop, matchesArray);
+        Util.matchProperty(searchTerm, pathString, prop, matchesArray);
       }
     }
     return matchesArray;
-  },
-  _getTypeInfo: function (obj) {
-    var type = typeof(obj);
-    return {
-      type: type,
-      IS_PRIMITIVE: (type === "string" || type === "number" || type === "boolean"),
-      IS_VALUE_LEAF_NODE: this.IS_PRIMITIVE || obj === null,
-      IS_PLAIN_OBJECT: !this.IS_VALUE_LEAF_NODE && !this.IS_PRIMITIVE && (obj != null && typeof(obj.length) === "undefined"),
-      IS_ARRAY: obj instanceof Array
-    }
   }
 };
 
