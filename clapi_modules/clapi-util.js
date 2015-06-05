@@ -18,6 +18,7 @@ module.exports = {
     return {
       TYPE: type,
       IS_PRIMITIVE: (type === "string" || type === "number" || type === "boolean"),
+      IS_BOOLEAN: (type === "boolean"),
       IS_VALUE_LEAF_NODE: this.IS_PRIMITIVE || obj === null,
       IS_PLAIN_OBJECT: !this.IS_VALUE_LEAF_NODE && !this.IS_PRIMITIVE
       && (obj != null && typeof(obj.length) === "undefined"),

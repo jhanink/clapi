@@ -1,6 +1,7 @@
 var fs = require("fs");
 var prettyjson = require("prettyjson");
 var Util = require("./clapi-util");
+var Const = require("./clapi-constants");
 
 module.exports =
 {
@@ -29,8 +30,9 @@ module.exports =
   generateOutput: function (val, state, args) {
     var props = [];
     var temp = args.EVALHELP || args.HELP || args.i;
+    var typeInfo = Util.getTypeInfo(temp);
     var argsHelpStr = temp;
-    var hasArgsValue = ! (typeof(temp) == "boolean" && temp);
+    var hasArgsValue = ! (typeInfo.IS_BOOLEAN && temp);
     if (hasArgsValue) {
       var _arr = temp.split(".");
       for (var _s=0;_s<_arr.length;_s++) {
@@ -43,39 +45,30 @@ module.exports =
       argsHelpStr = _arr.join(".");
       var _temp = Util.findShallow(val, argsHelpStr);
       argsHelpStr = _temp.key;
-      fs.writeFileSync(__dirname + '/../output/clapi_pasteboard', './clapi ' + argsHelpStr);
+      fs.writeFileSync(__dirname + '/../output/' + Const.NAMES.PASTEBOARD, './clapi ' + argsHelpStr);
       temp = _temp.val;
     } else {
       temp = eval('val');
-      fs.writeFileSync(__dirname + '/../output/clapi_pasteboard', './clapi ');
+      fs.writeFileSync(__dirname + '/../output/' + Const.NAMES.PASTEBOARD, './clapi ');
     }
 
-    // IS leaf node
-    if (typeof(temp) === "string" || typeof(temp) === "number" || typeof(temp) === "boolean")
-    {
+    if (typeInfo.IS_VALUE_LEAF_NODE) {
       return JSON.stringify(temp)
-    }
-    // NOT leaf node
-    else
-    {
-      // inspect the properties
+    } else {
       var idx = 0;
       for (var prop in temp) {
         if (!temp.hasOwnProperty(prop)) continue;
         idx++;
-        if (args.JSON)
-        {
+        if (args.JSON) {
           props.push(prop);
-        }
-        else
-        {
+        } else {
           var child = temp[prop];
           var str = Util.getFormattedLineOutput(child, prop, args, idx);
           props.push (str)
         }
       }
       var output = {};
-      var outputKey = "" + (hasArgsValue ? "\033[0;33m "+argsHelpStr+"\033[0m" : ":");
+      var outputKey = "" + (hasArgsValue ? Const.COLORS.BROWN_ORANGE+" " + argsHelpStr + Const.COLORS.CLEAR : ":");
       output[outputKey] = props;
       return output;
     }
