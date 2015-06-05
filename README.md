@@ -166,7 +166,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ```sh
 
-  ./curl-torbit http://www-e6.walmart.com -i                 # get torbit headers
+  # get torbit headers
+  ./curl-torbit http://www-e6.walmart.com -i
 ```
 
 ##### → TIPS & TRICKS
