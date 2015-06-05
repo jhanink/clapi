@@ -1,0 +1,103 @@
+var stripAnsi = require("strip-ansi");
+var Const = require("./clapi-constants");
+
+module.exports = {
+  getObjectPath: function (pathString, prop) {
+    return pathString === "" ? prop : pathString + "." + prop;
+  },
+  matchProperty: function (searchTerm, pathString, prop, matches) {
+    if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0) {
+      var propertyPath = this.getObjectPath(pathString, prop);
+      matches.push(propertyPath);
+      return true;
+    }
+    return false;
+  },
+  getTypeInfo: function (obj) {
+    var type = typeof(obj);
+    return {
+      TYPE: type,
+      IS_PRIMITIVE: (type === "string" || type === "number" || type === "boolean"),
+      IS_VALUE_LEAF_NODE: this.IS_PRIMITIVE || obj === null,
+      IS_PLAIN_OBJECT: !this.IS_VALUE_LEAF_NODE && !this.IS_PRIMITIVE
+      && (obj != null && typeof(obj.length) === "undefined"),
+      IS_ARRAY: obj instanceof Array
+    }
+  },
+  getFileContents: function (state) {
+    var file = state.args.file || state.args.f;
+    if (!file) {
+      console.log("---> no file provided");
+      return;
+    }
+    if (!fs.existsSync(file)) {
+      this.printResult(state, JSON.stringify({
+        "result": "file not found [" + file + "]"
+      }));
+      return;
+    }
+    return fs.readFileSync(file);
+  },
+  findShallow: function (obj, partial) {
+    var match, firstPart, lastPart;
+    try {
+      match = eval('obj.' + partial);
+      if (match) {
+        return {key: partial, val: match};
+      }
+    } catch (e) {}
+
+    var lastDot = partial.lastIndexOf(".");
+    if (lastDot === -1) {
+      lastPart = partial;
+    } else {
+      firstPart = partial.substring(0, lastDot);
+      lastPart = partial.substring(lastDot+1);
+      obj = eval('obj.'+firstPart);
+    }
+    for (var _i in obj) {
+      if (!obj.hasOwnProperty(_i)) continue;
+      if (_i.indexOf(lastPart) > -1) {
+        return {key: firstPart+"."+_i, val:obj[_i]};
+      }
+    }
+    return {key: partial, val:"NO MATCH FOUND for \""+partial+"\""};
+  },
+  getFormattedLineOutput: function (child, prop, args, idx) {
+    var objInfo = this.getTypeInfo(child);
+    var prefix = {line: "", padding: 0, length: 0};
+    if (this.getEnvVar(Const.ENV.SET_DATATYPE) === "ON") {
+      prefix.line = objInfo.IS_ARRAY?"array":objInfo.TYPE;
+      prefix.padding = 8;
+      prefix.length = prefix.line.length;
+    }
+    for (var _pad=0;_pad<(prefix.padding-prefix.length);_pad++) {prefix.line += " "}
+    prefix.line = idx+(idx<10?"   ":"  ") + prefix.line;
+    var str = Const.COLORS.DARK_GRAY + prefix.line + " "+ Const.COLORS.CLEAR ;
+    if (objInfo.IS_VALUE_LEAF_NODE)
+    {
+      str += Const.COLORS.BLUE + prop + Const.COLORS.CLEAR;
+      str += Const.COLORS.LIGHT_GRAY+" — " + child + Const.COLORS.CLEAR;
+    }
+    else
+    {
+      var propCount = 0;
+      if (objInfo.IS_PLAIN_OBJECT) {
+        for (var _p in child) {if (child.hasOwnProperty(_p)) {propCount++;}}
+      } else {
+        propCount = child.length;
+      }
+      str += propCount ? Const.COLORS.BLUE : Const.COLORS.DARK_GRAY;
+      var toPluralize = propCount === 0 || propCount > 1;
+      str += prop + "" + (propCount ? Const.COLORS.DARK_GRAY + " "+(objInfo.IS_ARRAY?"··":"○—○")+" "+propCount+(objInfo.IS_ARRAY?" element":" node") + (toPluralize?"s":"") + Const.COLORS.CLEAR : " \\");
+      str += "\033[0m";
+    }
+    if (args.NOCOLOR) {
+      str = stripAnsi(str);
+    }
+    return str;
+  },
+  getEnvVar: function (envKey) {
+    return process.env[envKey];
+  }
+};
