@@ -194,7 +194,7 @@ module.exports = {
       output.push(str);
     }
     var finalOutput = {}
-    finalOutput["  SEARCH TERM  >  " + searchTerm] = output;
+    finalOutput[" (search term) > " + searchTerm] = output;
     return finalOutput;
   },
 
