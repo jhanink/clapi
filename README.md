@@ -23,7 +23,9 @@ List JSON payloads with drill-down and search features
 
 ### Commands
 
-Currently available commands. [Add new requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+[Add new requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+
+Currently available commands:
 
 ##### → STAGE : Cart & Checkout
 
