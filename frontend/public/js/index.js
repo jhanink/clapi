@@ -1,13 +1,8 @@
-require.config({
-  paths: {
-    "react": "../lib/react",
-    "JSXTransformer": "../lib/JSXTransformer",
-    "jsx": ""
-  }
-});
+var data = [
+  {author: "Pete Hunt", text: "This is one comment"},
+  {author: "Jordan Walke", text: "This is *another* comment"}
+];
 
-require(["react", "JSXTransformer"], function (React) {
-
-  React.renderComponent(<IndexComponent name="Clapi" />, document.getElementById("container-main"))
-
-});
+React.render(
+    <IndexComponent name="Clapi" data={data}/>, document.getElementById("container-main")
+);
