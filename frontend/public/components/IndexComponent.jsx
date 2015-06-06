@@ -2,7 +2,7 @@ var IndexComponent = React.createClass({
   render: function() {
     var authors = this.props.data.map(function(item) {
       return (
-          <div>
+          <div key={item.key}>
             <div>
               {item.author}
             </div>
@@ -17,6 +17,5 @@ var IndexComponent = React.createClass({
         {authors}
       </div>
     );
-
   }
 });

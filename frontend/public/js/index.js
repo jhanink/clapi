@@ -1,6 +1,6 @@
 var data = [
-  {author: "Pete Hunt", text: "This is one comment"},
-  {author: "Jordan Walke", text: "This is *another* comment"}
+  {author: "Pete Hunt", text: "This is one comment", key:0},
+  {author: "Jordan Walke", text: "This is *another* comment", key:1}
 ];
 
 React.render(
