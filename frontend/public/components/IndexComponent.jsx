@@ -4,11 +4,11 @@ var IndexComponent = React.createClass({
       return (
           <div key={item.key}>
             <div>
-              {item.author}
+              {item.author} - <CommentComponent comment={item.text} />
             </div>
           </div>
       );
-    })
+    });
 
     return (
       <div>
