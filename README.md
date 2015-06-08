@@ -9,7 +9,7 @@ npm install
 cd bin
 ```
 
-List JSON payloads with drill-down and search features
+Hierarchically display JSON data with tree-view drill-down and property search 
 
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi_output.png?raw=true)
 
