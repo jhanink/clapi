@@ -141,15 +141,19 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   # turn datatype display off
   export CLAPI_SET_DATATYPE=OFF
   ./c
+```  
   
-  # find (deep search) by property name
+```sh
+
+  # find all matches by property name (deep search)
   # uses starts-with + case-insensitive matching 
   ./cf isAssociate
   ./cf isassoc
-  ./cf email
   
-  # ./find alias for ./cf 
+  # clapi-find aliases: ./cf, ./find, ./f
+  ./cf email
   ./find email
+  ./f email
 ```
 
 ![clapi find](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/cf_output.png?raw=true)
