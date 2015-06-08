@@ -81,7 +81,7 @@ module.exports = {
     if (objInfo.IS_VALUE_LEAF_NODE)
     {
       str += Const.COLORS.BLUE + prop + Const.COLORS.CLEAR;
-      str += Const.COLORS.LIGHT_GREEN+" — " + child + Const.COLORS.CLEAR;
+      str += Const.COLORS.LIGHT_GRAY+" — " + child + Const.COLORS.CLEAR;
     }
     else
     {
