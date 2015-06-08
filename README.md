@@ -25,7 +25,7 @@ Hierarchically display JSON data with tree-view drill-down and property search
 
 [Add new requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
 
-Currently available commands:
+Available commands:
 
 ##### → STAGE : Cart & Checkout
 
