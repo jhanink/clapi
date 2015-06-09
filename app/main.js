@@ -1,4 +1,10 @@
-'use strict';
-var component = require('./component.js');
 
-document.body.appendChild(component());
+import React from 'react';
+import $ from 'jquery';
+import Hello from './component';
+
+
+$(document).ready(function () {
+  React.render(<Hello />, document.body);
+});
+

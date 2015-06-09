@@ -1,10 +1,8 @@
-'use strict';
+import React from 'react';
 
+export default class Hello extends React.Component {
+  render() {
+    return <h1>Hello world</h1>;
+  }
+}
 
-module.exports = function () {
-  var element = document.createElement('h1');
-
-  element.innerHTML = 'OK 2 GO';
-
-  return element;
-};
