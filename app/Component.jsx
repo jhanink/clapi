@@ -1,8 +1,9 @@
-import React from 'react';
+//import React from 'react';
+var React = require("react");
 
-export default class Hello extends React.Component {
+module.exports = React.createClass({
   render() {
-    return <h1>Are you nuts??</h1>;
+    return <h1>Those crazy squirrels are nuts!!</h1>;
   }
-}
+});
 
