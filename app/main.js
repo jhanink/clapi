@@ -1,7 +1,8 @@
 
 import React from 'react';
 import $ from 'jquery';
-import Hello from './component';
+
+import Hello from './Component.jsx';
 
 
 $(document).ready(function () {
