@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
   },
   "repository": {
     "type": "git",
-    "url": "git@gecgithub01.walmart.com:jhanink/dev-api-shortcuts.git"
+    "url": "git@gecgithub01.walmart.com:jhanink/clapi.git"
   },
   "author": "Joe Hanink",
   "license": "ISC",
@@ -20,6 +22,9 @@
     "prettyjson": "^1.1.0",
     "request": "^2.55.0",
     "strip-ansi": "^2.0.1",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0",
     "yargs": "^3.8.0"
-  }
+  },
+  "devDependencies": {}
 }

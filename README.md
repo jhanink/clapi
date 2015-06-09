@@ -213,5 +213,6 @@ Because node is more fun.
 * [See additional project goals](docs/project-goals.md)
 
 ### Resources
-* https://christianalfoni.github.io/react-webpack-cookbook/index.html
+* http://survivejs.com
 * https://github.com/callemall/material-ui
+* https://www.gitbook.com
