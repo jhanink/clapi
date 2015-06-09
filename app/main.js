@@ -2,7 +2,7 @@
 import React from 'react';
 import $ from 'jquery';
 
-import Hello from './Component.jsx';
+import Hello from './Container.jsx';
 
 
 $(document).ready(function () {
