@@ -2,7 +2,7 @@
 import React from 'react';
 import $ from 'jquery';
 
-import Hello from './Container.jsx';
+import Hello from './ClapiPage.jsx';
 
 
 $(document).ready(function () {
