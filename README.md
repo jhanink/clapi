@@ -222,11 +222,14 @@ Because node is more fun.
 * [See additional project goals](docs/project-goals.md)
 
 ### Resources
-* http://survivejs.com
+* https://christianalfoni.github.io/react-webpack-cookbook/index.html
 * https://github.com/callemall/material-ui
-* https://www.gitbook.com
+* http://survivejs.com
 
 ### Reads
 * http://blog.namangoel.com/browserify-vs-webpack-js-drama
-* https://github.com/systemjs/systemjs
 * http://angular-tips.com/blog/2015/06/why-will-angular-2-rock/
+
+### Extras
+* https://github.com/systemjs/systemjs
+* https://github.com/systemjs/systemjs
