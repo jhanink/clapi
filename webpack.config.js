@@ -26,7 +26,6 @@ var config = {
       { test: /\.jsx?$/, loader: 'babel'},
       { test: /\.css$/, loader: 'style-loader!css-loader' }, // use ! to chain loaders
       { test: /\.png$/, loader: "url-loader?limit=100000&mimetype=image/png" }
-      /*{ test: /\.jsx$/, loader: 'jsx-loader?harmony' }*/
       ]
   }
 };
