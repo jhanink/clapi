@@ -1,13 +1,13 @@
-var React = require("react");
-var mui = require("material-ui");
+let React = require("react");
+let mui = require("material-ui");
 
-var AppBar = mui.AppBar;
-var ThemeManager = new mui.Styles.ThemeManager();
+let AppBar = mui.AppBar;
+let ThemeManager = new mui.Styles.ThemeManager();
 ThemeManager.setTheme(ThemeManager.types.LIGHT);
 
-var ClapiNavMenu = require("./clapi-nav-menu.jsx");
+let ClapiNavMenu = require("./clapi-nav-menu.jsx");
 
-var injectTapEventPlugin = require("react-tap-event-plugin");
+let injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
 module.exports = React.createClass({

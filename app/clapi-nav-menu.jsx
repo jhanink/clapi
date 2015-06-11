@@ -1,18 +1,18 @@
 import React from 'react';
-var Router = require('react-router');
+let Router = require('react-router');
 
-var mui = require("material-ui");
-var LeftNav = mui.LeftNav;
-var MenuItem = mui.MenuItem;
+let mui = require("material-ui");
+let LeftNav = mui.LeftNav;
+let MenuItem = mui.MenuItem;
 
-var {Colors, Spacing, Typography} = mui.Styles;
-var ThemeManager = new mui.Styles.ThemeManager();
+let {Colors, Spacing, Typography} = mui.Styles;
+let ThemeManager = new mui.Styles.ThemeManager();
 ThemeManager.setTheme(ThemeManager.types.LIGHT);
 
-var injectTapEventPlugin = require("react-tap-event-plugin");
+let injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
-var menuItems = [
+let menuItems = [
   {text: 'GET customer', route: 'get-customer'},
   {text: 'CREATE cart', route: 'create-customer'},
   {text: 'CREATE gift card', route: 'create-gift-card'},
@@ -73,5 +73,4 @@ module.exports = React.createClass({
   contextTypes : {
     router: React.PropTypes.func
   }
-
 });

@@ -1,15 +1,13 @@
 
 import React from 'react';
-var Router = require('react-router');
-
 import $ from 'jquery';
 
-var AppRoutes = require('./app-routes.jsx');
-
+let Router = require('react-router');
+let AppRoutes = require('./app-routes.jsx');
 
 $(document).ready(function () {
   Router
-    // Runs the router, similiar to the Router.run method. You can think of it as an
+    // Runs the router, similar to the Router.run method. You can think of it as an
     // initializer/constructor method.
     .create({
       routes: AppRoutes,
@@ -21,4 +19,3 @@ $(document).ready(function () {
       React.render(<Handler />, document.body);
     });
 });
-

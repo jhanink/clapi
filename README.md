@@ -11,7 +11,7 @@ cd bin
 
 View and search JSON data as you would a filesystem directory tree 
 
-![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi_output.png?raw=true)
+![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
 
 ### Features
 
@@ -32,7 +32,7 @@ open -a "Google Chrome" http://localhost:8080
 
 ### Commands
 
-[Add new requests here](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+[Add new requests here](https://gecgithub01.walmart.com/jhanink/clapi/issues)
 
 Available commands:
 
@@ -165,7 +165,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   ./f email
 ```
 
-![clapi find](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/cf_output.png?raw=true)
+![clapi find](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/cf_output.png?raw=true)
 
 
 ```sh
@@ -202,13 +202,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 ```
 
 
-### Why is this a node program instead of curl scripts?
-
-Because node is more fun.
-
 ### Contribute
 
-* [Open a github issue to request a new feature](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
+* [Open a github issue to request a new feature](https://gecgithub01.walmart.com/jhanink/clapi/issues)
 
 ### Related Documentation
 
@@ -219,6 +215,9 @@ Because node is more fun.
 
 ### Resources
 * https://christianalfoni.github.io/react-webpack-cookbook/index.html
+* https://github.com/webpack/webpack
+* https://github.com/rackt/react-router
+* https://github.com/github/fetch
 * https://github.com/callemall/material-ui
 
 ### Reads
@@ -235,3 +234,4 @@ Because node is more fun.
    * add stylus transforms via webpack
    * add css to react components
 * flux
+* fetch

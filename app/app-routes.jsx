@@ -1,14 +1,14 @@
-var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
-var Redirect = Router.Redirect;
-var DefaultRoute = Router.DefaultRoute;
+let React = require('react');
+let Router = require('react-router');
+let Route = Router.Route;
+let Redirect = Router.Redirect;
+let DefaultRoute = Router.DefaultRoute;
 
 
-var RootPage = require("./clapi-page.jsx");
-var Placeholder = {};
+let RootPage = require("./clapi-page.jsx");
+let Placeholder = {};
 
-var AppRoutes = (
+let AppRoutes = (
     <Route name="root" path="/" handler={RootPage}>
 
       <Route name="get-customer" handler={Placeholder} />
