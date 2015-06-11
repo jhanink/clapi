@@ -219,7 +219,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/rackt/react-router
 * https://github.com/github/fetch
 * https://github.com/callemall/material-ui
-* wm react - https://gecgithub01.walmart.com/react
+* wm react 
+   * https://gecgithub01.walmart.com/react
+   * https://gecgithub01.walmart.com/react/react-dev-guide
 
 ### Reads
 * http://facebook.github.io/react/docs
