@@ -15,13 +15,12 @@ Hierarchically display JSON data with tree-view drill-down and property search
 
 ### Features
 
-```
+
 * Call an API and view in JSON, PRETTY, or Interactive mode
 * Use the CLAPI result buffer to grep, pipe, or process with custom functions
 
 * There is a UI, but it is a work in progress at a nascent stage 
-* There is a command menu but no command execution yet.
-```
+* There is a command menu but no command execution yet
 
 ```
 # start a hot-swappable server and open the ui 
