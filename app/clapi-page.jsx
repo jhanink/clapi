@@ -5,7 +5,7 @@ var AppBar = mui.AppBar;
 var ThemeManager = new mui.Styles.ThemeManager();
 ThemeManager.setTheme(ThemeManager.types.LIGHT);
 
-var ClapiNavMenu = require("./ClapiNavMenu");
+var ClapiNavMenu = require("./clapi-nav-menu.jsx");
 
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
