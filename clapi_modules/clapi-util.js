@@ -80,8 +80,8 @@ module.exports = {
 
     if (objInfo.IS_VALUE_LEAF_NODE)
     {
-      str += Const.COLORS.BLUE + prop + Const.COLORS.CLEAR;
-      str += Const.COLORS.LIGHT_GRAY+" — " + child + Const.COLORS.CLEAR;
+      str += "" + Const.COLORS.BLUE + prop + Const.COLORS.CLEAR;
+      str += Const.COLORS.LIGHT_GRAY +" — " + child + Const.COLORS.CLEAR;
     }
     else
     {
@@ -93,7 +93,7 @@ module.exports = {
       }
       str += propCount ? Const.COLORS.BLUE : Const.COLORS.DARK_GRAY;
       var toPluralize = propCount === 0 || propCount > 1;
-      str += prop + "" + (propCount ? Const.COLORS.DARK_GRAY + " "+(objInfo.IS_ARRAY?"··":"○—○")+" "
+      str += (propCount?"+ ":"") + prop + "" + (propCount ? Const.COLORS.DARK_GRAY + " "+(objInfo.IS_ARRAY?"··":"○—○")+" "
           + propCount
           + (objInfo.IS_ARRAY?" element":" node")
           + (toPluralize?"s":"")
