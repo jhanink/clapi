@@ -19,7 +19,9 @@ Hierarchically display JSON data with tree-view drill-down and property search
 * Use the CLAPI result buffer to grep, pipe, or process with custom functions
 * There is a UI, but it is a work in progress at a nascent stage 
 
-### Use the UI (work in progress, menu only, no command execution yet)
+### Use the UI
+
+Work in progress, menu only, no command execution yet
 
 ```
 # start a hot-swappable server and open the ui 
