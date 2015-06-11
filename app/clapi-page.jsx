@@ -24,7 +24,7 @@ module.exports = React.createClass({
       <div>
         <ClapiNavMenu ref="lnm"/>
         <AppBar title="CLAPI - using react, material design, and webpack" onLeftIconButtonTouchTap={this._onTapMenu}/>
-        <h1>Those crazy squirrels are nuts!!</h1>
+        <h1>Those crazy squirrels are nuts!</h1>
       </div>
     );
   },
