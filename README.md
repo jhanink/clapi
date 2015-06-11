@@ -221,6 +221,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/callemall/material-ui
 
 ### Reads
+* http://facebook.github.io/react/docs
+* http://webpack.github.io/docs/
 * http://survivejs.com
 * http://blog.namangoel.com/browserify-vs-webpack-js-drama
 * http://blog.namangoel.com/css-in-js-in-css
@@ -231,7 +233,6 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ### Next
 * continue reading cookbook
-   * add stylus transforms via webpack
-   * add css to react components
+* add css to react components
 * flux
 * fetch

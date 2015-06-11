@@ -12,7 +12,7 @@ let AppRoutes = (
     <Route name="root" path="/" handler={RootPage}>
 
       <Route name="get-customer" handler={Placeholder} />
-      <Route name="create-customer" handler={Placeholder} />
+      <Route name="create-cart" handler={Placeholder} />
       <Route name="create-gift-card" handler={Placeholder} />
       <Route name="create-temp-card" handler={Placeholder} />
       <Route name="fetch-inventory-report" handler={Placeholder} />

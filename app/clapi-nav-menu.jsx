@@ -14,7 +14,7 @@ injectTapEventPlugin();
 
 let menuItems = [
   {text: 'GET customer', route: 'get-customer'},
-  {text: 'CREATE cart', route: 'create-customer'},
+  {text: 'CREATE cart', route: 'create-cart'},
   {text: 'CREATE gift card', route: 'create-gift-card'},
   {text: 'CREATE temp card', route: 'create-temp-card'},
   {text: 'FETCH inventory report', route: 'fetch-inventory-report'},
@@ -30,7 +30,7 @@ module.exports = React.createClass({
       muiTheme: ThemeManager.getCurrentTheme()
     };
   },
-  render() {
+  render: function() {
     var header = (
         <div style={this.getStyles()} onTouchTap={this._onHeaderClick}>
           clapi commands

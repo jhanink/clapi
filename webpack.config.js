@@ -5,7 +5,7 @@ var node_modules = path.resolve(__dirname, 'node_modules');
 var pathToJquery = path.resolve(node_modules, 'jquery/dist/jquery.min.js');*/
 
 var config = {
-  entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js')],
+  entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/app.js')],
   /*resolve: {
     alias: {
       'react': pathToReact
@@ -23,10 +23,20 @@ var config = {
   module: {
     /*noParse: [pathToReact, pathToJquery],*/
     loaders: [
-      { test: /\.jsx?$/, loader: 'babel'},
-      { test: /\.css$/, loader: 'style-loader!css-loader' }, // use ! to chain loaders
-      { test: /\.png$/, loader: "url-loader?limit=100000&mimetype=image/png" }
-      ]
+      { test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader?stage=1"
+      }, {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      }, {
+        test: /\.styl$/,
+        loader: "style-loader!css-loader!stylus-loader"
+      }, {
+        test: /\.json$/,
+        loader: "json-loader"
+      }
+    ]
   }
 };
 

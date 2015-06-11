@@ -19,17 +19,17 @@ module.exports = React.createClass({
       muiTheme: ThemeManager.getCurrentTheme()
     };
   },
-  render() {
+  render: function() {
     return (
       <div>
-        <ClapiNavMenu ref="lnm"/>
+        <ClapiNavMenu ref="leftNavMenu"/>
         <AppBar title="CLAPI - using react, material design, and webpack" onLeftIconButtonTouchTap={this._onTapMenu}/>
         <h1>Those crazy squirrels are nuts!</h1>
       </div>
     );
   },
   _onTapMenu: function() {
-    this.refs.lnm._toggle();
+    this.refs.leftNavMenu._toggle();
   }
 });
 
