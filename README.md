@@ -20,6 +20,14 @@ Hierarchically display JSON data with tree-view drill-down and property search
 * Use the CLAPI result buffer to grep, pipe, or process with custom functions
 ```
 
+```
+* There is a UI, but it is a work in progress
+```
+
+```
+npm run dev
+```
+
 
 ### Commands
 
