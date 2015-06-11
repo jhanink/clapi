@@ -206,13 +206,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 Because node is more fun.
 
-
-
 ### Contribute
 
 * [Open a github issue to request a new feature](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/issues)
-
-
 
 ### Related Documentation
 
@@ -233,3 +229,8 @@ Because node is more fun.
 ### Extras
 * https://github.com/systemjs/systemjs
 * https://github.com/systemjs/systemjs
+
+### Next
+* continue reading cookbook
+   * add stylus transforms via webpack
+   * add css to react components
