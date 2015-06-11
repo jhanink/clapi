@@ -232,6 +232,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ### Reads
 * http://facebook.github.io/react/docs
+* https://facebook.github.io/react/docs/addons.html
 * http://webpack.github.io/docs/
 * http://survivejs.com
 * http://blog.namangoel.com/browserify-vs-webpack-js-drama
@@ -243,6 +244,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ### Next
 * tie a route change to a targeted view update
+* react with addons
 * mixins
 * add css to react components
 * flux
