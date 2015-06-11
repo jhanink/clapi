@@ -9,7 +9,7 @@ npm install
 cd bin
 ```
 
-Hierarchically display JSON data with tree-view drill-down and property search 
+View and search JSON data as you would a filesystem directory tree 
 
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/dev-api-shortcuts/blob/master/assets/clapi_output.png?raw=true)
 
@@ -224,6 +224,7 @@ Because node is more fun.
 ### Reads
 * http://survivejs.com
 * http://blog.namangoel.com/browserify-vs-webpack-js-drama
+* http://blog.namangoel.com/css-in-js-in-css
 * http://angular-tips.com/blog/2015/06/why-will-angular-2-rock/
 
 ### Extras
