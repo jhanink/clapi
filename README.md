@@ -225,3 +225,7 @@ Because node is more fun.
 * http://survivejs.com
 * https://github.com/callemall/material-ui
 * https://www.gitbook.com
+
+### Reads
+* http://blog.namangoel.com/browserify-vs-webpack-js-drama
+
