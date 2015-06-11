@@ -25,7 +25,9 @@ Hierarchically display JSON data with tree-view drill-down and property search
 ```
 
 ```
-npm run dev
+# start a hot-swappable server and open the ui 
+npm run dev 
+open -a "Google Chrome" http://localhost:8080
 ```
 
 
