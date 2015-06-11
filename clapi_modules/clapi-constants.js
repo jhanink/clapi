@@ -18,7 +18,7 @@ module.exports = {
     BOLD: "\033[1m"
   },
   NAMES: {
-    PASTEBOARD: "clapi-pasteboard"
+    PASTEBOARD: "clapi_pasteboard"
   }
 };
 
