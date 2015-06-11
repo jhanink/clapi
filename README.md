@@ -220,17 +220,17 @@ Because node is more fun.
 ### Resources
 * https://christianalfoni.github.io/react-webpack-cookbook/index.html
 * https://github.com/callemall/material-ui
-* http://survivejs.com
 
 ### Reads
+* http://survivejs.com
 * http://blog.namangoel.com/browserify-vs-webpack-js-drama
 * http://angular-tips.com/blog/2015/06/why-will-angular-2-rock/
 
 ### Extras
-* https://github.com/systemjs/systemjs
 * https://github.com/systemjs/systemjs
 
 ### Next
 * continue reading cookbook
    * add stylus transforms via webpack
    * add css to react components
+* flux
