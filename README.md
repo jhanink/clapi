@@ -235,7 +235,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/systemjs/systemjs
 
 ### Next
-* continue reading cookbook
+* mixins
 * add css to react components
 * flux
 * fetch
+* continue reading cookbook
