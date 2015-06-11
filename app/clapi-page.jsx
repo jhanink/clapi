@@ -23,7 +23,7 @@ module.exports = React.createClass({
     return (
       <div>
         <ClapiNavMenu ref="lnm"/>
-        <AppBar title="CLAPI - using react, webpack, and material design" onLeftIconButtonTouchTap={this._onTapMenu}/>
+        <AppBar title="CLAPI - using react, material design, and webpack" onLeftIconButtonTouchTap={this._onTapMenu}/>
         <h1>Those crazy squirrels are nuts!!</h1>
       </div>
     );
