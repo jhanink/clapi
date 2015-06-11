@@ -24,9 +24,15 @@ View and search JSON data as you would a filesystem directory tree
 Work in progress, menu only, no command execution yet
 
 ```sh
-# start a hot-swappable server and open the ui 
+# start a hot-swappable server 
 npm run dev 
+
+# open auto-refreshing UI
+open -a "Google Chrome" http://localhost:8080/webpack-dev-server/bundle
+
+# open a manual-refresh UI
 open -a "Google Chrome" http://localhost:8080
+
 ```
 
 
@@ -222,6 +228,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * wm react 
    * https://gecgithub01.walmart.com/react
    * https://gecgithub01.walmart.com/react/react-dev-guide
+* css - http://projects.formidablelabs.com/radium/
 
 ### Reads
 * http://facebook.github.io/react/docs
@@ -235,6 +242,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/systemjs/systemjs
 
 ### Next
+* tie a route change to a targeted view update
 * mixins
 * add css to react components
 * flux
