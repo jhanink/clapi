@@ -219,7 +219,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * http://mobile-qa-ci.homeoffice.wal-mart.com:8080/view/Item%20check/job/Inventory_check/
 * [See additional project goals](docs/project-goals.md)
 
-### Resources
+### General Resources
 * https://christianalfoni.github.io/react-webpack-cookbook/index.html
 * https://github.com/webpack/webpack
 * https://github.com/rackt/react-router
@@ -229,6 +229,10 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://gecgithub01.walmart.com/react
    * https://gecgithub01.walmart.com/react/react-dev-guide
 * css - http://projects.formidablelabs.com/radium/
+
+### Walmart Resources
+* https://gecgithub01.walmart.com/react/react-dev-guide
+* https://gecgithub01.walmart.com/thor/getting-started
 
 ### Reads
 * http://facebook.github.io/react/docs
