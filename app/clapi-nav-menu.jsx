@@ -17,7 +17,8 @@ let menuItems = [
   {text: 'Create gift card', route: 'create-gift-card'},
   {text: 'Create temp card', route: 'create-temp-card'},
   {text: 'Fetch inventory report', route: 'fetch-inventory-report'},
-  {text: 'Get IRO offers', route: 'get-iro-offers'}
+  {text: 'Get IRO offers', route: 'get-iro-offers'},
+  {text: '* Material Design Samples', route: 'samples-view'}
 ];
 
 module.exports = React.createClass({

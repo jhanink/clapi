@@ -226,6 +226,15 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * http://mobile-qa-ci.homeoffice.wal-mart.com:8080/view/Item%20check/job/Inventory_check/
 * [See additional project goals](docs/project-goals.md)
 
+### Reads
+* http://facebook.github.io/react/docs
+* http://facebook.github.io/react/docs/addons.html
+* http://webpack.github.io/docs/
+* http://survivejs.com
+* http://blog.namangoel.com/browserify-vs-webpack-js-drama
+* http://blog.namangoel.com/css-in-js-in-css
+* http://angular-tips.com/blog/2015/06/why-will-angular-2-rock/
+
 ### General Resources
 * https://christianalfoni.github.io/react-webpack-cookbook/index.html
 * https://github.com/webpack/webpack
@@ -243,15 +252,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://gecgithub01.walmart.com/react/react-dev-guide
 * https://gecgithub01.walmart.com/thor/getting-started
 * https://gecgithub01.walmart.com/pages/react/showcase
-
-### Reads
-* http://facebook.github.io/react/docs
-* http://facebook.github.io/react/docs/addons.html
-* http://webpack.github.io/docs/
-* http://survivejs.com
-* http://blog.namangoel.com/browserify-vs-webpack-js-drama
-* http://blog.namangoel.com/css-in-js-in-css
-* http://angular-tips.com/blog/2015/06/why-will-angular-2-rock/
+* https://gecgithub01.walmart.com/react/analytics
 
 ### Extras
 * https://github.com/systemjs/systemjs
