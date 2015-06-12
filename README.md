@@ -133,8 +133,13 @@ Available commands:
 All the above commands save to the CLAPI buffer and can be immediately driven by ./clapi (below)
 
 
-##### → CLAPI : interactive / iterative mode
+##### → Clapi Todo:
 
+* save the previous pasteboard to support position-relative `./cd ..` and `./cd next_node` style
+* add a `./cd` command that works in a position-relative fashion.
+
+
+##### → CLAPI : interactive / iterative mode
 
 ```sh
   
