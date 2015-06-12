@@ -3,6 +3,7 @@
 CLAPI - Command Line API wrappers for cart and checkout
 
 ```sh
+
 git clone https://gecgithub01.walmart.com/jhanink/clapi.git
 cd clapi
 npm install
@@ -24,10 +25,10 @@ View and search JSON data as you would a filesystem directory tree
 Work in progress, menu only, no command execution yet
 
 ```sh
-# start a hot-swappable server 
+# start a hot re-loadable server 
 npm run dev 
 
-# open auto-refreshing UI
+# open an auto-refreshing UI
 open -a "Google Chrome" http://localhost:8080/webpack-dev-server/bundle
 
 # open a manual-refresh UI
@@ -83,6 +84,7 @@ Available commands:
   ./fetch-inventory-report --EVAL result[0]                  # get first item from cached result
   ./fetch-inventory-report --FUNC printFetchedItems          # print condensed report
 ```
+
 ```sh
   
   ./get-iro-offers 989CF1FB215E4C579A273357D8DE5111          # get IRO offers by offerId
@@ -161,7 +163,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 ```sh
 
   # find all matches by property name (deep search)
-  # uses starts-with + case-insensitive matching 
+  # using starts-with + case-insensitive matching 
   ./cf isAssociate
   ./cf isassoc
   
@@ -179,7 +181,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   # functions
   ./c -s=../samples/missingFulfillmentPrices.json
   ./c --FUNC=missingFulfillmentPrices
-  ```
+```
   
 ##### → ETC
 
@@ -204,7 +206,6 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   # find selected purchase contract shipping options
   ./c -s=../samples/purchaseContract.json;
   for i in {0..3}; do ./c groups[0].shippingOptions[$i].selected; done;
-  
 ```
 
 
