@@ -232,11 +232,12 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/rackt/react-router
 * https://github.com/github/fetch
 * https://github.com/callemall/material-ui
-* wm react 
+* (wm react) 
    * https://gecgithub01.walmart.com/react
    * https://gecgithub01.walmart.com/react/react-dev-guide
 * https://github.com/FormidableLabs/radium
 * https://github.com/FormidableLabs/component-playground
+* https://www.npmjs.com/package/color
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
@@ -245,7 +246,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ### Reads
 * http://facebook.github.io/react/docs
-* https://facebook.github.io/react/docs/addons.html
+* http://facebook.github.io/react/docs/addons.html
 * http://webpack.github.io/docs/
 * http://survivejs.com
 * http://blog.namangoel.com/browserify-vs-webpack-js-drama
