@@ -248,11 +248,13 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/systemjs/systemjs
 
 ### Next
-* tie a route change to a targeted view update
 * react with addons
 * mixins
-* add css to react components
 * flux
 * fetch
 * propTypes
-* radium
+
+### Done
+* tie a route change to a targeted view update - 6.11.2015
+* add css to react components - 6.11.2015
+* radium - 6.11.2015
