@@ -5,6 +5,7 @@ import $ from 'jquery';
 let Router = require('react-router');
 let AppRoutes = require('./app-routes.jsx');
 
+
 $(document).ready(function () {
   Router
     // Runs the router, similar to the Router.run method. You can think of it as an
@@ -18,4 +19,5 @@ $(document).ready(function () {
     .run(function (Handler) {
       React.render(<Handler />, document.body);
     });
+
 });

@@ -228,7 +228,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * wm react 
    * https://gecgithub01.walmart.com/react
    * https://gecgithub01.walmart.com/react/react-dev-guide
-* css - http://projects.formidablelabs.com/radium/
+* https://github.com/FormidableLabs/radium
+* https://github.com/FormidableLabs/component-playground
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
@@ -253,4 +254,5 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * add css to react components
 * flux
 * fetch
-* continue reading cookbook
+* propTypes
+* radium
