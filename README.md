@@ -241,6 +241,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
 * https://gecgithub01.walmart.com/thor/getting-started
+* https://gecgithub01.walmart.com/pages/react/showcase
 
 ### Reads
 * http://facebook.github.io/react/docs
@@ -256,10 +257,11 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ### Next
 * react with addons
-* mixins
-* flux
+* flux - https://github.com/goatslacker/alt
 * fetch
 * propTypes
+* production mode
+* mixins (deprecated)
 
 ### Done
 * tie a route change to a targeted view update - 6.11.2015
