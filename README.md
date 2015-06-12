@@ -26,10 +26,10 @@ View and search a JSON data tree as simply as navigating a file-system
 Work in progress, menu only, no command execution yet
 
 ```sh
-# start a hot re-loadable server 
+# start an auto hot-reload server 
 npm run dev 
 
-# open an auto-refreshing UI
+# open an hot-reloading UI (with state preservation)
 open -a "Google Chrome" http://localhost:8080/webpack-dev-server/bundle
 
 # open a manual-refresh UI
