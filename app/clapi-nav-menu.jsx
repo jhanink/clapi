@@ -23,18 +23,18 @@ let menuItems = [
 module.exports = React.createClass({
   render() {
     var header = (
-        <div style={this.getStyles()} onTouchTap={this._onHeaderClick}>
-          clapi commands
-        </div>
+      <div style={this.getStyles()} onTouchTap={this._onHeaderClick}>
+        clapi commands
+      </div>
     );
     return (
       <LeftNav
-          ref="leftNav"
-          docked={false}
-          isInitiallyOpen={false}
-          header={header}
-          menuItems={menuItems}
-          onChange={this._onLeftNavChange} />
+        ref="leftNav"
+        docked={false}
+        isInitiallyOpen={false}
+        header={header}
+        menuItems={menuItems}
+        onChange={this._onLeftNavChange} />
     );
   },
   _toggle() {

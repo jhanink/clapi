@@ -1,7 +1,5 @@
 let React     = require("react");
 let Radium    = require("radium");
-let Color     = require("color");
-
 
 @Radium
 class GetIroOffersView extends React.Component {

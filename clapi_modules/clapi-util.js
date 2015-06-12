@@ -93,7 +93,7 @@ module.exports = {
       }
       str += propCount ? Const.COLORS.BLUE : Const.COLORS.DARK_GRAY;
       var toPluralize = propCount === 0 || propCount > 1;
-      str += (propCount?"+ ":"") + prop + "" + (propCount ? Const.COLORS.DARK_GRAY + " "+(objInfo.IS_ARRAY?"··":"○—○")+" "
+      str += (propCount?(objInfo.IS_ARRAY?"":""):"") + prop + "" + (propCount ? Const.COLORS.DARK_GRAY + " "+(objInfo.IS_ARRAY?"·":"·")+" "
           + propCount
           + (objInfo.IS_ARRAY?" element":" node")
           + (toPluralize?"s":"")

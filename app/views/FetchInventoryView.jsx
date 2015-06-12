@@ -1,7 +1,5 @@
 let React     = require("react");
 let Radium    = require("radium");
-let Color     = require("color");
-
 
 @Radium
 class FetchInventoryView extends React.Component {
@@ -22,6 +20,5 @@ let styles = {
     textAlign: 'center'
   }
 };
-
 
 module.exports = FetchInventoryView;
