@@ -1,6 +1,6 @@
-let React = require("react");
-let Radium = require("radium");
-let Color = require("color");
+let React     = require("react");
+let Radium    = require("radium");
+let Color     = require("color");
 
 @Radium
 class CreateCartView extends React.Component {

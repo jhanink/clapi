@@ -1,16 +1,9 @@
-
 var path = require('path');
+
 var node_modules = path.resolve(__dirname, 'node_modules');
-/*var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
-var pathToJquery = path.resolve(node_modules, 'jquery/dist/jquery.min.js');*/
 
 var config = {
-  entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/app.js')],
-  /*resolve: {
-    alias: {
-      'react': pathToReact
-    }
-  },*/
+  entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/app.jsx')],
   resolve: {
     modulesDirectories: ['node_modules'],
     alias: {},
@@ -21,7 +14,6 @@ var config = {
     filename: 'bundle.js'
   },
   module: {
-    /*noParse: [pathToReact, pathToJquery],*/
     loaders: [
       { test: /\.(js|jsx)$/,
         exclude: /node_modules/,

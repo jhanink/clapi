@@ -1,17 +1,14 @@
-import React from 'react';
+import  React                 from 'react';
+let     Router                = require('react-router');
+let     $                     = require("jquery");
+let     mui                   = require("material-ui");
+let     injectTapEventPlugin  = require("react-tap-event-plugin");
 
-let Router = require('react-router');
-let $ = require("jquery");
-
-let mui = require("material-ui");
 let LeftNav = mui.LeftNav;
 let MenuItem = mui.MenuItem;
-
 let {Colors, Spacing, Typography} = mui.Styles;
 let ThemeManager = new mui.Styles.ThemeManager();
 ThemeManager.setTheme(ThemeManager.types.LIGHT);
-
-let injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
 let menuItems = [
