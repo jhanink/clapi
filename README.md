@@ -14,7 +14,6 @@ View and search a JSON data tree as simply as navigating a file-system
 
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
 
-![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/clapi_output_2.png?raw=true)
 
 ### Features
 
