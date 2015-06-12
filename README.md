@@ -257,7 +257,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ### Next
 * react with addons
-* flux - https://github.com/goatslacker/alt
+* (flux) 
+   * https://github.com/goatslacker/alt
+   * https://github.com/goatslacker/alt-tutorial
 * fetch
 * propTypes
 * production mode
