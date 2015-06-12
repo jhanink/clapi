@@ -10,7 +10,7 @@ npm install
 cd bin
 ```
 
-View and find data in a JSON data tree as if navigating a file-system 
+View and search a JSON data tree as simply as navigating a file-system 
 
 ![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
 
