@@ -45,12 +45,10 @@ module.exports =
       argsHelpStr = _arr.join(".");
       var _temp = Util.findShallow(val, argsHelpStr);
       argsHelpStr = _temp.key;
-      fs.writeFileSync(__dirname + '/../output/' + Const.NAMES.PASTEBOARD, './clapi ' + argsHelpStr);
-      temp = _temp.val;
-    } else {
-      temp = eval('val');
-      fs.writeFileSync(__dirname + '/../output/' + Const.NAMES.PASTEBOARD, './clapi ');
     }
+
+    temp = (hasArgsValue?_temp.val:eval('val'));
+    fs.writeFileSync(__dirname + '/../output/' + Const.NAMES.PASTEBOARD, './c ' + (hasArgsValue?argsHelpStr:""));
 
     var idx = 0;
     for (var prop in temp) {
