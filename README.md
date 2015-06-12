@@ -247,6 +247,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/FormidableLabs/radium
 * https://github.com/FormidableLabs/component-playground
 * https://www.npmjs.com/package/color
+* https://github.com/FormidableLabs/converter-react
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
