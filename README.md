@@ -214,7 +214,6 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   for i in {0..3}; do ./c groups[0].shippingOptions[$i].selected; done;
 ```
 
-
 ### Contribute
 
 * [Open a github issue to request a new feature](https://gecgithub01.walmart.com/jhanink/clapi/issues)
@@ -250,30 +249,32 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/FormidableLabs/component-playground
 * https://github.com/FormidableLabs/converter-react
 
-
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
 * https://gecgithub01.walmart.com/thor/getting-started
 * https://gecgithub01.walmart.com/pages/react/showcase
 * https://gecgithub01.walmart.com/react/analytics
 
-### Extras / Alternatives
-* https://github.com/systemjs/systemjs
-
 ### Next
-* react with addons
 * (flux) 
    * https://github.com/goatslacker/alt
    * https://github.com/goatslacker/alt-tutorial
+* react with addons
 * fetch
 * propTypes
-* production mode
 * mixins (deprecated)
+* isomorphic server rendering
+* production mode
+
+### Issues
+* able to run app via webpack-hot-loader but not via a simple webserver
+* run hot-loader and app node server at the same time
 
 ### Done
 * tie a route change to a targeted view update - 6.11.2015
 * add css to react components - 6.11.2015
 * radium - 6.11.2015
 
-### Issues
-* able to run app via webpack-hot-loader but not via a simple webserver
+### Extras / Alternatives
+* https://github.com/systemjs/systemjs
+
