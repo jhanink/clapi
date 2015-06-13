@@ -274,3 +274,6 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * tie a route change to a targeted view update - 6.11.2015
 * add css to react components - 6.11.2015
 * radium - 6.11.2015
+
+### Issues
+* able to run app via webpack-hot-loader but not via a simple webserver
