@@ -4,28 +4,25 @@ let mui       = require("material-ui");
 let ThemeManager = new mui.Styles.ThemeManager();
 ThemeManager.setTheme(ThemeManager.types.LIGHT);
 
-let Checkbox = mui.Checkbox;
+let Toggle = mui.Toggle;
 
 module.exports = React.createClass({
+  style: {marginTop:'50px', marginLeft:'50px', width:'200px'},
   getInitialState : function() {
     return {
-      checked: false
+      textValue: ""
     };
   },
   render() {
     return (
-      <div style={this.styles.base}>
-        <Checkbox
-          name="checkboxName1"
-          value="checkboxValue1"
-          label="Double Awesome Design Checkbox !"
-          defaultChecked={this.state.checked}
-          onCheck={this._onCheck}/>
+      <div style={this.style}>
+        <Toggle
+          name="test"
+          value="test1"
+          label="activate thrusters"
+          elementStyle={{width: '300px'}}/>
       </div>
     )
-  },
-  _onCheck(e, checked) {
-    this.state.checked = checked;
   },
   childContextTypes: {
     muiTheme: React.PropTypes.object
@@ -34,12 +31,5 @@ module.exports = React.createClass({
     return {
       muiTheme: ThemeManager.getCurrentTheme()
     };
-  },
-  styles: {
-    base: {
-      marginTop: '25px',
-      marginLeft: '50px'
-    }
   }
-
 });

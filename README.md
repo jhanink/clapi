@@ -239,15 +239,17 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://christianalfoni.github.io/react-webpack-cookbook/index.html
 * https://github.com/webpack/webpack
 * https://github.com/rackt/react-router
+* https://github.com/goatslacker/alt
 * https://github.com/github/fetch
-* https://github.com/callemall/material-ui
-* (wm react) 
-   * https://gecgithub01.walmart.com/react
-   * https://gecgithub01.walmart.com/react/react-dev-guide
+* (react material) 
+   * https://github.com/callemall/material-ui
+* (vanilla js material) 
+   * https://github.com/Dogfalo/materialize
+* https://www.npmjs.com/package/color
 * https://github.com/FormidableLabs/radium
 * https://github.com/FormidableLabs/component-playground
-* https://www.npmjs.com/package/color
 * https://github.com/FormidableLabs/converter-react
+
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
@@ -255,7 +257,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://gecgithub01.walmart.com/pages/react/showcase
 * https://gecgithub01.walmart.com/react/analytics
 
-### Extras
+### Extras / Alternatives
 * https://github.com/systemjs/systemjs
 
 ### Next

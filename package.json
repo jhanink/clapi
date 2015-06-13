@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "color": "^0.8.0",
+    "component-playground": "0.0.13",
     "csvtojson": "^0.3.21",
     "express": "^4.12.3",
     "jquery": "^2.1.4",
@@ -25,6 +26,7 @@
     "material-ui": "^0.8.0",
     "prettyjson": "^1.1.0",
     "radium": "^0.13.0",
+    "raw-loader": "^0.5.1",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "react-tap-event-plugin": "^0.1.7",

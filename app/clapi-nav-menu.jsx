@@ -18,7 +18,7 @@ let menuItems = [
   {text: 'Create temp card', route: 'create-temp-card'},
   {text: 'Fetch inventory report', route: 'fetch-inventory-report'},
   {text: 'Get IRO offers', route: 'get-iro-offers'},
-  {text: '* Material Design Samples', route: 'samples-view'}
+  {text: '○ Material Design Samples', route: 'samples-view'}
 ];
 
 module.exports = React.createClass({
