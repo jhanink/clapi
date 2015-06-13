@@ -269,6 +269,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 ### Issues
 * able to run app via webpack-hot-loader but not via a simple webserver
 * run hot-loader and app node server at the same time
+   * (try this) - https://github.com/FormidableLabs/converter-react
 
 ### Done
 * tie a route change to a targeted view update - 6.11.2015
