@@ -16,6 +16,7 @@
   "author": "Joe Hanink",
   "license": "ISC",
   "dependencies": {
+    "alt": "^0.16.10",
     "color": "^0.8.0",
     "component-playground": "0.0.13",
     "csvtojson": "^0.3.21",
