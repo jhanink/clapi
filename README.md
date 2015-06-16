@@ -236,7 +236,10 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * http://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html
 
 ### General Resources
-* https://christianalfoni.github.io/react-webpack-cookbook/index.html
+* Christian Alfoni's webpack setup
+   * https://christianalfoni.github.io/react-webpack-cookbook/index.html
+   * http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+   * https://github.com/christianalfoni/webpack-express-boilerplate
 * https://github.com/webpack/webpack
 * https://github.com/rackt/react-router
 * https://github.com/goatslacker/alt
@@ -257,9 +260,10 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://gecgithub01.walmart.com/react/analytics
 
 ### Next
-* Get express server up and running with webpack
+* Webpack + Express
    * http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
-* (flux) 
+   * https://github.com/christianalfoni/webpack-express-boilerplate
+* Flux 
    * https://github.com/goatslacker/alt
    * https://github.com/goatslacker/alt-tutorial
 * react with addons
