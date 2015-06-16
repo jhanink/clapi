@@ -5,6 +5,10 @@ var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxyServer();
 var app = express();
 
+var Routes = require("./routes")
+
+app.use("/", Routes);
+
 var isProduction = process.env.NODE_ENV === 'production';
 var port = isProduction ? 8080 : 3000;
 var publicPath = path.resolve(__dirname, 'public');
