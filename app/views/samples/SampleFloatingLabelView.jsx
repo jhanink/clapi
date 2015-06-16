@@ -9,7 +9,7 @@ let TextField = mui.TextField;
 // https://github.com/callemall/material-ui/issues/835
 module.exports = React.createClass({
   containerStyle: {marginTop:'0', marginLeft:'50px'},
-  textFieldStyle: {padding: '0', margin:'0', fontSize:'14px', display:'inline-block'},
+  textFieldStyle: {},
   getInitialState : function() {
     return {
       textValue: ""

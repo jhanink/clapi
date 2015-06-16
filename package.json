@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node startserver.js",
+    "start": "node server",
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build/"
   },
@@ -23,6 +23,7 @@
     "ejs": "^2.3.1",
     "es6-promise": "^2.3.0",
     "express": "^4.12.3",
+    "http-proxy": "^1.11.1",
     "iso": "^4.1.0",
     "jquery": "^2.1.4",
     "json-loader": "^0.5.2",
