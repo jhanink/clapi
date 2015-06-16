@@ -27,13 +27,13 @@ Work in progress, menu only, no command execution yet
 
 ```sh
 # start an auto hot-reload server 
-npm run dev 
+npm start
 
-# open an hot-reloading UI (with state preservation)
-open -a "Google Chrome" http://localhost:8080/webpack-dev-server/bundle
+# open an auto hot-reloading UI
+open -a "Google Chrome" http://localhost:3000
 
-# open a manual-refresh UI
-open -a "Google Chrome" http://localhost:8080
+# open an auto hot-reloading UI with update indicator
+open -a "Google Chrome" http://localhost:8080/webpack-dev-server/build/bundle
 
 ```
 
