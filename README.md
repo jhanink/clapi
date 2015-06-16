@@ -257,9 +257,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://gecgithub01.walmart.com/react/analytics
 
 ### Next
-* GET Express server up and running
+* Get express server up and running with webpack
    * http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
-   
 * (flux) 
    * https://github.com/goatslacker/alt
    * https://github.com/goatslacker/alt-tutorial
