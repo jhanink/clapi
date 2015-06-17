@@ -1,24 +1,37 @@
 let React     = require("react");
-let Radium    = require("radium");
+let $         = require("jquery");
 
-@Radium
-class GetCustomerView extends React.Component {
+let GetCustomerView = React.createClass({
+
+  getInitialState() {
+    return {
+      data: {}
+    }
+  },
+
+  componentDidMount() {
+    var self = this;
+    console.log("making /get-customer call")
+    $.get("/get-customer", function(result) {
+      self.setState({
+        data: result
+      })
+    });
+  },
+
   render() {
     return (
       <div>
-        <h2 style={[styles.base]}>
-          Get Customer...
+        <h2 style={this.styles}>
+          {this.state.data}
         </h2>
       </div>
     );
-  }
-}
-
-let styles = {
-  base: {
+  },
+  styles: {
     color: '#CCC',
     textAlign: 'center'
   }
-};
+});
 
 module.exports = GetCustomerView;

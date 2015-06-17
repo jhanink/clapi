@@ -7,6 +7,10 @@ var makeRequest = function (options, data, state) {
   }
 
   request(options, function (err, resp, body) {
+    if(state.callback) {
+      state.callback(err?err:body);
+      return;
+    }
     _printOutput(state, err, resp, body);
   });
 };
