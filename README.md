@@ -260,6 +260,12 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://gecgithub01.walmart.com/react/analytics
 
 ### Next
+* json tree view
+   * (react component)
+      * http://react.rocks/example/react-json-inspector
+      * https://bitbucket.org/davevedder/react-json-viewer
+   * (jquery component)
+      * http://blog.yesmeck.com/jquery-jsonview/
 * Webpack + Express
    * http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
    * https://github.com/christianalfoni/webpack-express-boilerplate
@@ -277,6 +283,10 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * able to run app via webpack-hot-loader but not via a simple webserver
 * run hot-loader and app node server at the same time
    * (try this) - https://github.com/FormidableLabs/converter-react
+* improper to use jquery plugins that modify dom
+   * http://stackoverflow.com/questions/25436445/using-jquery-plugins-that-transform-the-dom-in-react-components
+* (wormhole pattern for jquery plugins)
+   * https://gist.github.com/ryanflorence/7cdaea0af8e334413502
 
 ### Done
 * tie a route change to a targeted view update - 6.11.2015
