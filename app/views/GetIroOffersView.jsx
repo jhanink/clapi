@@ -7,27 +7,43 @@ let ThemeManager = new mui.Styles.ThemeManager();
 ThemeManager.setTheme(ThemeManager.types.LIGHT);
 
 let TextField = mui.TextField;
+let RaisedButton = mui.RaisedButton;
+let LinearProgress = mui.LinearProgress;
+var LinearProgressTag = undefined;
 
-let GetIroOffersView = React.createClass({
+module.exports = React.createClass({
   getInitialState() {
     return {
-      data: {}
+      data: {},
+      isFetching: false
     }
   },
 
   render() {
     return (
-        <div style={{marginLeft: '25px'}}>
-        <div style={{font:'20px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
+      <div style={{marginLeft: '25px'}}>
+        <div style={{font:'20px Helvetica', color:'#888', margin:'20px', textAlign:'center'}}>
           GET IRO OFFERS
         </div>
         <TextField
           ref="tf"
-          style={{width: '100%', marginBottom: '40px'}}
+          style={{width: '100%'}}
           hintText="OfferId / USItemId"
           floatingLabelText="Enter an OfferId or USItemId"
           onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
           onEnterKeyDown={this._handleInput}/>
+          <RaisedButton
+            label="fetch"
+            primary={true}
+            onClick={this._handleClick}
+            style={{marginBottom: '30px'}}/>
+          {
+            this.state.isFetching
+            ? <LinearProgress
+                mode="indeterminate"
+                style={{height:'2px', marginBottom: '20px'}}/>
+            : null
+          }
         <Inspector data={this.state.data}/>
       </div>
     );
@@ -35,16 +51,26 @@ let GetIroOffersView = React.createClass({
   _handleInput(e) {
     let val = e.target.value;
     if (val.length > 0) {
-      this._getIroOffers(val);
+      this._fetch(val)
     }
   },
-  _getIroOffers(input) {
+  _fetch(input) {
+    this.setState({isFetching: true});
     var self = this;
     $.get("/get-iro-offers/"+input, function(result) {
-      self.setState({
-        data: JSON.parse(result)
-      });
+      setTimeout(function() {
+        self.setState({
+          isFetching: false,
+          data: JSON.parse(result)
+        });
+      }, 1500);
     });
+  },
+  _handleClick() {
+    let val = this.refs.tf.getValue();
+    if (val.length > 0) {
+      this._fetch(val);
+    }
   },
   childContextTypes: {
     muiTheme: React.PropTypes.object
@@ -55,5 +81,3 @@ let GetIroOffersView = React.createClass({
     };
   }
 });
-
-module.exports = GetIroOffersView;

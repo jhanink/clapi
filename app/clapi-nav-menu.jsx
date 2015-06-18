@@ -16,9 +16,7 @@ let menuItems = [
   {text: 'create-cart', route: 'create-cart'},
   {text: 'create-gift-card', route: 'create-gift-card'},
   {text: 'create-temp-card', route: 'create-temp-card'},
-  {text: 'fetch-inventory-report', route: 'fetch-inventory-report'},
-  {text: 'get-iro-offers', route: 'get-iro-offers'}/*,
-  {text: '○ Material Design Samples', route: 'samples-view'}*/
+  {text: 'get-iro-offers', route: 'get-iro-offers'}
 ];
 
 module.exports = React.createClass({

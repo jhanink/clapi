@@ -10,7 +10,6 @@ let AppRoutes = (
     <Route name="create-cart" handler={require("./views/CreateCartView.jsx")} />
     <Route name="create-gift-card" handler={require("./views/CreateGiftCardView.jsx")} />
     <Route name="create-temp-card" handler={require("./views/CreateTempCardView.jsx")} />
-    <Route name="fetch-inventory-report" handler={require("./views/FetchInventoryView.jsx")} />
     <Route name="get-iro-offers" handler={require("./views/GetIroOffersView.jsx")} />
     <Route name="samples-view" handler={require("./views/SamplesView.jsx")} />
     <DefaultRoute handler={require("./views/HomeView.jsx")} />

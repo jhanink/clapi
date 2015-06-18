@@ -38,6 +38,23 @@ router.get('/get-iro-offers/:offerId', function(req, res) {
   ApiCall(config);
 });
 
+// ----------------------------
+// create gift card
+// ----------------------------
+router.get('/create-gift-card/:amount', function(req, res) {
+  var config = {
+    args: {
+      name: 'create-gift-card',
+      amount: req.params.amount
+    },
+    callback: function (result) {
+      res.send(result);
+    }
+  };
+
+  ApiCall(config);
+});
+
 
 /* test */
 router.get('/hello', function(req, res) {
