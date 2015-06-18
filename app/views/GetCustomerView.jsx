@@ -22,19 +22,21 @@ let GetCustomerView = React.createClass({
           Get Customer
         </div>
         <TextField
+          ref="tf"
           style={{width: '350px', marginBottom: '40px'}}
           hintText="Customer Id"
           floatingLabelText="Enter a customer id"
-          onKeyUp={this._handleInputCustomerId}/>
+          onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
+          onEnterKeyDown={this._handleInputCustomerId}/>
         <Inspector data={this.state.data}/>
       </div>
     );
   },
   _handleInputCustomerId(e) {
-    if (e.keyCode === 13) {
-      if (e.target.value.length === 36) {
-        this._getCustomer(e.target.value);
-      }
+    var val = e.target.value;
+    if (val.length === 36
+        || (val.indexOf("@")>0 && val.indexOf(".")<val.length-1)) {
+      this._getCustomer(val);
     }
   },
   _getCustomer(customerId) {
