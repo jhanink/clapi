@@ -1,42 +1,63 @@
 let React     = require("react");
 let $         = require("jquery");
-var Inspector = require('react-json-inspector');
-var inspector = React.createFactory(Inspector);
-var InteractiveSelection = require('../lib/interactive-selection');
-var interactiveSelection = React.createFactory(InteractiveSelection);
+let Inspector = require("react-json-inspector");
+let mui       = require("material-ui");
+
+let ThemeManager = new mui.Styles.ThemeManager();
+ThemeManager.setTheme(ThemeManager.types.LIGHT);
+
+let TextField = mui.TextField;
 
 let GetCustomerView = React.createClass({
-
   getInitialState() {
     return {
       data: {}
     }
   },
 
-  componentDidMount() {
+  render() {
+    return (
+      <div style={ {marginLeft: '25px'} }>
+        <div style={{font:'25px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
+          Get Customer
+        </div>
+        <TextField
+          style={{width: '350px', marginBottom: '40px'}}
+          hintText="Customer Id"
+          floatingLabelText="Enter a customer id"
+          onKeyUp={this._handleInputCustomerId}/>
+        <Inspector data={this.state.data}/>
+      </div>
+    );
+  },
+  _handleInputCustomerId(e) {
+    if (e.keyCode === 13) {
+      if (e.target.value.length === 36) {
+        this._getCustomer(e.target.value);
+      }
+    }
+  },
+  _getCustomer(customerId) {
     var self = this;
-    console.log("making /get-customer call");
-    $.get("/get-customer", function(result) {
+    $.get("/get-customer/"+customerId, function(result) {
       self.setState({
         data: JSON.parse(result)
       });
     });
   },
-
-  render() {
-    return (
-      <div>
-        <h2 style={this.styles} ref="json">
-          Get Customer...
-        </h2>
-        <Inspector data={this.state.data} interactiveLabel={interactiveSelection}/>
-      </div>
-    );
-  },
   styles: {
     color: '#CCC',
     textAlign: 'center'
-  }
+  },
+
+  childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+}
 });
 
 module.exports = GetCustomerView;

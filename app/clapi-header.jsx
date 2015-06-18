@@ -18,7 +18,7 @@ let ClapiHeader = React.createClass({
     );
   },
   _getTitle() {
-    return "CLAPI - using react, material design, and webpack";
+    return "CLAPI";
   },
   _onTapMenu() {
     this.refs.leftNavMenu._toggle();
