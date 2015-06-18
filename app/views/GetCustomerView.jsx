@@ -27,21 +27,21 @@ let GetCustomerView = React.createClass({
           hintText="Customer Id"
           floatingLabelText="Enter a customer id"
           onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
-          onEnterKeyDown={this._handleInputCustomerId}/>
+          onEnterKeyDown={this._handleInput}/>
         <Inspector data={this.state.data}/>
       </div>
     );
   },
-  _handleInputCustomerId(e) {
+  _handleInput(e) {
     var val = e.target.value;
     if (val.length === 36
         || (val.indexOf("@")>0 && val.indexOf(".")<val.length-1)) {
       this._getCustomer(val);
     }
   },
-  _getCustomer(customerId) {
+  _getCustomer(input) {
     var self = this;
-    $.get("/get-customer/"+customerId, function(result) {
+    $.get("/get-customer/"+input, function(result) {
       self.setState({
         data: JSON.parse(result)
       });
