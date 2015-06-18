@@ -33,18 +33,18 @@ module.exports = React.createClass({
           floatingLabelText="Enter a gift card amount"
           onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
           onEnterKeyDown={this._handleInput}/>
+        {
+          this.state.isFetching
+              ? <LinearProgress
+              mode="indeterminate"
+              style={{height:'4px', marginBottom: '10px', backgroundColor:'white'}}/>
+              : <div style={{height:'4px', marginBottom: '10px'}}></div>
+        }
         <RaisedButton
           label="fetch"
           primary={true}
           onClick={this._handleClick}
           style={{marginBottom: '30px'}}/>
-        {
-          this.state.isFetching
-            ? <LinearProgress
-                mode="indeterminate"
-                style={{height:'2px', marginBottom: '20px'}}/>
-            : null
-        }
         <Inspector data={this.state.data}/>
       </div>
     );

@@ -26,25 +26,25 @@ module.exports = React.createClass({
         <div style={{font:'20px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
           GET CUSTOMER
         </div>
-          <TextField
-            ref="tf"
-            style={{width: '100%'}}
-            hintText="Customer Id or Email"
-            floatingLabelText="Enter a customer id or email address"
-            onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
-            onEnterKeyDown={this._handleInput}/>
-          <RaisedButton
-            label="fetch"
-            primary={true}
-            onClick={this._handleClick}
-            style={{marginBottom: '30px'}}/>
-          {
-            this.state.isFetching
+        <TextField
+          ref="tf"
+          style={{width: '100%'}}
+          hintText="Customer Id or Email"
+          floatingLabelText="Enter a customer id or email address"
+          onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
+          onEnterKeyDown={this._handleInput}/>
+        {
+          this.state.isFetching
               ? <LinearProgress
-                  mode="indeterminate"
-                  style={{height:'2px', marginBottom: '20px'}}/>
-              : null
-          }
+              mode="indeterminate"
+              style={{height:'4px', marginBottom: '10px', backgroundColor:'white'}}/>
+              : <div style={{height:'4px', marginBottom: '10px'}}></div>
+        }
+        <RaisedButton
+          label="fetch"
+          primary={true}
+          onClick={this._handleClick}
+          style={{marginBottom: '30px'}}/>
         <Inspector data={this.state.data}/>
       </div>
     );
