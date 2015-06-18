@@ -243,6 +243,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://christianalfoni.github.io/react-webpack-cookbook/index.html
    * http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
    * https://github.com/christianalfoni/webpack-express-boilerplate
+   * http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html
 * https://github.com/webpack/webpack
 * https://github.com/rackt/react-router
 * https://github.com/goatslacker/alt
