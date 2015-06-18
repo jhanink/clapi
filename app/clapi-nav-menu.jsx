@@ -12,13 +12,13 @@ ThemeManager.setTheme(ThemeManager.types.LIGHT);
 injectTapEventPlugin();
 
 let menuItems = [
-  {text: 'Get customer', route: 'get-customer'},
-  {text: 'Create cart', route: 'create-cart'},
-  {text: 'Create gift card', route: 'create-gift-card'},
-  {text: 'Create temp card', route: 'create-temp-card'},
-  {text: 'Fetch inventory report', route: 'fetch-inventory-report'},
-  {text: 'Get IRO offers', route: 'get-iro-offers'},
-  {text: '○ Material Design Samples', route: 'samples-view'}
+  {text: 'get-customer', route: 'get-customer'},
+  {text: 'create-cart', route: 'create-cart'},
+  {text: 'create-gift-card', route: 'create-gift-card'},
+  {text: 'create-temp-card', route: 'create-temp-card'},
+  {text: 'fetch-inventory-report', route: 'fetch-inventory-report'},
+  {text: 'get-iro-offers', route: 'get-iro-offers'}/*,
+  {text: '○ Material Design Samples', route: 'samples-view'}*/
 ];
 
 module.exports = React.createClass({
