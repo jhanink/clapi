@@ -39,7 +39,7 @@ open -a "Google Chrome" http://localhost:8080/webpack-dev-server/build/bundle
 
 Run the API commands from the GUI
 
-![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/clapi_ui.gif?raw=true)
+![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/clapi-ui.gif?raw=true)
 
 ### Commands
 
