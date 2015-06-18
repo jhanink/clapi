@@ -17,19 +17,19 @@ let GetIroOffersView = React.createClass({
 
   render() {
     return (
-        <div style={ {marginLeft: '25px'} }>
-          <div style={{font:'25px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
-            Get IRO Offers
-          </div>
-          <TextField
-              ref="tf"
-              style={{width: '350px', marginBottom: '40px'}}
-              hintText="OfferId / USItemId"
-              floatingLabelText="Enter an OfferId or USItemId"
-              onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
-              onEnterKeyDown={this._handleInput}/>
-          <Inspector data={this.state.data}/>
+        <div style={{marginLeft: '25px'}}>
+        <div style={{font:'20px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
+          GET IRO OFFERS
         </div>
+        <TextField
+          ref="tf"
+          style={{width: '100%', marginBottom: '40px'}}
+          hintText="OfferId / USItemId"
+          floatingLabelText="Enter an OfferId or USItemId"
+          onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
+          onEnterKeyDown={this._handleInput}/>
+        <Inspector data={this.state.data}/>
+      </div>
     );
   },
   _handleInput(e) {
@@ -46,11 +46,6 @@ let GetIroOffersView = React.createClass({
       });
     });
   },
-  styles: {
-    color: '#CCC',
-    textAlign: 'center'
-  },
-
   childContextTypes: {
     muiTheme: React.PropTypes.object
   },

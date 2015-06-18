@@ -17,13 +17,13 @@ let GetCustomerView = React.createClass({
 
   render() {
     return (
-      <div style={ {marginLeft: '25px'} }>
-        <div style={{font:'25px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
-          Get Customer
+      <div style={{marginLeft: '25px'}}>
+        <div style={{font:'20px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
+          GET CUSTOMER
         </div>
         <TextField
           ref="tf"
-          style={{width: '350px', marginBottom: '40px'}}
+          style={{width: '100%', marginBottom: '40px'}}
           hintText="Customer Id"
           floatingLabelText="Enter a customer id"
           onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
@@ -47,11 +47,6 @@ let GetCustomerView = React.createClass({
       });
     });
   },
-  styles: {
-    color: '#CCC',
-    textAlign: 'center'
-  },
-
   childContextTypes: {
     muiTheme: React.PropTypes.object
   },
