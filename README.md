@@ -244,6 +244,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
    * https://github.com/christianalfoni/webpack-express-boilerplate
    * http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html
+   * http://www.christianalfoni.com/articles/2015_05_18_Cerebral-developer-preview
 * https://github.com/webpack/webpack
 * https://github.com/rackt/react-router
 * https://github.com/goatslacker/alt
