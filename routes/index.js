@@ -56,9 +56,16 @@ router.get('/create-gift-card/:amount', function(req, res) {
 });
 
 
-/* test */
-router.get('/hello', function(req, res) {
-  res.send("hello")
+router.get('/', function(req, res) {
+  var React = require('react');
+  var Router = require('react-router');
+  var Routes = require("../app/clapi-routes.jsx");
+
+  var router = Router.create({location: req.url, routes: Routes});
+  router.run(function(Handler, state) {
+    var html = React.renderToString(<Handler/>);
+    return res.render('index.ejs', {html:html});
+  })
 });
 
 

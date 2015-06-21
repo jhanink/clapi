@@ -5,7 +5,7 @@ let Route = Router.Route;
 let DefaultRoute = Router.DefaultRoute;
 
 let AppRoutes = (
-    <Route name="root" path="/" handler={require("./clapi-page.jsx")}>
+    <Route name="root" path="/" location="history" handler={require("./clapi-page.jsx")}>
       <Route name="get-customer" handler={require("./views/GetCustomerView.jsx")} />
       <Route name="create-cart" handler={require("./views/CreateCartView.jsx")} />
       <Route name="create-gift-card" handler={require("./views/CreateGiftCardView.jsx")} />

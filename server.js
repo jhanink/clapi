@@ -5,7 +5,8 @@ var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxyServer();
 var app = express();
 
-var Routes = require("./routes")
+app.set('view engine', 'ejs');
+var Routes = require("./routes");
 
 app.use("/", Routes);
 
