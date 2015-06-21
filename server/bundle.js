@@ -3,7 +3,8 @@ var WebpackDevServer = require('webpack-dev-server');
 var webpackConfig = require('./../webpack.config.js');
 var path = require('path');
 var fs = require('fs');
-var mainPath = path.resolve(__dirname, '..', 'app', 'main.js');
+
+//var mainPath = path.resolve(__dirname, '..', 'build', 'bundle.js');
 
 var listenPort = 8080;
 
@@ -33,6 +34,8 @@ module.exports = function () {
     // from the build path. When proxying:
     // http://localhost:3000/build -> http://localhost:8080/build
     publicPath: '/build/',
+
+    historyApiFallback: true,
 
     // Configure hot replacement
     hot: true,

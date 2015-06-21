@@ -41,7 +41,7 @@ var config = {
       // ES6/7 syntax and JSX transpiling out of the box
       {
         test: /\.(js|jsx)$/,
-        loader: 'react-hot!babel-loader?stage=1',
+        loader: 'react-hot!babel-loader?stage=0',
         exclude: [nodeModulesPath]
       },
 

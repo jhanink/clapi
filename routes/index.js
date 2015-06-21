@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var ApiCall = require('../api-call-configurations/stage');
 
-
 // ----------------------------
 // get customer
 // ----------------------------
@@ -55,14 +54,12 @@ router.get('/create-gift-card/:amount', function(req, res) {
   ApiCall(config);
 });
 
-
-router.get('/', function(req, res) {
+router.get('*', function(req, res) {
   var React = require('react');
   var Router = require('react-router');
   var Routes = require("../app/clapi-routes.jsx");
 
-  var router = Router.create({location: req.url, routes: Routes});
-  router.run(function(Handler, state) {
+  Router.run(Routes, req.path, function(Handler) {
     var html = React.renderToString(<Handler/>);
     return res.render('index.ejs', {html:html});
   })
