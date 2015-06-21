@@ -237,6 +237,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * http://blog.namangoel.com/css-in-js-in-css
 * http://angular-tips.com/blog/2015/06/why-will-angular-2-rock/
 * http://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html
+* http://stackoverflow.com/questions/28553904/client-routing-using-react-router-and-server-side-routing
+* https://github.com/mhart/react-server-example
 
 ### General Resources
 * Christian Alfoni's webpack setup
