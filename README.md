@@ -249,6 +249,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * http://www.christianalfoni.com/articles/2015_05_18_Cerebral-developer-preview
 * https://github.com/webpack/webpack
 * https://github.com/rackt/react-router
+* https://rackt.github.io/react-router/#HistoryLocation
 * https://github.com/goatslacker/alt
 * https://github.com/github/fetch
 * (react material) 
@@ -261,6 +262,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/FormidableLabs/converter-react
 * https://github.com/yahoo/react-intl
 * http://formatjs.io/react/
+* Demo a node server
+   * http://code.runnable.com
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
@@ -296,6 +299,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * http://stackoverflow.com/questions/25436445/using-jquery-plugins-that-transform-the-dom-in-react-components
 * (wormhole pattern for jquery plugins)
    * https://gist.github.com/ryanflorence/7cdaea0af8e334413502
+* SSR isomorphism issue with material-ui:
+   * https://github.com/callemall/material-ui/issues/748
 
 ### Done
 * tie a route change to a targeted view update - 6.11.2015
