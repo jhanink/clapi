@@ -14,8 +14,8 @@ injectTapEventPlugin();
 let menuItems = [
   {text: 'get-customer', route: 'get-customer'},
   {text: 'create-cart', route: 'create-cart'},
+  {text: 'add-to-cart', route: 'add-to-cart'},
   {text: 'create-gift-card', route: 'create-gift-card'},
-  {text: 'create-temp-card', route: 'create-temp-card'},
   {text: 'get-iro-offers', route: 'get-iro-offers'}
 ];
 

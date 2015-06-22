@@ -71,6 +71,24 @@ router.get('/create-cart/:customerId', function(req, res) {
   ApiCall(config);
 });
 
+// ----------------------------
+// add to cart
+// ----------------------------
+router.get('/add-to-cart/:cartId/:id', function(req, res) {
+  var config = {
+    args: {
+      name: 'add-to-cart',
+      cartId: req.params.cartId,
+      id: req.params.id // can be offerId or USItemId
+    },
+    callback: function (result) {
+      res.send(result);
+    }
+  };
+
+  ApiCall(config);
+});
+
 
 // ----------------------------
 // Isomorphic SSR for routes
