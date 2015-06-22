@@ -262,8 +262,12 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://github.com/FormidableLabs/converter-react
 * https://github.com/yahoo/react-intl
 * http://formatjs.io/react/
+
 * Demo a node server
    * http://code.runnable.com
+   
+* Use React Components as Backbone Views
+   * http://www.thomasboyt.com/2013/12/17/using-reactjs-as-a-backbone-view.html
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
