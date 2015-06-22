@@ -1,5 +1,4 @@
 import  React       from 'react';
-import  $           from 'jquery';
 let     Router      = require('react-router');
 let     AppRoutes   = require('./clapi-routes.jsx');
 
