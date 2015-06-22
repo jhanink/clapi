@@ -266,8 +266,12 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * Demo a node server
    * http://code.runnable.com
    
-* Use React Components as Backbone Views
+* Use React Components with backbone
    * http://www.thomasboyt.com/2013/12/17/using-reactjs-as-a-backbone-view.html
+   * http://blog.mayflower.de/3937-Backbone-React.html
+   * https://github.com/clayallsopp/react.backbone
+   * http://joelburget.com/backbone-to-react/
+   
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
