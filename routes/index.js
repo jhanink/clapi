@@ -54,6 +54,27 @@ router.get('/create-gift-card/:amount', function(req, res) {
   ApiCall(config);
 });
 
+// ----------------------------
+// create cart
+// ----------------------------
+router.get('/create-cart/:customerId', function(req, res) {
+  var config = {
+    args: {
+      name: 'create-cart',
+      customerId: req.params.customerId
+    },
+    callback: function (result) {
+      res.send(result);
+    }
+  };
+
+  ApiCall(config);
+});
+
+
+// ----------------------------
+// Isomorphic SSR for routes
+// ----------------------------
 router.get('*', function(req, res) {
   var React = require('react');
   var Router = require('react-router');
