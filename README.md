@@ -305,6 +305,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://gist.github.com/ryanflorence/7cdaea0af8e334413502
 * SSR isomorphism issue with material-ui:
    * https://github.com/callemall/material-ui/issues/748
+* list of issues in Quip
+   * https://quip.com/YRudAaDW6UXD
 
 ### Done
 * tie a route change to a targeted view update - 6.11.2015
