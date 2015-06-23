@@ -288,7 +288,6 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ### Next
 * fetch
-* propTypes
 * mixins (deprecated)
 * production mode
 
@@ -320,6 +319,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://github.com/christianalfoni/webpack-express-boilerplate
 * react with addons
 * isomorphic server rendering
+* propTypes
 
 ### Extras / Alternatives
 * https://github.com/systemjs/systemjs
