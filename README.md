@@ -1,6 +1,6 @@
 ### What is this?
 
-CLAPI - Command Line API wrappers for cart and checkout
+CLAPI - Command Line API processor for cart and checkout
 
 ```sh
 
