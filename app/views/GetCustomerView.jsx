@@ -16,7 +16,8 @@ module.exports = React.createClass({
   getInitialState() {
     return {
       data: {},
-      isFetching: false
+      isFetching: false,
+      pageTitle: "GET CUSTOMER"
     }
   },
 
@@ -24,7 +25,7 @@ module.exports = React.createClass({
     return (
       <div style={{marginLeft: '25px'}}>
         <div style={{font:'20px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
-          GET CUSTOMER
+          {this.state.pageTitle}<br/>
         </div>
         <TextField
           ref="tf"

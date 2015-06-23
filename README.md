@@ -303,6 +303,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://github.com/callemall/material-ui/issues/748
 * list of issues in Quip
    * https://quip.com/YRudAaDW6UXD
+* isomorphic data fetching with react router
+   * https://github.com/rackt/react-router/issues/57
 
 ### Done
 * tie a route change to a targeted view update - 6.11.2015
