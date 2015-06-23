@@ -16,7 +16,7 @@ function echoEnd(msg, val) {
 }
 
 if (args.DEBUG) {
-  clapi.printResult({args: args}, JSON.stringify({"args": args}));return;
+  clapi.printResult({args: args}, JSON.stringify({"args": args})); process.exit(0);
 }
 
 var state = {
@@ -27,14 +27,14 @@ var file = args.file || args.f;
 
 if (!file) {
   console.log("---> no file provided");
-  return;
+  process.exit(0);
 }
 
 if (!fs.existsSync(file)) {
   clapi.printResult(state, JSON.stringify({
     "result": "file not found [" + file + "]"
   }));
-  return;
+  process.exit(0);
 }
 
 var contents = fs.readFileSync(file);

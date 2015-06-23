@@ -5,7 +5,7 @@ var Const = require("./clapi-constants");
 
 module.exports =
 {
-  printResult: function printResult (state, contents) {
+  printResult: function (state, contents) {
     if (state.args.RAW) {
       console.log(JSON.stringify(JSON.parse(contents)));
     } else if (state.args.JSON) {
