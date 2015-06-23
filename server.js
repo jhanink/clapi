@@ -19,6 +19,11 @@ if (!isProduction) {
   });
 }
 
+app.get('/favicon.ico', function(req, res) {
+  res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+  res.end();
+});
+
 var Routes = require("./routes");
 app.use("/", Routes);
 

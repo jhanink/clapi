@@ -272,6 +272,13 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://github.com/clayallsopp/react.backbone
    * http://joelburget.com/backbone-to-react/
    
+* Flux 
+   * https://github.com/goatslacker/alt
+   * https://github.com/goatslacker/alt-tutorial
+   
+* Flux + react router example   
+   * https://github.com/gaearon/flux-react-router-example
+   
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide
@@ -280,23 +287,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * https://gecgithub01.walmart.com/react/analytics
 
 ### Next
-* json tree view
-   * (react component)
-      * http://react.rocks/example/react-json-inspector
-      * https://bitbucket.org/davevedder/react-json-viewer
-   * (jquery component)
-      * http://blog.yesmeck.com/jquery-jsonview/
-* Webpack + Express
-   * http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
-   * https://github.com/christianalfoni/webpack-express-boilerplate
-* Flux 
-   * https://github.com/goatslacker/alt
-   * https://github.com/goatslacker/alt-tutorial
-* react with addons
 * fetch
 * propTypes
 * mixins (deprecated)
-* isomorphic server rendering
 * production mode
 
 ### Issues
@@ -316,6 +309,17 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * tie a route change to a targeted view update - 6.11.2015
 * add css to react components - 6.11.2015
 * radium - 6.11.2015
+* json tree view
+   * (react component)
+      * http://react.rocks/example/react-json-inspector
+      * https://bitbucket.org/davevedder/react-json-viewer
+   * (jquery component)
+      * http://blog.yesmeck.com/jquery-jsonview/
+* Webpack + Express
+   * http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+   * https://github.com/christianalfoni/webpack-express-boilerplate
+* react with addons
+* isomorphic server rendering
 
 ### Extras / Alternatives
 * https://github.com/systemjs/systemjs
