@@ -278,6 +278,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    
 * Flux + react router example   
    * https://github.com/gaearon/flux-react-router-example
+   * https://github.com/lostpebble/alt-react-router-example
    
 
 ### Walmart Resources
