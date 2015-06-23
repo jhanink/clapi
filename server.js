@@ -1,37 +1,38 @@
-var express = require('express');
-var path = require('path');
-var app = express();
+let express = require('express');
+let path = require('path');
+let app = express();
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
-var isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
+const port = isProduction ? 8080 : 3000;
 
-var httpProxy = require('http-proxy');
-var proxy = httpProxy.createProxyServer();
+let httpProxy = require('http-proxy');
+let proxy = httpProxy.createProxyServer();
+
 if (!isProduction) {
-  var bundle = require('./server/bundle.js');
+  let bundle = require('./server/bundle.js');
   bundle();
-  app.all('/build/*', function (req, res) {
+  app.all('/build/*', (req, res) => {
     proxy.web(req, res, {
       target: 'http://localhost:8080'
     });
   });
 }
 
-app.get('/favicon.ico', function(req, res) {
+app.get('/favicon.ico', (req, res) => {
   res.writeHead(200, {'Content-Type': 'image/x-icon'} );
   res.end();
 });
 
-var Routes = require("./routes");
+let Routes = require("./routes");
 app.use("/", Routes);
 
-proxy.on('error', function(e) {
+proxy.on('error', (e) => {
   console.log('Could not connect to proxy, please try again...');
 });
 
-var port = isProduction ? 8080 : 3000;
-app.listen(port, function () {
+app.listen(port, () => {
   console.log('---> Node App Server running on port ' + port);
 });
