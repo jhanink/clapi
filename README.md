@@ -280,6 +280,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://github.com/gaearon/flux-react-router-example
    * https://github.com/lostpebble/alt-react-router-example
    
+* Webpack docs
+  * http://webpack.github.io/docs/
+  * https://github.com/webpack/docs/wiki/cli
 
 ### Walmart Resources
 * https://gecgithub01.walmart.com/react/react-dev-guide

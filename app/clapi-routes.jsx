@@ -6,13 +6,13 @@ let DefaultRoute = Router.DefaultRoute;
 
 let AppRoutes = (
   <Route name="root" path="/" location="history" handler={require("./clapi-page.jsx")}>
-    <Route name="get-customer" handler={require("./views/GetCustomerView.jsx")} />
-    <Route name="create-cart" handler={require("./views/CreateCartView.jsx")} />
-    <Route name="add-to-cart" handler={require("./views/AddToCartView.jsx")} />
-    <Route name="create-gift-card" handler={require("./views/CreateGiftCardView.jsx")} />
-    <Route name="get-iro-offers" handler={require("./views/GetIroOffersView.jsx")} />
-    <Route name="samples-view" handler={require("./views/SamplesView.jsx")} />
-    <DefaultRoute handler={require("./views/HomeView.jsx")} />
+    <Route name="get-customer" handler={require("./components/GetCustomerView.jsx")} />
+    <Route name="create-cart" handler={require("./components/CreateCartView.jsx")} />
+    <Route name="add-to-cart" handler={require("./components/AddToCartView.jsx")} />
+    <Route name="create-gift-card" handler={require("./components/CreateGiftCardView.jsx")} />
+    <Route name="get-iro-offers" handler={require("./components/GetIroOffersView.jsx")} />
+    <Route name="samples-view" handler={require("./components/SamplesView.jsx")} />
+    <DefaultRoute handler={require("./components/HomeView.jsx")} />
   </Route>
 );
 
