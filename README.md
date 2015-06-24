@@ -281,7 +281,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://github.com/lostpebble/alt-react-router-example
    
 * ALT
-   * **The Docs - http://alt.js.org/docs/**
+   * The Docs - http://alt.js.org/docs/
    * getting started with ALT - http://alt.js.org/guide/
    
 * Webpack docs
