@@ -38,7 +38,7 @@ module.exports = React.createClass({
     return (
       <div style={{marginLeft: '25px'}}>
         <div style={{font:'20px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
-          GET CUSTOMER 66<br/>
+          GET CUSTOMER<br/>
         </div>
         <TextField
           ref="tf"
