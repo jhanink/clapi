@@ -1,7 +1,8 @@
-let React     = require("react");
-let $         = require("jquery");
-let Inspector = require("react-json-inspector");
-let mui       = require("material-ui");
+let React           = require("react");
+let $               = require("jquery");
+let Inspector       = require("react-json-inspector");
+let mui             = require("material-ui");
+let CustomerStore   = require("../stores/CustomerStore");
 
 let ThemeManager = new mui.Styles.ThemeManager();
 ThemeManager.setTheme(ThemeManager.types.LIGHT);
@@ -16,16 +17,28 @@ module.exports = React.createClass({
   getInitialState() {
     return {
       data: {},
-      isFetching: false,
-      pageTitle: "GET CUSTOMER"
+      customerData: CustomerStore.getState(),
+      isFetching: false
     }
+  },
+
+  componentDidMount() {
+    CustomerStore.listen(this.onChange);
+  },
+
+  componentWillUnmount() {
+    CustomerStore.unlisten(this.onChange);
+  },
+
+  onChange(state) {
+    this.setState({customerData: state});
   },
 
   render() {
     return (
       <div style={{marginLeft: '25px'}}>
         <div style={{font:'20px Helvetica', color:'#888', marginTop:'20px', textAlign:'center'}}>
-          {this.state.pageTitle}<br/>
+          GET CUSTOMER 66<br/>
         </div>
         <TextField
           ref="tf"

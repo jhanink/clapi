@@ -4,8 +4,6 @@ var webpackConfig = require('./../webpack.config.js');
 var path = require('path');
 var fs = require('fs');
 
-//var mainPath = path.resolve(__dirname, '..', 'build', 'bundle.js');
-
 var listenPort = 8080;
 
 module.exports = function () {
