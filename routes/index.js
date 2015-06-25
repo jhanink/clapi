@@ -99,7 +99,7 @@ router.get('*', (req, res) => {
   let Routes = require("../app/clapi-routes.jsx");
 
   Router.run(Routes, req.path, (Handler) => {
-    var html = React.renderToString(<Handler/>);
+    var html = React.renderToStaticMarkup(<Handler/>);
     return res.render('index.ejs', {html:html});
   })
 });
