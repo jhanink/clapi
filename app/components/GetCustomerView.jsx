@@ -60,8 +60,6 @@ module.exports = React.createClass({
           onClick={this._handleClick}
           style={{marginBottom: '30px'}}/>
         <Inspector data={this.state.data}/>
-        <hr/>
-        <Inspector data={this.state.customerData}/>
       </div>
     );
   },
