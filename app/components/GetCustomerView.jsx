@@ -17,7 +17,7 @@ module.exports = React.createClass({
   getInitialState() {
     return {
       data: {},
-      customerData: CustomerStore.getState(),
+      customerData: CustomerStore.getState().data,
       isFetching: false
     }
   },
@@ -31,7 +31,7 @@ module.exports = React.createClass({
   },
 
   onChange(state) {
-    this.setState({customerData: state});
+    this.setState({customer: state});
   },
 
   render() {
@@ -60,6 +60,8 @@ module.exports = React.createClass({
           onClick={this._handleClick}
           style={{marginBottom: '30px'}}/>
         <Inspector data={this.state.data}/>
+        <hr/>
+        <Inspector data={this.state.customerData}/>
       </div>
     );
   },

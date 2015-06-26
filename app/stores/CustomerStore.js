@@ -3,14 +3,14 @@ let CustomerActions = require("../actions/CustomerActions");
 
 class CustomerStore {
   constructor() {
-    this.customer = {};
+    this.data = {};
     this.bindListeners({
       handleUpdateCustomer: CustomerActions.UPDATE_CUSTOMER
     });
   }
 
-  handleUpdateCustomer(customer) {
-    this.customer = customer;
+  handleUpdateCustomer(data) {
+    this.data = data;
     return false; // suppress change customer event
   }
 }
