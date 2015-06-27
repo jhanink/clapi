@@ -5,11 +5,11 @@ class CustomerStore {
   constructor() {
     this.data = {};
     this.bindListeners({
-      handleUpdateCustomer: CustomerActions.UPDATE_CUSTOMER
+      updateCustomer: CustomerActions.updateCustomer
     });
   }
 
-  handleUpdateCustomer(data) {
+  updateCustomer(data) {
     this.data = data;
     return false; // suppress change customer event
   }

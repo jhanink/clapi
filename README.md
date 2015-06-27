@@ -280,6 +280,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
    * https://github.com/gaearon/flux-react-router-example
    * https://github.com/lostpebble/alt-react-router-example
    
+* isomorphic flux
+   * https://github.com/goatslacker/iso/tree/d6b854b02864f9fe143dd9e2665d3e949acad912/examples/datetime-flux
+   
 * ALT
    * The Docs - http://alt.js.org/docs/
    * getting started with ALT - http://alt.js.org/guide/
@@ -339,4 +342,5 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ### Extras / Alternatives
 * https://github.com/systemjs/systemjs
+
 

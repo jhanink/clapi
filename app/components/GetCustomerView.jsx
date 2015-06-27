@@ -3,6 +3,7 @@ let $               = require("jquery");
 let Inspector       = require("react-json-inspector");
 let mui             = require("material-ui");
 let CustomerStore   = require("../stores/CustomerStore");
+let CustomerActions = require("../actions/CustomerActions");
 
 let ThemeManager = new mui.Styles.ThemeManager();
 ThemeManager.setTheme(ThemeManager.types.LIGHT);
@@ -24,6 +25,9 @@ module.exports = React.createClass({
 
   componentDidMount() {
     CustomerStore.listen(this.onChange);
+    CustomerActions.fetch().then((res) => {
+      CustomerActions.updateCustomer(res);
+    });
   },
 
   componentWillUnmount() {

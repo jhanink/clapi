@@ -1,6 +1,10 @@
-let express = require('express');
-let router = express.Router();
-let ApiCall = require('../api-call-configurations/stage');
+let express   = require('express');
+let ApiCall   = require('../api-call-configurations/stage');
+let AltIso    = require('alt/utils/AltIso');
+let alt      = require('../app/alt');
+let Iso       = require('iso');
+
+let router  = express.Router();
 
 // ----------------------------
 // get customer
@@ -98,9 +102,14 @@ router.get('*', (req, res) => {
   let Router = require('react-router');
   let Routes = require("../app/clapi-routes.jsx");
 
-  Router.run(Routes, req.path, (Handler) => {
+  let iso = new Iso();
+  Router.run(Routes, req.path, (Handler, state) => {
     var html = React.renderToStaticMarkup(<Handler/>);
-    return res.render('index.ejs', {html:html});
+    iso.add(html, alt.flush())
+
+    res.render('index.ejs', {
+      html: iso.render()
+    });
   })
 });
 

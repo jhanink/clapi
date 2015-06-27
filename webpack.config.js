@@ -45,14 +45,22 @@ var config = {
         exclude: [nodeModulesPath]
       },
 
+      { test: /\.json$/, loader: 'json-loader' },
+
       // Let us also add the style-loader and css-loader, which you can
       // expand with less-loader etc.
       {
         test: /\.css$/,
         loader: 'style!css'
       }
-
     ]
+  },
+
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
   },
 
   // We have to manually add the Hot Replacement plugin when running
