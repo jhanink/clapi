@@ -283,6 +283,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 * isomorphic flux
    * https://github.com/goatslacker/iso/tree/d6b854b02864f9fe143dd9e2665d3e949acad912/examples/datetime-flux
    
+* more iso examples to try
+   * https://github.com/erikras/react-redux-universal-hot-example
+   
 * ALT
    * The Docs - http://alt.js.org/docs/
    * getting started with ALT - http://alt.js.org/guide/
