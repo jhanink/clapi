@@ -4,6 +4,10 @@ let AltIso    = require('alt/utils/AltIso');
 let alt      = require('../app/alt');
 let Iso       = require('iso');
 
+let React = require('react');
+let Router = require('react-router');
+let Routes = require("../app/clapi-routes.jsx");
+
 let router  = express.Router();
 
 // ----------------------------
@@ -93,20 +97,36 @@ router.get('/add-to-cart/:cartId/:id', (req, res) => {
   ApiCall(config);
 });
 
+router.get('/get-customer', (req, res, next) => {
+  console.log('---------------- load page /get-customer');
+  // get data
+  let config = {
+    args: {
+      name: 'get-customer',
+      customerId: '688ddfc5-181f-46b5-a0e7-8dc139146253'
+    },
+    callback (result) {
+      console.log("------------ got customer data");
+      res.locals.data = result;
+      next();
+    }
+  };
+
+  ApiCall(config);
+
+});
+
 
 // ----------------------------
 // Isomorphic SSR for routes
 // ----------------------------
-router.get('*', (req, res) => {
-  let React = require('react');
-  let Router = require('react-router');
-  let Routes = require("../app/clapi-routes.jsx");
-
+router.use( (req, res) => {
+  console.log("---------- iso render page")
+  alt.bootstrap(JSON.stringify(res.locals.data || {}));
   let iso = new Iso();
-  Router.run(Routes, req.path, (Handler, state) => {
+  Router.run(Routes, req.path, (Handler) => {
     var html = React.renderToStaticMarkup(<Handler/>);
-    iso.add(html, alt.flush())
-
+    iso.add(html, alt.flush());
     res.render('index.ejs', {
       html: iso.render()
     });
