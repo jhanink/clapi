@@ -106,7 +106,7 @@ router.get('/get-customer', (req, res, next) => {
       customerId: '688ddfc5-181f-46b5-a0e7-8dc139146253'
     },
     callback (result) {
-      console.log("------------ got customer data");
+      console.log("------------ got customer data for 688ddfc5-181f-46b5-a0e7-8dc139146253");
       res.locals.data = result;
       next();
     }
