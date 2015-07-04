@@ -14,7 +14,7 @@ var LinearProgressTag = undefined;
 module.exports = React.createClass({
   getInitialState() {
     return {
-      data: {},
+      data: undefined,
       isFetching: false
     }
   },
@@ -44,7 +44,11 @@ module.exports = React.createClass({
           primary={true}
           onClick={this._handleClick}
           style={{marginBottom: '30px'}}/>
-        <Inspector data={this.state.data}/>
+        {
+          this.state.data
+              ? <Inspector data={this.state.data}/>
+              : <div></div>
+        }
       </div>
     );
   },
