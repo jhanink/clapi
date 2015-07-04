@@ -24,14 +24,9 @@ module.exports = React.createClass({
   },
 
   componentDidMount() {
-    CustomerStore.listen(this.onChange);
-    CustomerActions.fetch().then((res) => {
-      CustomerActions.updateCustomer(res);
-    });
   },
 
   componentWillUnmount() {
-    CustomerStore.unlisten(this.onChange);
   },
 
   onChange(state) {
