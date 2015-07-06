@@ -37,7 +37,7 @@ let Routes = require("./routes");
 app.use("/", Routes);
 
 proxy.on('error', (e) => {
-  console.log('Could not connect to proxy, please try again...');
+  console.log('Could not connect to proxy, please try again...', e);
 });
 
 app.listen(port, () => {
