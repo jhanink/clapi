@@ -5,4 +5,4 @@
    * resolve promise
    * call action method to update store
    * use alt-iso to render html
-   * use html rendering to fulfill response
+* use html rendering to fulfill response
