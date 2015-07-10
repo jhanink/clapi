@@ -58,6 +58,7 @@
 * Flux + react router example   
    * https://github.com/gaearon/flux-react-router-example
    * https://github.com/lostpebble/alt-react-router-example
+   * https://github.com/gaearon/redux (revisit)
    
 * isomorphic flux
    * https://github.com/goatslacker/iso/tree/d6b854b02864f9fe143dd9e2665d3e949acad912/examples/datetime-flux

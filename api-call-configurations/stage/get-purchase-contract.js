@@ -4,15 +4,15 @@ module.exports = function (state) {
     console.log("---> missing pcId");return;
   }
 
-  // TODO - change to stage endpoint url
   var options = {
-    url: 'http://ultra-esb.prod-xo.esb.platform.glb.prod.walmart.com/service/checkoutservice/checkout/contract/'
+    url: 'http://xoservice-app.stg.pangaeasvcsxo.services.glb.prod.walmart.com/checkoutservice'
     + state.args.pcId,
     method: 'GET'
   };
 
   service.setServiceName("checkoutservice");
-  service.setServiceVersion("2.0.0");
+  service.setServiceVersion("1.0.0");
+  service.setConsumerId("881f2838-7b97-49c3-a45e-1b36ceac7b9a");
 
   // --- send request
   service.sendRequest(options);
