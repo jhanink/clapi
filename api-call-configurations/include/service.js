@@ -17,6 +17,18 @@ module.exports = function(state) {
     setConsumerId: function (consumerId) {
       this.setHeader("WM_CONSUMER.ID", consumerId);
     },
+    setTenantId: function (tenantId) {
+      this.setHeader("WM_TENANT_ID", tenantId);
+    },
+    setVerticalId: function (verticalId) {
+      this.setHeader("WM_VERTICAL_ID", verticalId);
+    },
+    setLocaleId: function (localeId) {
+      this.setHeader("WM_LOCALE_ID", localeId);
+    },
+    setConsumerUserId: function (consumerUserId) {
+      this.setHeader("WM_CONSUMER.USER_ID", consumerUesrId);
+    },
     setRequestOptions: function (options) {
       _options = options;
       _options.headers = _headers;

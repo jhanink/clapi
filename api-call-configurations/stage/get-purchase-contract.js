@@ -5,7 +5,7 @@ module.exports = function (state) {
   }
 
   var options = {
-    url: 'http://xoservice-app.stg.pangaeasvcsxo.services.glb.prod.walmart.com/checkoutservice'
+    url: 'http://xoservice-app.stg.pangaeasvcsxo.services.glb.prod.walmart.com/checkoutservice/v1/purchasecontracts/'
     + state.args.pcId,
     method: 'GET'
   };

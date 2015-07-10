@@ -2,7 +2,7 @@ module.exports = function (state) {
   var service = require("../include/service")(state);
 
   var options = {
-    url: 'http://xoservice-app.stg.pangaeasvcsxo.services.glb.prod.walmart.com/checkoutservice',
+    url: 'http://xoservice-app.stg.pangaeasvcsxo.services.glb.prod.walmart.com/checkoutservice/v1/purchasecontracts/',
     method: 'PUT'
   };
 
@@ -10,10 +10,13 @@ module.exports = function (state) {
   service.setServiceVersion("1.0.0");
 
   service.setConsumerId("881f2838-7b97-49c3-a45e-1b36ceac7b9a");
+  service.setTenantId("0");
+  service.setVerticalId("8");
+  service.setLocaleId("eng_USA");
+  service.setConsumerUserId("85eede94-3796-4d34-a6b9-0c286326a10d");
+
   service.setDataPayload(payload2);
 
-  service.setHeader("WM_SEC.AUTH_SIGNATURE", "qcQtdV2tcjqk3RRSlB5i6oU4WD/QmgJUXWWwReRz/DtG05zrJ6cM/zRm0l2P2rmoZU6MqcX3HLeNLAjGsmKE0Yp2rmPi8lZCBgLGNVZLIpmqlg7b5N+FMOZoqYqI+ipOAgIgRKEleS4onHFo0FHhciySZL2Vxrf08LO6+hIqfrQ=");
-  service.setHeader("WM_CONSUMER.USER_ID", "85eede94-3796-4d34-a6b9-0c286326a10d");
   // --- send request
   service.sendRequest(options);
 };
