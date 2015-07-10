@@ -97,6 +97,11 @@ Available commands:
   ./get-iro-offers --EVAL status                             # print IRO status (OK, PARTIAL..)
 ```
 
+```sh
+
+  ./create-purchase-contract                                 # create 1hg sample pc
+```
+
 ##### → PROD : Cart & Checkout
 
 ```sh
