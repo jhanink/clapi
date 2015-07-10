@@ -11,6 +11,9 @@ module.exports = function (state) {
 
   service.setConsumerId("881f2838-7b97-49c3-a45e-1b36ceac7b9a");
   service.setDataPayload(payload2);
+
+  service.setHeader("WM_SEC.AUTH_SIGNATURE", "qcQtdV2tcjqk3RRSlB5i6oU4WD/QmgJUXWWwReRz/DtG05zrJ6cM/zRm0l2P2rmoZU6MqcX3HLeNLAjGsmKE0Yp2rmPi8lZCBgLGNVZLIpmqlg7b5N+FMOZoqYqI+ipOAgIgRKEleS4onHFo0FHhciySZL2Vxrf08LO6+hIqfrQ=");
+  service.setHeader("WM_CONSUMER.USER_ID", "85eede94-3796-4d34-a6b9-0c286326a10d");
   // --- send request
   service.sendRequest(options);
 };
@@ -333,3 +336,29 @@ var cpcPayload = {
     }
   }
 };
+
+/*
+ Headers:
+
+ Accept: application/json
+ WM_SVC.VERSION: 1.0.0
+ WM_SVC.ENV: stg
+ WM_CONSUMER.IP: 172.29.175.171
+ WM_QOS.CORRELATION_ID: d1f0c0d2-2cf4-497b-b630-06d609d987b0
+ WM_SEC.AUTH_TOKEN: WgGaTf5YlI8naVndAkf2r9kmnRcuYxPbeOuGgXo0aoeyVCoHTpVufCPGTSC0iqtFPgz
+ WM_TENANT_ID: 0
+ WM_VERTICAL_ID: 8
+ WM_LOCALE_ID: eng_USA
+ WM_DEVICE_ID: 01
+ DEVICE_TYPE: browser
+ USER_AGENT: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20120403211507 Firefox/12.0
+ DEVICE_LANGUAGE: eng_USA
+ DEVICE_OS: MAC OSX Lion
+ DEVICE_TZ: 2012-04-25T12:00:00
+ WM_IFX.CLIENT_TYPE: Java
+ WM_CONSUMER.ID: 881f2838-7b97-49c3-a45e-1b36ceac7b9a
+ WM_SVC.NAME: checkoutservice
+ WM_CONSUMER.USER_ID: 85eede94-3796-4d34-a6b9-0c286326a10d
+ WM_CONSUMER.INTIMESTAMP: 1416607158639
+ WM_SEC.AUTH_SIGNATURE: qcQtdV2tcjqk3RRSlB5i6oU4WD/QmgJUXWWwReRz/DtG05zrJ6cM/zRm0l2P2rmoZU6MqcX3HLeNLAjGsmKE0Yp2rmPi8lZCBgLGNVZLIpmqlg7b5N+FMOZoqYqI+ipOAgIgRKEleS4onHFo0FHhciySZL2Vxrf08LO6+hIqfrQ=
+*/

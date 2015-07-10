@@ -1,0 +1,6 @@
+. ./include/script-include
+
+node $DAS_index --name=$DAS_script_name --WRAP > $DAS_base_dir/output/TEMP_RESULT.json
+DAS_handle_response;
+
+DAS_print_output;
