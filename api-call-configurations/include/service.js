@@ -27,7 +27,7 @@ module.exports = function(state) {
       this.setHeader("WM_LOCALE_ID", localeId);
     },
     setConsumerUserId: function (consumerUserId) {
-      this.setHeader("WM_CONSUMER.USER_ID", consumerUesrId);
+      this.setHeader("WM_CONSUMER.USER_ID", consumerUserId);
     },
     setRequestOptions: function (options) {
       _options = options;
