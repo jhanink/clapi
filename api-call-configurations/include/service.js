@@ -29,6 +29,9 @@ module.exports = function(state) {
     setConsumerUserId: function (consumerUserId) {
       this.setHeader("WM_CONSUMER.USER_ID", consumerUserId);
     },
+    setAuthSignature: function (signature) {
+      this.setHeader("WM_SEC.AUTH_SIGNATURE", signature);
+    },
     setRequestOptions: function (options) {
       _options = options;
       _options.headers = _headers;

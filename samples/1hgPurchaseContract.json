@@ -1,0 +1,109 @@
+    {
+  "payload": {
+    "requestType": "ONEHG",
+    "transactionCode": "26686011496922631859",
+    "purchaseLineItems": [
+      {
+        "offerId": {
+          "offerId": "94B764604EAC4D338E1EEE0625313722"
+        },
+        "unitPrice": {
+          "currencyAmount": 50,
+          "currencyUnit": "USD"
+        },
+        "quantity": 2,
+        "lineItemPrice": {
+          "currencyAmount": 100,
+          "currencyUnit": "USD"
+        },
+        "fulfillmentDetail": {
+          "fulfillmentOption": "S2S",
+          "fulfillmentType": "PICKUP",
+          "shipMethod": "STORE_DELIVERY",
+          "selectionType": "USER",
+          "storeFrontId": {
+            "USStoreId": "2280"
+          },
+          "storeName": "Mountain view store",
+          "address": {
+            "addressLineOne": "850 Cherry Ave",
+            "city": "San Bruno",
+            "countryCode": "USA",
+            "postalCode": "94066",
+            "stateOrProvinceCode": "CA",
+            "isApoFpo": false,
+            "isPoBox": false
+          }
+        }
+      }
+    ],
+    "purchaseContractTotals": {
+      "subTotal": {
+        "currencyAmount": 100,
+        "currencyUnit": "USD"
+      },
+      "taxTotal": {
+        "currencyAmount": 62.82,
+        "currencyUnit": "USD"
+      },
+      "grandTotal": {
+        "currencyAmount": 162.82,
+        "currencyUnit": "USD"
+      }
+    },
+    "buyer": {
+      "buyerId": "4c9d677a-a645-466d-8ad7-8c5e6e491b97",
+      "customerType": "INDIVIDUAL",
+      "accountType": "INDIVIDUAL",
+      "primaryContact": {
+        "name": {
+          "firstName": "David",
+          "lastName": "Silver"
+        },
+        "phone": {
+          "completeNumber": "912-192-9139"
+        },
+        "email": {
+          "emailAddress": "d@g.com"
+        }
+      }
+    },
+    "payments": [
+      {
+        "paymentType": "PAID_PAYMENT",
+        "pmId": "PREPAID",
+        "amountToBeCharged": {
+          "currencyAmount": 162.82,
+          "currencyUnit": "USD"
+        },
+        "billingName": {
+          "firstName": "John",
+          "lastName": "Doe"
+        },
+        "email": {
+          "emailAddress": "john@walmart.com"
+        },
+        "piHash": "PIH.raw.External.CASH.DUMMY.PayerId"
+      }
+    ],
+    "taxOnOrder": {
+      "totalAmount": {
+        "currencyAmount": 62.82,
+        "currencyUnit": "USD"
+      },
+      "type": "Sales Tax"
+    },
+    "pickupPersons": [
+      {
+        "name": {
+          "firstName": "Joe",
+          "lastName": "Smith"
+        },
+        "phone": {
+          "completeNumber": "4086634567"
+        },
+        "isPrimary": true
+      }
+    ]
+  }
+}
