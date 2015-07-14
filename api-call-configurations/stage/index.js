@@ -9,7 +9,13 @@ module.exports = function (state) {
     "WM_QOS.CORRELATION_ID": "bfhyb",
     "WM_SEC.AUTH_TOKEN": "ahha%&!^!)(!&",
     "WM_SVC.ENV": "stage",
-    "WM_SVC.VERSION": "1.0.0"
+    "WM_SVC.VERSION": "1.0.0",
+    "WM_DEVICE_ID": "01",
+    "DEVICE_TYPE": "browser",
+    "DEVICE_TZ": "2012-04-25T12:00:00",
+    "WM_IFX.CLIENT_TYPE": "Java",
+    "USER_AGENT": "Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20120403211507 Firefox/12.0",
+    "WM_CONSUMER.INTIMESTAMP": "1436824998496"
   };
 
   state.headers = headers;

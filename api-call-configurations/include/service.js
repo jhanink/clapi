@@ -14,6 +14,9 @@ module.exports = function(state) {
     setServiceVersion: function (serviceVersion) {
       this.setHeader("WM_SVC.VERSION", serviceVersion);
     },
+    setServiceEnv: function (serviceEnv) {
+      this.setHeader("WM_SVC.ENV", serviceEnv)
+    },
     setConsumerId: function (consumerId) {
       this.setHeader("WM_CONSUMER.ID", consumerId);
     },
@@ -26,11 +29,17 @@ module.exports = function(state) {
     setLocaleId: function (localeId) {
       this.setHeader("WM_LOCALE_ID", localeId);
     },
+    setKeyVersion: function (keyVersion) {
+      this.setHeader("WM_SEC.KEY_VERSION", keyVersion);
+    },
     setConsumerUserId: function (consumerUserId) {
       this.setHeader("WM_CONSUMER.USER_ID", consumerUserId);
     },
     setAuthSignature: function (signature) {
       this.setHeader("WM_SEC.AUTH_SIGNATURE", signature);
+    },
+    setCorrelationId: function (correlationId) {
+      this.setHeader("WM_QOS.CORRELATION_ID", correlationId);
     },
     setRequestOptions: function (options) {
       _options = options;
