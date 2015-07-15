@@ -20,7 +20,7 @@ module.exports = function (state) {
   service.setKeyVersion(1);
   service.setCorrelationId("d1f0c0d2-2cf4-497b-b630-06d609d987b0");
 
-  service.setDataPayload(payload2);
+  service.setDataPayload(payload3);
 
   // --- send request
   service.sendRequest(options);
@@ -136,6 +136,116 @@ var payload2 = {
   }
 };
 
+
+var payload3 = {
+  "payload":{
+    "requestType":"ONEHG",
+    "transactionCode":"26686011496922631859",
+    "purchaseLineItems":[
+      {
+        "offerId":{
+          "offerId":"94B764604EAC4D338E1EEE0625313722"
+        },
+        "unitPrice":{
+          "currencyAmount":8.85,
+          "currencyUnit":"USD"
+        },
+        "quantity":1,
+        "lineItemPrice":{
+          "currencyAmount":8.85,
+          "currencyUnit":"USD"
+        },
+        "fulfillmentDetail":{
+          "fulfillmentOption":"S2S",
+          "fulfillmentType":"PICKUP",
+          "shipMethod":"STORE_DELIVERY",
+          "selectionType":"USER",
+          "storeFrontId":{
+            "USStoreId":"2280"
+          },
+          "storeName":"Mountain View Walmart Store",
+          "address":{
+            "addressLineOne":"600 Showers Dr",
+            "city":"Mountain View",
+            "countryCode":"USA",
+            "postalCode":"94040",
+            "stateOrProvinceCode":"CA",
+            "isApoFpo":false,
+            "isPoBox":false
+          }
+        }
+      }
+    ],
+    "purchaseContractTotals":{
+      "subTotal":{
+        "currencyAmount":8.85,
+        "currencyUnit":"USD"
+      },
+      "taxTotal":{
+        "currencyAmount":0,
+        "currencyUnit":"USD"
+      },
+      "grandTotal":{
+        "currencyAmount":8.85,
+        "currencyUnit":"USD"
+      }
+    },
+    "buyer":{
+      "buyerId":"5d456dc1-c81e-4314-86b3-7b32dd31f64d",
+      "customerType":"INDIVIDUAL",
+      "accountType":"INDIVIDUAL",
+      "primaryContact":{
+        "name":{
+          "firstName":"node-1",
+          "lastName":"H"
+        },
+        "phone":{
+          "completeNumber":"888-888-8888"
+        },
+        "email":{
+          "emailAddress":"node-1@wm.com"
+        }
+      },
+    },
+    "payments":[
+      {
+        "paymentType":"PAID_PAYMENT",
+        "pmId":"PREPAID",
+        "amountToBeCharged":{
+          "currencyAmount":8.85,
+          "currencyUnit":"USD"
+        },
+        "billingName":{
+          "firstName":"node-1",
+          "lastName":"H"
+        },
+        "email":{
+          "emailAddress":"node-1@wm.com"
+        },
+        "piHash":"PIH.raw.External.CASH.DUMMY.PayerId"
+      }
+    ],
+    "taxOnOrder":{
+      "totalAmount":{
+        "currencyAmount":0,
+        "currencyUnit":"USD"
+      },
+      "type":"Sales Tax"
+    },
+    "pickupPersons":[
+      {
+        "name":{
+          "firstName":"node-1",
+          "lastName":"H"
+        },
+        "phone":{
+          "completeNumber":""
+        },
+        "isPrimary":true,
+      }
+    ],
+  }
+};
 //https://confluence.walmart.com/display/~jhanink/1HG+Create+Purchase+Contract+notes
 var cpcPayload = {
   "payload": {

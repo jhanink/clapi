@@ -52,6 +52,11 @@ module.exports = function(state) {
       if (options) this.setRequestOptions(options);
       if (data) this.setDataPayload(data);
       makeRequest(_options, _data, state);
+    },
+    logHeaders: function () {
+      var fs = require('fs');
+      fs.writeFile("/tmp/clapiHeaders.json", JSON.stringify(_headers), function(err) {
+      })
     }
   }
 };
