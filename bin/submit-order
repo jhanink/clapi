@@ -1,9 +1,9 @@
 . ./include/script-include
 
-if [ $DAS_has_params == 1 ]
-then
+#if [ $DAS_has_params == 1 ]
+#then
   node $DAS_index --name=$DAS_script_name --pcId=$1 --WRAP > $DAS_base_dir/output/TEMP_RESULT.json
   DAS_handle_response;
-fi
+#fi
 
 DAS_print_output;
