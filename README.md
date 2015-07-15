@@ -6,6 +6,7 @@ CLAPI - Command Line API processor for cart and checkout
 
 git clone https://gecgithub01.walmart.com/jhanink/clapi.git
 cd clapi
+npm install -g nodemon
 npm install
 cd bin
 ```
