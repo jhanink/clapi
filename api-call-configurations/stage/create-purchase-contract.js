@@ -9,7 +9,6 @@ module.exports = function (state) {
   service.setServiceName("checkoutservice");
   service.setServiceVersion("1.0.0");
 
-  service.setConsumerId("b2d8d5fd-db75-4b2f-8b98-3a417b4c1d10");
   service.setTenantId("0");
   service.setVerticalId("8");
   service.setLocaleId("eng_USA");
