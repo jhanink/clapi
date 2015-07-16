@@ -27,6 +27,23 @@ router.get('/get-customer/:customerId', (req, res) => {
   ApiCall(config);
 });
 
+// ----------------------------
+// get receipt
+// ----------------------------
+router.get('/get-receipt/:transactionCode', (req, res) => {
+  let config = {
+    args: {
+      name: 'get-receipt',
+      transactionCode: req.params.transactionCode
+    },
+    callback (result) {
+      res.send(result);
+    }
+  };
+
+  ApiCall(config);
+});
+
 
 // ----------------------------
 // get iro offers

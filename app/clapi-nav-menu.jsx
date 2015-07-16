@@ -16,7 +16,8 @@ let menuItems = [
   {text: 'create-cart', route: 'create-cart'},
   {text: 'add-to-cart', route: 'add-to-cart'},
   {text: 'create-gift-card', route: 'create-gift-card'},
-  {text: 'get-iro-offers', route: 'get-iro-offers'}
+  {text: 'get-iro-offers', route: 'get-iro-offers'},
+  {text: 'get-receipt', route: 'get-receipt'}
 ];
 
 module.exports = React.createClass({

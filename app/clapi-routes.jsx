@@ -11,6 +11,7 @@ let AppRoutes = (
     <Route name="add-to-cart" handler={require("./components/AddToCartView.jsx")} />
     <Route name="create-gift-card" handler={require("./components/CreateGiftCardView.jsx")} />
     <Route name="get-iro-offers" handler={require("./components/GetIroOffersView.jsx")} />
+    <Route name="get-receipt" handler={require("./components/GetReceiptView.jsx")} />
     <Route name="samples-view" handler={require("./components/SamplesView.jsx")} />
     <DefaultRoute handler={require("./components/HomeView.jsx")} />
   </Route>

@@ -5,6 +5,9 @@ module.exports = function(state) {
   var _options, _data;
 
   return {
+    clearHeaders: function () {
+      _headers = {};
+    },
     setHeader: function (name, value) {
       _headers[name] = value;
     },
