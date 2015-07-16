@@ -20,7 +20,7 @@ View and search a JSON data tree as simply as navigating a file-system
 
 * Call an API and view in JSON, PRETTY, or Interactive mode
 * Use the CLAPI result buffer to grep, pipe, or process with custom functions
-* Prefer to use a GUI, see "Use the UI" section next 
+* Prefer to use a GUI? see the next section, "Using the UI" 
 
 ### Use the UI
 
