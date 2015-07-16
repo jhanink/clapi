@@ -20,11 +20,11 @@ View and search a JSON data tree as simply as navigating a file-system
 
 * Call an API and view in JSON, PRETTY, or Interactive mode
 * Use the CLAPI result buffer to grep, pipe, or process with custom functions
-* There is a UI, but it is a work in progress at a nascent stage 
+* Prefer to use a GUI, see "Use the UI" section next 
 
 ### Use the UI
 
-Work in progress, menu only, no command execution yet
+React UI components plus material-ui theme
 
 ```sh
 # start an auto hot-reload server 
