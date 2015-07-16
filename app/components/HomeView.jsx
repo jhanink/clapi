@@ -12,7 +12,7 @@ class HomeView extends React.Component {
           click the hamburger to get started
           </p>
 
-          <div style={{display:'inline-block',border:'3px solid orange',padding:'20px',margin:'10px 150px',borderRadius:'25px'}}>
+          <div style={{display:'inline-block',border:'3px solid black',padding:'20px',margin:'10px 150px',borderRadius:'25px'}}>
             <img src="/images/clapi-ui.gif" width="60%" height="50%"/>
           </div>
 
