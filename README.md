@@ -96,6 +96,8 @@ Available commands:
   ./get-iro-offers 17753319                                  # get IRO offers by USItemId
   ./get-iro-offers --MORE                                    # print cached result
   ./get-iro-offers --EVAL status                             # print IRO status (OK, PARTIAL..)
+  
+  ./get-receipt 26686011496922631859                         # get receipt data by TC#
 ```
 
 ```sh
