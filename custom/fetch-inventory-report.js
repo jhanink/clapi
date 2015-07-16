@@ -1,6 +1,6 @@
 var fs = require("fs");
 var args = require("yargs").argv;
-var Converter=require("csvtojson").core.Converter;
+var Converter=require("csvtojson").Converter;
 
 var state = {
   args: args
