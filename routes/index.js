@@ -44,6 +44,22 @@ router.get('/get-receipt/:transactionCode', (req, res) => {
   ApiCall(config);
 });
 
+// ----------------------------
+// get purchase contract
+// ----------------------------
+router.get('/get-purchase-contract/:id', (req, res) => {
+  let config = {
+    args: {
+      name: 'get-purchase-contract',
+      pcId: req.params.id
+    },
+    callback (result) {
+      res.send(result);
+    }
+  };
+
+  ApiCall(config);
+});
 
 // -----------------------------------------------------
 // get iro offers by id (offerId/USItemId), UPC, or WUPC

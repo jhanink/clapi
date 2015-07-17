@@ -49,7 +49,7 @@ module.exports =
     temp = (hasArgsValue?_temp.val:eval('val'));
     var typeInfo = Util.getTypeInfo(temp);
     fs.writeFileSync(__dirname + '/../output/' + Const.NAMES.PASTEBOARD, './c ' + (hasArgsValue?argsHelpStr:""));
-    
+
     if (typeInfo.IS_PRIMITIVE && args.i) {
       var parts = args.i.split(".");
       var prop = parts[parts.length-1];

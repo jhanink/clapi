@@ -12,6 +12,7 @@ let AppRoutes = (
     <Route name="create-gift-card" handler={require("./components/CreateGiftCardView.jsx")} />
     <Route name="get-iro-offers" handler={require("./components/GetIroOffersView.jsx")} />
     <Route name="get-receipt" handler={require("./components/GetReceiptView.jsx")} />
+    <Route name="get-purchase-contract" handler={require("./components/GetPurchaseContract.jsx")} />
     <Route name="samples-view" handler={require("./components/SamplesView.jsx")} />
     <DefaultRoute handler={require("./components/HomeView.jsx")} />
   </Route>
