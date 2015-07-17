@@ -2,8 +2,10 @@
 module.exports = function (state) {
   var service = require("../include/service")(state);
   var id = state.args.id;
-  if (!id) {
-    console.log("---> missing (item or offer) id");return;
+  var upc = state.args.upc;
+  var wupc = state.args.wupc;
+  if (!id && !upc && !wupc) {
+    console.log("---> missing required (item or offer) id, upc, or wupc");return;
   }
 
   var options = {
@@ -12,11 +14,6 @@ module.exports = function (state) {
   };
 
   var data = {
-    "offerContexts" : [
-      {
-        "offerId" : {}
-      }
-    ],
     "postalAddress": {
       "isApoFpo": false,
       "isPoBox": false,
@@ -32,13 +29,45 @@ module.exports = function (state) {
     ]
   };
 
+  if (id) {
+    if (id.length === 32) {
+      data.offerContexts = [
+        {
+          "offerId": {
+            "offerId": id
+          }
+        }
+      ];
+    } else {
+      data.offerContexts = [
+        {
+          "offerId": {
+            "USItemId": id,
+            USSellerId: 0
+          }
+        }
+      ];
+    }
+  }
 
+  if (upc) {
+    data.productContexts = [
+      {
+        "productId": {
+          "upc": upc
+        }
+      }
+    ];
+  }
 
-  if (id.length === 32) {
-    data.offerContexts[0].offerId.offerId = id;
-  } else {
-    data.offerContexts[0].offerId.USItemId = id;
-    data.offerContexts[0].offerId.USSellerId = 0;
+  if (wupc) {
+    data.productContexts = [
+      {
+        "productId": {
+          "wupc": wupc
+        }
+      }
+    ];
   }
 
   service.setServiceName("item-read-service");
