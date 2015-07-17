@@ -30,9 +30,8 @@ module.exports =
   generateOutput: function (val, state, args) {
     var props = [];
     var temp = args.EVALHELP || args.HELP || args.i;
-    var typeInfo = Util.getTypeInfo(temp);
     var argsHelpStr = temp;
-    var hasArgsValue = ! (typeInfo.IS_BOOLEAN && temp);
+    var hasArgsValue = ! (typeof(temp) === "boolean" && temp);
     if (hasArgsValue) {
       var _arr = temp.split(".");
       for (var _s=0;_s<_arr.length;_s++) {
@@ -48,18 +47,25 @@ module.exports =
     }
 
     temp = (hasArgsValue?_temp.val:eval('val'));
+    var typeInfo = Util.getTypeInfo(temp);
     fs.writeFileSync(__dirname + '/../output/' + Const.NAMES.PASTEBOARD, './c ' + (hasArgsValue?argsHelpStr:""));
-
-    var idx = 0;
-    for (var prop in temp) {
-      if (!temp.hasOwnProperty(prop)) continue;
-      idx++;
-      if (args.JSON) {
-        props.push(prop);
-      } else {
-        var child = temp[prop];
-        var str = Util.getFormattedLineOutput(child, prop, args, idx);
-        props.push (str)
+    
+    if (typeInfo.IS_PRIMITIVE && args.i) {
+      var parts = args.i.split(".");
+      var prop = parts[parts.length-1];
+      props.push(Util.getFormattedLineOutput(temp, prop, args, 1));
+    } else {
+      var idx = 0;
+      for (var prop in temp) {
+        if (!temp.hasOwnProperty(prop)) continue;
+        idx++;
+        if (args.JSON) {
+          props.push(prop);
+        } else {
+          var child = temp[prop];
+          var str = Util.getFormattedLineOutput(child, prop, args, idx);
+          props.push(str)
+        }
       }
     }
     var output = {};
