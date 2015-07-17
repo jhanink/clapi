@@ -97,6 +97,9 @@ Available commands:
   ./get-iro-offers --MORE                                    # print cached result
   ./get-iro-offers --EVAL status                             # print IRO status (OK, PARTIAL..)
   
+  ./get-iro-offers --upc 084522601117                        # get IRO offers by upc
+  ./get-iro-offers --wupc 0084522601117                      # get IRO offers by wupc
+  
   ./get-receipt 26686011496922631859                         # get receipt data by TC#
 ```
 
