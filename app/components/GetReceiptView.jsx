@@ -9,7 +9,7 @@ ThemeManager.setTheme(ThemeManager.types.LIGHT);
 let TextField = mui.TextField;
 let RaisedButton = mui.RaisedButton;
 let LinearProgress = mui.LinearProgress;
-var LinearProgressTag = undefined;
+let LinearProgressTag = undefined;
 
 module.exports = React.createClass({
   getInitialState() {

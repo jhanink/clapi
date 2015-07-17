@@ -9,7 +9,7 @@ ThemeManager.setTheme(ThemeManager.types.LIGHT);
 let TextField = mui.TextField;
 let RaisedButton = mui.RaisedButton;
 let LinearProgress = mui.LinearProgress;
-var LinearProgressTag = undefined;
+let LinearProgressTag = undefined;
 
 module.exports = React.createClass({
   getInitialState() {
@@ -26,12 +26,29 @@ module.exports = React.createClass({
           GET IRO OFFERS
         </div>
         <TextField
-          ref="tf"
+          ref="tfId"
           style={{width: '100%'}}
           hintText="OfferId / USItemId"
-          floatingLabelText="Enter an OfferId or USItemId"
-          onChange={(e)=>{this.refs.tf.setValue(e.target.value.trim())}}
+          floatingLabelText="Enter an OfferId or US-ItemId"
+          onChange={(e)=>{this.refs.tfId.setValue(e.target.value.trim())}}
           onEnterKeyDown={this._handleInput}/>
+
+        <TextField
+            ref="tfUPC"
+            style={{width: '100%'}}
+            hintText="UPC"
+            floatingLabelText="Enter a UPC"
+            onChange={(e)=>{this.refs.tfUpc.setValue(e.target.value.trim())}}
+            onEnterKeyDown={this._handleInput}/>
+
+        <TextField
+            ref="tfWUPC"
+            style={{width: '100%'}}
+            hintText="WUPC"
+            floatingLabelText="Enter a WUPC"
+            onChange={(e)=>{this.refs.tfWUPC.setValue(e.target.value.trim())}}
+            onEnterKeyDown={this._handleInput}/>
+
         {
           this.state.isFetching
               ? <LinearProgress
@@ -58,10 +75,10 @@ module.exports = React.createClass({
       this._fetch(val)
     }
   },
-  _fetch(input) {
+  _fetch(type, input) {
     this.setState({isFetching: true});
     var self = this;
-    $.get("/get-iro-offers/"+input, function(result) {
+    $.get("/get-iro-offers/"+type+"/"+input, function(result) {
       setTimeout(function() {
         self.setState({
           isFetching: false,
@@ -71,9 +88,15 @@ module.exports = React.createClass({
     });
   },
   _handleClick() {
-    let val = this.refs.tf.getValue();
-    if (val.length > 0) {
-      this._fetch(val);
+    let id = this.refs.tfId.getValue();
+    let upc = this.refs.tfUPC.getValue();
+    let wupc = this.refs.tfWUPC.getValue();
+    if (id.length > 0) {
+      this._fetch("id", id);
+    } else if (upc.length > 0) {
+      this._fetch("upc", upc);
+    } else if (wupc.length > 0) {
+      this._fetch("wupc", wupc);
     }
   },
   childContextTypes: {

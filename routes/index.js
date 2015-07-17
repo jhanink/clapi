@@ -45,19 +45,20 @@ router.get('/get-receipt/:transactionCode', (req, res) => {
 });
 
 
-// ----------------------------
-// get iro offers
-// ----------------------------
-router.get('/get-iro-offers/:offerId', (req, res) => {
+// -----------------------------------------------------
+// get iro offers by id (offerId/USItemId), UPC, or WUPC
+// -----------------------------------------------------
+router.get('/get-iro-offers/:type/:value', (req, res) => {
   let config = {
     args: {
-      name: 'get-iro-offers',
-      id: req.params.offerId
+      name: 'get-iro-offers'
     },
     callback (result) {
       res.send(result);
     }
   };
+
+  config.args[req.params.type] = req.params.value;
 
   ApiCall(config);
 });
@@ -115,7 +116,6 @@ router.get('/add-to-cart/:cartId/:id', (req, res) => {
 });
 
 router.get('/get-customer', (req, res, next) => {
-  console.log('---------------- load page /get-customer');
   // get data
   let config = {
     args: {
@@ -123,7 +123,6 @@ router.get('/get-customer', (req, res, next) => {
       customerId: '688ddfc5-181f-46b5-a0e7-8dc139146253'
     },
     callback (result) {
-      console.log("------------ got customer data for 688ddfc5-181f-46b5-a0e7-8dc139146253");
       res.locals.data = result;
       next();
     }
@@ -138,7 +137,6 @@ router.get('/get-customer', (req, res, next) => {
 // Isomorphic SSR for routes
 // ----------------------------
 router.use( (req, res) => {
-  console.log("---------- iso render page")
   alt.bootstrap(JSON.stringify(res.locals.data || {}));
   let iso = new Iso();
   Router.run(Routes, req.path, (Handler) => {
