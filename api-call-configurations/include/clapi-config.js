@@ -1,8 +1,8 @@
-let configDefault = require("./clapi-config-default");
-let config = require("./clapi-config");
+var configDefault = require("./clapi-config-default");
+var config = require("./clapi-config");
 
 var result = configDefault;
-for (let i in config) {
+for (var i in config) {
   if (config.hasOwnProperty(i)) {
     result[i] = configDefault[i];
   }
