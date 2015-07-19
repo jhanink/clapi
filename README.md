@@ -104,8 +104,10 @@ Available commands:
 ```
 
 ```sh
-
   ./create-purchase-contract                                 # create 1hg sample pc
+  ./get-purchase-contract                                    # get purchase contract by id
+  
+  ./set-cid                                                  # set cid for purchase-contract
 ```
 
 ##### → PROD : Cart & Checkout
