@@ -106,16 +106,17 @@ Available commands:
 ```sh
   ./create-purchase-contract                                 # create 1hg sample pc
   ./get-purchase-contract                                    # get purchase contract by id
-  
-  ./set-cid                                                  # set cid for purchase-contract
+
 ```
 
-##### → PROD : Cart & Checkout
+##### → STAGE : Set Configs
+
+edit the file `~/clapi-config-override.json` or use the `config-set` commands.
 
 ```sh
-   
-  ./get-purchase-contract-prod \
-     e74dd26a-ef98-442e-bf88-86637b5b344d                    # purchase contract Id
+
+  ./config-set-cid                                            # set cid for purchase-contract
+
 ```
 
 ##### → OPTIONS : Output mode, expression eval, custom functions
