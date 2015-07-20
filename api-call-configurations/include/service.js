@@ -48,6 +48,9 @@ module.exports = function(state) {
       _options = options;
       _options.headers = _headers;
     },
+    deleteHeader: function (header) {
+      delete _options.headers[header];
+    },
     setDataPayload: function (data) {
       _data = data;
     },

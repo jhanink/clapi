@@ -3,15 +3,16 @@ var path = require("path");
 var config = require("../include/clapi-config");
 
 module.exports = function (state) {
-  var cid = state.args.cid;
-  if (!cid) {
-    console.log("---> missing cid");
+  var url = state.args.url;
+  if (!url) {
+    console.log("---> missing purchase contract endpoint url");
     return;
   }
 
-  config.customer.cid = cid;
+  config.purchaseContractEndpoint = url;
 
   var userHome = process.env['HOME'];
   var clapiUserConfigFilePath = path.join(userHome, "/clapi-config-override.json");
-  fs.writeFileSync(clapiUserConfigFilePath, JSON.stringify(config));
+  fs.writeFileSync(clapiUserConfigFilePath, JSON.stringify(data));
 };
+

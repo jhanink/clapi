@@ -4,7 +4,7 @@ module.exports = function (state) {
   var service = require("../include/service")(state);
 
   var options = {
-    url: 'http://xoservice-app.stg1.pangaeasvcsxo.services.prod.walmart.com/checkoutservice/v1/purchasecontracts/',
+    url: clapiConfig.purchaseContractEndpoint,
     method: 'PUT'
   };
 
@@ -23,6 +23,8 @@ module.exports = function (state) {
   service.setCorrelationId("d1f0c0d2-2cf4-497b-b630-06d609d987b0");
 
   service.setDataPayload(payload3);
+
+  service.deleteHeader["WM_SEC.AUTH_TOKEN"];
 
   // --- send request
   service.sendRequest(options);
