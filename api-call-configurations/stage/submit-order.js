@@ -7,8 +7,7 @@ module.exports = function (state) {
   }
 
   var options = {
-    url: 'http://xoservice-app.stg1.pangaeasvcsxo.services.prod.walmart.com/checkoutservice/v1/purchasecontracts/'
-      + state.args.pcId + '/submit',
+    url: clapiConfig.purchaseContractEndpoint + state.args.pcId + '/submit',
     method: 'POST'
   };
 
