@@ -1,0 +1,9 @@
+. ./include/script-include
+
+if [ -z "$1" ]
+  then
+    echo "Missing serviceEnv"
+    exit 1;
+fi
+
+node $DAS_index --name=$DAS_script_name --serviceEnv=$1
