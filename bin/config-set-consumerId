@@ -1,9 +1,0 @@
-. ./include/script-include
-
-if [ -z "$1" ]
-  then
-    echo "Missing consumerId"
-    exit 1;
-fi
-
-node $DAS_index --name=$DAS_script_name --consumerId=$1
