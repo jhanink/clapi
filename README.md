@@ -105,7 +105,9 @@ Available commands:
 
 ```sh
   ./create-purchase-contract                                 # create 1hg sample pc
-  ./get-purchase-contract                                    # get purchase contract by id
+
+  ./get-purchase-contract \
+     53f91076-0f31-4456-b214-74e3741b7d77                    # get purchase contract by id
 
 ```
 
