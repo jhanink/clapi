@@ -4,7 +4,7 @@ module.exports = function (state) {
   var service = require("../include/service")(state);
 
   var options = {
-    url: clapiConfig.purchaseContractEndpoint,
+    url: clapiConfig.checkout.purchaseContractEndpoint,
     method: 'PUT'
   };
 

@@ -8,6 +8,11 @@ then
   DAS_index='../index';
   DAS_print_output='../print_output';
   DAS_base_dir=`dirname "$PWD"`;
+elif [ `basename "$PWD"` == "config" ];
+then
+  DAS_index='../../index';
+  DAS_print_output='../../print_output';
+  DAS_base_dir=`dirname "$PWD"`;
 else
   DAS_index='index';
   DAS_print_output='print_output';

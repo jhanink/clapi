@@ -7,7 +7,7 @@ module.exports = function (state) {
   }
 
   var options = {
-    url: clapiConfig.purchaseContractEndpoint + state.args.pcId,
+    url: clapiConfig.checkout.purchaseContractEndpoint + state.args.pcId,
     method: 'GET'
   };
 
