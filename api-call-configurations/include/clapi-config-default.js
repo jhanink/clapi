@@ -11,6 +11,7 @@ module.exports = {
   },
   "general": {
     "tenantId": "0",
-    "verticalId": "8"
+    "verticalId": "8",
+    "localeId": "eng_USA"
   }
 };

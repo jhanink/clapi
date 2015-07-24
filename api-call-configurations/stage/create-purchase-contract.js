@@ -13,7 +13,7 @@ module.exports = function (state) {
 
   service.setTenantId(clapiConfig.general.tenantId);
   service.setVerticalId(clapiConfig.general.verticalId);
-  service.setLocaleId("eng_USA");
+  service.setLocaleId(clapiConfig.general.localeId);
 
   service.setServiceEnv(clapiConfig.checkout.serviceEnv);
   service.setConsumerUserId(clapiConfig.customer.cid);
