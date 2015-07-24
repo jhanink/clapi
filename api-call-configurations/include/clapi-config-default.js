@@ -10,7 +10,7 @@ module.exports = {
     "purchaseContractEndpoint": "http://xoservice-app.stg1.pangaeasvcsxo.services.prod.walmart.com/checkoutservice/v1/purchasecontracts/"
   },
   "general": {
-    "tenandId": "0",
+    "tenantId": "0",
     "verticalId": "8"
   }
 };
