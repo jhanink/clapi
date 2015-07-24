@@ -4,6 +4,8 @@ module.exports = {
     "email": "node-1@wm.com"
   },
   "checkout": {
+    "serviceName": "checkoutservice",
+    "serviceVersion": "1.0.0",
     "serviceEnv": "stg1",
     "consumerId": "b2d8d5fd-db75-4b2f-8b98-3a417b4c1d10",
     "authSignature": "EGHKfpuQzEz4cABRyQ/8byPVHVIzI9VqXDX4tvuEGEnmJkT1flIYTCnx1m0RDCihridZ0zf+9xxU9r3xnbLgKHe2yTiFRFRIHa1XiUOaQ8ry2JoOF4sQrD9PcwjiqqHGvL2aaD/jUV4xLQ+fajIM2+AW57BQRuDyZA9Y+llMB2E=",

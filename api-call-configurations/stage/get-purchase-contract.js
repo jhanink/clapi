@@ -11,17 +11,17 @@ module.exports = function (state) {
     method: 'GET'
   };
 
-  service.setServiceName("checkoutservice");
-  service.setServiceVersion("1.0.0");
-
   service.setTenantId(clapiConfig.general.tenantId);
   service.setVerticalId(clapiConfig.general.verticalId);
   service.setLocaleId(clapiConfig.general.localeId);
 
+  service.setServiceName(clapiConfig.checkout.serviceName);
+  service.setServiceVersion(clapiConfig.checkout.serviceVersion);
   service.setServiceEnv(clapiConfig.checkout.serviceEnv);
   service.setConsumerUserId(clapiConfig.customer.cid);
   service.setConsumerId(clapiConfig.checkout.consumerId);
   service.setAuthSignature(clapiConfig.checkout.authSignature);
+
   service.setKeyVersion(1);
   service.setCorrelationId("d1f0c0d2-2cf4-497b-b630-06d609d987b0");
 
