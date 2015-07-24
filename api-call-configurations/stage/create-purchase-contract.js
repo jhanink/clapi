@@ -11,8 +11,8 @@ module.exports = function (state) {
   service.setServiceName("checkoutservice");
   service.setServiceVersion("1.0.0");
 
-  service.setTenantId("0");
-  service.setVerticalId("8");
+  service.setTenantId(clapiConfig.general.tenantId);
+  service.setVerticalId(clapiConfig.general.verticalId);
   service.setLocaleId("eng_USA");
 
   service.setServiceEnv(clapiConfig.checkout.serviceEnv);
