@@ -14,6 +14,8 @@ module.exports = function (state) {
   service.setTenantId(clapiConfig.general.tenantId);
   service.setVerticalId(clapiConfig.general.verticalId);
   service.setLocaleId(clapiConfig.general.localeId);
+  service.setKeyVersion(clapiConfig.general.keyVersion);
+  service.setCorrelationId(clapiConfig.general.correlationId);
 
   service.setServiceName(clapiConfig.checkout.serviceName);
   service.setServiceVersion(clapiConfig.checkout.serviceVersion);
@@ -21,9 +23,6 @@ module.exports = function (state) {
   service.setConsumerUserId(clapiConfig.customer.cid);
   service.setConsumerId(clapiConfig.checkout.consumerId);
   service.setAuthSignature(clapiConfig.checkout.authSignature);
-
-  service.setKeyVersion(1);
-  service.setCorrelationId("d1f0c0d2-2cf4-497b-b630-06d609d987b0");
 
   var payload = {"payload":null};
   service.setDataPayload(payload);
