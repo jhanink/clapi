@@ -17,5 +17,6 @@ module.exports = {
     "localeId": "eng_USA",
     "correlationId": "d1f0c0d2-2cf4-497b-b630-06d609d987b0",
     "keyVersion": "1"
-  }
+  },
+  versionDate: "1.0.0"
 };
