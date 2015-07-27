@@ -1,0 +1,3 @@
+. ../include/script-include
+
+node $DAS_index --name=config-set-prop --showConfig=true

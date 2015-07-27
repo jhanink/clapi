@@ -20,5 +20,12 @@ module.exports = function (state) {
     config.checkout.authSignature = args.authSignature;
   }
 
-  fs.writeFileSync(clapiUserConfigFilePath, JSON.stringify(config));
+  if (args.showConfig) {
+    console.log(config);
+  } else {
+    config.configVersion = config.configVersion + 1;
+    config.configVersionDate = new Date().toString();
+    fs.writeFileSync(clapiUserConfigFilePath, JSON.stringify(config));
+  }
+
 };

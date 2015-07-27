@@ -18,6 +18,6 @@ module.exports = {
     "correlationId": "d1f0c0d2-2cf4-497b-b630-06d609d987b0",
     "keyVersion": "1"
   },
-  configVersion: "1.0.0",
-  configVersionDate: "2015-07-27"
+  configVersion: 5,
+  configVersionDate: "Mon Jul 27 2015 00:11:33 GMT-0700 (PDT)'"
 };
