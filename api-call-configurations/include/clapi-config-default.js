@@ -19,5 +19,5 @@ module.exports = {
     "keyVersion": "1"
   },
   configVersion: 5,
-  configVersionDate: "Mon Jul 27 2015 00:11:33 GMT-0700 (PDT)'"
+  configVersionDate: "Mon Jul 27 2015 00:11:33 GMT-0700 (PDT)"
 };
