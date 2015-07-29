@@ -18,6 +18,8 @@ module.exports = function (state) {
     config.checkout.serviceEnv = args.serviceEnv;
   } else if (args.authSignature) {
     config.checkout.authSignature = args.authSignature;
+  } else if (args.tenantId) {
+    config.general.tenantId = args.tenantId;
   }
 
   if (args.showConfig) {
