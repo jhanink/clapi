@@ -20,6 +20,8 @@ module.exports = function (state) {
     config.checkout.authSignature = args.authSignature;
   } else if (args.tenantId) {
     config.general.tenantId = args.tenantId;
+  } else if (args.verticalId) {
+    config.general.verticalId = args.verticalId;
   }
 
   if (args.showConfig) {
