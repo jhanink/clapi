@@ -22,6 +22,8 @@ module.exports = function (state) {
     config.general.tenantId = args.tenantId;
   } else if (args.verticalId) {
     config.general.verticalId = args.verticalId;
+  } else if (args.localeId) {
+    config.general.localeId = args.localeId;
   }
 
   if (args.showConfig) {
