@@ -1,3 +1,5 @@
+var clapiConfig = require("../include/clapi-config");
+
 module.exports = function (state) {
   var service = require("../include/service")(state);
   var customerId = state.args.customerId;
@@ -8,11 +10,11 @@ module.exports = function (state) {
   var isEmail = customerId.indexOf("@") > 0;
 
   var options = {
-    url: 'http://ca.stg0.ca-services-cdc.prod.walmart.com/ca-app/services/customers/'
-      + (isEmail?'emails/':'') + customerId,
+    url: clapiConfig.customer.caEndpoint + (isEmail?'emails/':'') + customerId,
     method: 'GET'
   };
 
+  // todo: what is the right service name??
   service.setServiceName("payment");
   service.sendRequest(options);
 };
