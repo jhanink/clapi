@@ -10,10 +10,12 @@ module.exports = function (state) {
 
   if (args.cid) {
     config.customer.cid = args.cid;
+  }  else if (args.caEndpointUrl) {
+    config.customer.caEndpointUrl = args.caEndpointUrl;
   } else if (args.consumerId) {
     config.checkout.consumerId = args.consumerId;
-  } else if (args.url) {
-    config.checkout.purchaseContractEndpoint = args.url;
+  } else if (args.pcEndpointUrl) {
+    config.checkout.purchaseContractEndpoint = args.pcEndpointUrl;
   } else if (args.serviceEnv) {
     config.checkout.serviceEnv = args.serviceEnv;
   } else if (args.authSignature) {

@@ -1,0 +1,9 @@
+. ../include/script-include
+
+if [ -z "$1" ]
+  then
+    echo "Missing customer accounts endpoint url"
+    exit 1;
+fi
+
+node $DAS_index --name=config-set-prop --caEndpointUrl=$1
