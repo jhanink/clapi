@@ -24,6 +24,8 @@ module.exports = function (state) {
     config.general.verticalId = args.verticalId;
   } else if (args.localeId) {
     config.general.localeId = args.localeId;
+  } else if (args.correlationId) {
+    config.general.correlationId = args.correlationId;
   }
 
   if (args.showConfig) {
