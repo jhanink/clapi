@@ -28,6 +28,8 @@ module.exports = function (state) {
     config.general.localeId = args.localeId;
   } else if (args.correlationId) {
     config.general.correlationId = args.correlationId;
+  } else if (args.keyVersion) {
+    config.general.keyVersion = args.keyVersion;
   }
 
   if (args.showConfig) {
