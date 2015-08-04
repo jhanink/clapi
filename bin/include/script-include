@@ -21,6 +21,7 @@ fi
 
 DAS_output_dir="${DAS_base_dir}/output"
 DAS_temp_dir="$DAS_output_dir/temp"
+DAS_mocks_dir="${DAS_base_dir}/mocks"
 
 mkdir -p $DAS_temp_dir
 
