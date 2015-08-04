@@ -38,6 +38,12 @@ else
   DAS_has_params=1
 fi
 
+if [ "$CLAPI_SET_MOCKS" = "ON" ];
+then
+  DAS_mocks_mode_on=1
+else
+  DAS_mocks_mode_on=0
+fi
 
 function DAS_handle_response() {
   DAS_response_status=`node $DAS_print_output --file=$DAS_output_dir/TEMP_RESULT.json --EVAL=status`
