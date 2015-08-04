@@ -1,6 +1,7 @@
 module.exports = {
   ENV : {
-    SET_DATATYPE: "CLAPI_SET_DATATYPE"
+    SET_DATATYPE: "CLAPI_SET_DATATYPE",
+    SET_MOCKS: "CLAPI_SET_MOCKS"
   },
   COLORS: {
     BLACK: "\033[0;30m",

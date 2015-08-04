@@ -107,5 +107,8 @@ module.exports = {
   },
   getEnvVar: function (envKey) {
     return process.env[envKey];
+  },
+  isMocksMode: function() {
+    return this.getEnvVar(Const.ENV.SET_MOCKS) === "ON";
   }
 };
