@@ -1,5 +1,7 @@
+var prettyjson = require("prettyjson");
 var stripAnsi = require("strip-ansi");
 var Const = require("./clapi-constants");
+var clapi = require("../clapi_modules/clapi-helpers");
 
 module.exports = {
   getObjectPath: function (pathString, prop) {
@@ -33,7 +35,7 @@ module.exports = {
       return;
     }
     if (!fs.existsSync(file)) {
-      this.printResult(state, JSON.stringify({
+      clapi.printResult(state, JSON.stringify({
         "result": "file not found [" + file + "]"
       }));
       return;
@@ -110,5 +112,32 @@ module.exports = {
   },
   isMocksMode: function() {
     return this.getEnvVar(Const.ENV.SET_MOCKS) === "ON";
+  },
+  printOutput: function (state, err, resp, body) {
+    var wrappedResult = {};
+
+    if (err) {
+      wrappedResult.status = "FAILURE";
+      wrappedResult.body = err;
+      console.log(wrappedResult);
+      return;
+    }
+
+    if (state.args.WRAP) {
+      wrappedResult = {
+        status: Math.floor(resp.statusCode/100) === 2 ? "SUCCESS" : "FAILURE",
+        body: body
+      };
+      console.log(JSON.stringify(wrappedResult));
+      return;
+    }
+
+    if (state.args.RAW) {
+      console.log(body);
+    } else if (state.args.JSON) {
+      console.log(JSON.stringify(JSON.parse(body), null, 2));
+    } else {
+      console.log(prettyjson.render(JSON.parse(body)));
+    }
   }
 };
