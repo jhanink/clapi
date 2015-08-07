@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$1" =~ "-s=" ]];
+if [[ "$1" =~ "-f=" ]];
 then
   f=${1: 3}
   cp $f ../output/clapi.json
