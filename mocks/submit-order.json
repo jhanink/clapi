@@ -1,1 +1,1 @@
-{"status":"OK","payload":{"entityErrors":[],"purchaseContractId":"f7db98f5-6d6c-4a01-bcae-dcebec179ecc","customerId":"5d456dc1-c81e-4314-86b3-7b32dd31f64d","orderId":"4661500907783"}}
+{"MOCKS-MODE":true,"status":"OK","payload":{"entityErrors":[],"purchaseContractId":"f7db98f5-6d6c-4a01-bcae-dcebec179ecc","customerId":"5d456dc1-c81e-4314-86b3-7b32dd31f64d","orderId":"4661500907783"}}
