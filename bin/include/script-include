@@ -42,7 +42,7 @@ fi
 if [ "$CLAPI_SET_MOCKS" = "ON" ];
 then
   DAS_mocks_mode_on=1;
-  echo "===== clapi mocks mode ON ====="
+  echo "==========   clapi  mocks mode  ON"
 else
   DAS_mocks_mode_on=0
 fi
@@ -93,7 +93,7 @@ function DAS_print_output() {
 
   if [ "$CLAPI_SET_MOCKS" = "ON" ];
   then
-    echo "===== clapi mocks mode ON ====="
+    echo "==========   clapi  mocks mode  ON"
   fi
 
 }
