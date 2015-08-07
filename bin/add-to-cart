@@ -8,4 +8,4 @@ then
   cp $DAS_output_dir/$DAS_script_name.json $DAS_output_dir/LATEST_CART.json
 fi
 
-DAS_print_output $DAS_output_dir/LATEST_CART.json;
+DAS_print_output
