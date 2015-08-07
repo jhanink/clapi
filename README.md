@@ -121,7 +121,7 @@ edit the file `~/clapi-config-override.json` or use the `config-set` commands.
 
 ```
 
-##### → OPTIONS : Output mode, expression eval, custom functions
+##### → OPTIONS : DISPLAY MODE, EXPRESSION EVALUATION, CUSTOM FUNCTIONS
 
 ```sh
   
@@ -152,27 +152,7 @@ edit the file `~/clapi-config-override.json` or use the `config-set` commands.
 All the above commands save to the CLAPI buffer and can be immediately driven by ./clapi (below)
 
 
-##### → CLAPI : mocks mode
-
-The CLI and UI return mock data when MOCKS mode is ON.
-
-The CLI will display a visual cue `==========   clapi  mocks mode  ON`
-
-The Clapi UI response data will contain an extra property `MOCK-DATA:true`
-
-```sh
-
-  # turn mocks mode on and run any command
-  export CLAPI_SET_MOCKS=ON
-  ./get-customer
-  ./c
-  
-  # turn mocks mode off
-  export CLAPI_SET_MOCKS=OFF
-  ./c
-```  
-
-##### → CLAPI : interactive / iterative mode
+##### → CLAPI : INTERACTIVE MODE
 
 ```sh
   
@@ -222,6 +202,25 @@ The Clapi UI response data will contain an extra property `MOCK-DATA:true`
   ./c --FUNC=missingFulfillmentPrices
 ```
   
+##### → CLAPI : MOCKS MODE
+
+The CLI and UI return mock data when MOCKS mode is ON.
+
+The CLI will display a visual cue `==========   clapi  mocks mode  ON`
+
+The Clapi UI response data will contain an extra property `MOCK-DATA:true`
+
+```sh
+
+  # turn mocks mode on and run any command
+  export CLAPI_SET_MOCKS=ON
+  ./get-customer
+  ./c
+  
+  # turn mocks mode off
+  export CLAPI_SET_MOCKS=OFF
+```  
+
 ##### → ETC
 
 ```sh
