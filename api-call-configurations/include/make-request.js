@@ -7,6 +7,11 @@ var makeRequest = function (options, data, state) {
     options.body = JSON.stringify(data);
   }
 
+  if (util.isMocksMode()) {
+    util.handleMockApiCall(state, state.args.name);
+    return;
+  }
+
   request(options, function (err, resp, body) {
     if(state.callback) {
       state.callback(err?err:body);
@@ -15,7 +20,5 @@ var makeRequest = function (options, data, state) {
     util.printOutput(state, err, resp, body);
   });
 };
-
-
 
 module.exports = makeRequest;

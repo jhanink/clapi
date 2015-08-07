@@ -4,7 +4,8 @@ var args = require("yargs").argv;
 var util = require("./clapi_modules/clapi-util");
 
 var state = {
-  args: args
+  args: args,
+  baseDir: __dirname
 };
 
 var command_name = args.name;
@@ -14,9 +15,7 @@ if (!command_name) {
 }
 
 if (util.isMocksMode()) {
-  var mockFile = path.join(__dirname, "mocks", command_name + ".json");
-  var mockBody = JSON.stringify(JSON.parse(fs.readFileSync(mockFile)));
-  util.printOutput(state, null, {statusCode: 200}, mockBody);
+  util.printMockOutput(state, command_name);
   process.exit();
 }
 

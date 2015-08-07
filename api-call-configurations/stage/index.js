@@ -1,3 +1,5 @@
+var util = require("../../clapi_modules/clapi-util");
+
 module.exports = function (state) {
   var headers = {
     "Accept": "application/json",
@@ -19,6 +21,8 @@ module.exports = function (state) {
   };
 
   state.headers = headers;
-
+  if (util.isMocksMode()) {
+    state.baseDir = __dirname + "/../../";
+  }
   require("./" + state.args.name)(state);
 };

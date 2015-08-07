@@ -1,3 +1,5 @@
+var fs = require("fs");
+var path = require("path");
 var prettyjson = require("prettyjson");
 var stripAnsi = require("strip-ansi");
 var Const = require("./clapi-constants");
@@ -112,6 +114,16 @@ module.exports = {
   },
   isMocksMode: function() {
     return this.getEnvVar(Const.ENV.SET_MOCKS) === "ON";
+  },
+  printMockOutput: function (state, command_name) {
+    var mockFile = path.join(state.baseDir, "mocks", command_name + ".json");
+    var mockBody = JSON.stringify(JSON.parse(fs.readFileSync(mockFile)));
+    this.printOutput(state, null, {statusCode: 200}, mockBody);
+  },
+  handleMockApiCall: function (state, command_name) {
+    var mockFile = path.join(state.baseDir, "mocks", command_name + ".json");
+    var mockBody = JSON.stringify(JSON.parse(fs.readFileSync(mockFile)));
+    state.callback(mockBody);
   },
   printOutput: function (state, err, resp, body) {
     var wrappedResult = {};
