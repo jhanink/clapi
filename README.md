@@ -50,6 +50,8 @@ Available commands:
 
 ##### → STAGE : Cart & Checkout
 
+cd to `clapi/bin`
+
 ```sh
   
   ./get-customer 688ddfc5-181f-46b5-a0e7-8dc139146253        # customerId
@@ -83,6 +85,8 @@ Available commands:
 
 ##### → STAGE : Other
 
+cd to `clapi/bin`
+
 ```sh
   
   ./fetch-inventory-report --NEW                             # fetches the latest report
@@ -113,15 +117,19 @@ Available commands:
 
 ##### → STAGE : Set Configs
 
-edit the file `~/clapi-config-override.json` or use the `config-set` commands.
+edit the file `~/clapi-config-override.json` or use the `config/set-*` commands.
+
+cd to `clapi/bin/config`
 
 ```sh
 
-  ./config-set-cid                                            # set cid for purchase-contract
+  ./set-cid                                                  # set cid for purchase-contract
 
 ```
 
 ##### → OPTIONS : DISPLAY FORMAT, EXPRESSION EVALUATION, CUSTOM FUNCTIONS
+
+cd to `clapi/bin`
 
 ```sh
   
@@ -153,6 +161,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 
 ##### → CLAPI : INTERACTIVE MODE
+
+cd to `clapi/bin`
 
 ```sh
   
@@ -204,6 +214,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   
 ##### → CLAPI : MOCKS MODE
 
+cd to `clapi/bin`
+
 * The CLI and UI return mock data when MOCKS mode is ON.
 * The CLI will display a visual cue `==========   clapi  mocks mode  ON`
 * The Clapi UI response data will contain an extra property `MOCK-DATA:true`
@@ -221,6 +233,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 
 ##### → ETC
 
+cd to `clapi/bin`
+
 ```sh
 
   # get torbit headers
@@ -228,6 +242,8 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 ```
 
 ##### → TIPS & TRICKS
+
+cd to `clapi/bin`
 
 ```sh
 
