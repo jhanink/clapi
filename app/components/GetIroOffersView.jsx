@@ -63,7 +63,7 @@ module.exports = React.createClass({
           style={{marginBottom: '30px'}}/>
         {
           this.state.data
-              ? <Inspector data={this.state.data}/>
+              ? <Inspector data={this.state.data} filterOptions={{ignoreCase:true}}/>
               : <div></div>
         }
       </div>
