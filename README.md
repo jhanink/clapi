@@ -204,11 +204,9 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   
 ##### → CLAPI : MOCKS MODE
 
-The CLI and UI return mock data when MOCKS mode is ON.
-
-The CLI will display a visual cue `==========   clapi  mocks mode  ON`
-
-The Clapi UI response data will contain an extra property `MOCK-DATA:true`
+* The CLI and UI return mock data when MOCKS mode is ON.
+* The CLI will display a visual cue `==========   clapi  mocks mode  ON`
+* The Clapi UI response data will contain an extra property `MOCK-DATA:true`
 
 ```sh
 
