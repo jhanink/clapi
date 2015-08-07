@@ -122,7 +122,9 @@ module.exports = {
   },
   handleMockApiCall: function (state, command_name) {
     var mockFile = path.join(state.baseDir, "mocks", command_name + ".json");
-    var mockBody = JSON.stringify(JSON.parse(fs.readFileSync(mockFile)));
+    var mockJson = JSON.parse(fs.readFileSync(mockFile));
+    mockJson["MOCK-DATA"] = true;
+    var mockBody = JSON.stringify(mockJson);
     state.callback(mockBody);
   },
   printOutput: function (state, err, resp, body) {
