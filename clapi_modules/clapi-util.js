@@ -100,7 +100,7 @@ module.exports = {
           + (objInfo.IS_ARRAY?" element":" node")
           + (toPluralize?"s":"")
           + Const.COLORS.CLEAR : " \\");
-      str += "\033[0m";
+      str += Const.COLORS.CLEAR;
     }
     if (args.NOCOLOR) {
       str = stripAnsi(str);

@@ -4,19 +4,19 @@ module.exports = {
     SET_MOCKS: "CLAPI_SET_MOCKS"
   },
   COLORS: {
-    BLACK: "\033[0;30m",
-    BLUE: "\033[0;34m",
-    GREEN: "\033[0;32m",
-    RED: "\033[0;31m",
-    LIGHT_GRAY: "\033[0;37m",
-    LIGHT_BLUE: "\033[1;34m",
-    LIGHT_GREEN: "\033[1;32m",
-    DARK_GRAY: "\033[1;30m",
-    BROWN_ORANGE: "\033[0;33m",
-    YELLOW: "\033[1;33m",
-    WHITE: "\033[1;37m",
-    CLEAR: "\033[00m",
-    BOLD: "\033[1m"
+    BLACK: "\x1B[0;30m",
+    BLUE: "\x1B[0;34m",
+    GREEN: "\x1B[0;32m",
+    RED: "\x1B[0;31m",
+    LIGHT_GRAY: "\x1B[0;37m",
+    LIGHT_BLUE: "\x1B[1;34m",
+    LIGHT_GREEN: "\x1B[1;32m",
+    DARK_GRAY: "\x1B[1;30m",
+    BROWN_ORANGE: "\x1B[0;33m",
+    YELLOW: "\x1B[1;33m",
+    WHITE: "\x1B[1;37m",
+    CLEAR: "\x1B[00m",
+    BOLD: "\x1B[1m"
   },
   NAMES: {
     PASTEBOARD: "clapi_pasteboard"
