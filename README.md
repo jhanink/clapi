@@ -160,7 +160,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   ./get-cart
   
   # explicitly save a json file to the clapi buffer
-  ./clapi -s=../samples/SAMPLE.json
+  ./clapi -f=../samples/SAMPLE.json
   
   # interactive mode against the existing clapi buffer
   ./clapi
@@ -198,7 +198,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 ```sh
   
   # functions
-  ./c -s=../samples/missingFulfillmentPrices.json
+  ./c -f=../samples/missingFulfillmentPrices.json
   ./c --FUNC=missingFulfillmentPrices
 ```
   
@@ -232,7 +232,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 ```sh
 
   # find which nodes have values
-  ./c -s=../samples/missingFulfillmentPrices.json && \
+  ./c -f=../samples/missingFulfillmentPrices.json && \
   for var in $(seq 0 20); \
   do \
     echo "--- $var" && \
@@ -240,7 +240,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
   done;
   
   # find selected purchase contract shipping options
-  ./c -s=../samples/purchaseContract.json;
+  ./c -f=../samples/purchaseContract.json;
   for i in {0..3}; do ./c groups[0].shippingOptions[$i].selected; done;
 ```
 
