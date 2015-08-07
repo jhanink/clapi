@@ -152,11 +152,25 @@ edit the file `~/clapi-config-override.json` or use the `config-set` commands.
 All the above commands save to the CLAPI buffer and can be immediately driven by ./clapi (below)
 
 
-##### → Clapi Todo:
+##### → CLAPI : mocks mode
 
-* save the previous pasteboard to support position-relative `./cd ..` and `./cd next_node` style
-* add a `./cd` command that works in a position-relative fashion.
+The CLI and UI return mock data when MOCKS mode is ON.
 
+The CLI will display a visual cue `==========   clapi  mocks mode  ON`
+
+The Clapi UI response data will contain an extra property `MOCK-DATA:true`
+
+```sh
+
+  # turn mocks mode on and run any command
+  export CLAPI_SET_MOCKS=ON
+  ./get-customer
+  ./c
+  
+  # turn mocks mode off
+  export CLAPI_SET_MOCKS=OFF
+  ./c
+```  
 
 ##### → CLAPI : interactive / iterative mode
 
