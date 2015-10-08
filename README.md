@@ -151,7 +151,7 @@ cd to `clapi/bin/config`
 
 ```
 
-#### OPTIONS : DISPLAY FORMAT, EXPRESSION EVALUATION, CUSTOM FUNCTIONS
+#### Options : Display formatting, expression eval, custom functions
 
 ```sh
   
