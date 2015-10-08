@@ -28,7 +28,7 @@ cd bin
 
 ```
 
-View and search a JSON data tree as simply as navigating a file-system 
+Navigate a JSON tree as simply as easily as browsing file-system directories
 
 ![Pretty Printed output](https://github.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
 
