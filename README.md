@@ -4,12 +4,12 @@ CLAPI - Command Line API processor (for various service APIs)
 
 The intent of this is to create CLI + GUI interfaces to service APIs with the goal of learning React in the process.
 
-The CLI features
+#### The CLI features
 * output formatting (pretty printing with color, raw JSON)
 * interactive/iterative/drill-down mode from the root node
 * search mode
  
-React UI
+#### React UI
 * use webpack for 
    * build and babel transpilation of es6 and jsx code
    * file watchers and hot deploy to the client
