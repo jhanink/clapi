@@ -72,8 +72,6 @@ https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
 
 Command line access to API services with output formatting, search, and interactive features
 
-##### → STAGE : Cart & Checkout
-
 cd to `clapi/bin`
 
 ```sh
@@ -112,9 +110,6 @@ cd to `clapi/bin`
   ./delete-cart-item  `./get-cart --EVAL=items[0].id`        # id             (not USItemId)
 ```
 
-##### → STAGE : Other
-
-cd to `clapi/bin`
 
 ```sh
   
@@ -144,7 +139,7 @@ cd to `clapi/bin`
 
 ```
 
-##### → STAGE : Set Configs
+Set Configs
 
 edit the file `~/clapi-config-override.json` or use the `config/set-*` commands.
 
@@ -156,9 +151,7 @@ cd to `clapi/bin/config`
 
 ```
 
-##### → OPTIONS : DISPLAY FORMAT, EXPRESSION EVALUATION, CUSTOM FUNCTIONS
-
-cd to `clapi/bin`
+OPTIONS : DISPLAY FORMAT, EXPRESSION EVALUATION, CUSTOM FUNCTIONS
 
 ```sh
   
