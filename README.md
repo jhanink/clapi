@@ -51,6 +51,8 @@ Search mode
 
 React UI components plus material-ui theme
 
+DEMO - https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
+
 ```sh
 
 # turn MOCKS mode on
@@ -63,10 +65,6 @@ npm start
 open -a "Google Chrome" http://localhost:3000
 
 ```
-
-DEMO - Run the API commands from the GUI
-
-https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
 
 ### Use the CLI
 
