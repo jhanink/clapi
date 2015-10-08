@@ -9,12 +9,12 @@ The CLI features
 * interactive/iterative/drill-down mode from the root node
 * search mode
  
-The React UI learnings
+React UI
 * use webpack for 
    * build and babel transpilation of es6 and jsx code
    * file watchers and hot deploy to the client
 * use jsx for react view components
-* use google material-ui
+* use google material-ui for the look and feel
 * use react router and alt-iso for isomorphic js (server + client rendering)
 
 ```sh
