@@ -28,10 +28,17 @@ cd bin
 
 ```
 
+Pretty print service call results
+
+![pretty print](https://github.com/jhanink/clapi/blob/master/assets/api-shortcuts-jh1.png?raw=true)
+
 Navigate a JSON tree as simply as browsing file-system directories
 
-![Pretty Printed output](https://github.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
+![clapi buffer](https://github.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
 
+Search mode
+
+![find mode](https://github.com/jhanink/clapi/blob/master/assets/cf_output.png?raw=true)
 
 ### Features
 
