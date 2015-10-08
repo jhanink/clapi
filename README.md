@@ -231,8 +231,6 @@ cd to `clapi/bin`
   ./f email
 ```
 
-![clapi find](https://github.com/jhanink/clapi/blob/master/assets/cf_output.png?raw=true)
-
 
 ```sh
   
