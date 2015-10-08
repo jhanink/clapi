@@ -1,6 +1,21 @@
 ### What is this?
 
-CLAPI - Command Line API processor (mainly for cart and checkout)
+CLAPI - Command Line API processor (for various service APIs)
+
+The intent of this is to create CLI + GUI interfaces to service APIs with the goal of learning React in the process.
+
+The CLI features
+* output formatting (pretty printing with color, raw JSON)
+* interactive/iterative/drill-down mode from the root node
+* search mode
+ 
+The React UI learnings
+* use webpack for 
+   * build and babel transpilation of es6 and jsx code
+   * file watchers and hot deploy to the client
+* use jsx for react view components
+* use google material-ui
+* use react router and alt-iso for isomorphic js (server + client rendering)
 
 ```sh
 
@@ -21,7 +36,7 @@ View and search a JSON data tree as simply as navigating a file-system
 
 * Call an API and view in JSON, PRETTY, or Interactive mode
 * Use the CLAPI result buffer to grep, pipe, or process with custom functions
-* Prefer to use a GUI? see the next section, "Using the UI" 
+* Use the GUI or CLI below
 
 ### Use the UI
 
@@ -45,6 +60,8 @@ DEMO - Run the API commands from the GUI
 https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
 
 ### Use the CLI
+
+Command line access to API services with output formatting, search, and interactive features
 
 ##### → STAGE : Cart & Checkout
 
