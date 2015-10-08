@@ -9,6 +9,7 @@ cd clapi
 npm install -g nodemon
 npm install
 cd bin
+
 ```
 
 View and search a JSON data tree as simply as navigating a file-system 
@@ -27,20 +28,21 @@ View and search a JSON data tree as simply as navigating a file-system
 React UI components plus material-ui theme
 
 ```sh
+
+# turn MOCKS mode on
+export CLAPI_SET_MOCKS=ON
+  
 # start an auto hot-reload server 
 npm start
 
 # open an auto hot-reloading UI
 open -a "Google Chrome" http://localhost:3000
 
-# open an auto hot-reloading UI with update indicator
-open -a "Google Chrome" http://localhost:8080/webpack-dev-server/build/bundle
-
 ```
 
 Run the API commands from the GUI
 
-![Pretty Printed output](https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif?raw=true)
+https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
 
 ### Commands
 
