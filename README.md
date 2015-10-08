@@ -36,6 +36,7 @@ Navigate a JSON tree as simply as easily as browsing file-system directories
 ### Features
 
 * Call an API and view in JSON, PRETTY, or Interactive mode
+* Search/Find mode
 * Use the CLAPI result buffer to grep, pipe, or process with custom functions
 * Use the GUI or CLI below
 
