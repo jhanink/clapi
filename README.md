@@ -40,7 +40,7 @@ open -a "Google Chrome" http://localhost:3000
 
 ```
 
-Run the API commands from the GUI
+DEMO - Run the API commands from the GUI
 
 https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
 
