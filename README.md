@@ -44,10 +44,7 @@ DEMO - Run the API commands from the GUI
 
 https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
 
-### Commands
-
-
-Available commands:
+### Use the CLI
 
 ##### → STAGE : Cart & Checkout
 
