@@ -4,7 +4,7 @@ CLAPI - Command Line API processor (mainly for cart and checkout)
 
 ```sh
 
-git clone https://gecgithub01.walmart.com/jhanink/clapi.git
+git clone https://github.com/jhanink/clapi.git
 cd clapi
 npm install -g nodemon
 npm install
@@ -13,7 +13,7 @@ cd bin
 
 View and search a JSON data tree as simply as navigating a file-system 
 
-![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
+![Pretty Printed output](https://github.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
 
 
 ### Features
@@ -40,17 +40,21 @@ open -a "Google Chrome" http://localhost:8080/webpack-dev-server/build/bundle
 
 Run the API commands from the GUI
 
-![Pretty Printed output](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/clapi-ui.gif?raw=true)
+![Pretty Printed output](https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif?raw=true)
 
 ### Commands
 
-[Add new requests here](https://gecgithub01.walmart.com/jhanink/clapi/issues)
 
 Available commands:
 
 ##### → STAGE : Cart & Checkout
 
 cd to `clapi/bin`
+
+```sh
+  # turn MOCKS mode on
+  export CLAPI_SET_MOCKS=ON
+```
 
 ```sh
   
@@ -202,7 +206,7 @@ cd to `clapi/bin`
   ./f email
 ```
 
-![clapi find](https://gecgithub01.walmart.com/jhanink/clapi/blob/master/assets/cf_output.png?raw=true)
+![clapi find](https://github.com/jhanink/clapi/blob/master/assets/cf_output.png?raw=true)
 
 
 ```sh
@@ -260,13 +264,3 @@ cd to `clapi/bin`
   for i in {0..3}; do ./c groups[0].shippingOptions[$i].selected; done;
 ```
 
-### Contribute
-
-* [Open a github issue to request a new feature](https://gecgithub01.walmart.com/jhanink/clapi/issues)
-
-### Related Documentation
-
-* https://confluence.walmart.com/display/PGSCARTXO/Cart-Service-App+API
-* https://confluence.walmart.com/display/PGSCARTXO/New+Checkout+Service+API
-* http://mobile-qa-ci.homeoffice.wal-mart.com:8080/view/Item%20check/job/Inventory_check/
-* [See additional project goals](docs/project-goals.md)
