@@ -139,7 +139,7 @@ cd to `clapi/bin`
 
 ```
 
-Set Configs
+#### Set Configs
 
 edit the file `~/clapi-config-override.json` or use the `config/set-*` commands.
 
@@ -151,7 +151,7 @@ cd to `clapi/bin/config`
 
 ```
 
-OPTIONS : DISPLAY FORMAT, EXPRESSION EVALUATION, CUSTOM FUNCTIONS
+#### OPTIONS : DISPLAY FORMAT, EXPRESSION EVALUATION, CUSTOM FUNCTIONS
 
 ```sh
   
