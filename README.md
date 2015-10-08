@@ -14,6 +14,7 @@ The intent of this is to create CLI + GUI interfaces to service APIs with the go
    * build and babel transpilation of es6 and jsx code
    * file watchers and hot deploy to the client
 * use jsx for react view components
+* basic flux pattern with actions/stores
 * use google material-ui for the look and feel
 * use react router and alt-iso for isomorphic js (server + client rendering)
 
