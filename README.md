@@ -23,7 +23,7 @@ The intent of this is to create a CLI + GUI interface to services and learn Reac
 
 ![pretty print](https://github.com/jhanink/clapi/blob/master/assets/api-shortcuts-jh1.png?raw=true)
 
-Navigate a JSON tree as simply as browsing file-system directories
+Drill down into JSON service response
 
 ![clapi buffer](https://github.com/jhanink/clapi/blob/master/assets/clapi_output.png?raw=true)
 
