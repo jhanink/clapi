@@ -1,8 +1,8 @@
 ### What is this?
 
-CLAPI - Command Line API processor (for calling service APIs and inspecting response data)
+CLAPI - Command Line API processor for calling service APIs and inspecting response data.
 
-The intent of this is to create CLI + GUI interfaces to service APIs with the goal of learning React in the process.
+The intent of this is to create a CLI + GUI interface to services and learn React in the process.
 
 #### Features
 * Call an API and view in JSON, PRETTY, or Interactive mode
