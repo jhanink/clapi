@@ -13,7 +13,7 @@ The intent of this is to create a CLI + GUI interface to services and learn Reac
 #### Developing a React UI
 * use webpack for 
    * build and babel transpilation of es6 and jsx code
-   * file watchers and hot deploy to the client
+   * hot reload changes to the client without page refresh
 * use jsx for react view components
 * basic flux pattern with actions/stores
 * use google material-ui for the look and feel
