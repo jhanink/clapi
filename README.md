@@ -174,7 +174,7 @@ cd to `clapi/bin/config`
   ./get-cart --FUNC printCartItems                           # run a custom function on result
 ```
 
-All the above commands save to the CLAPI buffer and can be immediately driven by ./clapi (below)
+All the above commands save to the CLAPI buffer and can be immediately driven by ./clapi or ./c (alias for ./clapi)
 
 
 ##### → CLAPI : INTERACTIVE MODE
@@ -182,6 +182,7 @@ All the above commands save to the CLAPI buffer and can be immediately driven by
 cd to `clapi/bin`
 
 ```sh
+  # clapi aliases: ./clapi, ./c
   
   # implicitly save a result to the clapi buffer
   ./get-cart
@@ -208,12 +209,13 @@ cd to `clapi/bin`
   
 ```sh
 
+  # clapi find aliases: ./cf, ./find, ./f
+
   # find all matches by property name (deep search)
   # using starts-with + case-insensitive matching 
+  
   ./cf isAssociate
   ./cf isassoc
-  
-  # clapi-find aliases: ./cf, ./find, ./f
   ./cf email
   ./find email
   ./f email
@@ -254,13 +256,6 @@ cd to `clapi/bin`
 
   # get torbit headers
   ./curl-torbit http://www-e6.walmart.com -i
-```
-
-##### → TIPS & TRICKS
-
-cd to `clapi/bin`
-
-```sh
 
   # find which nodes have values
   ./c -f=../samples/missingFulfillmentPrices.json && \
