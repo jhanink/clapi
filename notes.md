@@ -74,18 +74,6 @@
   * http://webpack.github.io/docs/
   * https://github.com/webpack/docs/wiki/cli
 
-### Walmart Resources
-* https://gecgithub01.walmart.com/react/react-dev-guide
-* https://gecgithub01.walmart.com/thor/getting-started
-* https://gecgithub01.walmart.com/pages/react/showcase
-* https://gecgithub01.walmart.com/react/analytics
-
-* Alt/Iso example with SSR
-   * https://gecgithub01.walmart.com/react/item-page
-   
-   * Ken's example
-      * https://gecgithub01.walmart.com/react/flux-example
-
 ### Next
 * fetch
 * mixins (deprecated)
