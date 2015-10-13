@@ -1,15 +1,16 @@
 ### What is this?
 
-CLAPI - Command Line API processor (for various service APIs)
+CLAPI - Command Line API processor (for calling service APIs and inspecting response data)
 
 The intent of this is to create CLI + GUI interfaces to service APIs with the goal of learning React in the process.
 
-#### The CLI features
-* output formatting (pretty printing with color, raw JSON)
-* interactive/iterative/drill-down mode from the root node
-* search mode
+#### Features
+* Call an API and view in JSON, PRETTY, or Interactive mode
+* Search/Find mode
+* Use the CLAPI result buffer to grep, pipe, or process with custom functions
+* CLI and GUI
  
-#### React UI
+#### Developing a React UI
 * use webpack for 
    * build and babel transpilation of es6 and jsx code
    * file watchers and hot deploy to the client
@@ -18,17 +19,7 @@ The intent of this is to create CLI + GUI interfaces to service APIs with the go
 * use google material-ui for the look and feel
 * use react router and alt-iso for isomorphic js (server + client rendering)
 
-```sh
-
-git clone https://github.com/jhanink/clapi.git
-cd clapi
-npm install -g nodemon
-npm install
-cd bin
-
-```
-
-Pretty print service call results
+#### CLI interface
 
 ![pretty print](https://github.com/jhanink/clapi/blob/master/assets/api-shortcuts-jh1.png?raw=true)
 
@@ -40,18 +31,24 @@ Search mode
 
 ![find mode](https://github.com/jhanink/clapi/blob/master/assets/cf_output.png?raw=true)
 
-### Features
+### Installation
 
-* Call an API and view in JSON, PRETTY, or Interactive mode
-* Search/Find mode
-* Use the CLAPI result buffer to grep, pipe, or process with custom functions
-* Use the GUI or CLI below
+```sh
 
-### Use the UI
+git clone https://github.com/jhanink/clapi.git
+cd clapi
+npm install -g nodemon
+npm install
+cd bin
 
+```
+
+#### UI Demo
 React UI components plus material-ui theme
+https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
 
-DEMO - https://github.com/jhanink/clapi/blob/master/assets/clapi-ui.gif
+
+### Run the React app
 
 ```sh
 
