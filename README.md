@@ -39,7 +39,6 @@ git clone https://github.com/jhanink/clapi.git
 cd clapi
 npm install -g nodemon
 npm install
-cd bin
 
 ```
 
