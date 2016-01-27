@@ -74,18 +74,18 @@ module.exports = {
     var objInfo = this.getTypeInfo(child);
     var prefix = {line: "", padding: 0, length: 0};
     if (this.getEnvVar(Const.ENV.SET_DATATYPE) === "ON") {
-      prefix.line = objInfo.IS_ARRAY?"array":objInfo.TYPE;
+      prefix.line = objInfo.IS_ARRAY?"ARRAY":objInfo.TYPE.toUpperCase();
       prefix.padding = 8;
       prefix.length = prefix.line.length;
     }
     for (var _pad=0;_pad<(prefix.padding-prefix.length);_pad++) {prefix.line += " "}
     prefix.line = idx+(idx<10?"   ":"  ") + prefix.line;
-    var str = Const.COLORS.DARK_GRAY + prefix.line + " "+ Const.COLORS.CLEAR ;
+    var str = Const.COLORS.RED + prefix.line + " "+ Const.COLORS.CLEAR ;
 
     if (objInfo.IS_VALUE_LEAF_NODE)
     {
       str += "" + Const.COLORS.BLUE + prop + Const.COLORS.CLEAR;
-      str += Const.COLORS.LIGHT_GRAY +" — " + child + Const.COLORS.CLEAR;
+      str += Const.COLORS.LIGHT_GREEN +" — " + child + Const.COLORS.CLEAR;
     }
     else
     {
@@ -95,9 +95,9 @@ module.exports = {
       } else {
         propCount = child.length;
       }
-      str += propCount ? Const.COLORS.BLUE : Const.COLORS.DARK_GRAY;
+      str += propCount ? Const.COLORS.BLUE : Const.COLORS.RED;
       var toPluralize = propCount === 0 || propCount > 1;
-      str += (propCount?(objInfo.IS_ARRAY?"":""):"") + prop + "" + (propCount ? Const.COLORS.DARK_GRAY + " "+(objInfo.IS_ARRAY?"·":"·")+" "
+      str += (propCount?(objInfo.IS_ARRAY?"":""):"") + prop + "" + (propCount ? Const.COLORS.RED + " "+(objInfo.IS_ARRAY?"·":"·")+" "
           + propCount
           + (objInfo.IS_ARRAY?" element":" node")
           + (toPluralize?"s":"")
