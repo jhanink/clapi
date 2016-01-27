@@ -1,12 +1,9 @@
 let React                 = require("react");
 let mui                   = require("material-ui");
-let injectTapEventPlugin  = require("react-tap-event-plugin");
 let ClapiLeftNavMenu      = require("./clapi-nav-menu.jsx");
 
 let AppBar = mui.AppBar;
-let ThemeManager = new mui.Styles.ThemeManager();
-ThemeManager.setTheme(ThemeManager.types.LIGHT);
-injectTapEventPlugin();
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
 
 let ClapiHeader = React.createClass({
   render() {
@@ -24,9 +21,7 @@ let ClapiHeader = React.createClass({
     this.refs.leftNavMenu._toggle();
   },
   getChildContext() {
-    return {
-      muiTheme: ThemeManager.getCurrentTheme()
-    };
+    
   },
   childContextTypes: {
     muiTheme: React.PropTypes.object

@@ -1,9 +1,7 @@
 let React     = require("react");
 let mui       = require("material-ui");
 
-let ThemeManager = new mui.Styles.ThemeManager();
-ThemeManager.setTheme(ThemeManager.types.LIGHT);
-
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
 let Toggle = mui.Toggle;
 
 module.exports = React.createClass({
@@ -28,8 +26,5 @@ module.exports = React.createClass({
     muiTheme: React.PropTypes.object
   },
   getChildContext() {
-    return {
-      muiTheme: ThemeManager.getCurrentTheme()
-    };
   }
 });

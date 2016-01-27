@@ -3,8 +3,7 @@ let $         = require("jquery");
 let Inspector = require("react-json-inspector");
 let mui       = require("material-ui");
 
-let ThemeManager = new mui.Styles.ThemeManager();
-ThemeManager.setTheme(ThemeManager.types.LIGHT);
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
 
 let TextField = mui.TextField;
 let RaisedButton = mui.RaisedButton;
@@ -81,8 +80,5 @@ module.exports = React.createClass({
     muiTheme: React.PropTypes.object
   },
   getChildContext() {
-    return {
-      muiTheme: ThemeManager.getCurrentTheme()
-    };
   }
 });

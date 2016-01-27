@@ -2,14 +2,11 @@ import  React                 from 'react';
 let     Router                = require('react-router');
 let     $                     = require("jquery");
 let     mui                   = require("material-ui");
-let     injectTapEventPlugin  = require("react-tap-event-plugin");
 
 let LeftNav = mui.LeftNav;
 let MenuItem = mui.MenuItem;
 let {Colors, Spacing, Typography} = mui.Styles;
-let ThemeManager = new mui.Styles.ThemeManager();
-ThemeManager.setTheme(ThemeManager.types.LIGHT);
-injectTapEventPlugin();
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
 
 let menuItems = [
   {text: 'get-customer', route: 'get-customer'},
@@ -50,9 +47,6 @@ module.exports = React.createClass({
     this.refs.leftNav.close();
   },
   getChildContext() {
-    return {
-      muiTheme: ThemeManager.getCurrentTheme()
-    };
   },
   contextTypes : {
     router: React.PropTypes.func

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node server --stage 1",
+    "start": "nodemon --exec babel-node server --stage 2",
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build/"
   },
@@ -18,8 +18,8 @@
   "dependencies": {
     "alt": "^0.17.1",
     "async": "^1.4.0",
+    "babel-runtime": "^6.3.19",
     "color": "^0.10.1",
-    "component-playground": "0.1.1",
     "cookies-js": "^1.2.1",
     "css": "^2.2.1",
     "css-loader": "^0.15.6",
@@ -36,7 +36,7 @@
     "json-loader": "^0.5.2",
     "line-reader": "^0.2.4",
     "lodash": "^3.10.1",
-    "material-ui": "^0.10.2",
+    "material-ui": "^0.14.2",
     "node-cache": "^3.0.0",
     "node-jsx": "^0.13.3",
     "node-libs-browser": "^0.5.2",
@@ -44,10 +44,11 @@
     "q": "^1.4.1",
     "radium": "^0.13.7",
     "raw-loader": "^0.5.1",
-    "react": "^0.13.3",
-    "react-json-inspector": "^5.2.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.6",
+    "react-json-inspector": "*",
     "react-router": "^0.13.3",
-    "react-tap-event-plugin": "^0.1.7",
+    "react-tap-event-plugin": "*",
     "request": "^2.60.0",
     "strip-ansi": "^3.0.0",
     "url-loader": "^0.5.6",
@@ -57,8 +58,14 @@
     "yargs": "^3.18.0"
   },
   "devDependencies": {
-    "babel-core": "^5.8.21",
-    "babel-loader": "^5.3.2",
-    "react-hot-loader": "^1.2.8"
+    "babel":"*",
+    "babel-core": "*",
+    "react-hot-loader": "^1.2.8",
+    "babel-cli": "*",
+    "babel-plugin-check-es2015-constants": "*",
+    "babel-plugin-transform-es2015-arrow-functions": "*",
+    "babel-plugin-transform-es2015-block-scoping": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-stage-2": "*"
   }
 }
