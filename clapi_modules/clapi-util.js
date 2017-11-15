@@ -9,8 +9,44 @@ module.exports = {
   getObjectPath: function (pathString, prop) {
     return pathString === "" ? prop : pathString + "." + prop;
   },
+  canMatch: function(childTypeInfo) {
+    return childTypeInfo.IS_ARRAY || childTypeInfo.IS_PLAIN_OBJECT ||
+      childTypeInfo.IS_PRIMITIVE || childTypeInfo.IS_VALUE_LEAF_NODE;
+  },
+  match: function(obj, searchTerm, pathString, prop, matches, args) {
+    if (args.VALUE) { // match by value
+      this.matchValue(obj, searchTerm, pathString, prop, matches);
+    } else { // match by key
+      this.matchProperty(searchTerm, pathString, prop, matches);
+    }
+  },
   matchProperty: function (searchTerm, pathString, prop, matches) {
     if (prop.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+      var propertyPath = this.getObjectPath(pathString, prop);
+      matches.push(propertyPath);
+      return true;
+    }
+    return false;
+  },
+  matchValue: function (obj, searchTerm, pathString, prop, matches) {
+    var val = obj[prop];
+    var result = false;
+    if (val !== undefined) {
+      var typeInfo = this.getTypeInfo(val);
+      if (typeInfo.TYPE === 'string' && val.toLowerCase().indexOf(new String(searchTerm).toLowerCase()) > -1) {
+        result = true;
+      } else if (typeInfo.IS_PRIMITIVE && new String(val) == searchTerm) {
+        result = true;
+      } else if (val == null && searchTerm === 'null') {
+        result = true;
+      }
+      if (result === true) {
+        var propertyPath = this.getObjectPath(pathString, prop);
+        matches.push(propertyPath);
+      }
+      return result;
+    }
+    if (val && obj[prop].toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
       var propertyPath = this.getObjectPath(pathString, prop);
       matches.push(propertyPath);
       return true;
@@ -27,7 +63,8 @@ module.exports = {
       IS_BOOLEAN: (type === "boolean"),
       IS_VALUE_LEAF_NODE: isLeafNode,
       IS_PLAIN_OBJECT: !isLeafNode && !isPrimitive && (obj != null && typeof(obj.length) === "undefined"),
-      IS_ARRAY: obj instanceof Array
+      IS_ARRAY: obj instanceof Array,
+      IS_NULL: obj === null,
     }
   },
   getFileContents: function (state) {

@@ -58,7 +58,7 @@
     "yargs": "^3.18.0"
   },
   "devDependencies": {
-    "babel":"*",
+    "babel": "*",
     "babel-core": "*",
     "react-hot-loader": "^1.2.8",
     "babel-cli": "*",

@@ -1,0 +1,16 @@
+IS_JSON=false
+
+for var in "$@"
+do
+  if [ $var == "--JSON" ];
+  then
+    IS_JSON=true
+  fi
+done
+
+if [ $IS_JSON == true ];
+then
+  ./c "$@" --FIND --VALUE --NOCOLOR
+else
+  ./c "$@" --FIND --VALUE
+fi

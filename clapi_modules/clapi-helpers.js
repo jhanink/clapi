@@ -75,7 +75,7 @@ module.exports =
 
   },
   getMatches: function (obj, searchTerm, state, args) {
-    var searchResult = this.search (obj, searchTerm, "", []);
+    var searchResult = this.search (obj, searchTerm, "", [], args);
 
     var output = [];
     for (var i=0;i<searchResult.length;i++) {
@@ -91,27 +91,26 @@ module.exports =
   },
 
   // deep search matching for all keys and values matching 'term' starting at node 'obj'
-  search: function (obj, searchTerm, pathString, matchesArray) {
+  search: function (obj, searchTerm, pathString, matchesArray, args) {
     for (var prop in obj) {
       if (!obj.hasOwnProperty(prop)) continue;
       var child = obj[prop];
       var childTypeInfo = Util.getTypeInfo(child);
       var propertyPath = Util.getObjectPath(pathString, prop);
+
+      if (Util.canMatch(childTypeInfo)) {
+        Util.match(obj, searchTerm, pathString, prop, matchesArray, args);
+      }
+
       if (childTypeInfo.IS_ARRAY)
       {
-        Util.matchProperty(searchTerm, pathString, prop, matchesArray);
         for (var i=0;i<child.length;i++) {
-          this.search(child[i], searchTerm, propertyPath + "["+i+"]", matchesArray);
+          this.search(child[i], searchTerm, propertyPath + "["+i+"]", matchesArray, args);
         }
       }
       else if (childTypeInfo.IS_PLAIN_OBJECT)
       {
-        Util.matchProperty(searchTerm, pathString, prop, matchesArray);
-        this.search(child, searchTerm, propertyPath, matchesArray);
-      }
-      else if (childTypeInfo.IS_PRIMITIVE)
-      {
-        Util.matchProperty(searchTerm, pathString, prop, matchesArray);
+        this.search(child, searchTerm, propertyPath, matchesArray, args);
       }
     }
     return matchesArray;
