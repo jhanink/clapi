@@ -48,6 +48,11 @@ module.exports = {
     }
   },
   matchValue: function (obj, searchTerm, pathString, prop, matches) {
+    if (searchTerm === '.') {
+        var propertyPath = this.getObjectPath(pathString, prop);
+        matches.push(propertyPath);
+        return true;
+    };
     var val = obj[prop];
     var result = false;
     if (val !== undefined) {
