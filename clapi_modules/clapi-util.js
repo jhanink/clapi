@@ -42,6 +42,9 @@ module.exports = {
     var propertyPath = this.getObjectPath(pathString, prop);
     // convert the shorthand '..' -> regex '.*'
     var _pathValue = pathValue.replace(/\.\./g, '.*')
+    if (!searchTerm) {
+      searchTerm = '.';
+    }
     if (propertyPath.match(_pathValue.toLowerCase())) {
       var propertyPath = this.getObjectPath(pathString, prop);
       this.matchValue(obj, searchTerm, pathString, prop, matches);
