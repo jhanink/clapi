@@ -1,4 +1,4 @@
 echo "./r records..modified_by .    # match path substring..substring and any value "
 echo "./r .                         # match any path; show entire path tree"
 echo "./r results..47..             # e.g match results[47].clients"
-echo "./r results\\[93\\]..records    # e.g match results[93].records"
+echo "./r results\\\\[93\\\\]..records    # e.g match results[93].records"
