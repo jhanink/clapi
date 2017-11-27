@@ -1,1 +1,3 @@
-echo "./pv records..modified_by ."
+echo "./pv records..modified_by .    # match path substring..substring and any value "
+echo "./pv .                         # match any path; show entire path tree"
+echo "./pv 47..clients..0..uuid      # e.g match results[47].clients[0].uuid"
