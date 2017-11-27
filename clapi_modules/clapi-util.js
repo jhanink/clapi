@@ -16,6 +16,8 @@ module.exports = {
   match: function(obj, searchTerm, pathString, prop, matches, args) {
     if (args.VALUE) { // match by value
       this.matchValue(obj, searchTerm, pathString, prop, matches);
+    } else if (args.KEYVALUE) { // match by value
+      this.matchKeyValue(obj, searchTerm, args['_'][0], pathString, prop, matches);
     } else { // match by key
       this.matchProperty(searchTerm, pathString, prop, matches);
     }
@@ -27,6 +29,12 @@ module.exports = {
       return true;
     }
     return false;
+  },
+  matchKeyValue: function (obj, key, searchTerm, pathString, prop, matches) {
+    if (prop.toLowerCase().indexOf(key.toLowerCase()) > -1) {
+      var propertyPath = this.getObjectPath(pathString, prop);
+      this.matchValue(obj, searchTerm, pathString, prop, matches);
+    }
   },
   matchValue: function (obj, searchTerm, pathString, prop, matches) {
     var val = obj[prop];
