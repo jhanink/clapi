@@ -18,6 +18,8 @@ module.exports = {
       this.matchValue(obj, searchTerm, pathString, prop, matches);
     } else if (args.KEYVALUE) { // match by value
       this.matchKeyValue(obj, searchTerm, args['_'][0], pathString, prop, matches);
+    } else if (args.PATHVALUE) { // match by value
+      this.matchPathValue(obj, searchTerm, args['_'][0], pathString, prop, matches);
     } else { // match by key
       this.matchProperty(searchTerm, pathString, prop, matches);
     }
@@ -32,6 +34,15 @@ module.exports = {
   },
   matchKeyValue: function (obj, key, searchTerm, pathString, prop, matches) {
     if (prop.toLowerCase().indexOf(key.toLowerCase()) > -1) {
+      var propertyPath = this.getObjectPath(pathString, prop);
+      this.matchValue(obj, searchTerm, pathString, prop, matches);
+    }
+  },
+  matchPathValue: function (obj, pathValue, searchTerm, pathString, prop, matches) {
+    var propertyPath = this.getObjectPath(pathString, prop);
+    // convert the shorthand '..' -> regex '.*'
+    var _pathValue = pathValue.replace(/\.\./g, '.*')
+    if (propertyPath.match(_pathValue.toLowerCase())) {
       var propertyPath = this.getObjectPath(pathString, prop);
       this.matchValue(obj, searchTerm, pathString, prop, matches);
     }
