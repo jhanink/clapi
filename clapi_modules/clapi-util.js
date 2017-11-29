@@ -7,6 +7,9 @@ var clapi = require("../clapi_modules/clapi-helpers");
 
 module.exports = {
   getObjectPath: function (pathString, prop) {
+    if (typeof prop === 'number') {
+      return pathString + `[${prop}]`;
+    }
     return pathString === "" ? prop : pathString + "." + prop;
   },
   canMatch: function(childTypeInfo) {
@@ -46,13 +49,12 @@ module.exports = {
       searchTerm = '.';
     }
     if (propertyPath.match(_pathValue.toLowerCase())) {
-      var propertyPath = this.getObjectPath(pathString, prop);
       this.matchValue(obj, searchTerm, pathString, prop, matches);
     }
   },
   matchValue: function (obj, searchTerm, pathString, prop, matches) {
+    var propertyPath = this.getObjectPath(pathString, prop);
     if (searchTerm === '.') {
-        var propertyPath = this.getObjectPath(pathString, prop);
         matches.push(propertyPath);
         return true;
     };
@@ -68,13 +70,11 @@ module.exports = {
         result = true;
       }
       if (result === true) {
-        var propertyPath = this.getObjectPath(pathString, prop);
         matches.push(propertyPath);
       }
       return result;
     }
     if (val && obj[prop].toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
-      var propertyPath = this.getObjectPath(pathString, prop);
       matches.push(propertyPath);
       return true;
     }

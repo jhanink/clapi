@@ -105,7 +105,12 @@ module.exports =
       if (childTypeInfo.IS_ARRAY)
       {
         for (var i=0;i<child.length;i++) {
-          this.search(child[i], searchTerm, propertyPath + "["+i+"]", matchesArray, args);
+          const childValueTypeInfo = Util.getTypeInfo(child[i]);
+          if (childValueTypeInfo.IS_VALUE_LEAF_NODE) {
+            Util.match(child, searchTerm, propertyPath, i, matchesArray, args);
+          } else {
+          this.search(child[i], searchTerm, propertyPath + `[${i}]`, matchesArray, args);
+          }
         }
       }
       else if (childTypeInfo.IS_PLAIN_OBJECT)
